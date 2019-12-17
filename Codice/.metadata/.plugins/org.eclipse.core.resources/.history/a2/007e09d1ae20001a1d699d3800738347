@@ -1,0 +1,9 @@
+package modelBean;
+
+public class AmministratoreBean {
+
+	public AmministratoreBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

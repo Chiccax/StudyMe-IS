@@ -1,0 +1,9 @@
+package modelBean;
+
+public class OrdineBean {
+
+	public OrdineBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

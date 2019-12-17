@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Mariarosaria\Desktop\StudyMe - IS\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1875483007.index
+1132232118.index
+1994036004.index
+2130973024.index
+360583439.index
+3219404352.index
+266923649.index

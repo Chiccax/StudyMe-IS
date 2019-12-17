@@ -1,0 +1,8 @@
+package modelBean;
+
+public class UtenteBean {
+
+	public UtenteBean() {
+	}
+
+}

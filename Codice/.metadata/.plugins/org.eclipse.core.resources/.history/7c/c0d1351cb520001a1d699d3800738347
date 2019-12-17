@@ -1,0 +1,33 @@
+package modelBean;
+
+public class UtenteBean {
+
+	public UtenteBean() {
+	}
+
+	
+
+
+	public String getNomeUtente() {
+		return nomeUtente;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public String getTipo() {
+		return tipo;
+	}
+	
+	//Variabili d'istanza
+	String nomeUtente, password, email, tipo;
+
+}

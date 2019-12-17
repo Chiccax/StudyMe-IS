@@ -1,0 +1,9 @@
+package modelDao;
+
+public class OrdineDao {
+
+	public OrdineDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

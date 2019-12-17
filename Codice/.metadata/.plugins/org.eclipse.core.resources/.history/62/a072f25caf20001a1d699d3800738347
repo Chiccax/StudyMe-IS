@@ -1,0 +1,9 @@
+package modelDao;
+
+public class PacchettoDao {
+
+	public PacchettoDao() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,283 @@
+<!-- Barra di navigazione -->
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" import="java.util.*" import="modelBean.UtenteBean" import="modelBean.PacchettoBean"
+	import="modelBean.AmministratoreBean"%>
+<%
+	UtenteBean loggedUser = (UtenteBean) session.getAttribute("User");
+	AmministratoreBean administrator = (AmministratoreBean) session.getAttribute("Amministratore");
+
+	HttpSession sessione = request.getSession();
+	ArrayList<PacchettoBean> carrello = (ArrayList<PacchettoBean>) sessione.getAttribute("carrello");
+	if(carrello == null){
+		carrello = new ArrayList<PacchettoBean>();
+	}
+	
+	String initial = null;
+
+	if (loggedUser != null) {
+		initial = loggedUser.getNomeUtente().substring(0, 2);
+	}
+
+	if (administrator != null) {
+		initial = administrator.getNomeAmministratore().substring(0, 2);
+	}
+%>
+
+<div class="navbar">
+	<div id="logo">
+		<div class="navbar-item" id="logo-item">
+			<div class="navbar-item-image">
+				<a href="HomePage.jsp"><img src="./Icons/Logo sito.png"
+					alt="logo"></a>
+			</div>
+			<div class="navbar-item-description">StudyMe</div>
+		</div>
+	</div>
+
+	<form id="ricerca" method="GET" action="SearchServlet">
+		<i class="fas fa-search"></i> <input type="Text" name="argument"
+			placeholder="Cosa vuoi imparare oggi ?">
+	</form>
+
+	<div id="carrello">
+		<nav>
+			<ul class="nav">
+				<%
+					if (administrator != null) {
+				%>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image" onClick="redirectUserArea()">
+							<div class="cerchio">
+								<h1><%=initial%></h1>
+							</div>
+						</div>
+					</div>
+				</li>
+				<%
+					} else if (loggedUser != null) {
+				%>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image" onClick="redirectUserArea()">
+							<div class="cerchio">
+								<h1><%=initial%></h1>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image">
+							<a href="LibreriaServlet"><img src="./Icons/libreria.png" alt="logo"></a>
+						</div>
+						<div class="navbar-item-description">
+							<a href="LibreriaServlet"><div id="pulsante-accedi" onClick="">Lezioni</div></a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="navbar-item">
+						<div class="navbar-item-image">
+							<a href = "Cart.jsp">
+								<div id = "numberIncrement" style = "right: 10px;"><%=carrello.size()%></div>
+								<img src = "./Icons/carrello.png" alt="logo">
+							</a>			
+						</div>
+						<a href="Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
+					</div>
+				</li>
+				<%
+					} else {
+				%>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image">
+							<img src="./Icons/user.png" alt="logo" id="loginImage"
+								onClick="mostraLogin()">
+						</div>
+						<div class="navbar-item-description">
+							<div id="pulsante-accedi" onClick="mostraLogin()">Accedi</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="navbar-item">
+						<div class="navbar-item-image">
+							<a href="Cart.jsp"><img src="./Icons/carrello.png" alt="logo"></a>
+						</div>			
+						<div id = "numberIncrement" style = "right: 10px;"><%=carrello.size()%></div>
+						<a href="CarrelloServlet"><div class="navbar-item-description">Carrello</div></a>
+					</div>
+				</li>
+				<%
+					}
+				%>
+			</ul>
+		</nav>
+	</div>
+	<i class="fas fa-bars" onclick="openNav()"></i>
+</div>
+
+<!-- Barra di navigazione resposive -->
+<div id="responsive-bar">
+	<div id="lateral">
+		<i class="closebtn" onclick="closeNav()">&times;</i>
+		<nav>
+			<ul class="navLateral">
+				<%
+					if (administrator != null) {
+				%>
+				<li>
+					<div id="formSearch">
+						<i class="fas fa-search" onClick="ShowSearchBar()"></i>
+						<div class="navbar-item-description search"
+							onClick="ShowSearchBar()">Cerca</div>
+					</div>
+					<div id="formSearchResponse">
+						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
+								type="Text" name="argument" placeholder="Cerca pacchetti">
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image">
+							<i class="fas fa-plus-square" onClick="redirectUserArea()"></i>
+						</div>
+						<div class="navbar-item-description">
+							<div id="pulsante-accedi" onClick="redirectUserArea()">Aggiungi pacchetti</div>
+						</div>
+					</div>
+				</li>
+				<%if(request.getRequestURI().equals("/StudyMe/UserArea.jsp")){%>
+				<li>		
+					<div class="navbar-item login ordini">
+						<div class="navbar-item-image">
+							<i class="fas fa-money-check-alt" onClick= "showOrdersAdministrator()"></i>
+						</div>
+						<div class="navbar-item-description">
+							<div id="pulsante-accedi" onClick= "showOrdersAdministrator()">Ordini</div>
+						</div>
+					</div>	
+				</li>
+				<%}%>
+				<%
+					} else if (loggedUser != null) {
+				%>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image" onClick="redirectUserArea()">
+							<div class="cerchio">
+								<h1><%=initial%></h1>
+							</div>
+						</div>
+					</div>
+				</li>
+				<%if(request.getRequestURI().equals("/StudyMe/UserArea.jsp")){%>
+					
+				<li>			
+					<div class="navbar-item">		
+						<div class="navbar-item-image">
+							<i class="fas fa-money-check-alt" onClick= "showOrders()"></i>
+						</div>
+						<div class="navbar-item-description">
+							<div id="pulsante-accedi" onClick= "showOrders()">Ordini</div>
+						</div>
+					</div>
+				</li>
+				<%}%>
+				<li>
+					<div id="formSearch">
+						<i class="fas fa-search" onClick="ShowSearchBar()"></i>
+						<div class="navbar-item-description search"
+							onClick="ShowSearchBar()">Cerca</div>
+					</div>
+					<div id="formSearchResponse">
+						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
+								type="Text" name="argument" placeholder="Cerca pacchetti">
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image">
+							<a href="LibreriaServlet"><img src="./Icons/libreria.png" alt="logo"></a>
+						</div>
+						<a href="LibreriaServlet">
+							<div class="navbar-item-description">
+								<div id="pulsante-accedi" >Lezioni</div>
+							</div>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="navbar-item">
+						<div class="navbar-item-image">
+							<a href = "Cart.jsp">
+								<div id = "numberIncrement" style = "right: 30px;"><%=carrello.size()%></div>
+								<img src = "./Icons/carrello.png" alt="logo">
+							</a>
+						</div>
+						<a href = "Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
+					</div>
+				</li>
+				<%
+					} else {
+				%>
+				<li>
+					<div id="formSearch">
+						<i class="fas fa-search" onClick="ShowSearchBar()"></i>
+						<div class="navbar-item-description search"
+							onClick="ShowSearchBar()">Cerca</div>
+					</div>
+					<div id="formSearchResponse">
+						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
+								type="Text" name="argument" placeholder="Cerca pacchetti">
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image">
+							<img src="./Icons/utente.png" alt="logo" id="loginImage"
+								onClick="mostraLogin()">
+						</div>
+						<div class="navbar-item-description">
+							<div id="pulsante-accedi" onClick="mostraLogin()">Accedi</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="navbar-item">
+						<div class="navbar-item-image">
+							<a href = "Cart.jsp">
+								<div id = "numberIncrement" style = "right: 30px;"><%=carrello.size()%></div>
+								<img src = "./Icons/carrello.png" alt="logo">
+							</a>
+						</div>
+						<a href = "Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
+					</div>
+				</li>
+				<%
+					}
+				%>
+				<%
+					if (loggedUser != null || administrator != null) {
+				%>
+				<a href="LogoutServlet">
+					<li><i class="fas fa-sign-out-alt"></i>
+						<div class="navbar-item-description">Logout</div></li>
+				</a>
+				<%
+					}
+				%>
+			</ul>
+		</nav>
+	</div>
+</div>
+
+<!-- Accesso, registrazione, recensione -->

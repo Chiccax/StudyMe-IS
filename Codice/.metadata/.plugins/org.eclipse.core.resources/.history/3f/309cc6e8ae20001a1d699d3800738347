@@ -1,0 +1,9 @@
+package modelBean;
+
+public class CarrelloBean {
+
+	public CarrelloBean() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
