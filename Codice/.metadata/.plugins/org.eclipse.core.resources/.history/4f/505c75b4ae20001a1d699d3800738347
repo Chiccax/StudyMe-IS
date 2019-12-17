@@ -1,9 +1,0 @@
-package modelBean;
-
-public class OrdineAcquistoBean {
-
-	public OrdineAcquistoBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

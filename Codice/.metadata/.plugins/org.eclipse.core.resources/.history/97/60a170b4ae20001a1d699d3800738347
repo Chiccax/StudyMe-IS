@@ -1,9 +1,0 @@
-package modelBean;
-
-public class AcquistoBean {
-
-	public AcquistoBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

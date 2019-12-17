@@ -1,7 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\Mariarosaria\Desktop\StudyMe - IS+\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1875483007.index
-\StudyMe\src
-C:\Users\Mariarosaria\Desktop\StudyMe - IS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1875483007.index
-\StudyMe\src
-C:\Users\Mariarosaria\Desktop\StudyMe - IS+\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\42739358.index
-\StudyMe\src

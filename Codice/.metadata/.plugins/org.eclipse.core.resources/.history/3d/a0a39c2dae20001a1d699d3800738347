@@ -1,9 +1,0 @@
-package modelBean;
-
-public class CategoriaBean {
-
-	public CategoriaBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

@@ -1,9 +1,0 @@
-package modelBean;
-
-public class LezioniBean {
-
-	public LezioniBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

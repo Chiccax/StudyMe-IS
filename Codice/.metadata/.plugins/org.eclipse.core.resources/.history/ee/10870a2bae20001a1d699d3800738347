@@ -1,9 +1,0 @@
-package modelBean;
-
-public class SottocategoriaBean {
-
-	public SottocategoriaBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

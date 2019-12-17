@@ -1,9 +1,0 @@
-package modelBean;
-
-public class RecensioneBean {
-
-	public RecensioneBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

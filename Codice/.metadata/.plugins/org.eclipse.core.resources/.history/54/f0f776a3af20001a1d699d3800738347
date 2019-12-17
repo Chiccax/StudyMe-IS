@@ -1,9 +1,0 @@
-package modelDao;
-
-public class CategoriaDao {
-
-	public CategoriaDao() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

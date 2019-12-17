@@ -1,9 +1,0 @@
-package modelBean;
-
-public class PacchettoBean {
-
-	public PacchettoBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

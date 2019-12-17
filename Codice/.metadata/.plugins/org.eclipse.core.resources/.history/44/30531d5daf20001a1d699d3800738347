@@ -1,9 +1,0 @@
-package modelDao;
-
-public class RecensioneDao {
-
-	public RecensioneDao() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

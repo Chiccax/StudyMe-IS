@@ -1,9 +1,0 @@
-package modelBean;
-
-public class UtenteBean {
-
-	public UtenteBean() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
