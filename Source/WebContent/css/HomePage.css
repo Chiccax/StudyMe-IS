@@ -1,0 +1,487 @@
+@charset "ISO-8859-1";
+body, html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    background: #f2f2f2;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.navbar{
+    background: #3490cd;
+    display: flex;
+    flex-direction: row; /*Serve a dettare la direzione con cui gli elementi flex debbano essere mostrati. In particolare con flex-direction:row indichiamo che devono essere mostrati in riga.*/
+    justify-content: flex-start;  /*equivale a dire allinea il testo a sinistra. Qui però invece di allineare il testo, allineamo gli elementi.*/
+    align-items: center; /*c’entra gli elementi verticalmente*/
+}
+
+#logo, #carrello {
+	width: 275px;
+}
+
+#logo {
+	margin-right: auto;
+}
+
+#numberIncrement{
+	position: absolute;
+	top: -5px;
+    border: 1px solid black;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    line-height: 25px;
+    text-align: center;
+    height: 25px;
+  	width: 25px;
+    border-radius: 50%;
+}
+
+#carrello {
+	margin-left: auto;
+    display: block;
+}
+
+#carrello nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#pulsanteAccedi{
+	desktop: block;
+}
+
+.nav li {
+    list-style: none;
+    float: left;
+}
+
+.navbar {
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.navbar-item {
+    padding: 5px 10px;
+    position: relative;
+}
+
+.navbar-item#logo-item {
+    display: inline-flex;
+}
+
+.navbar-item-image {
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.navbar-item-image img {
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+}
+
+.navbar-item#logo-item .navbar-item-image img {
+    display: block;
+    height: 60px;
+}
+
+.navbar-item-image i {
+    font-size: 30px;
+    color: black;
+}
+
+.navbar-item-description {
+    color: white;
+    font-family: 'Mali', cursive;
+}
+
+.navbar-item#logo-item .navbar-item-description{
+    display: flex;
+    align-items: center;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none !important;
+    color: white;
+}
+
+#ricerca {
+    position: relative;
+    display: block;
+    color: black;
+}
+
+#ricerca i {
+    position: absolute;
+    left: 30px; /*Questa dimensione è la metà del padding*/
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#ricerca input {
+    width: 300px;
+    padding: 15px 30px 15px 60px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Mali', cursive;
+}
+
+.barraCategorie{
+    background: #13364D;
+    margin: 0 auto;
+    padding: 5px 15px;
+    display: flex;
+    overflow-x: hidden; 
+}
+
+.barraCategorie img{
+    display: block;
+    margin: 0 auto;
+    height: 35px;
+    float: left;
+}
+
+.cartaCategoria{
+    position: relative;
+    display: block;
+    width: 150px;
+    height: 37.5px;
+    font-size: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 37.5px;
+    background-size: 100%;
+    background-position: center;
+    border-radius: 7.5px;
+    margin-right: 12.5px;
+    background-repeat: no-repeat;
+}
+
+.cartaCategoria h1{
+	font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: 'Mali', cursive;
+    pointer-events: none; 
+}
+
+#nomeCategoria{
+	font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: 'Mali', cursive;
+}
+
+.sfondo{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 7.5px;
+    background: linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.8) 100%); 
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 70%;
+}
+
+.slideshow {
+	position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    opacity: 1;
+}
+
+.text-wrapper{
+	position: absolute;
+	bottom: 50px;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.slideshow-frase{
+    font-size: 30px;
+    font-family: 'Courgette', cursive;
+    color: white;
+    margin-left: 15px;
+}
+
+.slideshow-sottofrase{
+    size: 10px;
+    color: white;
+    font-family: 'Courgette', cursive;
+    margin-left: 15px;
+}
+
+
+.listaVantaggi-container{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.listaVantaggi-container h1{
+    text-align: center;
+    font-family: 'Mali', cursive;
+    color: #585961;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.light-font-color {
+    color: #e6e6e6;
+}
+
+.cell {
+    grid-column: span 4;
+    height: auto;
+    display: inline-block;
+    margin: 0 2%; 
+    font-family: 'Mali', cursive;
+}
+
+.cell.medium {
+    grid-column: span 3;
+}
+
+.cell h1{
+    font-size: 20px;
+}
+
+.cell p{
+    font-size: 15px;
+    text-align: center;
+}
+
+.cell i{
+    font-size: 50px;
+    transition: all .2s;
+}
+
+.cell i.small-font{
+    font-size: 30px;
+}
+
+.cell:hover > i{
+    color: #3490cd;
+}
+
+.whoWeAre{
+    background: #2980b9;  
+}
+
+.whoWeAre h1{
+    text-align: center;
+    font-family: 'Mali', cursive;
+    color:white;
+    margin: 0;
+}
+
+.whoWeAre > h1 {
+    padding: 30px 0;
+}
+
+.footer-container{
+    background: #13364D;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.info{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    
+}
+
+.info i{
+    font-size: 50px;
+    transition: all .2s;
+}
+
+.info p{
+    font-size: 15px;
+    color: white;
+}
+
+.fas.fa-bars{
+	color: black;
+	font-size: 30px;
+	display: none;
+}
+
+#responsive-bar {
+    height: 100%;
+    width: 100%;
+    background: #000000AA;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+#lateral{
+    height: 100%;
+    margin-right: 0px;
+    width: 150px;
+    position: fixed;
+    right: 0;
+    background-color: #3490cd;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.navLateral{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.closebtn{
+	font-size: 70px;
+	color: black;
+}
+
+#formSearch .fas.fa-search {
+	font-size: 50px;
+	color: black !important;
+}
+
+.fas.fa-plus-square{
+	font-size: 50px;
+}
+
+#lateral .navbar-item-image img{
+	height: 50px;
+}
+
+#lateral li{
+	display: block;
+	padding: 8px 0;
+	text-decoration: none;
+}
+
+.fas.fa-sign-out-alt{
+	font-size: 50px;
+}
+
+.fas.fa-money-check-alt{
+	font-size: 50px;
+}
+
+#lateral a{
+	color: black;
+}
+
+#ricercaResponsive{
+	display: none;
+	color: black;
+}
+
+#ricercaResponsive input{
+	width: 150px;
+    padding: 15px 30px 15px 60px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Mali', cursive;
+}
+
+#ricercaResponsive i {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+ 
+ #formSearchResponse{
+ 	position: relative;
+ }
+
+@media only screen and (min-width: 1440px){
+    .barraCategorie{
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  .cell {
+      grid-column: span 6 !important;
+  }
+  
+  .cell.odd {
+      grid-column: span 12 !important;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+    .cell {
+        grid-column: span 12 !important;
+    }
+}
+
+@media only screen and (max-width: 600px){
+	.slideshow-frase{
+  		top: 200px
+  	}
+  
+  	.slideshow-sottofrase{
+ 		top: 200px;
+  	}
+  	
+  	.cartaCategoria{
+  		width: 130px;
+	  	height:30px;
+  	}
+}
+
+@media only screen and (max-width: 1024px) {
+  #carrello{
+  	display: none;
+  }
+  
+  #ricerca{
+  	display:none;
+  }
+
+  .fas.fa-bars{
+    float: right;
+    display: block;
+  }
+}
