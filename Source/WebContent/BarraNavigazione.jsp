@@ -1,10 +1,8 @@
 <!-- Barra di navigazione -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="java.util.*" import="modelBean.UtenteBean" import="modelBean.PacchettoBean"
-	import="modelBean.AmministratoreBean"%>
+	pageEncoding="ISO-8859-1" import="java.util.*" import="modelBean.UtenteBean" import="modelBean.PacchettoBean"%>
 <%
 	UtenteBean loggedUser = (UtenteBean) session.getAttribute("User");
-	AmministratoreBean administrator = (AmministratoreBean) session.getAttribute("Amministratore");
 
 	HttpSession sessione = request.getSession();
 	ArrayList<PacchettoBean> carrello = (ArrayList<PacchettoBean>) sessione.getAttribute("carrello");
@@ -16,10 +14,6 @@
 
 	if (loggedUser != null) {
 		initial = loggedUser.getNomeUtente().substring(0, 2);
-	}
-
-	if (administrator != null) {
-		initial = administrator.getNomeAmministratore().substring(0, 2);
 	}
 %>
 
@@ -43,19 +37,7 @@
 		<nav>
 			<ul class="nav">
 				<%
-					if (administrator != null) {
-				%>
-				<li>
-					<div class="navbar-item login">
-						<div class="navbar-item-image" onClick="redirectUserArea()">
-							<div class="cerchio">
-								<h1><%=initial%></h1>
-							</div>
-						</div>
-					</div>
-				</li>
-				<%
-					} else if (loggedUser != null) {
+					if (loggedUser != null) {
 				%>
 				<li>
 					<div class="navbar-item login">
@@ -126,45 +108,7 @@
 		<nav>
 			<ul class="navLateral">
 				<%
-					if (administrator != null) {
-				%>
-				<li>
-					<div id="formSearch">
-						<i class="fas fa-search" onClick="ShowSearchBar()"></i>
-						<div class="navbar-item-description search"
-							onClick="ShowSearchBar()">Cerca</div>
-					</div>
-					<div id="formSearchResponse">
-						<form id="ricercaResponsive" method="GET" action="SearchServlet">
-							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
-								type="Text" name="argument" placeholder="Cerca pacchetti">
-						</form>
-					</div>
-				</li>
-				<li>
-					<div class="navbar-item login">
-						<div class="navbar-item-image">
-							<i class="fas fa-plus-square" onClick="redirectUserArea()"></i>
-						</div>
-						<div class="navbar-item-description">
-							<div id="pulsante-accedi" onClick="redirectUserArea()">Aggiungi pacchetti</div>
-						</div>
-					</div>
-				</li>
-				<%if(request.getRequestURI().equals("/StudyMe/UserArea.jsp")){%>
-				<li>		
-					<div class="navbar-item login ordini">
-						<div class="navbar-item-image">
-							<i class="fas fa-money-check-alt" onClick= "showOrdersAdministrator()"></i>
-						</div>
-						<div class="navbar-item-description">
-							<div id="pulsante-accedi" onClick= "showOrdersAdministrator()">Ordini</div>
-						</div>
-					</div>	
-				</li>
-				<%}%>
-				<%
-					} else if (loggedUser != null) {
+					if (loggedUser != null) {
 				%>
 				<li>
 					<div class="navbar-item login">
@@ -266,7 +210,7 @@
 					}
 				%>
 				<%
-					if (loggedUser != null || administrator != null) {
+					if (loggedUser != null) {
 				%>
 				<a href="LogoutServlet">
 					<li><i class="fas fa-sign-out-alt"></i>

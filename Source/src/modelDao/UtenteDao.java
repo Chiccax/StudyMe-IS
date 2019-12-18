@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.DriverManagerConnectionPool;
-import modelBean.AmministratoreBean;
 import modelBean.PacchettoBean;
 import modelBean.UtenteBean;
 
@@ -46,34 +45,6 @@ public class UtenteDao {
 		return user;
 	}
 	
-	public AmministratoreBean loginAmministratore(String nomeUtente, String password) {
-		AmministratoreBean amministratore = null;
-		try {
-			Connection conn = DriverManagerConnectionPool.getConnection();
-	
-			PreparedStatement stm = conn.prepareStatement("SELECT * FROM amministratore WHERE nomeAmministratore = ? AND password = ?");
-			stm.setString(1, nomeUtente);
-			stm.setString(2, password);
-			ResultSet res = stm.executeQuery();
-			
-			amministratore = new AmministratoreBean();
-			
-			//Se esiste l'amminitratore
-			if(res.next()) {
-				amministratore.setNomeAmministratore(res.getString(1));
-				amministratore.setPassword(res.getString(2));
-				amministratore.setEmail(res.getString(3));
-			}	
-			else
-				return null;
-					
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		}
-		return amministratore;
-	}
-	
 	public boolean registration(String email, String nomeUtente, String password){
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -82,10 +53,11 @@ public class UtenteDao {
 			stm.setString(2, nomeUtente);
 			ResultSet res = stm.executeQuery();
 			if(!res.next()) {
-				stm = conn.prepareStatement("INSERT INTO  utente(nomeUtente, password, email) VALUES (?, ?, ?)");
+				stm = conn.prepareStatement("INSERT INTO  utente(nomeUtente, password, email, tipo) VALUES (?, ?, ?, ?)");
 				stm.setString(1, nomeUtente);
 				stm.setString(2, password);
 				stm.setString(3, email);
+				stm.setString(4, "acquirente");
 				stm.executeUpdate();	
 				
 				conn.commit();
@@ -102,11 +74,11 @@ public class UtenteDao {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
 			
-			PreparedStatement stm = conn.prepareStatement("SELECT * FROM cliente WHERE email = ?");
+			PreparedStatement stm = conn.prepareStatement("SELECT * FROM utente WHERE email = ?");
 			stm.setString(1, email);
 			ResultSet res = stm.executeQuery();
 			if(res.next()) {
-				stm = conn.prepareStatement("UPDATE cliente SET password = ? WHERE email = ?");
+				stm = conn.prepareStatement("UPDATE utente SET password = ? WHERE email = ?");
 				stm.setString(1, password);
 				stm.setString(2, email);
 				stm.executeUpdate();
@@ -126,12 +98,12 @@ public class UtenteDao {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
 			
-			PreparedStatement stm = conn.prepareStatement("SELECT * FROM cliente WHERE email = ?");
+			PreparedStatement stm = conn.prepareStatement("SELECT * FROM utente WHERE email = ?");
 			stm.setString(1, email);
 			
 			ResultSet res = stm.executeQuery();
 			if(res.next()) {
-				stm = conn.prepareStatement("UPDATE cliente SET email = ? WHERE email = ?");
+				stm = conn.prepareStatement("UPDATE utente SET email = ? WHERE email = ?");
 				stm.setString(1, newEmail);
 				stm.setString(2, email);
 				stm.executeUpdate();

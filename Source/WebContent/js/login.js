@@ -219,7 +219,7 @@ const onSignUpSubmit = event => {
 	 let formRegEff = document.getElementsByClassName("registrazioneEffettuata");
 	 
 	 $.ajax({
-	       url: "SignUpServlet",
+	       url: "RegistrazioneServlet",
 	       method: 'POST',
 	       data: {
 	           NomeUtente: userInput.value,
@@ -254,7 +254,7 @@ const recoveryPassword = event => {
 	    let userEmail = document.getElementById("emailF");
 
 	    $.ajax({
-	    	url: "ForgotPasswordServlet",
+	    	url: "RecuperoPasswordServlet",
 	    	method: 'POST',
 	    	data: {
 	    		Email: userEmail.value
