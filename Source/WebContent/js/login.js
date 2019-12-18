@@ -21,7 +21,9 @@ function ValidateEmail(inputText)
 function allLetter(inputtxt)
 { 
 	//Solo lettere e/o numeri ed abbia una lunghezza minima di 6 e massima di 12 caratteri
-	var letters = /^[a-z0-9]{6,12}+$/;
+	//SONO STATE AGGIUNTE DELLE PARENTESI TONDE CHE NON CI VOLEVANO ALTRIMENTI NON FUNGE
+	var letters = /^([a-z0-9]{6,12})+$/;
+	
 	if(inputtxt.value.match(letters))
 	{
 		alert('Your name have accepted : you can try another');

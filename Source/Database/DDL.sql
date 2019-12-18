@@ -58,7 +58,7 @@ CREATE TABLE ordine(
 numOrdine int primary key not null auto_increment,
 nomeCliente varchar(20) not null,
 dataOdierna date not null,
-foreign key(nomeCliente) references cliente(nomeUtente)
+foreign key(nomeCliente) references utente(nomeUtente)
 		on update cascade
         on delete cascade);
 
@@ -84,7 +84,7 @@ userCliente varchar(20) not null,
 codiceP varchar(6) not null,
 commento varchar(500) not null,
 titolo varchar(300) not null,
-foreign key (userCliente) references cliente(nomeUtente)
+foreign key (userCliente) references utente(nomeUtente)
 	on update cascade
     on delete cascade,
 foreign key (codiceP) references pacchetto(codicePacchetto)

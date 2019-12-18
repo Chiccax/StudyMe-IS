@@ -20,7 +20,7 @@ public class AmministratoreBean {
 		return tipo;
 	}
 
-	public void setNome(String nomeAmministratore) {
+	public void setNomeAmministratore(String nomeAmministratore) {
 		this.nomeAmministratore = nomeAmministratore;
 	}
 
