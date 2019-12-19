@@ -1,0 +1,328 @@
+@charset "ISO-8859-1";
+body, html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-container-user{
+	display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.cell-user{
+	height: auto;
+    display: inline-block;
+    font-family: 'Mali', cursive;
+}
+
+.cell-user.menu{
+	grid-column: span 4;
+}
+
+.cell-user.profile{
+	grid-column: span 8;
+}
+
+/* Menu laterale */
+#navUser{
+	list-style-type: none;
+	font-family: 'Mali', cursive;
+	font-size: 20px;
+	display: block;
+}
+
+#navUser li{
+	margin: 10px;
+	height: 70px;	
+	border-radius: 10px 10px 10px 10px;
+	background-color: #3490cd;
+	color: white;
+	cursor: pointer;
+}
+
+#navUser li:hover{
+	 background: linear-gradient(to bottom, #2C5364 0%, #13364D 100%);
+	 color: white;
+}
+
+#navUser li i{
+	font-size: 50px;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+
+#navUser a{
+	text-decoration: none;
+}
+
+/* Update */
+#UpdateUserName{
+	display: block;
+	width: 90%;
+	height: auto;
+	padding: 20px;
+	margin: 20px auto;
+	border-radius: 10px 10px 10px 10px;
+	background: linear-gradient(to bottom, #2C5364 0%, #13364D 100%);
+}
+
+#UpdateUserName h1{
+	font-family: 'Mali', cursive;
+	font-size: 25px;
+	text-align: center;
+	color: white;
+}
+
+#UpdateUserName h2{
+	font-family: 'Mali', cursive;
+	font-size: 20px;
+	color: white;
+}
+
+#email{
+	font-family: 'Mali', cursive;
+	font-size: 15px;
+	color: green;
+	display: none;
+	text-align: center;
+}
+
+#password{
+	font-family: 'Mali', cursive;
+	font-size: 15px;
+	color: green;
+	display: none;
+	text-align: center;
+}
+
+#messageErrorEmail{
+	font-weight: bold;
+    text-align: center;
+    color: red;
+    opacity: 0;
+    transition: opacity .5s;
+    text-shadow: 2px 2px 4px black;
+    margin: 1px;
+}
+
+#messageErrorPassword{
+	margin: 1px;
+	font-weight: bold;
+    text-align: center;
+    color: red;
+    opacity: 0;
+    transition: opacity .5s;
+    text-shadow: 2px 2px 4px black;
+}
+
+#formEmail{
+	display: block;
+}
+
+#formPassword{
+	display: block;
+}
+
+.active{
+	background: linear-gradient(to bottom, #2C5364 0%, #13364D 100%);
+	boxShadow: "5px 3px 8px 2px #606060";
+}
+
+#navUser li i, #navUser li span{
+	pointer-events: none;
+}
+
+#navUser li span{
+ 	vertical-align: 10px;
+ }
+ 
+#updateAccount{
+ 	padding: 10px;
+ }
+
+.containerUserArea input[type=text], input[type=password], input[type=email] {
+	position: relative;
+	font-size: 12px;
+	font-family: 'Mali', cursive;
+	width: 100%;
+	margin: 0;
+	padding: 15px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 5px 5px 5px 5px;
+	line-height: 150%;
+}
+
+textarea{
+	width: 99%;
+	height: 50px;
+}
+
+
+#MyOrder h1{
+	text-align: center;
+	font-family: 'Mali', cursive;
+}
+
+.divTableHeading h1{
+	text-align: center;
+	font-family: 'Mali', cursive;
+}
+
+#ordini{
+	display: none;
+}
+
+.orderHeader {
+	font-size: 20px;
+	color:white;
+	padding:10px 0;
+	background-color: #13364D;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+	
+}
+.orderHeader .nOrdine{
+    grid-column: span 6;
+    padding-left: 10px;
+	
+}
+
+.orderHeader .data{
+	
+    grid-column: span 6;
+    text-align: right;
+    padding-right: 10px;
+	
+}
+
+
+.orderInfo{
+	padding:10px 0;
+	
+}
+
+.pacchettoOrdine{
+	display:grid;
+	grid-template-columns: repeat(12, 1fr);
+	margin: 5px 0;
+}
+
+.pacchettoOrdine .titolo{
+    grid-column: span 8;
+    text-align: center;
+    align-self: center;
+	
+}
+
+.pacchettoOrdine .prezzo{
+	
+    grid-column: span 2;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+	
+}
+
+.pacchettoOrdine img {
+	width: 100%;
+    grid-column: span 2;
+    border-radius: 5px;
+	
+}
+
+.pacchettoOrdineAmministratore{
+	display:grid;
+	grid-template-columns: repeat(12, 1fr);
+	margin: 5px 0;
+}
+
+.pacchettoOrdineAmministratore .titolo{
+    grid-column: span 4;
+    text-align: center;
+    align-self: center;
+	
+}
+
+.pacchettoOrdineAmministratore .prezzo{	
+    grid-column: span 3;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+	
+}
+
+.pacchettoOrdineAmministratore img {
+	width: 100%;
+    grid-column: span 2;
+    border-radius: 5px;
+	
+}
+
+.pacchettoOrdineAmministratore .cliente {
+	grid-column: span 3;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+}
+
+.divTableRow{
+	padding:0 10px;
+}
+
+#success{
+	display: none;
+}
+
+.nextBottons{
+	text-align: center;
+    height: 50px;
+}
+
+.nextDiv{
+	border-radius: 50%;
+    width: 5%;
+    margin: 10px;
+    background: #3490cd;
+    height: 80%;
+}
+
+.nextDiv.uno{
+	background:white;
+}
+
+.nextDiv:hover{
+	background:white;
+}
+
+.nextDiv:hover{
+	background: #3490cd;
+}
+
+@media screen and (max-width: 1024px){
+	#navUser{
+		display: none;
+	}
+	
+	.cell-user.profile{
+		grid-column: span 12;
+	}
+	
+	#UpdateUserName{
+		background: initial;
+		color: black;
+	}
+	
+	#UpdateUserName h1{
+		color: black;
+	}
+	
+	#UpdateUserName h2{
+		color: black;
+	}	
+}

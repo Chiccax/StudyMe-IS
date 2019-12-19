@@ -37,7 +37,7 @@
 		<nav>
 			<ul class="nav">
 				<%
-					if (loggedUser != null) {
+					if (loggedUser != null && loggedUser.getTipo().equals("acquirente")) {
 				%>
 				<li>
 					<div class="navbar-item login">
@@ -69,6 +69,16 @@
 						<a href="Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
 					</div>
 				</li>
+				<% } else if(loggedUser != null && (loggedUser.getTipo().equals("gestorecatalogo") || loggedUser.getTipo().equals("insegnante")) ) { %>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image" onClick="redirectUserArea()">
+							<div class="cerchio">
+								<h1><%=initial%></h1>
+							</div>
+						</div>
+					</div>
+				</li>
 				<%
 					} else {
 				%>
@@ -86,10 +96,12 @@
 				<li>
 					<div class="navbar-item">
 						<div class="navbar-item-image">
-							<a href="Cart.jsp"><img src="./img/utility/carrello.png" alt="logo"></a>
-						</div>			
-						<div id = "numberIncrement" style = "right: 10px;"><%=carrello.size()%></div>
-						<a href="CarrelloServlet"><div class="navbar-item-description">Carrello</div></a>
+							<a href = "Cart.jsp">
+								<div id = "numberIncrement" style = "right: 10px;"><%=carrello.size()%></div>
+								<img src = "./img/utility/carrello.png" alt="logo">
+							</a>			
+						</div>
+						<a href="Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
 					</div>
 				</li>
 				<%
@@ -108,7 +120,7 @@
 		<nav>
 			<ul class="navLateral">
 				<%
-					if (loggedUser != null) {
+					if (loggedUser != null && loggedUser.getTipo().equals("acquirente")) {
 				%>
 				<li>
 					<div class="navbar-item login">
@@ -168,6 +180,74 @@
 						<a href = "Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
 					</div>
 				</li>
+				<% } else if (loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){ %>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image" onClick="redirectUserArea()">
+							<div class="cerchio">
+								<h1><%=initial%></h1>
+							</div>
+						</div>
+					</div>
+				</li>		
+				<li>			
+					<div class="navbar-item">		
+						<div class="navbar-item-image">
+							<i class="fas fa-tasks" onClick= ""></i>
+						</div>
+						<div class="navbar-item-description">
+							<div id="pulsante-accedi" onClick= "">Approvazioni</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div id="formSearch">
+						<i class="fas fa-search" onClick="ShowSearchBar()"></i>
+						<div class="navbar-item-description search"
+							onClick="ShowSearchBar()">Cerca</div>
+					</div>
+					<div id="formSearchResponse">
+						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
+								type="Text" name="argument" placeholder="Cerca pacchetti">
+						</form>
+					</div>
+				</li>
+				<%
+				} else if (loggedUser != null && loggedUser.getTipo().equals("insegnante")){
+				%>
+				<li>
+					<div class="navbar-item login">
+						<div class="navbar-item-image" onClick="redirectUserArea()">
+							<div class="cerchio">
+								<h1><%=initial%></h1>
+							</div>
+						</div>
+					</div>
+				</li>	
+				<li>			
+					<div class="navbar-item">		
+						<div class="navbar-item-image">
+							<i class="fas fa-folder-plus" onClick= ""></i>
+						</div>
+						<div class="navbar-item-description">
+							<div id="pulsante-accedi" onClick= "">Inserimento</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div id="formSearch">
+						<i class="fas fa-search" onClick="ShowSearchBar()"></i>
+						<div class="navbar-item-description search"
+							onClick="ShowSearchBar()">Cerca</div>
+					</div>
+					<div id="formSearchResponse">
+						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
+								type="Text" name="argument" placeholder="Cerca pacchetti">
+						</form>
+					</div>
+				</li>
 				<%
 					} else {
 				%>
@@ -213,8 +293,10 @@
 					if (loggedUser != null) {
 				%>
 				<a href="LogoutServlet">
-					<li><i class="fas fa-sign-out-alt"></i>
-						<div class="navbar-item-description">Logout</div></li>
+					<li>
+						<i class="fas fa-sign-out-alt"></i>
+						<div class="navbar-item-description">Logout</div>
+					</li>
 				</a>
 				<%
 					}

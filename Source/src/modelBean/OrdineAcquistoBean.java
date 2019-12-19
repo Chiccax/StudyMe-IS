@@ -2,7 +2,7 @@ package modelBean;
 
 import java.util.ArrayList;
 
-public class OrdineAcquistoBean {
+public class OrdineAcquistoBean extends OrdineBean{
 
 	public OrdineAcquistoBean() {}
 	public ArrayList<PacchettoBean> getPacchettiAcquistati() {
@@ -13,8 +13,5 @@ public class OrdineAcquistoBean {
 		this.pacchettiAcquistati = pacchettiAcquistati;
 	}
 
-
 	private ArrayList<PacchettoBean> pacchettiAcquistati = new ArrayList<PacchettoBean>();
-
-
 }

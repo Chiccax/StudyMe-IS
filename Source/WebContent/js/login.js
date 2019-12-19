@@ -277,5 +277,5 @@ const recoveryPassword = event => {
 	}
 
 function redirectUserArea(){
-	window.location = "UserArea.jsp";
+	window.location = "AreaUtente.jsp";
 }

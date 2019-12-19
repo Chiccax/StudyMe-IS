@@ -33,6 +33,7 @@ public class UtenteDao {
 				user.setNomeUtente(res.getString(1));
 				user.setPassword(res.getString(2));
 				user.setEmail(res.getString(3));
+				user.setTipo(res.getString(4));
 			}
 			
 			else
