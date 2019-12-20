@@ -290,13 +290,14 @@ textarea{
     margin: 10px;
     background: #3490cd;
     height: 80%;
+    pointer-events: none;
 }
 
 .nextDiv.uno{
 	background:white;
 }
 
-.nextDiv:hover{
+.nextDiv.uno:hover{
 	background:white;
 }
 

@@ -164,7 +164,7 @@ const changeEmail = event => {
 	let newUserEmail = document.getElementById("changeEmail");
     
     $.ajax({
-        url: "UpdateServlet",
+        url: "ModificaAreaUtenteServlet",
         method: 'POST',
         data: {
             NuovaEmailUtente: newUserEmail.value
@@ -192,7 +192,7 @@ const changePassword  = event => {
     let newUserPasswordConf = document.getElementById("confChangePassword");
     
     $.ajax({
-        url: "UpdateServlet",
+        url: "ModificaAreaUtenteServlet",
         method: 'POST',
         data: {
             NuovaPasswordUtente: newUserPassword.value,
@@ -232,7 +232,7 @@ function addPackage(){
 	const datiNuovoPacchetto = [nuovoCodice, nuovaCategoria, nuovaSottocategoria, nuovoTitolo, nuovaFoto, nuovoPrezzo, nuovaDescrizione];
 	
 	$.ajax({
-        url: "AmministratoreServlet",
+        url: "InsegnanteServlet",
         method: 'POST',
         data:{
         	azione: action,
@@ -248,15 +248,7 @@ function addPackage(){
     	 const response = JSON.parse(data);
     	 
     	 if(response.ok == true){
-    		const messageError = $("#success");
-         	messageError.text(response.message);
-    		document.getElementById("success").style.display = "block";
-    		document.getElementById("success").style.color = "#4CAF50";
-    		
-    		datiNuovoPacchetto.forEach(element =>{
-    			element.style.border = "1px solid #4CAF50";
-    			element.value = null;
-    		});
+    		document.getElementById("UpdateUserName").style.display = "none";
        	 }else{
     		const messageError = $("#success");
           	messageError.text(response.message);
@@ -271,4 +263,4 @@ function addPackage(){
 	        console.log(response.message);
     	 }
     })
-}s
+}

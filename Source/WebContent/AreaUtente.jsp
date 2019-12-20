@@ -137,10 +137,12 @@
 								<form name="insertDes">
 									<textarea id = "newDesc" placeholder="Inserisci nuova descrizione"></textarea>
 								</form>
-
+								
+								<button type="submit" data = "aggiungiPacchetto" onClick="addPackage()">Procedi</button>
+								
 								<div class = "nextBottons">
 									<button class = "nextDiv uno" onClick = "showAddPackage()"></button>
-									<button class = "nextDiv due" onClick = "showAddLesson()"></button>
+									<button class = "nextDiv due"></button>
 									<button class = "nextDiv tre" onClick = "showSummary()"></button>
 								</div>
 								</div>
