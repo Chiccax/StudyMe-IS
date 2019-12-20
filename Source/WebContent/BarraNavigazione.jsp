@@ -28,7 +28,7 @@
 		</div>
 	</div>
 
-	<form id="ricerca" method="GET" action="SearchServlet">
+	<form id="ricerca" method="GET" action="RicercaServlet">
 		<i class="fas fa-search"></i> <input type="Text" name="argument"
 			placeholder="Cosa vuoi imparare oggi ?">
 	</form>
@@ -61,12 +61,12 @@
 				<li>
 					<div class="navbar-item">
 						<div class="navbar-item-image">
-							<a href = "Cart.jsp">
+							<a href = "Carrello.jsp">
 								<div id = "numberIncrement" style = "right: 10px;"><%=carrello.size()%></div>
 								<img src = "./img/utility/carrello.png" alt="logo">
 							</a>			
 						</div>
-						<a href="Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
+						<a href="Carrello.jsp"><div class="navbar-item-description">Carrello</div></a>
 					</div>
 				</li>
 				<% } else if(loggedUser != null && (loggedUser.getTipo().equals("gestorecatalogo") || loggedUser.getTipo().equals("insegnante")) ) { %>
@@ -96,12 +96,12 @@
 				<li>
 					<div class="navbar-item">
 						<div class="navbar-item-image">
-							<a href = "Cart.jsp">
+							<a href = "Carrello.jsp">
 								<div id = "numberIncrement" style = "right: 10px;"><%=carrello.size()%></div>
 								<img src = "./img/utility/carrello.png" alt="logo">
 							</a>			
 						</div>
-						<a href="Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
+						<a href="Carrello.jsp"><div class="navbar-item-description">Carrello</div></a>
 					</div>
 				</li>
 				<%
@@ -131,7 +131,7 @@
 						</div>
 					</div>
 				</li>
-				<%if(request.getRequestURI().equals("/StudyMe/UserArea.jsp")){%>
+				<%if(request.getRequestURI().equals("/StudyMe/AreaUtente.jsp")){%>
 					
 				<li>			
 					<div class="navbar-item">		
@@ -151,7 +151,7 @@
 							onClick="ShowSearchBar()">Cerca</div>
 					</div>
 					<div id="formSearchResponse">
-						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+						<form id="ricercaResponsive" method="GET" action="RicercaServlet">
 							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
 								type="Text" name="argument" placeholder="Cerca pacchetti">
 						</form>
@@ -172,12 +172,12 @@
 				<li>
 					<div class="navbar-item">
 						<div class="navbar-item-image">
-							<a href = "Cart.jsp">
+							<a href = "Carrello.jsp">
 								<div id = "numberIncrement" style = "right: 30px;"><%=carrello.size()%></div>
 								<img src = "./img/utility/carrello.png" alt="logo">
 							</a>
 						</div>
-						<a href = "Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
+						<a href = "Carrello.jsp"><div class="navbar-item-description">Carrello</div></a>
 					</div>
 				</li>
 				<% } else if (loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){ %>
@@ -207,7 +207,7 @@
 							onClick="ShowSearchBar()">Cerca</div>
 					</div>
 					<div id="formSearchResponse">
-						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+						<form id="ricercaResponsive" method="GET" action="RicercaServlet">
 							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
 								type="Text" name="argument" placeholder="Cerca pacchetti">
 						</form>
@@ -242,7 +242,7 @@
 							onClick="ShowSearchBar()">Cerca</div>
 					</div>
 					<div id="formSearchResponse">
-						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+						<form id="ricercaResponsive" method="GET" action="RicercaServlet">
 							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
 								type="Text" name="argument" placeholder="Cerca pacchetti">
 						</form>
@@ -258,7 +258,7 @@
 							onClick="ShowSearchBar()">Cerca</div>
 					</div>
 					<div id="formSearchResponse">
-						<form id="ricercaResponsive" method="GET" action="SearchServlet">
+						<form id="ricercaResponsive" method="GET" action="RicercaServlet">
 							<i class="fas fa-times" onClick="HideSearchBar()"></i> <input
 								type="Text" name="argument" placeholder="Cerca pacchetti">
 						</form>
@@ -278,12 +278,12 @@
 				<li>
 					<div class="navbar-item">
 						<div class="navbar-item-image">
-							<a href = "Cart.jsp">
+							<a href = "Carrello.jsp">
 								<div id = "numberIncrement" style = "right: 30px;"><%=carrello.size()%></div>
 								<img src = "./img/utility/carrello.png" alt="logo">
 							</a>
 						</div>
-						<a href = "Cart.jsp"><div class="navbar-item-description">Carrello</div></a>
+						<a href = "Carrello.jsp"><div class="navbar-item-description">Carrello</div></a>
 					</div>
 				</li>
 				<%

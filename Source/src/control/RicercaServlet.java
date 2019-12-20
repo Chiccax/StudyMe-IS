@@ -41,7 +41,7 @@ String argument = request.getParameter("argument");
 		request.setAttribute("pacchetti", pacchettiRicercati);
 		request.setAttribute("argomento", argument);
 
-		RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Search.jsp");
+		RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Ricerca.jsp");
 		dispatcher.forward(request, response);	
 	}
 
