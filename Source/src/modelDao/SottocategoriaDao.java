@@ -52,7 +52,7 @@ public class SottocategoriaDao implements Model_interface<SottocategoriaBean> {
 
 	@Override
 	public Collection<SottocategoriaBean> findAll() throws SQLException {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 }

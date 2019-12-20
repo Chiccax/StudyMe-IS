@@ -1,0 +1,337 @@
+@CHARSET "ISO-8859-1";
+
+
+#ricercaTitolo{
+	 font-family: 'Coming Soon', cursive;
+	 text-align: center;
+	 color: white;
+}
+
+#immagineRicerca{
+	height: 350px;
+    margin-left: 40%;
+}
+
+#nomeCategoria{
+	font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: 'Coming Soon', cursive;
+}
+
+.sfondoCategoria{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.8) 100%); 
+}
+
+.slideshow-container{
+    max-width: 1000px;
+    position: relative;
+}
+
+.slideshow {
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    opacity: 1;
+}
+
+.categoria {
+    width: 100%;
+    height: 200px;
+    font-family:'Coming Soon', cursive;
+    font-size: 10px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.categoria h1{
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    background-size: contain;
+    font-family:'Coming Soon', cursive;
+    font-size: 70px;
+    color: white;
+    position: absolute;
+    text-align:center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.grid-generale{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.pacchetto{
+    position: relative;
+    grid-column: span 3;
+    border-radius: 15px;
+    margin: 10px 15px 15px 15px;
+    background-color:#F2F3F4;
+    transition: .5s all ease;
+}
+
+
+.pacchetto h1{
+    font-size: 20px;
+    text-align: center;
+    font-family:'Coming Soon', cursive;
+}
+
+.foto-categoria{
+    max-width: 100%;
+    height: 250px;
+    background-size: cover;
+    display: block;
+    margin: 0px auto;
+    background-position: center;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 14px;
+    transition: background-size;
+}
+
+.pacchetto p{
+    text-align: center;
+    font-size: 15px;
+    font-family:'Coming Soon', cursive;
+    margin: 10px 0 80px 0;
+}
+
+.pacchetto h1{
+	 font-family:'Coming Soon', cursive;
+	 margin: 10px 0 !important;
+	 color: black !important;
+}
+
+.pacchetto .buy-now {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sottocat:nth-child(odd){
+    background: #13364D; 
+}
+
+.sottocat:nth-child(even) {
+	background: #2980b9;
+}
+
+.sottocat h1{
+    font-family:'Coming Soon', cursive;
+    font-size: x-large;
+    margin: 0;
+    color: white;
+    margin-left: 10px;
+}
+
+.catalogo{
+	outline: none;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    padding: 5px 10px;
+    border: solid 1px  #0076a3;
+    background: #0095cd;
+    border-radius: 20px;
+    font-family:'Coming Soon', cursive;
+   	text-decoration: none;
+}
+
+.catalogo:hover{
+	 background: linear-gradient(to right, #24c6dc, #514a9d);
+}
+
+.amministratore{
+	width: 200px;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.catalogoAmministratore{
+	grid-column: span 6;
+}
+
+.modifica{
+	background: #585961;
+	grid-column: span 6;
+	margin-right: 5px;
+	outline: none;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    padding: 5px 10px;
+    border: solid 1px black;
+    border-radius: 20px;
+    font-family:'Coming Soon', cursive;
+   	text-decoration: none;
+}
+
+.modifica:hover{
+	background: linear-gradient(to right, #e6dada, #274046);
+}
+
+/*Modifica pacchetto*/
+#sfondoModificaPacchetto{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 30;
+	background-color: rgb(0,0,0,0.8);
+	overflow-y:hidden;
+}
+
+#containerModificaPacchetto{
+	position: fixed;
+	z-index: 1;
+	font-size: 15px;
+	display: none;
+	top:50%;
+	left:50%;
+	width:400px;
+	height:200px;
+	margin-left:-200px;
+	margin-top: -100px;
+}
+
+#modificaPacchetto{
+	box-shadow: -7px 7px black;
+	border-radius: 20px 20px 20px 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 25px 30px;
+	width: 400px;
+	text-align: left;
+	font-family: 'Mali', cursive;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(to bottom, #546c7cCC 0%, #2890b9CC 100%);
+}
+
+#containerModificaPacchetto input{
+	position: relative;
+	font-size: 12px;
+	font-family: 'Mali', cursive;
+	width: 85%;
+	margin: 0;
+	padding: 15px 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 5px 5px 5px 5px;
+	line-height: 150%;
+}
+
+#updateButton{
+	border-radius: 5px 5px 5px 5px;
+	font-size: 40px;
+	float: right;
+	width: 45px;
+	cursor: pointer;
+	text-align: center;
+	background-color: #4CAF50;
+	color: white;
+}
+
+#updateButton i{
+	pointer-events: none;
+}
+
+#updateButton:hover{
+	 background-color: #1CCE51;
+}
+
+#delete{
+	color: red;
+    font-size: 25px;
+    position: relative;
+    left: 20%;
+    cursor: pointer;
+}
+
+#noElement{
+	display: none;
+}
+
+#insuccess{
+	display: none;
+	text-align: center;
+	font-weight: bold;
+}
+
+@media only screen and (min-width: 1440px){
+    .barraCategorie{
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+  .cell {
+    grid-column: span 6 !important;
+  }
+  
+  .cell.odd {
+    grid-column: span 12 !important;
+  }
+  
+  .pacchetto {
+	grid-column: span 6 !important;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+    .cell {
+        grid-column: span 12 !important;
+    }
+    
+    .pacchetto {
+  		grid-column: span 12 !important;
+    }
+  	
+  	textarea{
+  		width: 190px;
+  		height: 45px;
+  	}
+  	
+  	#modificaPacchetto{
+  		width: 250px;
+  	}
+  	
+  	#containerModificaPacchetto input{
+  		width: 80%;
+  	}
+  	
+  	#immagineRicerca{
+  		margin-left: 20% !important;
+  	}
+}
+
+@media only screen and (max-width: 375px) {
+	#immagineRicerca{
+  		margin-left: 10% !important;
+  	}
+}
+
+@media only screen and (max-width: 768px) {
+	#immagineRicerca{
+  		margin-left: 35%;
+  	}
+}
