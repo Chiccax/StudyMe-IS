@@ -1,6 +1,6 @@
 function showUpdateAccount(){
 	document.getElementById("UpdateUserName").style.display = ("block");
-	document.getElementById("ordini").style.display = "none";
+	document.getElementById("#ordini #UpdateUserName").style.display = ("none");
 	var name = event.target;
 	name.classList.add("active");
 	document.getElementById("myOrder").classList.remove("active");
@@ -10,6 +10,22 @@ function showUpdateAccount(){
 	}, 500);
 	
 	$("#myOrder").animate({
+		padding: "0"
+	}, 500);
+}
+
+function showAddPackage(){
+	document.getElementById("UpdateUserName").style.display = ("none");
+	document.getElementById("ordini").style.display = ("block");
+	var name = event.target;
+	name.classList.add("active");
+	document.getElementById("updateAccount").classList.remove("active");
+
+	$("#myOrder").animate({
+		padding: "10px"
+	}, 500);
+	
+	$("#updateAccount").animate({
 		padding: "0"
 	}, 500);
 }
@@ -248,7 +264,10 @@ function addPackage(){
     	 const response = JSON.parse(data);
     	 
     	 if(response.ok == true){
-    		document.getElementById("UpdateUserName").style.display = "none";
+    		document.querySelector("#ordini #UpdateUserName").style.display = "none";
+    		document.getElementById("lezioni").style.display= "block";
+    		document.getElementById("uno").style.backgroundColor = "#3490cd";
+    		document.getElementById("due").style.backgroundColor = "white";
        	 }else{
     		const messageError = $("#success");
           	messageError.text(response.message);

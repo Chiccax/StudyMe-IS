@@ -81,6 +81,30 @@ body, html{
 	color: white;
 }
 
+/*Inserimento lezione*/
+#lezioni{
+	display: none;
+	width: 90%;
+	height: auto;
+	padding: 20px;
+	margin: 20px auto;
+	border-radius: 10px 10px 10px 10px;
+	background: linear-gradient(to bottom, #2C5364 0%, #13364D 100%);
+}
+
+#lezioni h1{
+	font-family: 'Mali', cursive;
+	font-size: 25px;
+	text-align: center;
+	color: white;
+}
+
+#lezioni h2{
+	font-family: 'Mali', cursive;
+	font-size: 20px;
+	color: white;
+}
+
 #email{
 	font-family: 'Mali', cursive;
 	font-size: 15px;
@@ -279,30 +303,39 @@ textarea{
 	display: none;
 }
 
-.nextBottons{
+#nextBottons{
 	text-align: center;
     height: 50px;
 }
 
-.nextDiv{
+#uno{
 	border-radius: 50%;
     width: 5%;
     margin: 10px;
-    background: #3490cd;
+    background-color: white;
     height: 80%;
     pointer-events: none;
 }
 
-.nextDiv.uno{
-	background:white;
+#due{
+	border-radius: 50%;
+    width: 5%;
+    margin: 10px;
+    background-color: #3490cd;
+    height: 80%;
+    pointer-events: none;
 }
 
-.nextDiv.uno:hover{
-	background:white;
+#tre{
+	border-radius: 50%;
+    width: 5%;
+    margin: 10px;
+    background-color: #3490cd;
+    height: 80%;
+    pointer-events: none;
 }
-
-.nextDiv:hover{
-	background: #3490cd;
+.addPackage{
+	display:none;
 }
 
 @media screen and (max-width: 1024px){

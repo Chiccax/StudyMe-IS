@@ -14,6 +14,6 @@
     <script src="./js/login.js"></script>
     <script src="./js/menuResponse.js"></script>
     <script src="./js/jquery.nicescroll.min.js"></script>
-    <script type="text/javascript" src="./js/UserArea.js"></script>
+    <script type="text/javascript" src="./js/areaUtente.js"></script>
     <script type="text/javascript" src="./js/barraCategoria.js"></script>
 </head>

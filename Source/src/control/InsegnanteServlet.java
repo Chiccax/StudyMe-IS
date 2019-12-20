@@ -147,7 +147,7 @@ public class InsegnanteServlet extends HttpServlet {
 	private static final String INVALID_PRICE = "Prezzo non valido";
 	private static final String INVALID_CODE = "Codice pacchetto gi&agrave; in uso";
 	private static final String NO_CODE = "Inserire codice per proseguire!";
-	private static final String NO_ARGUMENT = "Tutti i parametri devono essere passati";
+	private static final String NO_ARGUMENT = "Tutti i parametri devono essere compilati";
 	private static final String NO_CATEGORY = "Categoria non valida";
 	private static final String NO_SOTTOCATEGORY = "Codice sottocategoria non valido";
 }
