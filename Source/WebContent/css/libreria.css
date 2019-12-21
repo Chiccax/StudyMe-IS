@@ -1,0 +1,191 @@
+@CHARSET "ISO-8859-1";
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+	background: linear-gradient(to right, #0f2027, #203a43, #2c5364) !important;
+}
+
+.wrapper {
+    padding: 0 20%;
+    font-family: 'Coming Soon', cursive;
+    color: white;
+}
+
+
+.information * {
+    margin: 0;
+    padding: 0;
+}
+
+.information {
+    text-align: center;
+ 	padding: 15px;
+}
+
+.pacchetto-wrap {
+    margin: 10px 0;
+    border: 0 solid #ebeff2;
+    border-radius: 5px;
+    box-shadow: 0 2px 1px -1px rgba(48,56,64,.2), 0 1px 1px 0 rgba(48,56,64,.14), 0 1px 3px 0 rgba(48,56,64,.12);
+    color: #303840;
+    background-color: #f5f7fa;
+}
+
+.pacchetto {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 5px 10px;
+}
+
+.pacchetto:hover {
+    cursor: pointer;
+}
+
+.pacchetto > i, .pacchetto > img, .pacchetto > span {
+    pointer-events: none;
+}
+
+.pacchetto:not(:last-child) {
+    border-bottom: 1px solid rgba(48,56,64,.14);
+}
+
+.pacchetto * {
+    align-self: center;
+}
+
+.pacchetto img {
+    grid-column: span 3;
+    width: 100%;
+}
+
+.pacchetto span {
+    grid-column: span 8;
+    font-weight: bold;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.pacchetto i {
+    text-align: center;
+}
+
+.lezioni {
+    display: none;
+    grid-column: span 12;
+    list-style: none;
+    padding: 0;
+}
+
+.lezione {
+    display: flex;
+    padding: 5px 0;
+    padding-left: 10px;
+    transition: background-color .4s;
+}
+
+.lezioni:hover, .lezione:hover {
+    cursor: pointer;
+}
+
+.lezione:hover {
+    background-color: #e3e3e3;
+}
+
+.lezione i {
+    grid-column: span 1;
+    color: #40aeff;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.lezione .title {
+    flex: 1 1 0%;
+    text-align: left;
+    font-weight: normal;
+}
+
+.lezione .durata {
+    grid-column: span 3;
+    text-align: right;
+    font-weight: lighter;
+    color: #303840AA;
+}
+
+.lezione i, .lezione .title, .lezione .durata {
+    pointer-events: none;
+}
+
+#sfondoVideo{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 30;
+	background-color: rgb(0,0,0,0.8);
+	overflow-y:hidden;
+}
+
+#close-video i{
+	position: absolute;
+	top: 0;
+	margin: 10px;
+	font-size: 50px;
+	color: #c1dbf7;
+	right: 20px;
+	cursor: pointer;
+}
+
+#video{
+	height: 100%;
+    display: none;
+    width: 100%;
+}
+
+iframe{
+	width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#buyNow{
+	display: block;
+	width: 30%;
+	margin: 15px auto;
+    font-size: 20px;
+    cursor: pointer;
+    height: 50px;
+}
+
+#noAcquisti{
+	 font-weight: bold;
+}
+
+#libreriaVuota{
+	width: 85%;
+}
+
+@media only screen and (max-width: 425px) {
+    .wrapper {
+        padding: 0 10%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+	#libreriaVuota{
+		width: 60%;
+	}
+	
+	#buyNow{
+		width: 80%;
+	}
+}
