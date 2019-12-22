@@ -153,22 +153,22 @@
 									<div id = "success"></div>
 										<h2>Codice pacchetto: </h2>	
 											<form name="insertCod">
-												<input type="text" id = "newCode" placeholder="Inserisci nuovo codice">	
+												<input type="text" id = "codiceP" placeholder="Inserisci nuovo codice">	
 											</form>
 												
 										<h2>Inserire url: </h2>	
 											<form name="insertCod">
-												<input type="text" id = "newCode" placeholder="Inserire url nuova lezione">	
+												<input type="text" id = "url" placeholder="Inserire url nuova lezione">	
 											</form>
 													
 										<h2>Titolo: </h2>	
 											<form name="insertTitle">
-												<input type="text" id = "newTitle" placeholder="Inserisci titolo">	
+												<input type="text" id = "title" placeholder="Inserisci titolo">	
 											</form>
 													
 										<h2>Durata: </h2>	
 											<form name="insertTitle">
-												<input type="text" id = "newTitle" placeholder="Inserire durata nuova lezione">	
+												<input type="text" id = "duration" placeholder="Inserire durata nuova lezione">	
 											</form>
 													
 											<button type="submit" data = "aggiungiLezione" onClick="addLesson()">Procedi</button>
@@ -179,7 +179,31 @@
 												<button id = "tre"></button>
 											</div>
 									</div>
-							<% } %>				
+								
+								<!-- Riepilogo inserimento lezione -->
+								 <!-- 
+								<div id="riepilogo">
+									<div class="information">
+	               					 	<h1>RIEPILOGO</h1>
+	               					 </div>
+	
+		            				<div class="pacchetto-wrap">
+				            			<div class="pacchetto">
+			                    			<img src="">
+			                   				<span></span>
+			                    			<i class="fas fa-chevron-down"></i>
+				                    		<ul class="lezioni">
+												<li class="lezione" data="">
+						                            <i class="fas fa-play"></i>
+						                            <span class="title"></span>
+						                            <span class="durata"></span>
+					                        	</li>
+				                        	</ul>
+										</div>
+					  				</div> 
+				  				</div>	 
+				  				-->	
+							<% } %>						
 						</div>				
 					</div>
 				</div>

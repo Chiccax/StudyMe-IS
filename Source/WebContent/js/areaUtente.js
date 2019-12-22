@@ -266,8 +266,7 @@ function addPackage(){
     	 if(response.ok == true){
     		document.querySelector("#ordini #UpdateUserName").style.display = "none";
     		document.getElementById("lezioni").style.display= "block";
-    		document.getElementById("uno").style.backgroundColor = "#3490cd";
-    		document.getElementById("due").style.backgroundColor = "white";
+    		
        	 }else{
     		const messageError = $("#success");
           	messageError.text(response.message);
@@ -282,4 +281,42 @@ function addPackage(){
 	        console.log(response.message);
     	 }
     })
+}
+
+function addLesson(){
+	let caller = event.target;
+	const action = caller.getAttribute("data");
+	
+	let codicePacchetto =  document.getElementById("codiceP");
+	let url = document.getElementById("url");
+	let titolo = document.getElementById("title");
+	let durata  = document.getElementById("duration");
+
+	$.ajax({
+        url: "InsegnanteServlet",
+        method: 'POST',
+        data:{
+        	azione: action,
+        	vecchioCodice: codicePacchetto.value,
+        	url: url.value,
+        	titolo: titolo.value,
+        	durata: durata.value
+        }
+    }).done(data => {
+    	const response = JSON.parse(data);
+   	 
+   	 if(response.ok == true){
+ 		document.querySelector("#ordini #lezioni").style.display = "none";
+		document.getElementById("riepilogo").style.display= "block";
+   	 }else{
+   		const messageError = $("#messErr");
+      	messageError.text(response.message);
+ 		document.getElementById("messErr").style.display = "block";
+ 		document.getElementById("messErr").style.color = "red";
+ 		
+   		url.style.border = "1px solid red";
+   		titolo.style.border = "1px solid red";
+   		durata.style.border = "1px solid red";
+   	 }
+   })
 }

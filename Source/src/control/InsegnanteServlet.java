@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
@@ -96,6 +97,18 @@ public class InsegnanteServlet extends HttpServlet {
 				return;	
 			}
      
+			PacchettoBean pacchettoDaInserire = new PacchettoBean();
+			pacchettoDaInserire.setCodicePacchetto(nuovoCodice);
+			pacchettoDaInserire.setCatagoria(nuovaCategoria);
+			pacchettoDaInserire.setPrezzo(nuovoPrezzo);
+			pacchettoDaInserire.setDescrizione(nuovaDescrizione);
+			pacchettoDaInserire.setTitolo(nuovoTitolo);
+			pacchettoDaInserire.setFoto(nuovaFoto);
+			pacchettoDaInserire.setApprovato(0);
+			pacchettoDaInserire.setSottocategoria(nuovaSottocategoria);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("PacchettoAttuale", pacchettoDaInserire);
 			//InsegnanteDao manager = new InsegnanteDao();
 			//boolean res = manager.inserPacchetto(nuovoCodice, nuovaCategoria, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
 			/*if(res == false){
@@ -127,17 +140,26 @@ public class InsegnanteServlet extends HttpServlet {
 				return;	
 			}
 			
-			InsegnanteDao manager = new InsegnanteDao();
+			LezioniBean lezioneDaInserire = new LezioniBean();
+			lezioneDaInserire.setPacchetto(vecchioCodice);
+			lezioneDaInserire.setUrl(url);
+			lezioneDaInserire.setTitolo(titolo);
+			lezioneDaInserire.setDurata(durata);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("LezioneAttuale", lezioneDaInserire);
+			
+			/*InsegnanteDao manager = new InsegnanteDao();
 			boolean res = manager.insertLesson(vecchioCodice, url, titolo, durata);
 			
 			if(res == false){
 				JSONResponse jsonResponse = new JSONResponse(false, NO_INSERT);
 				out.print(gson.toJson(jsonResponse));
 				return;	
-			}else {
+			}else {*/
 				JSONResponse jsonResponse = new JSONResponse(true, "OK");
 				out.print(gson.toJson(jsonResponse));		
-			}	
+			//}	
 		}//Modifica lezione
 	}
 	

@@ -312,7 +312,7 @@ textarea{
 	border-radius: 50%;
     width: 5%;
     margin: 10px;
-    background-color: white;
+    background-color: #3490cd;
     height: 80%;
     pointer-events: none;
 }
@@ -334,6 +334,15 @@ textarea{
     height: 80%;
     pointer-events: none;
 }
+
+#UpdateUserName #uno{
+	background-color: white;
+}
+
+#lezioni #due{
+	background-color: white;
+}
+
 .addPackage{
 	display:none;
 }
