@@ -33,7 +33,7 @@
         		<div class="information">
         			<img src="img/utility/libreriaVuota.png" id = "libreriaVuota" alt="Libreria vuota">
         		 	<h1 id = "noAcquisti">Non hai effettuato acquisti</h1>
-        		 	<a href = "SearchServlet?argument=">
+        		 	<a href = "RicercaServlet?argument=">
 						<button id="buyNow">Acquista ora!</button>
 					</a>
         		</div>

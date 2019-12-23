@@ -38,11 +38,7 @@ public class LezioneServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String codicePacchetto = request.getParameter("codicePacchetto");
-	//	AmministratoreBean amministratore = (AmministratoreBean) request.getSession().getAttribute("Amministratore");
 		String nomeAmministratore = null;
-		
-		/*if(amministratore != null)
-			nomeAmministratore = amministratore.getNomeAmministratore();*/
 
 		ArrayList<OrdineAcquistoBean> ordiniCliente = null;
 		OrdineAcquistoDao dao = new OrdineAcquistoDao();
@@ -52,6 +48,7 @@ public class LezioneServlet extends HttpServlet {
 		boolean comprato = false;
 		boolean nelCarrello = false;
 		boolean recensito = false;
+		String tipo= null;
 		
 		PacchettoDao manager = new PacchettoDao();
 		lezioni = manager.getLezioni(codicePacchetto);
@@ -70,9 +67,11 @@ public class LezioneServlet extends HttpServlet {
 			cart = new ArrayList<PacchettoBean>();
 			session.setAttribute("carrello", cart);
 		}
-		
-		//Se l'utente è loggato
-		if(user != null) {
+		//se utente non loggato
+		if(user==null){
+			tipo= "nonLoggato";
+		}else {//se utente loggato
+			tipo= user.getTipo();
 			String nomeUtente = user.getNomeUtente();
 			ArrayList<PacchettoBean> pacchettiAcquistati = null;
 			try {
@@ -117,14 +116,11 @@ public class LezioneServlet extends HttpServlet {
 		request.setAttribute("comprato", comprato);
 		request.setAttribute("nelCarrello", nelCarrello);
 		request.setAttribute("recensito", recensito);
+		request.setAttribute("tipo",tipo);
+	
+		RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Lezione.jsp");
+		dispatcher.forward(request, response);	
 		
-	/*	if(nomeAmministratore != null) {
-			RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/LessonAdministrator.jsp");
-			dispatcher.forward(request, response);	
-		} else {*/
-			RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Lezione.jsp");
-			dispatcher.forward(request, response);	
-		/*}	*/
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

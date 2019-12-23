@@ -9,6 +9,7 @@
 	boolean comprato = (boolean) request.getAttribute("comprato");
 	boolean nelCarrello = (boolean) request.getAttribute("nelCarrello");
 	boolean recensito = (boolean) request.getAttribute("recensito");
+	String tipo= (String) request.getAttribute("tipo");
 %>
 
 <!DOCTYPE html>
@@ -34,7 +35,9 @@
    					<p id = "descrizione"><%=pacchetto.getDescrizione()%>.</p>
    					<p id  ="prezzo"><strong>Prezzo:</strong> <%=pacchetto.getPrezzo()%>&euro;</p>
    					<div id="bottoni">
+ 
    						<%
+   						
    							if(comprato) {
    						%>
    							<span id="videoIntroduzione" onClick="redirectTo('LibreriaServlet')"> Vai al corso <i class="far fa-play-circle"></i></span>
@@ -42,13 +45,15 @@
    								<div id="recensione" onClick = "lasciaUnaRecensione('<%=loggedUser.getNomeUtente()%>')"> Lascia una recensione <i class="fas fa-pen-alt"></i></div>
    							<%}%>
 						<%	} else {
-   						%>
+						%>
 							<div id="videoIntroduzione" onClick = "mostraLezioneGratis('<%=result.get(0).getUrl()%>')"> Guarda prima lezione gratis <i class="far fa-play-circle"></i></div>
-							<%if(nelCarrello) { %>
+							<%
+							if(!tipo.equals("insegnante") && !tipo.equals("gestorecatalogo")){
+								if(nelCarrello) { %>
 								<div id ="aggiungiAlCarrello" action="false" data="<%=pacchetto.getCodicePacchetto()%>" onClick = "aggiungiAlCarrello()" style="background: red;">Rimuovi dal carrello <i class="fas fa-trash-alt"></i></div>
    							<%} else { %>
 	   							<div id ="aggiungiAlCarrello" action="false" data="<%=pacchetto.getCodicePacchetto()%>" onClick = "aggiungiAlCarrello()">Aggiungi al carrello <i class="fas fa-cart-plus"></i></div>
-   							<%} %>
+   							<%}}%>
 						<%} %>
    						</div>
    				</div>
