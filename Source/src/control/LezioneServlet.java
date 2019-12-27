@@ -15,11 +15,13 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 
 import modelBean.CarrelloBean;
+import modelBean.CategoriaBean;
 import modelBean.LezioniBean;
 import modelBean.OrdineAcquistoBean;
 import modelBean.PacchettoBean;
 import modelBean.RecensioneBean;
 import modelBean.UtenteBean;
+import modelDao.CategoriaDao;
 import modelDao.OrdineAcquistoDao;
 import modelDao.PacchettoDao;//ds
 import modelDao.RecensioneDao;
@@ -38,8 +40,9 @@ public class LezioneServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String codicePacchetto = request.getParameter("codicePacchetto");
-		String nomeAmministratore = null;
-
+		String insegnante= null;
+		String categoria= null;
+		
 		ArrayList<OrdineAcquistoBean> ordiniCliente = null;
 		OrdineAcquistoDao dao = new OrdineAcquistoDao();
 		ArrayList<LezioniBean> lezioni = null;
@@ -49,6 +52,9 @@ public class LezioneServlet extends HttpServlet {
 		boolean nelCarrello = false;
 		boolean recensito = false;
 		String tipo= null;
+		CategoriaBean categoriaBean= null;
+		String nomeUtente= null;
+		
 		
 		PacchettoDao manager = new PacchettoDao();
 		lezioni = manager.getLezioni(codicePacchetto);
@@ -56,6 +62,14 @@ public class LezioneServlet extends HttpServlet {
 		if(pacchetto == null) {
 			response.sendError(HttpServletResponse.SC_NOT_FOUND);
 			return;
+		}
+		CategoriaDao daoCategoria= new CategoriaDao();
+		try {
+			categoria= pacchetto.getCatagoria();
+			categoriaBean= daoCategoria.findByKey(categoria);
+			insegnante= categoriaBean.getInsegnante();//insegnante categoria
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		recensioni = manager.getRecensioni(codicePacchetto);
 		
@@ -72,7 +86,7 @@ public class LezioneServlet extends HttpServlet {
 			tipo= "nonLoggato";
 		}else {//se utente loggato
 			tipo= user.getTipo();
-			String nomeUtente = user.getNomeUtente();
+			nomeUtente = user.getNomeUtente();
 			ArrayList<PacchettoBean> pacchettiAcquistati = null;
 			try {
 				ordiniCliente = dao.findByNomeCliente(nomeUtente);
@@ -89,6 +103,7 @@ public class LezioneServlet extends HttpServlet {
 				}
 				
 			}
+			
 			if(!comprato) {
 				//Controlla che sia nel carrello
 				for(PacchettoBean product : cart) {
@@ -118,8 +133,14 @@ public class LezioneServlet extends HttpServlet {
 		request.setAttribute("recensito", recensito);
 		request.setAttribute("tipo",tipo);
 	
-		RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Lezione.jsp");
-		dispatcher.forward(request, response);	
+		//se insegnante.equals(nomeUtente))
+		if(insegnante.equals(nomeUtente)) {
+			RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/LezioneInsegnante.jsp");
+			dispatcher.forward(request, response);	
+		} else {
+			RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Lezione.jsp");
+			dispatcher.forward(request, response);	
+			}	
 		
 	}
 

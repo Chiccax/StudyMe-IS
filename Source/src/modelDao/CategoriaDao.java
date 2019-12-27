@@ -46,6 +46,7 @@ public class CategoriaDao implements Model_interface<CategoriaBean> {
 				bean = new CategoriaBean();
 				bean.setNomeCategoria(ris.getString(1));
 				bean.setFotoCategoria(ris.getString(2));
+				bean.setInsegnante(ris.getString(3));
 			}
 			
 			return bean;

@@ -49,6 +49,8 @@ public class PacchettoDao {
 				pa.setDescrizione(res.getString(5));
 				pa.setTitolo(res.getString(6));
 				
+				pa.setApprovato(res.getInt(9));
+				
 				pacchetti.add(pa);
 				
 			}
@@ -244,6 +246,8 @@ public class PacchettoDao {
 				lezione.setTitolo(res.getString(2));
 				lezione.setDurata(res.getString(3));
 				lezione.setPacchetto(res.getString(4));
+				
+				lezione.setApprovato(res.getInt(5));
 
 				lezioni.add(lezione);
 			}

@@ -10,6 +10,8 @@
 	
 	CategoriaBean cat= (CategoriaBean) request.getAttribute("fotoCat");
 	String tipo= (String) request.getAttribute("tipo");
+	String insegnante= (String) request.getAttribute("insegnante");
+	String userName= (String) request.getAttribute("userName");
 %>
 <!DOCTYPE html>
 <html>
@@ -39,9 +41,15 @@
    		for(PacchettoBean pacchetto : pacchetti) {
    		%>	
         <div class= "pacchetto">
-        	<%//if(tipo.equals("insegnante") && categoryName.equals("") ) 
-        			//se non approvato  background-color%>
-        			<button class="approvazione"></button>
+        	<%if(insegnante.equals(userName)){
+        			if(pacchetto.getApprovato()==-1){%>
+        				<button class="approvazione" id="rosso"></button>
+        		 <%}if(pacchetto.getApprovato()==1){%>
+        				<button class="approvazione" id="verde"></button>
+        		 <%}else{%>
+        		 		<button class="approvazione" id="giallo"></button>
+        		 		<%}
+        	}%>
         	<div class = "foto-categoria" style = "background-image: url(<%= pacchetto.getFoto()%>)"></div>
             <h1><%=pacchetto.getTitolo()%></h1>
 

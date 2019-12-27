@@ -278,12 +278,21 @@
 }
 
 .approvazione {
-	background-color: red; 
 	border-radius: 50px 50px 50px 50px;
  	padding: 10px 10px;
   	border: none;
   	margin: 5px 5px;
 } 
+
+#rosso{
+	background-color: red; 
+}
+#verde{
+	background-color: green; 
+}
+#giallo{
+	background-color: yellow; 
+}
 
 @media only screen and (min-width: 1440px){
     .barraCategorie{
