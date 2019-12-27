@@ -10,15 +10,15 @@ INSERT into utente(nomeUtente, password,email,tipo)
            ('Martina', 'Y3VvY2E=', 'martina@gmail.com', 'gestorecatalogo');
   
  /*CATEGORIA*/
- INSERT  into categoria(nomeCategoria,foto)
-	values	('Sviluppo','img/category/sviluppo2.png'),
-            ('Informatica','img/category/informatica2.jpg'),
-            ('Produttivita', 'img/category/Produttivita.jpg'),
-            ('Design','img/category/design.jpg'),
-            ('Musica','img/category/musica2.jpg'),
-            ('Fotografia','img/category/fotografia2.jpg'),
-            ('Insegnamento','img/category/Insegnamento.jpg'),
-            ('Business','img/category/Business.jpg');
+ INSERT  into categoria(nomeCategoria,foto, insegnante)
+	values	('Sviluppo','img/category/sviluppo2.png','Maria'),
+            ('Informatica','img/category/informatica2.jpg','Mariarosaria'),
+            ('Produttivita', 'img/category/Produttivita.jpg','Ciro'),
+            ('Design','img/category/design.jpg','Vincent'),
+            ('Musica','img/category/musica2.jpg','Francesco'),
+            ('Fotografia','img/category/fotografia2.jpg','Rachele'),
+            ('Insegnamento','img/category/Insegnamento.jpg','Claudia'),
+            ('Business','img/category/Business.jpg','Lorenzo');
 	
 /*SOTTOCATEGORIA*/
 INSERT into sottoCategoria(idSottocat,nomeSott)

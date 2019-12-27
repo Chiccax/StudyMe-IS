@@ -14,7 +14,11 @@ tipo varchar(20) not null
 DROP DATABASE IF EXISTS categoria;
 CREATE TABLE categoria(
  nomeCategoria varchar(30) primary key,
- foto varchar(300) not null
+ foto varchar(300) not null,
+ insegnante varchar(20) not null,
+ foreign key (insegnante) references utente(nomeUtente)
+	on update cascade
+    on delete cascade
 );
 
 DROP DATABASE IF EXISTS sottoCategoria;
@@ -62,7 +66,7 @@ foreign key(nomeCliente) references utente(nomeUtente)
 		on update cascade
         on delete cascade);
 
-#Acquisto = Pacchetto con ordine effettuato, cioè acquistato. (E' nella libreria)
+
 DROP DATABASE IF EXISTS acquisto;
 CREATE TABLE acquisto(
 numAcquisto int auto_increment primary key,
