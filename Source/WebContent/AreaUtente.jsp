@@ -107,11 +107,6 @@
 								<form name="insertCod">
 									<input type="text" id = "newCode" placeholder="Inserisci nuovo codice">	
 								</form>
-										
-								<h2>Categoria: </h2>	
-								<form name="insertCat">
-									<input type="text" id = "newCat" placeholder="Inserisci nome categoria">	
-								</form>
 								
 								<h2>Sottocategoria: </h2>	
 								<form name="insertSott">
@@ -150,12 +145,7 @@
 							<!-- Inserisci lezione -->
 							<div id="lezioni">
 								<h1>Aggiungi lezione</h1>
-									<div id = "success"></div>
-										<h2>Codice pacchetto: </h2>	
-											<form name="insertCod">
-												<input type="text" id = "codiceP" placeholder="Inserisci nuovo codice">	
-											</form>
-												
+									<div id = "success"></div>											
 										<h2>Inserire url: </h2>	
 											<form name="insertCod">
 												<input type="text" id = "url" placeholder="Inserire url nuova lezione">	
@@ -198,11 +188,7 @@
 		               					 <div id = "informazioniLezione">
 		               					 	<h1 id = "titoloLezione"></h1>
 		               					 	<h2 id = "durataLezione"></h2>		 
-		               					 </div>
-		               					 
-		               					  <hr>
-		               					  
-		               					 <button class = "bottoneDefault" id="aggiuntaPacchetto"> Aggiungi </button>				
+		               					 </div>			
 	               					 </div>
 
 									<div id = "nextBottons">

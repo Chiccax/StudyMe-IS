@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 import control.util.JSONResponse;
 import modelBean.LezioniBean;
 import modelBean.PacchettoBean;
+import modelBean.UtenteBean;
 import modelDao.InsegnanteDao;
 import modelDao.CategoriaDao;
 import modelDao.PacchettoDao;
@@ -54,7 +55,6 @@ public class InsegnanteServlet extends HttpServlet {
 		//Aggiungi pacchetto
 		if(action.equalsIgnoreCase("aggiungiPacchetto")) {
 			String nuovoCodice = request.getParameter("nuovoCodice");
-			String nuovaCategoria = request.getParameter("categoria");
 			String nuovaSottocategoria = request.getParameter("sottocategoria");
 			String nuovoTitolo = request.getParameter("titolo");
 			String nuovaFoto =  request.getParameter("foto");
@@ -66,25 +66,17 @@ public class InsegnanteServlet extends HttpServlet {
 			}
 			String nuovaDescrizione = request.getParameter("descrizione");
 			
-			if(nuovoCodice == null || nuovaSottocategoria == null || nuovaCategoria == null || nuovoPrezzo == 0 || nuovaDescrizione == null || nuovoTitolo == null || nuovaFoto == null) {
+			if(nuovoCodice == null || nuovaSottocategoria == null || nuovoPrezzo == 0 || nuovaDescrizione == null || nuovoTitolo == null || nuovaFoto == null) {
 				JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
 				out.print(gson.toJson(jsonResponse));
 				return;
 			}
 			
-			CategoriaDao categoriaDao = new CategoriaDao();
 			SottocategoriaDao sottocategoriaDao = new SottocategoriaDao();
 			
 			//Controllo che i codici di categoria e sottocategoria siano validi
 			try {
-				Object categoria = categoriaDao.findByKey(nuovaCategoria);
 				Object sottocategoria = sottocategoriaDao.findByKey(nuovaSottocategoria);
-				
-				if(categoria == null) {
-					JSONResponse jsonResponse = new JSONResponse(false, NO_CATEGORY);
-					out.print(gson.toJson(jsonResponse));
-					return;	
-				}
 				
 				if(sottocategoria == null) {
 					JSONResponse jsonResponse = new JSONResponse(false, NO_SOTTOCATEGORY);
@@ -96,36 +88,31 @@ public class InsegnanteServlet extends HttpServlet {
 				out.print(gson.toJson(jsonResponse));
 				return;	
 			}
-     
-			PacchettoBean pacchettoDaInserire = new PacchettoBean();
-			pacchettoDaInserire.setCodicePacchetto(nuovoCodice);
-			pacchettoDaInserire.setCatagoria(nuovaCategoria);
-			pacchettoDaInserire.setPrezzo(nuovoPrezzo);
-			pacchettoDaInserire.setDescrizione(nuovaDescrizione);
-			pacchettoDaInserire.setTitolo(nuovoTitolo);
-			pacchettoDaInserire.setFoto(nuovaFoto);
-			pacchettoDaInserire.setApprovato(0);
-			pacchettoDaInserire.setSottocategoria(nuovaSottocategoria);
 			
 			HttpSession session = request.getSession();
-			session.setAttribute("PacchettoAttuale", pacchettoDaInserire);
-			//InsegnanteDao manager = new InsegnanteDao();
-			//boolean res = manager.inserPacchetto(nuovoCodice, nuovaCategoria, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
-			/*if(res == false){
+			UtenteBean utente = (UtenteBean) session.getAttribute("User");
+			String nomeUtente = utente.getNomeUtente();
+			System.out.println(nomeUtente);
+			
+			InsegnanteDao manager = new InsegnanteDao();
+			PacchettoBean pacchettoDaInserire = manager.inserPacchetto(nuovoCodice, nomeUtente, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
+			
+			if(pacchettoDaInserire == null){
 				JSONResponse jsonResponse = new JSONResponse(false);
 				out.print(gson.toJson(jsonResponse));
 				return;	
-			}else {*/
+			}else {
 				JSONResponse jsonResponse = new JSONResponse(true, COMPLETE);
 				out.print(gson.toJson(jsonResponse));
-			//}	
+			}	
+			session.setAttribute("PacchettoAttuale", pacchettoDaInserire);
 		}//Aggiungi lezione
 		else if(action.equalsIgnoreCase("aggiungiLezione")) {
 			String url = request.getParameter("url");
 			String titolo = request.getParameter("titolo");
 			String durata = request.getParameter("durata");
 			
-			if(vecchioCodice == null || vecchioCodice.length() == 0 || url == null || url.length() == 0 || titolo == null || titolo.length() == 0 || durata == null || durata.length() == 0) {
+			if(url == null || url.length() == 0 || titolo == null || titolo.length() == 0 || durata == null || durata.length() == 0) {
 				JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
 				out.print(gson.toJson(jsonResponse));
 				return;
@@ -140,26 +127,23 @@ public class InsegnanteServlet extends HttpServlet {
 				return;	
 			}
 			
-			LezioniBean lezioneDaInserire = new LezioniBean();
-			lezioneDaInserire.setPacchetto(vecchioCodice);
-			lezioneDaInserire.setUrl(url);
-			lezioneDaInserire.setTitolo(titolo);
-			lezioneDaInserire.setDurata(durata);
-			
 			HttpSession session = request.getSession();
-			session.setAttribute("LezioneAttuale", lezioneDaInserire);
+			PacchettoBean pacchettoAtt = (PacchettoBean) session.getAttribute("PacchettoAttuale");
+			String codicePacchettoAttuale = pacchettoAtt.getCodicePacchetto();
 			
-			/*InsegnanteDao manager = new InsegnanteDao();
-			boolean res = manager.insertLesson(vecchioCodice, url, titolo, durata);
+			InsegnanteDao manager = new InsegnanteDao();
+			LezioniBean res = manager.insertLesson(codicePacchettoAttuale, url, titolo, durata);
 			
-			if(res == false){
+			if(res == null){
 				JSONResponse jsonResponse = new JSONResponse(false, NO_INSERT);
 				out.print(gson.toJson(jsonResponse));
 				return;	
-			}else {*/
+			}else {
 				JSONResponse jsonResponse = new JSONResponse(true, "OK");
 				out.print(gson.toJson(jsonResponse));		
-			//}	
+			}
+			
+			session.setAttribute("LezioneAttuale", res);
 		}//Modifica lezione
 	}
 	

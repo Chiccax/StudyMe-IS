@@ -238,14 +238,13 @@ function addPackage(){
 	let caller = event.target;
 	const action = caller.getAttribute("data");
 	let nuovoCodice = document.getElementById("newCode");
-	let nuovaCategoria = document.getElementById("newCat");
 	let nuovaSottocategoria = document.getElementById("newSottoCat");
 	let nuovoTitolo = document.getElementById("newTitle");
 	let nuovaFoto = document.getElementById("newPhoto")
 	let nuovoPrezzo = document.getElementById("newPrice");
 	let nuovaDescrizione = document.getElementById("newDesc");
 	
-	const datiNuovoPacchetto = [nuovoCodice, nuovaCategoria, nuovaSottocategoria, nuovoTitolo, nuovaFoto, nuovoPrezzo, nuovaDescrizione];
+	const datiNuovoPacchetto = [nuovoCodice, nuovaSottocategoria, nuovoTitolo, nuovaFoto, nuovoPrezzo, nuovaDescrizione];
 	
 	$.ajax({
         url: "InsegnanteServlet",
@@ -253,7 +252,6 @@ function addPackage(){
         data:{
         	azione: action,
         	nuovoCodice: nuovoCodice.value,
-        	categoria: nuovaCategoria.value,
         	sottocategoria: nuovaSottocategoria.value,
         	titolo: nuovoTitolo.value,
         	foto: nuovaFoto.value,
@@ -284,7 +282,6 @@ function addPackage(){
     			element.style.border = "1px solid red";
     			element.value = null;
     		});
-
 	        console.log(response.message);
     	 }
     })
@@ -294,7 +291,6 @@ function addLesson(){
 	let caller = event.target;
 	const action = caller.getAttribute("data");
 	
-	let codicePacchetto =  document.getElementById("codiceP");
 	let url = document.getElementById("url");
 	let titolo = document.getElementById("title");
 	let durata  = document.getElementById("duration");
@@ -304,7 +300,6 @@ function addLesson(){
         method: 'POST',
         data:{
         	azione: action,
-        	vecchioCodice: codicePacchetto.value,
         	url: url.value,
         	titolo: titolo.value,
         	durata: durata.value

@@ -16,15 +16,24 @@ public class InsegnanteDao {
 	public InsegnanteDao() {}
 	
 	//Aggiungi pacchetto
-	public boolean inserPacchetto(String nuovoCodice, String nuovaCategoria, String nuovaSottocategoria, double nuovoPrezzo, String nuovaDescrizione, String nuovoTitolo, String nuovaFoto) {
-		
+	public PacchettoBean inserPacchetto(String nuovoCodice, String nomeUtente, String nuovaSottocategoria, double nuovoPrezzo, String nuovaDescrizione, String nuovoTitolo, String nuovaFoto) {
+			String categoria;
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
 			
-			PreparedStatement stm = conn.prepareStatement("INSERT into pacchetto (codicePacchetto, categoria, idSott, prezzo, descrizione, titolo, foto, nelCatalogo) VALUES (?,?,?,?,?,?,?, true)");
+			PreparedStatement stm = conn.prepareStatement("SELECT nomeCategoria FROM categoria WHERE insegnante = ?");
+			stm.setString(1, nomeUtente);
+			ResultSet res = stm.executeQuery();
+			if(res.next()) {
+				categoria = res.getString(1);
+			} else {
+				return null;
+			}
+			
+			stm = conn.prepareStatement("INSERT into pacchetto (codicePacchetto, categoria, idSott, prezzo, descrizione, titolo, foto, nelCatalogo) VALUES (?,?,?,?,?,?,?, true)");
 			
 			stm.setString(1, nuovoCodice);
-			stm.setString(2, nuovaCategoria);
+			stm.setString(2, categoria);
 			stm.setString(3, nuovaSottocategoria);
 			stm.setDouble(4, nuovoPrezzo);
 			stm.setString(5, nuovaDescrizione);
@@ -35,17 +44,25 @@ public class InsegnanteDao {
 			
 			stm = conn.prepareStatement("SELECT * FROM pacchetto WHERE codicePacchetto= ?");
 			stm.setString(1, nuovoCodice);
-			ResultSet res = stm.executeQuery();
+			res = stm.executeQuery();
 			conn.commit();
 			
 			if(res.next()) {
-				return true;
+				PacchettoBean pacchettoDaInserire = new PacchettoBean();
+				pacchettoDaInserire.setCodicePacchetto(nuovoCodice);
+				pacchettoDaInserire.setPrezzo(nuovoPrezzo);
+				pacchettoDaInserire.setDescrizione(nuovaDescrizione);
+				pacchettoDaInserire.setTitolo(nuovoTitolo);
+				pacchettoDaInserire.setFoto(nuovaFoto);
+				pacchettoDaInserire.setCatagoria(categoria);
+				pacchettoDaInserire.setSottocategoria(nuovaSottocategoria);
+				return pacchettoDaInserire;
 			} else
-				return false;
+				return null;
 		}catch (SQLException e) {
 			e.printStackTrace();			
 		}
-		return false;
+		return null;
 		
 	}
 	
@@ -154,7 +171,7 @@ public class InsegnanteDao {
 	}
 
 	//Aggiungi lezione
-	public boolean insertLesson(String codiceP, String url, String titolo, String durata) {
+	public LezioniBean insertLesson(String codiceP, String url, String titolo, String durata) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
 			
@@ -172,14 +189,20 @@ public class InsegnanteDao {
 			ResultSet res = stm.executeQuery();
 			conn.commit();
 			
+			LezioniBean lezioneDaInserire = new LezioniBean();
+			lezioneDaInserire.setPacchetto(codiceP);
+			lezioneDaInserire.setUrl(url);
+			lezioneDaInserire.setTitolo(titolo);
+			lezioneDaInserire.setDurata(durata);
+			
 			if(res.next()) {
-				return true;
+				return lezioneDaInserire;
 			} else
-				return false;
+				return null;
 		}catch (SQLException e) {
 			e.printStackTrace();			
 		}
-		return false;
+		return null;
 	}
 	
 	//Modifica lezione
