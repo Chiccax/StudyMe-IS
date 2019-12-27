@@ -68,7 +68,7 @@
 						<div id = "messageErrorEmail"></div>
 						<form name="updateEmail" id = "formEmail">
 							<input type="email" placeholder="Inserisci nuova email" name="Email" id = "changeEmail">	
-							<button type="submit">Invio</button>
+							<button class = "bottoneDefault" type="submit">Invio</button>
 						</form>
 										
 						<h2>Modifica password</h2>
@@ -84,7 +84,7 @@
 									<input type="password" placeholder="Reinserisci password" name="Conf_Password" id="confChangePassword" required>
 										<i class="fas fa-eye-slash" onclick="togglePassword(event)"></i>
 								</div>
-									<button type="submit">Invio</button>
+									<button class = "bottoneDefault" type="submit">Invio</button>
 							</form>
 						</div>						
 						
@@ -138,7 +138,7 @@
 									<textarea id = "newDesc" placeholder="Inserisci nuova descrizione"></textarea>
 								</form>
 								
-								<button type="submit" data = "aggiungiPacchetto" onClick="addPackage()">Procedi</button>
+								<button class = "bottoneDefault" type="submit" data = "aggiungiPacchetto" onClick="addPackage()">Procedi</button>
 								
 								<div id = "nextBottons">
 									<button id = "uno"></button>
@@ -171,7 +171,7 @@
 												<input type="text" id = "duration" placeholder="Inserire durata nuova lezione">	
 											</form>
 													
-											<button type="submit" data = "aggiungiLezione" onClick="addLesson()">Procedi</button>
+											<button class = "bottoneDefault" type="submit" data = "aggiungiLezione" onClick="addLesson()">Procedi</button>
 													
 											<div id = "nextBottons">
 												<button id = "uno"></button>
@@ -181,28 +181,37 @@
 									</div>
 								
 								<!-- Riepilogo inserimento lezione -->
-								 <!-- 
+								 
 								<div id="riepilogo">
-									<div class="information">
-	               					 	<h1>RIEPILOGO</h1>
+	               					 <h1 id = "titoloRiepilogo">RIEPILOGO</h1>
+	               					 
+	               					 <div id = "informazioni">
+		               					 <div id = "informazioniPacchetto">
+		         							<div id = "foto"></div>
+		         							<div id = "datiPacchetto">
+		               					 	<h1 id = "titoloPacchetto"><h1>
+		               					 	<h2 id = "descrizionePacchetto"></h2>
+		               					 	<h2 id = "prezzoPacchetto"></h2>
+		               					 	</div>
+		               					 </div>
+		               					 <hr>
+		               					 <div id = "informazioniLezione">
+		               					 	<h1 id = "titoloLezione"></h1>
+		               					 	<h2 id = "durataLezione"></h2>		 
+		               					 </div>
+		               					 
+		               					  <hr>
+		               					  
+		               					 <button class = "bottoneDefault" id="aggiuntaPacchetto"> Aggiungi </button>				
 	               					 </div>
-	
-		            				<div class="pacchetto-wrap">
-				            			<div class="pacchetto">
-			                    			<img src="">
-			                   				<span></span>
-			                    			<i class="fas fa-chevron-down"></i>
-				                    		<ul class="lezioni">
-												<li class="lezione" data="">
-						                            <i class="fas fa-play"></i>
-						                            <span class="title"></span>
-						                            <span class="durata"></span>
-					                        	</li>
-				                        	</ul>
-										</div>
-					  				</div> 
-				  				</div>	 
-				  				-->	
+
+									<div id = "nextBottons">
+										<button id = "uno"></button>
+										<button id = "due"></button>
+										<button id = "tre"></button>
+									</div>						               					 
+		  						</div>	 
+				  				
 							<% } %>						
 						</div>				
 					</div>

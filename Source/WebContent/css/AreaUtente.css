@@ -119,7 +119,7 @@ body, html{
 	color: green;
 	display: none;
 	text-align: center;
-}
+}   
 
 #messageErrorEmail{
 	font-weight: bold;
@@ -218,7 +218,6 @@ textarea{
 }
 
 .orderHeader .data{
-	
     grid-column: span 6;
     text-align: right;
     padding-right: 10px;
@@ -245,7 +244,6 @@ textarea{
 }
 
 .pacchettoOrdine .prezzo{
-	
     grid-column: span 2;
     text-align: center;
     width: 100%;
@@ -310,7 +308,7 @@ textarea{
 
 #uno{
 	border-radius: 50%;
-    width: 5%;
+   	width: 40px;
     margin: 10px;
     background-color: #3490cd;
     height: 80%;
@@ -319,7 +317,7 @@ textarea{
 
 #due{
 	border-radius: 50%;
-    width: 5%;
+    width: 40px;
     margin: 10px;
     background-color: #3490cd;
     height: 80%;
@@ -328,7 +326,7 @@ textarea{
 
 #tre{
 	border-radius: 50%;
-    width: 5%;
+    width: 40px;
     margin: 10px;
     background-color: #3490cd;
     height: 80%;
@@ -346,6 +344,167 @@ textarea{
 .addPackage{
 	display:none;
 }
+
+#riepilogo{
+	display: none;
+	color: white;
+	width: 90%;
+	height: auto;
+	padding: 20px;
+	margin: 20px auto;
+	border-radius: 10px 10px 10px 10px;
+	background: linear-gradient(to bottom, #2C5364 0%, #13364D 100%);
+}
+
+#titoloRiepilogo{
+	text-align: center;
+}
+
+#informazioni{
+	background: white;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#informazioniPacchetto{
+	display: grid;
+	grid-template-columns: 35% 65%;
+	margin-left: 5px;
+}
+
+#foto img{
+	border-radius: 30px 30px 30px 30px;
+    width: 200px;
+    height: 130px;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+#datiPacchetto{
+    float: left;
+    color: black;
+}
+
+#titoloPacchetto{
+	text-align: center;
+}
+
+#descrizionePacchetto{
+	font-size: 20px;
+	color: black;
+}
+
+#prezzoPacchetto{
+	font-size: 20px;
+	color: black;
+}
+
+hr {
+	border-top: 2px solid black;
+}
+
+#informazioniLezione{
+	display: grid;
+	grid-template-columns: 75% 25%;
+}
+
+#titoloLezione{
+	text-transform: uppercase;
+	color: black;
+	font-size: 20px;
+	margin-left: 20px;
+}
+
+#durataLezione{
+	color: black;
+	font-size: 20px;
+}
+
+#aggiuntaPacchetto{
+	margin-left: 25%;
+    width: 50%;
+    margin-botton: 20px;
+}
+
+#riepilogo #tre{
+	background-color: white;
+}
+
+@media screen and (min-width: 320px){
+	#foto img{
+		margin-left: 15%;
+	}
+}
+
+@media screen and (min-width: 375px){
+	#foto img{
+		margin-left: 20%;
+	}
+}
+
+@media screen and (min-width: 425px){
+	#foto img{
+		margin-left: 25%;
+	}
+}
+
+@media screen and (min-width: 768px){
+	#foto img{
+		margin-left: 35%;
+	}
+}
+
+@media screen and (min-width: 1024px){
+	#foto img{
+		margin-left: 10%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	#informazioni{
+		background: none;
+	}
+	
+	#informazioniLezione{
+		grid-template-columns: 100%;
+	}
+	
+	#informazioniPacchetto{
+		grid-template-columns: 100%;
+	}
+	
+	#riepilogo{
+		background: none;
+	}
+	
+	#lezioni{
+		background: none;
+	}
+	
+	#informazioniPacchetto{
+		background: none;
+	}
+
+	#lezioni h1{
+		color: black;
+	}
+	
+	#lezioni h2{
+		color: black;
+	}
+	
+	#riepilogo h1{
+		color: black;
+	}
+	
+	#titoloLezione{
+		margin-left: 10px;
+	}
+	
+	#durataLezione{
+		margin-left: 10px;
+	}
+}
+
 
 @media screen and (max-width: 1024px){
 	#navUser{

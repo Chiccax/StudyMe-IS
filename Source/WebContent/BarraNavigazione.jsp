@@ -228,10 +228,10 @@
 				<li>			
 					<div class="navbar-item">		
 						<div class="navbar-item-image">
-							<i class="fas fa-folder-plus" onClick= ""></i>
+							<i class="fas fa-folder-plus" onClick= "showAddPackage()"></i>
 						</div>
 						<div class="navbar-item-description">
-							<div id="pulsante-accedi" onClick= "">Inserimento</div>
+							<div id="pulsante-accedi" onClick= "showAddPackage()">Inserimento</div>
 						</div>
 					</div>
 				</li>

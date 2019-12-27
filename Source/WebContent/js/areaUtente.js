@@ -267,6 +267,13 @@ function addPackage(){
     		document.querySelector("#ordini #UpdateUserName").style.display = "none";
     		document.getElementById("lezioni").style.display= "block";
     		
+    		var img = document.createElement("img");
+    		img.src = nuovaFoto.value;
+    		var src = document.getElementById("foto");
+    		src.appendChild(img);
+    		document.getElementById("titoloPacchetto").innerHTML = nuovoTitolo.value;
+    		document.getElementById("descrizionePacchetto").innerHTML = (nuovaDescrizione.value);
+    		document.getElementById("prezzoPacchetto").innerHTML = ("Prezzo: " + nuovoPrezzo.value + "&euro;");
        	 }else{
     		const messageError = $("#success");
           	messageError.text(response.message);
@@ -308,6 +315,13 @@ function addLesson(){
    	 if(response.ok == true){
  		document.querySelector("#ordini #lezioni").style.display = "none";
 		document.getElementById("riepilogo").style.display= "block";
+		
+   		document.getElementById("titoloLezione").innerHTML = ("Titolo lezione: " + titolo.value);
+   		document.getElementById("durataLezione").innerHTML = ("Durata: " + durata.value);
+   		var source = document.createElement("source");
+		source.src = url.value;
+		var src = document.getElementById("urlLezione");
+		src.appendChild(img);
    	 }else{
    		const messageError = $("#messErr");
       	messageError.text(response.message);
