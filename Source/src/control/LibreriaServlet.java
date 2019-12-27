@@ -19,7 +19,9 @@ import modelBean.PacchettoBean;
 import modelBean.UtenteBean;
 import modelDao.OrdineAcquistoDao;
 import modelDao.PacchettoDao;
-
+/**
+ * La servlet Libreria  gestisce la visualizzazione dei pacchetti acquistati.
+ */
 
 @WebServlet("/LibreriaServlet")
 public class LibreriaServlet extends HttpServlet {
@@ -53,14 +55,14 @@ public class LibreriaServlet extends HttpServlet {
 		PacchettoDao pacchetto=new PacchettoDao();
 		
 		try {			
-			pacchettiAcquistati = dao.findByNomeCliente(nomeUtente); // prendo i pacchetti acquistati da un utente  e  mi ritorna un array di pacchetti ascquistati dall'utente		
+			pacchettiAcquistati = dao.findByNomeCliente(nomeUtente); // prende i pacchetti acquistati da un utente  e   ritorna un array di pacchetti ascquistati dall'utente		
 			for(OrdineAcquistoBean e: pacchettiAcquistati) {
 				ArrayList<PacchettoBean> pacchettiOrdineAttuale = e.getPacchettiAcquistati();
-				pacchetti.addAll(pacchettiOrdineAttuale);// chiamo il metodo getLezioni per prendere le lezioni del pacchetto e gli passo il codice			
+				pacchetti.addAll(pacchettiOrdineAttuale);// chiama il metodo getLezioni per prendere le lezioni del pacchetto e gli passa il codice			
 				for(PacchettoBean p : pacchettiOrdineAttuale) {
 					//Per ogni pacchetto ottengo tutte le lezioni
 					ArrayList<LezioniBean> lezione = new ArrayList<LezioniBean>();
-					lezione = pacchetto.getLezioni(p.getCodicePacchetto());// aggiungo le lezioni all'arrayList lezioni 	
+					lezione = pacchetto.getLezioni(p.getCodicePacchetto());// aggiunge le lezioni all'arrayList lezioni 	
 					lezioni.add(lezione);
 				}
 			}
