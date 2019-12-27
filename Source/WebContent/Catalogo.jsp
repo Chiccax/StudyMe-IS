@@ -9,6 +9,7 @@
 	String categoria = (String) request.getAttribute("categoria");
 	
 	CategoriaBean cat= (CategoriaBean) request.getAttribute("fotoCat");
+	String tipo= (String) request.getAttribute("tipo");
 %>
 <!DOCTYPE html>
 <html>
@@ -38,6 +39,9 @@
    		for(PacchettoBean pacchetto : pacchetti) {
    		%>	
         <div class= "pacchetto">
+        	<%//if(tipo.equals("insegnante") && categoryName.equals("") ) 
+        			//se non approvato  background-color%>
+        			<button class="approvazione"></button>
         	<div class = "foto-categoria" style = "background-image: url(<%= pacchetto.getFoto()%>)"></div>
             <h1><%=pacchetto.getTitolo()%></h1>
 

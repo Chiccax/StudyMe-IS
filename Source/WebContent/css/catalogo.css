@@ -277,6 +277,14 @@
 	font-weight: bold;
 }
 
+.approvazione {
+	background-color: red; 
+	border-radius: 50px 50px 50px 50px;
+ 	padding: 10px 10px;
+  	border: none;
+  	margin: 5px 5px;
+} 
+
 @media only screen and (min-width: 1440px){
     .barraCategorie{
         justify-content: center;

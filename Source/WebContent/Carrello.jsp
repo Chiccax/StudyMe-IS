@@ -69,7 +69,7 @@
 		%>
 			<div id = "accedi">
 				<p> Per proseguire all'acquisto: </p>
-				<button id = "access" onClick = "mostraLogin()">Accedi </button>
+				<button class="bottoneDefault" id = "access" onClick = "mostraLogin()">Accedi </button>
 			</div>
 		<%} else { %>
 			<div class = "bottonePaypal">
@@ -91,7 +91,7 @@
 		<img src="img/utility/carrelloVuoto.png" id = "immagineCarrelloVuoto" alt="Carrello vuoto">
 		<h1 id= "noProduct">Non ci sono prodotti aggiunti al carrello</h1>
 		<a href = "RicercaServlet?argument=">
-			<button id="buyNow">Acquista ora!</button>
+			<button class="bottoneDefault" id="buyNow">Acquista ora!</button>
 		</a>
 	</div>
 	

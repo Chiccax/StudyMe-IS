@@ -142,7 +142,7 @@ a:hover {
 	text-decoration: underline;
 }
 
-button {
+.bottoneDefault {
 	font-family: 'Mali', cursive;
 	background-color: #4CAF50;
 	color: white;
@@ -155,7 +155,7 @@ button {
 	transition: all 0.5s;
 }
 
-button:hover {
+.bottoneDefault:hover {
 	background-color: #1CCE51;
 }
 

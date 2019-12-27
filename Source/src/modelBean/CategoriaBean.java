@@ -7,8 +7,14 @@ public class CategoriaBean {
 	public String getNomeCategoria() {
 		return nomeCategoria;
 	}
+	public String getInsegnante(){
+		return insegnante;
+	}
 	public String getFotoCategoria() {
 		return fotoCat;
+	}
+	public void setInsegnante(String insegnante){
+		this.insegnante= insegnante;
 	}
 	
 	public void setNomeCategoria(String nomeCategoria) {
@@ -19,5 +25,5 @@ public class CategoriaBean {
 	}
 
 	//VARIABILI D'ISTANZA
-	private String nomeCategoria,fotoCat;
+	private String nomeCategoria,fotoCat,insegnante;
 }

@@ -328,7 +328,7 @@
 				<span class="dim" onclick="mostraRecuperoPassword()">Password
 					dimenticata ?</span>
 
-				<button type="submit">Accedi</button>
+				<button class="bottoneDefault" type="submit">Accedi</button>
 				<span class="remb"> <label> <input type="checkbox"
 						id="remember">Ricordami
 				</label>
@@ -373,7 +373,7 @@
 						class="fas fa-eye-slash" onclick="togglePassword(event)"></i>
 				</div>
 
-				<button type="submit">Registrati</button>
+				<button class="bottoneDefault" type="submit">Registrati</button>
 
 				<div class="footer">Sei gi&agrave; registrato?</div>
 				<div class="footer">
@@ -399,7 +399,7 @@
 				<label for="email"><b>Inserisci la tua mail</b></label><br> <input
 					type="email" placeholder="es: marioRossi@libero.it" name="Email"
 					required id="emailF">
-				<button type="submit">Invio</button>
+				<button class="bottoneDefault" type="submit">Invio</button>
 			</form>
 		</div>
 	</div>
