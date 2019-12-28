@@ -41,7 +41,8 @@
    		for(PacchettoBean pacchetto : pacchetti) {
    		%>	
         <div class= "pacchetto">
-        	<%if(insegnante.equals(userName)){
+        	<%
+        	if(insegnante.equals(userName)){
         			if(pacchetto.getApprovato()==-1){%>
         				<button class="approvazione" id="rosso"></button>
         		 <%}if(pacchetto.getApprovato()==1){%>

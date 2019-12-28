@@ -48,7 +48,6 @@ public class PacchettoDao {
 				pa.setPrezzo(res.getDouble(4));
 				pa.setDescrizione(res.getString(5));
 				pa.setTitolo(res.getString(6));
-				
 				pa.setApprovato(res.getInt(9));
 				
 				pacchetti.add(pa);
@@ -81,6 +80,8 @@ public class PacchettoDao {
 				pa.setDescrizione(res.getString(5));
 				pa.setTitolo(res.getString(6));
 				pa.setFoto(res.getString(7));
+				
+				
 				return pa;
 			}
 			else {
@@ -175,7 +176,7 @@ public class PacchettoDao {
 				pacchetto1.setDescrizione(res.getString(5));
 				pacchetto1.setTitolo(res.getString(6));
 				pacchetto1.setFoto(res.getString(7));
-				pacchetto1.setApprovato(res.getInt(8));
+				pacchetto1.setApprovato(res.getInt(9));
 
 				String valueSottocategoria = null;
 				
