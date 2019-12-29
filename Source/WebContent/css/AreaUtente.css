@@ -429,6 +429,21 @@ hr {
 	background-color: white;
 }
 
+#pacchettiDaApprovare{
+	display: none;
+	color: white;
+	width: 90%;
+	height: auto;
+	padding: 20px;
+	margin: 20px auto;
+	border-radius: 10px 10px 10px 10px;
+	background: linear-gradient(to bottom, #2C5364 0%, #13364D 100%);
+}
+
+#titoloFinestra{
+	text-align: center;
+}
+
 @media screen and (min-width: 320px){
 	#foto img{
 		margin-left: 15%;

@@ -49,7 +49,7 @@
         				<button class="approvazione" id="verde"></button>
         		 <%}else{%>
         		 		<button class="approvazione" id="giallo"></button>
-        		 		<%}
+        		 <%}
         	}%>
         	<div class = "foto-categoria" style = "background-image: url(<%= pacchetto.getFoto()%>)"></div>
             <h1><%=pacchetto.getTitolo()%></h1>

@@ -30,40 +30,54 @@ public class InsegnanteDao {
 				return null;
 			}
 			
-			stm = conn.prepareStatement("INSERT into pacchetto (codicePacchetto, categoria, idSott, prezzo, descrizione, titolo, foto, nelCatalogo) VALUES (?,?,?,?,?,?,?, true)");
-			
-			stm.setString(1, nuovoCodice);
-			stm.setString(2, categoria);
-			stm.setString(3, nuovaSottocategoria);
-			stm.setDouble(4, nuovoPrezzo);
-			stm.setString(5, nuovaDescrizione);
-			stm.setString(6, nuovoTitolo);
-			stm.setString(7, nuovaFoto);
-			
-			stm.executeUpdate();
-			
-			stm = conn.prepareStatement("SELECT * FROM pacchetto WHERE codicePacchetto= ?");
+			stm = conn.prepareStatement("SELECT codicePacchetto FROM pacchetto WHERE codicePacchetto = ?");
 			stm.setString(1, nuovoCodice);
 			res = stm.executeQuery();
-			conn.commit();
-			
-			if(res.next()) {
-				PacchettoBean pacchettoDaInserire = new PacchettoBean();
-				pacchettoDaInserire.setCodicePacchetto(nuovoCodice);
-				pacchettoDaInserire.setPrezzo(nuovoPrezzo);
-				pacchettoDaInserire.setDescrizione(nuovaDescrizione);
-				pacchettoDaInserire.setTitolo(nuovoTitolo);
-				pacchettoDaInserire.setFoto(nuovaFoto);
-				pacchettoDaInserire.setCatagoria(categoria);
-				pacchettoDaInserire.setSottocategoria(nuovaSottocategoria);
-				return pacchettoDaInserire;
-			} else
+			if(res.next()){
 				return null;
+			}else {
+				stm = conn.prepareStatement("SELECT idSottocat FROM sottoCategoria WHERE idSottocat = ?");
+				stm.setString(1, nuovaSottocategoria);
+				res = stm.executeQuery();
+				if(!res.next()){
+					return null;
+				}else {
+			
+				stm = conn.prepareStatement("INSERT into pacchetto (codicePacchetto, categoria, idSott, prezzo, descrizione, titolo, foto, nelCatalogo) VALUES (?,?,?,?,?,?,?, true)");
+				
+				stm.setString(1, nuovoCodice);
+				stm.setString(2, categoria);
+				stm.setString(3, nuovaSottocategoria);
+				stm.setDouble(4, nuovoPrezzo);
+				stm.setString(5, nuovaDescrizione);
+				stm.setString(6, nuovoTitolo);
+				stm.setString(7, nuovaFoto);
+				
+				stm.executeUpdate();
+				
+				stm = conn.prepareStatement("SELECT * FROM pacchetto WHERE codicePacchetto= ?");
+				stm.setString(1, nuovoCodice);
+				res = stm.executeQuery();
+				conn.commit();
+				
+				if(res.next()) {
+					PacchettoBean pacchettoDaInserire = new PacchettoBean();
+					pacchettoDaInserire.setCodicePacchetto(nuovoCodice);
+					pacchettoDaInserire.setPrezzo(nuovoPrezzo);
+					pacchettoDaInserire.setDescrizione(nuovaDescrizione);
+					pacchettoDaInserire.setTitolo(nuovoTitolo);
+					pacchettoDaInserire.setFoto(nuovaFoto);
+					pacchettoDaInserire.setCatagoria(categoria);
+					pacchettoDaInserire.setSottocategoria(nuovaSottocategoria);
+					return pacchettoDaInserire;
+				} else
+					return null;
+				}
+			}
 		}catch (SQLException e) {
 			e.printStackTrace();			
 		}
 		return null;
-		
 	}
 	
 	//Rimuovi pacchetto

@@ -1,6 +1,6 @@
 function showUpdateAccount(){
 	document.getElementById("UpdateUserName").style.display = ("block");
-	document.getElementById("#ordini #UpdateUserName").style.display = ("none");
+	document.getElementById("ordini").style.display = "none";
 	var name = event.target;
 	name.classList.add("active");
 	document.getElementById("myOrder").classList.remove("active");
@@ -10,6 +10,22 @@ function showUpdateAccount(){
 	}, 500);
 	
 	$("#myOrder").animate({
+		padding: "0"
+	}, 500);
+}
+
+function showApprovals(){
+	document.getElementById("UpdateUserName").style.display = ("none");
+	document.getElementById("pacchettiDaApprovare").style.display = ("block");
+	var name = event.target;
+	name.classList.add("active");
+	document.getElementById("updateAccount").classList.remove("active");
+
+	$("#myOrder").animate({
+		padding: "10px"
+	}, 500);
+	
+	$("#updateAccount").animate({
 		padding: "0"
 	}, 500);
 }
@@ -28,30 +44,9 @@ function showAddPackage(){
 	$("#updateAccount").animate({
 		padding: "0"
 	}, 500);
-}
-
-function showOrders(){	
-	document.getElementById("UpdateUserName").style.display = ("none");
-	document.getElementById("ordini").style.display = "block";
-	var name = event.target;
-	name.classList.add("active");
-	document.getElementById("updateAccount").classList.remove("active");
-
-	$("#myOrder").animate({
-		padding: "10px"
-	}, 500);
-	
-	$("#updateAccount").animate({
-		padding: "0"
-	}, 500);
-	
-	const checkElement = document.querySelector(".orderHeader") || document.querySelector("#noOrder");
-	
-	if(checkElement != null)
-		return;
 	
 	$.ajax({
-		url: "OrdiniServlet",
+		url: "GestoreServlet",
 		method : 'POST',
 	}).done( data => {
 		const response = JSON.parse(data);
@@ -85,6 +80,32 @@ function showOrders(){
 				element.innerHTML = element.innerHTML + title;		
 		}
 	})
+}
+
+function showOrders(){	
+	document.getElementById("UpdateUserName").style.display = ("none");
+	document.getElementById("ordini").style.display = "block";
+	var name = event.target;
+	name.classList.add("active");
+	document.getElementById("updateAccount").classList.remove("active");
+
+	$("#myOrder").animate({
+		padding: "10px"
+	}, 500);
+	
+	$("#updateAccount").animate({
+		padding: "0"
+	}, 500);
+	
+	const checkElement = document.querySelector(".orderHeader") || document.querySelector("#noOrder");
+	
+	if(checkElement != null)
+		return;
+	
+	$.ajax({
+		url: "OrdiniServlet",
+		method : 'POST',
+	}).done()
 }
 
 function showOrdersAdministrator(){	

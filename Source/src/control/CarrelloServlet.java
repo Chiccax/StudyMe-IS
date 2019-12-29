@@ -22,9 +22,6 @@ import modelBean.CarrelloBean;
 import modelBean.PacchettoBean;
 import modelDao.PacchettoDao;//ds
 
-
-
-
 @WebServlet("/CarrelloServlet")
 public class CarrelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -105,6 +102,4 @@ public class CarrelloServlet extends HttpServlet {
 		return total;
 	}
 
-	}
-
-
+}

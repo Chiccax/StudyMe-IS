@@ -1,7 +1,7 @@
 <%@page import="modelDao.OrdineDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.util.*, modelBean.*"%>
-
+	
 <!DOCTYPE html>
 <head>
 		<%@ include file = "header.jsp"%>
@@ -48,6 +48,23 @@
 							<li  id = "myOrder" onClick = "showAddPackage()">
 								<i class="fas fa-folder-plus"></i>
 								<span>Inserimento</span>
+							</li>
+							<a href = "LogoutServlet">
+								<li>
+									<i class="fas fa-sign-out-alt"></i>
+									<span>Logout</span>
+								</li>
+							</a>
+						</ul>
+						<%} else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){%>
+						<ul id = "navUser">
+							<li  id = "updateAccount" class ="active" onClick = "showUpdateAccount()">
+								<i class="far fa-user-circle"></i>
+									<span>Account</span>
+							</li>
+							<li  id = "myOrder" onClick = "showApprovals()">
+								<i class="fas fa-folder-plus"></i>
+								<span>Approvazioni</span>
 							</li>
 							<a href = "LogoutServlet">
 								<li>
@@ -198,6 +215,19 @@
 									</div>						               					 
 		  						</div>	 
 				  				
+							<% } else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){ %>
+								<div id="pacchettiDaApprovare">
+	               					 <h1 id = "titoloFinestra">PACCHETTI DA APPROVARE</h1>
+	               						<div id = "pacchetto">
+	               							
+	               							<i class="fas fa-gavel"></i>
+	               						</div>
+	               						<div id = "lezioni">
+	               							
+	               							<i class="far fa-check-circle"></i>
+	               							<i class="far fa-times-circle"></i>
+	               						</div>
+	               				</div>
 							<% } %>						
 						</div>				
 					</div>

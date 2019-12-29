@@ -25,7 +25,7 @@ public class RicercaServlet extends HttpServlet {
          }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-String argument = request.getParameter("argument");
+		String argument = request.getParameter("argument");
 		
 		if(argument == null) {
 			response.sendError(HttpServletResponse.SC_NOT_FOUND);
