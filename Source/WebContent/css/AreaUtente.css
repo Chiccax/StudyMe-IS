@@ -444,6 +444,37 @@ hr {
 	text-align: center;
 }
 
+#riquadroPacchetto{
+	border-radius: 10px;
+    background: white;
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: 25% 60% 15%;
+}
+
+#riquadroPacchetto img{
+	height: 80px;
+	width: 120x;
+	border-radius: 20px;
+	margin: auto;
+}
+
+#infoPacchetto{
+	text-align: center;
+	color: black;
+	font-size: 10px;
+    display: inline-block;
+}
+
+#riquadroPacchetto i{
+	color: black;
+	margin: auto;
+    font-size: 60px;
+}
+
+
+
 @media screen and (min-width: 320px){
 	#foto img{
 		margin-left: 15%;

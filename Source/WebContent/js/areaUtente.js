@@ -16,23 +16,8 @@ function showUpdateAccount(){
 
 function showApprovals(){
 	document.getElementById("UpdateUserName").style.display = ("none");
-	document.getElementById("pacchettiDaApprovare").style.display = ("block");
-	var name = event.target;
-	name.classList.add("active");
-	document.getElementById("updateAccount").classList.remove("active");
-
-	$("#myOrder").animate({
-		padding: "10px"
-	}, 500);
-	
-	$("#updateAccount").animate({
-		padding: "0"
-	}, 500);
-}
-
-function showAddPackage(){
-	document.getElementById("UpdateUserName").style.display = ("none");
 	document.getElementById("ordini").style.display = ("block");
+	document.getElementById("pacchettiDaApprovare").style.display = ("block");
 	var name = event.target;
 	name.classList.add("active");
 	document.getElementById("updateAccount").classList.remove("active");
@@ -48,38 +33,15 @@ function showAddPackage(){
 	$.ajax({
 		url: "GestoreServlet",
 		method : 'POST',
-	}).done( data => {
-		const response = JSON.parse(data);
-		if(response.ok == true) {
-			const element = document.querySelector(".divTableHeading");
-			const content = response.content;
-			
-			content.forEach(ordine => {
-				let div = "<div class='divTableRow'><div class='orderHeader'>";
-				div += "<span class='nOrdine'><b>Numero ordine:</b> " + ordine.numOrdine + " </span><span class='data'><b>Data Ordine:</b> " + ordine.data+"</span>";
-				div += "</div><div class = 'orderInfo'>";
-				
-				const pacchettiAcquistati = ordine.pacchettiAcquistati;
-				pacchettiAcquistati.forEach(dettOrdine => {
-					let sottoOrdine = "<div class='pacchettoOrdine'>";
-					sottoOrdine += "<img src='" + dettOrdine.foto + "'/>";
-					sottoOrdine += "<span class='titolo'>"+ dettOrdine.titolo + "</span>";
-					sottoOrdine += "<span class='prezzo'> " + dettOrdine.prezzo + "&euro;</span>";
-					sottoOrdine += "</div>";
-					
-					div += sottoOrdine;
-				})
-				
-				div += "</div></div>";
-				
-				element.innerHTML = element.innerHTML + div;
-			})
-		}else{
-				const element = document.querySelector(".divTableHeading");
-				let title = "<h1 id='noOrder'>" + "Non sono ancora stati effettuati ordini!" + "<h1>";
-				element.innerHTML = element.innerHTML + title;		
-		}
-	})
+	});
+}
+
+function showAddPackage(){
+	document.getElementById("UpdateUserName").style.display = ("none");
+	document.getElementById("ordini").style.display = ("block");
+	var name = event.target;
+	name.classList.add("active");
+	document.getElementById("updateAccount").classList.remove("active");
 }
 
 function showOrders(){	
@@ -106,83 +68,6 @@ function showOrders(){
 		url: "OrdiniServlet",
 		method : 'POST',
 	}).done()
-}
-
-function showOrdersAdministrator(){	
-	let nuovoCodice = document.getElementById("newCode");
-	let nuovaCategoria = document.getElementById("newCat");
-	let nuovaSottocategoria = document.getElementById("newSottoCat");
-	let nuovoTitolo = document.getElementById("newTitle");
-	let nuovaFoto = document.getElementById("newPhoto")
-	let nuovoPrezzo = document.getElementById("newPrice");
-	let nuovaDescrizione = document.getElementById("newDesc");
-	let messageError = document.getElementById("success");
-	
-	const datiNuovoPacchetto = [nuovoCodice, nuovaCategoria, nuovaSottocategoria, nuovoTitolo, nuovaFoto, nuovoPrezzo, nuovaDescrizione];
-	console.log(datiNuovoPacchetto);
-	
-	datiNuovoPacchetto.forEach(element =>{
-		element.style.border = "none";
-		element.value = null;
-	});
-	
-	messageError.style.display = "none";
-	
-	document.getElementById("UpdateUserName").style.display = ("none");
-	document.getElementById("ordini").style.display = "block";
-	var name = event.target;
-	name.classList.add("active");
-	document.getElementById("updateAccount").classList.remove("active");
-
-	$("#myOrder").animate({
-		padding: "10px"
-	}, 500);
-	
-	$("#updateAccount").animate({
-		padding: "0"
-	}, 500);
-	
-	const checkElement = document.querySelector(".orderHeader");
-	
-	if(checkElement != null)
-		return;
-	
-	$.ajax({
-		url: "OrdiniAmministratore",
-		method : 'POST',
-	}).done( data => {
-		const response = JSON.parse(data);
-		if(response.ok == true) {
-			const element = document.querySelector(".divTableHeading");
-			const content = response.content;
-			
-			content.forEach(ordine => {
-				let div = "<div class='divTableRow'><div class='orderHeader'>";
-				div += "<span class='nOrdine'><b>Numero ordine:</b> " + ordine.numOrdine + " </span><span class='data'><b>Data Ordine:</b> " + ordine.data+"</span>";
-				div += "</div><div class = 'orderInfo'>";
-				
-				const pacchettiAcquistati = ordine.pacchettiAcquistati;
-				pacchettiAcquistati.forEach(dettOrdine => {
-					let sottoOrdine = "<div class='pacchettoOrdineAmministratore'>";
-					sottoOrdine += "<img src='" + dettOrdine.foto + "'/>";
-					sottoOrdine += "<span class='titolo'>"+ dettOrdine.titolo + "</span>";
-					sottoOrdine += "<span class='prezzo'> " + dettOrdine.prezzo + "&euro;</span>";
-					sottoOrdine += "<span class='cliente'> <strong>Cliente: </strong>" + ordine.cliente + "</span>";
-					sottoOrdine += "</div>";
-					
-					div += sottoOrdine;
-				})
-				
-				div += "</div></div>";
-				
-				element.innerHTML = element.innerHTML + div;
-			})
-		}else{
-				const element = document.querySelector(".divTableHeading");
-				let title = "<h1>" + "Non sono ancora stati effettuati ordini!" + "<h1>";
-				element.innerHTML = element.innerHTML + title;		
-		}
-	})
 }
 
 $(document).ready(() => {

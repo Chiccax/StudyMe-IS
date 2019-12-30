@@ -21,7 +21,7 @@ public class GestoreDao {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
 			
-			PreparedStatement stm = conn.prepareStatement("SELECT pacchetto FROM pacchetto WHERE approvato = 0");
+			PreparedStatement stm = conn.prepareStatement("SELECT * FROM pacchetto WHERE approvato = 0");
 			ResultSet res = stm.executeQuery();
 			conn.commit();
 			
@@ -44,7 +44,7 @@ public class GestoreDao {
 				pacchettoDaApprovare.setFoto(fotoPacchetto);
 				
 				pacchetti.add(pacchettoDaApprovare);
-			}
+			}	
 			return pacchetti;
 		} catch(SQLException e){
 			e.printStackTrace();
@@ -60,7 +60,7 @@ public class GestoreDao {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
 			
-			PreparedStatement stm = conn.prepareStatement("SELECT lezioni FROM lezioni WHERE approvato = 0");
+			PreparedStatement stm = conn.prepareStatement("SELECT * FROM lezioni WHERE approvato = 0");
 			ResultSet res = stm.executeQuery();
 			conn.commit();
 			

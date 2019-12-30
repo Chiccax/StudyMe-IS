@@ -56,11 +56,12 @@
 								</li>
 							</a>
 						</ul>
-						<%} else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){%>
+						<%} else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){
+						%>
 						<ul id = "navUser">
 							<li  id = "updateAccount" class ="active" onClick = "showUpdateAccount()">
 								<i class="far fa-user-circle"></i>
-									<span>Account</span>
+								<span>Account</span>
 							</li>
 							<li  id = "myOrder" onClick = "showApprovals()">
 								<i class="fas fa-folder-plus"></i>
@@ -215,20 +216,41 @@
 									</div>						               					 
 		  						</div>	 
 				  				
-							<% } else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){ %>
+							<% } else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){
+									ArrayList<PacchettoBean> pacchettiDaApprovare = (ArrayList<PacchettoBean>) session.getAttribute("pacchettiDaApprovare");
+									ArrayList<LezioniBean> lezioniDaApprovare = (ArrayList<LezioniBean>) session.getAttribute("lezioniDaApprovare");
+									HashMap<String, ArrayList<LezioniBean>> lezioniPacchettoDaApprovare = (HashMap<String, ArrayList<LezioniBean>>) session.getAttribute("lezioniPacchettoDaApprovare");
+								%>	
+							
 								<div id="pacchettiDaApprovare">
 	               					 <h1 id = "titoloFinestra">PACCHETTI DA APPROVARE</h1>
 	               						<div id = "pacchetto">
+	               							<% 
+	               								for(PacchettoBean b : pacchettiDaApprovare){
 	               							
-	               							<i class="fas fa-gavel"></i>
-	               						</div>
-	               						<div id = "lezioni">
-	               							
-	               							<i class="far fa-check-circle"></i>
-	               							<i class="far fa-times-circle"></i>
-	               						</div>
-	               				</div>
-							<% } %>						
+	               							%>
+	               								<div id = "riquadroPacchetto">
+		               								<img src = "<%=b.getFoto()%>">
+		               								<div id = "infoPacchetto">
+			               								<h1 class = "titolo"><%=b.getTitolo()%></h1>
+			               								<h1 class = "descrizione"><%=b.getDescrizione()%></h1>
+		               								</div>
+		               								<i class="fas fa-gavel"></i>
+	               								</div>
+	               								
+	               								<% 
+	               									ArrayList<LezioniBean> lezioni = lezioniPacchettoDaApprovare.get(b.getCodicePacchetto());
+	               									System.out.println(lezioni);
+	               									for(LezioniBean l : lezioni){	
+	               								%>
+	               									<div id = riquadroLezioni>
+		               									<h1 id = "titoloLezioni"><%=l.getTitolo()%></h1>		
+		               									<i class="far fa-check-circle"></i>
+		               									<i class="far fa-times-circle"></i>
+	               									</div>
+	               								<%}%>		
+	               							<%}%>
+	               					<%}%>	               									
 						</div>				
 					</div>
 				</div>

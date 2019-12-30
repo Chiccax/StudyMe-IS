@@ -193,10 +193,10 @@
 				<li>			
 					<div class="navbar-item">		
 						<div class="navbar-item-image">
-							<i class="fas fa-tasks" onClick= ""></i>
+							<i class="fas fa-tasks" onClick= "showApprovals()"></i>
 						</div>
 						<div class="navbar-item-description">
-							<div id="pulsante-accedi" onClick= "">Approvazioni</div>
+							<div id="pulsante-accedi" onClick= "showApprovals()">Approvazioni</div>
 						</div>
 					</div>
 				</li>
