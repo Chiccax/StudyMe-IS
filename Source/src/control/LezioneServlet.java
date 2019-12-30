@@ -57,7 +57,7 @@ public class LezioneServlet extends HttpServlet {
 		
 		
 		PacchettoDao manager = new PacchettoDao();
-		lezioni = manager.getLezioni(codicePacchetto);
+		
 		pacchetto = manager.getPacchetto(codicePacchetto);
 		if(pacchetto == null) {
 			response.sendError(HttpServletResponse.SC_NOT_FOUND);
@@ -123,6 +123,11 @@ public class LezioneServlet extends HttpServlet {
 				}
 				
 			}
+		}
+		if(insegnante.equals(nomeUtente)) {
+			lezioni = manager.getLezioni(codicePacchetto);
+		}else{
+			lezioni = manager.getLezioniApprovate(codicePacchetto);
 		}
 		
 		request.setAttribute("lezioni", lezioni);

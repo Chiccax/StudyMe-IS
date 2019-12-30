@@ -55,7 +55,6 @@ public class CatalogoServlet extends HttpServlet {
 		}
 		CategoriaDao daoCategoria= new CategoriaDao();
 		PacchettoDao dao = new PacchettoDao();
-		pacchetti = dao.getCategoriaRaggruppato(categoria);
 		
 		fotoCat= dao.getBeanCategoria(categoria);
 		try {
@@ -65,7 +64,11 @@ public class CatalogoServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
+		if(insegnante.equals(userName)){
+			pacchetti = dao.getCategoriaRaggruppato(categoria);
+		}else{
+			pacchetti= dao.getCategoriaRaggruppatoApprovato(categoria);
+		}
 		
 		if(pacchetti == null || pacchetti.size()==0) {
 			response.sendError(HttpServletResponse.SC_NOT_FOUND);

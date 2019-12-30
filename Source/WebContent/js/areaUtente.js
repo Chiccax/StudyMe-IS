@@ -14,6 +14,7 @@ function showUpdateAccount(){
 	}, 500);
 }
 
+
 function showApprovals(){
 	document.getElementById("UpdateUserName").style.display = ("none");
 	document.getElementById("ordini").style.display = ("block");
@@ -33,7 +34,7 @@ function showApprovals(){
 	$.ajax({
 		url: "GestoreServlet",
 		method : 'POST',
-	});
+	}).done()
 }
 
 function showAddPackage(){

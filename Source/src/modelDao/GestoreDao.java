@@ -68,7 +68,7 @@ public class GestoreDao {
 				String urlLezione = res.getString(1);
 				String titoloLezione = res.getString(2);
 				String durataLezione = res.getString(3);
-				String codicePacchetto = res.getString(5);
+				String codicePacchetto = res.getString(4);
 				
 				lezioniDaApprovare = new LezioniBean();
 				lezioniDaApprovare.setUrl(urlLezione);

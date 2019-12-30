@@ -57,6 +57,7 @@
 							</a>
 						</ul>
 						<%} else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){
+							System.out.println("ENTRO NEL CONTROLLO");
 						%>
 						<ul id = "navUser">
 							<li  id = "updateAccount" class ="active" onClick = "showUpdateAccount()">
@@ -220,13 +221,16 @@
 									ArrayList<PacchettoBean> pacchettiDaApprovare = (ArrayList<PacchettoBean>) session.getAttribute("pacchettiDaApprovare");
 									ArrayList<LezioniBean> lezioniDaApprovare = (ArrayList<LezioniBean>) session.getAttribute("lezioniDaApprovare");
 									HashMap<String, ArrayList<LezioniBean>> lezioniPacchettoDaApprovare = (HashMap<String, ArrayList<LezioniBean>>) session.getAttribute("lezioniPacchettoDaApprovare");
+									
 								%>	
 							
 								<div id="pacchettiDaApprovare">
-	               					 <h1 id = "titoloFinestra">PACCHETTI DA APPROVARE</h1>
-	               						<div id = "pacchetto">
-	               							<% 
-	               								for(PacchettoBean b : pacchettiDaApprovare){
+									<% if(pacchettiDaApprovare == null){%>
+	               					 <h1 id = "titoloFinestra">Non ci sono pacchetti da approvare</h1>
+	               				    <% }else{%>
+										<h1 id = "titoloFinestra">PACCHETTI DA APPROVARE</h1>
+										 <div id = "pacchetto">
+	               							<%	for(PacchettoBean b : pacchettiDaApprovare){
 	               							
 	               							%>
 	               								<div id = "riquadroPacchetto">
@@ -240,7 +244,6 @@
 	               								
 	               								<% 
 	               									ArrayList<LezioniBean> lezioni = lezioniPacchettoDaApprovare.get(b.getCodicePacchetto());
-	               									System.out.println(lezioni);
 	               									for(LezioniBean l : lezioni){	
 	               								%>
 	               									<div id = riquadroLezioni>
@@ -249,7 +252,7 @@
 		               									<i class="far fa-times-circle"></i>
 	               									</div>
 	               								<%}%>		
-	               							<%}%>
+	               							<%}}%>
 	               					<%}%>	               									
 						</div>				
 					</div>
