@@ -33,6 +33,16 @@ body, html{
 	display: block;
 }
 
+#messErr{
+	margin: 1px;
+	font-weight: bold;
+    text-align: center;
+    color: red;
+    display: none;
+    transition: opacity .5s;
+    text-shadow: 2px 2px 4px black;
+}
+
 #navUser li{
 	margin: 10px;
 	height: 70px;	
@@ -444,13 +454,19 @@ hr {
 	text-align: center;
 }
 
+#pacchetto{
+	border: 2px solid black;
+	border-radius: 15px;
+}
+
 #riquadroPacchetto{
-	border-radius: 10px;
     background: white;
     width: auto;
     height: auto;
+    border-radius: 15px 15px 0 0;
     display: grid;
     grid-template-columns: 25% 60% 15%;
+    border-bottom: 2px solid black;
 }
 
 #riquadroPacchetto img{
@@ -473,7 +489,26 @@ hr {
     font-size: 60px;
 }
 
+#riquadroLezioni{
+	grid-template-columns: 80% 10% 10%;
+    display: grid;
+    width: auto;
+    height: auto;
+    background: #3490cd;
+    color: black;
+    border-radius: 0 0 15px 15px;
+}
 
+#titoloLezioniDaApprovare {
+	margin-left: 5% !important;
+	font-size: 25px !important; 
+}
+
+#riquadroLezioni i{
+	color: black;
+    margin: auto;
+    font-size: 45px;
+}
 
 @media screen and (min-width: 320px){
 	#foto img{

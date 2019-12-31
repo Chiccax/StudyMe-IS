@@ -29,8 +29,6 @@ public class GestoreServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
 		ArrayList<PacchettoBean> pacchettiDaApprovare = new ArrayList<PacchettoBean>();
 		ArrayList<LezioniBean> lezioniDaApprovare = new ArrayList<LezioniBean>();
 		ArrayList<LezioniBean> lezioniPacchetto = new ArrayList<LezioniBean>();

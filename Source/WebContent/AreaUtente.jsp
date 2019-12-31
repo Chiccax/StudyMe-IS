@@ -240,19 +240,19 @@
 			               								<h1 class = "descrizione"><%=b.getDescrizione()%></h1>
 		               								</div>
 		               								<i class="fas fa-gavel"></i>
-	               								</div>
-	               								
+	               								</div>           								
 	               								<% 
 	               									ArrayList<LezioniBean> lezioni = lezioniPacchettoDaApprovare.get(b.getCodicePacchetto());
 	               									for(LezioniBean l : lezioni){	
 	               								%>
 	               									<div id = riquadroLezioni>
-		               									<h1 id = "titoloLezioni"><%=l.getTitolo()%></h1>		
+		               									<h1 id = "titoloLezioniDaApprovare"><%=l.getTitolo()%></h1>		
 		               									<i class="far fa-check-circle"></i>
 		               									<i class="far fa-times-circle"></i>
 	               									</div>
 	               								<%}%>		
-	               							<%}}%>
+	               							<%}
+	               						}%>
 	               					<%}%>	               									
 						</div>				
 					</div>
