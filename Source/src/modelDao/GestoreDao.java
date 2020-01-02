@@ -33,24 +33,15 @@ public class GestoreDao {
 				String descrizionePacchetto = res.getString(5);
 				String titoloPacchetto = res.getString(6);
 				String fotoPacchetto = res.getString(7);
-				
-				stm = conn.prepareStatement("SELECT * FROM lezioni WHERE codiceP = ? AND approvato = 0");
-				stm.setString(1, codicePacchetto);
-				ResultSet res2 = stm.executeQuery();
-				conn.commit();
-				
-				if(res2 != null) {
-					pacchettoDaApprovare = new PacchettoBean();
-					pacchettoDaApprovare.setCodicePacchetto(codicePacchetto);
-					pacchettoDaApprovare.setCatagoria(categoriaPacchetto);
-					pacchettoDaApprovare.setSottocategoria(sottocategoriaPacchetto);
-					pacchettoDaApprovare.setPrezzo(prezzoPacchetto);
-					pacchettoDaApprovare.setDescrizione(descrizionePacchetto);
-					pacchettoDaApprovare.setTitolo(titoloPacchetto);
-					pacchettoDaApprovare.setFoto(fotoPacchetto);
-					
-					pacchetti.add(pacchettoDaApprovare);
-				}
+			
+				pacchettoDaApprovare = new PacchettoBean();
+				pacchettoDaApprovare.setCodicePacchetto(codicePacchetto);
+				pacchettoDaApprovare.setCatagoria(categoriaPacchetto);
+				pacchettoDaApprovare.setSottocategoria(sottocategoriaPacchetto);
+				pacchettoDaApprovare.setPrezzo(prezzoPacchetto);
+				pacchettoDaApprovare.setDescrizione(descrizionePacchetto);
+				pacchettoDaApprovare.setTitolo(titoloPacchetto);
+				pacchettoDaApprovare.setFoto(fotoPacchetto);
 			}	
 			return pacchetti;
 		} catch(SQLException e){
