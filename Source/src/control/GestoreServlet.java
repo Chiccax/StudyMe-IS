@@ -29,29 +29,36 @@ public class GestoreServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<PacchettoBean> pacchettiDaApprovare = new ArrayList<PacchettoBean>();
-		ArrayList<LezioniBean> lezioniDaApprovare = new ArrayList<LezioniBean>();
-		ArrayList<LezioniBean> lezioniPacchetto = new ArrayList<LezioniBean>();
-		GestoreDao manager = new GestoreDao();
-		pacchettiDaApprovare = manager.visualizzaPacchettiDaApprovare();
-		lezioniDaApprovare = manager.visualizzaLezioniDaApprovare();
+		String azione = request.getParameter("azione");
 		
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("pacchettiDaApprovare", pacchettiDaApprovare);
-		session.setAttribute("lezioniDaApprovare", lezioniDaApprovare);
-		
-		Map<String, ArrayList<LezioniBean>> lezioniPacchettoDaApprovare = new HashMap<String, ArrayList<LezioniBean>>();
-		for(PacchettoBean pacchetto : pacchettiDaApprovare) {
-			for(LezioniBean lezioni : lezioniDaApprovare) {
-				if(lezioni.getPacchetto().equals(pacchetto.getCodicePacchetto())) {
-					lezioniPacchetto.add(lezioni);
+		if(azione.equals("mostraPacchettiDaApprovare")) {
+			ArrayList<PacchettoBean> pacchettiDaApprovare = new ArrayList<PacchettoBean>();
+			ArrayList<LezioniBean> lezioniDaApprovare = new ArrayList<LezioniBean>();
+			ArrayList<LezioniBean> lezioniPacchetto = null;
+			GestoreDao manager = new GestoreDao();
+			pacchettiDaApprovare = manager.visualizzaPacchettiDaApprovare();
+			lezioniDaApprovare = manager.visualizzaLezioniDaApprovare();
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("pacchettiDaApprovare", pacchettiDaApprovare);
+			session.setAttribute("lezioniDaApprovare", lezioniDaApprovare);
+			
+			Map<String, ArrayList<LezioniBean>> lezioniPacchettoDaApprovare = new HashMap<String, ArrayList<LezioniBean>>();
+			for(PacchettoBean pacchetto : pacchettiDaApprovare) {
+				for(LezioniBean lezioni : lezioniDaApprovare) {
+					if(lezioni.getPacchetto().equals(pacchetto.getCodicePacchetto())) {
+						lezioniPacchetto = new ArrayList<LezioniBean>();
+						lezioniPacchetto.add(lezioni);
+					} 
 				}
+				lezioniPacchettoDaApprovare.put(pacchetto.getCodicePacchetto(), lezioniPacchetto);
 			}
-			lezioniPacchettoDaApprovare.put(pacchetto.getCodicePacchetto(), lezioniPacchetto);
+			
+			session.setAttribute("lezioniPacchettoDaApprovare", lezioniPacchettoDaApprovare);
+		} else if (azione.equals("approvaInteroPacchetto")) {
+			String codicePacchetto = request.getParameter("codicePacchetto");
+			GestoreDao manager = new GestoreDao();
+			manager.approvaInteroPacchetto(codicePacchetto);
 		}
-		
-		session.setAttribute("lezioniPacchettoDaApprovare", lezioniPacchettoDaApprovare);
-		
 	}
 }

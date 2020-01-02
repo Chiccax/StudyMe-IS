@@ -85,4 +85,20 @@ public class GestoreDao {
 			
 			return null;
 	}
+
+	public void approvaInteroPacchetto(String codicePacchetto) {
+		try {
+			Connection conn = DriverManagerConnectionPool.getConnection();
+			PreparedStatement stm = conn.prepareStatement("UPDATE pacchetto SET approvato = 1 WHERE codicePacchetto = ?");
+			stm.setString(1, codicePacchetto);
+			stm.executeUpdate();
+			
+			stm = conn.prepareStatement("UPDATE lezioni SET approvato = 1 WHERE codiceP = ?");
+			stm.setString(1, codicePacchetto);
+			stm.executeUpdate();
+			
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
 }

@@ -233,28 +233,42 @@
 	               							<%	for(PacchettoBean b : pacchettiDaApprovare){
 	               							
 	               							%>
-	               								<div id = "riquadroPacchetto">
-		               								<img src = "<%=b.getFoto()%>">
-		               								<div id = "infoPacchetto">
-			               								<h1 class = "titolo"><%=b.getTitolo()%></h1>
-			               								<h1 class = "descrizione"><%=b.getDescrizione()%></h1>
-		               								</div>
-		               								<i class="fas fa-gavel"></i>
-	               								</div>           								
-	               								<% 
-	               									ArrayList<LezioniBean> lezioni = lezioniPacchettoDaApprovare.get(b.getCodicePacchetto());
-	               									for(LezioniBean l : lezioni){	
-	               								%>
-	               									<div id = riquadroLezioni>
-		               									<h1 id = "titoloLezioniDaApprovare"><%=l.getTitolo()%></h1>		
-		               									<i class="far fa-check-circle"></i>
-		               									<i class="far fa-times-circle"></i>
+	               							<div id = "singoloPacchetto">
+		               								<div id = "riquadroPacchetto">
+			               								<img src = "<%=b.getFoto()%>">
+			               								<div id = "infoPacchetto">
+				               								<h1 class = "titolo"><%=b.getTitolo()%></h1>
+				               								<h1 class = "descrizione"><%=b.getDescrizione()%></h1>
+			               								</div>
+			               								<i class="fas fa-gavel"></i>
+		               								</div>    
+		               								<div id = "confermaPacchetto">
+														<h1> Confermando approvi automaticamente tutte le lezioni del pacchetto, sei sicuro?</h1>
+														<i class="far fa-check-circle" id = "true" onClick = "approvaInteroPacchetto()" data = <%= b.getCodicePacchetto() %>></i>
+														<i class="far fa-times-circle" id = "false"></i>
+													</div>       								
+		               								<% 
+		               									ArrayList<LezioniBean> lezioni = lezioniPacchettoDaApprovare.get(b.getCodicePacchetto());
+		               									for(LezioniBean l : lezioni){	
+		               								%>
+		               									<div id = riquadroLezioni>
+			               									<h1 id = "titoloLezioniDaApprovare"><%=l.getTitolo()%></h1>		
+			               									<i class="far fa-check-circle" onClick = "approvaSingolaLezione()"></i>
+			               									<i class="far fa-times-circle" onClick = "disapprovaSingolaLezione()"></i>
+		               									</div>
 	               									</div>
 	               								<%}%>		
 	               							<%}
 	               						}%>
 	               					<%}%>	               									
-						</div>				
+						</div>
+						
+						<div id = "confermaLezione">
+							<h1> Sei sicuro di voler approvare la lezione?</h1>
+							<i class="far fa-check-circle" id = "true"></i>
+							<i class="far fa-times-circle" id = "false"></i>
+						</div>
+									
 					</div>
 				</div>
 			</div>

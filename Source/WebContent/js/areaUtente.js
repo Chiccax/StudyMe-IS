@@ -16,6 +16,7 @@ function showUpdateAccount(){
 
 
 function showApprovals(){
+	const action = "mostraPacchettiDaApprovare";
 	document.getElementById("UpdateUserName").style.display = ("none");
 	document.getElementById("ordini").style.display = ("block");
 	document.getElementById("pacchettiDaApprovare").style.display = ("block");
@@ -34,7 +35,10 @@ function showApprovals(){
 	$.ajax({
 		url: "GestoreServlet",
 		method : 'POST',
-	}).done()
+		data: {
+			azione = action
+		}
+	}).done(data => {})
 }
 
 function showAddPackage(){
@@ -236,3 +240,18 @@ function addLesson(){
    	 }
    })
 }
+
+function approvaInteroPacchetto(){
+	let caller = event.target;
+	const pacchettoDaApprovare = caller.getAttribute("data");
+	const action = "approvaInteroPacchetto";
+	
+	$.ajax({
+        url: "GestoreServlet",
+        method: 'POST',
+        data:{
+        	azione = action,
+        	codicePacchetto = pacchettoDaApprovare
+        }
+    }).done()
+ }
