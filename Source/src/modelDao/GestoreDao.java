@@ -34,16 +34,23 @@ public class GestoreDao {
 				String titoloPacchetto = res.getString(6);
 				String fotoPacchetto = res.getString(7);
 				
-				pacchettoDaApprovare = new PacchettoBean();
-				pacchettoDaApprovare.setCodicePacchetto(codicePacchetto);
-				pacchettoDaApprovare.setCatagoria(categoriaPacchetto);
-				pacchettoDaApprovare.setSottocategoria(sottocategoriaPacchetto);
-				pacchettoDaApprovare.setPrezzo(prezzoPacchetto);
-				pacchettoDaApprovare.setDescrizione(descrizionePacchetto);
-				pacchettoDaApprovare.setTitolo(titoloPacchetto);
-				pacchettoDaApprovare.setFoto(fotoPacchetto);
+				stm = conn.prepareStatement("SELECT * FROM lezioni WHERE codiceP = ? AND approvato = 0");
+				stm.setString(1, codicePacchetto);
+				ResultSet res2 = stm.executeQuery();
+				conn.commit();
 				
-				pacchetti.add(pacchettoDaApprovare);
+				if(res2 != null) {
+					pacchettoDaApprovare = new PacchettoBean();
+					pacchettoDaApprovare.setCodicePacchetto(codicePacchetto);
+					pacchettoDaApprovare.setCatagoria(categoriaPacchetto);
+					pacchettoDaApprovare.setSottocategoria(sottocategoriaPacchetto);
+					pacchettoDaApprovare.setPrezzo(prezzoPacchetto);
+					pacchettoDaApprovare.setDescrizione(descrizionePacchetto);
+					pacchettoDaApprovare.setTitolo(titoloPacchetto);
+					pacchettoDaApprovare.setFoto(fotoPacchetto);
+					
+					pacchetti.add(pacchettoDaApprovare);
+				}
 			}	
 			return pacchetti;
 		} catch(SQLException e){
@@ -82,7 +89,6 @@ public class GestoreDao {
 		} catch(SQLException e){
 			e.printStackTrace();
 		}
-			
 			return null;
 	}
 
@@ -92,11 +98,53 @@ public class GestoreDao {
 			PreparedStatement stm = conn.prepareStatement("UPDATE pacchetto SET approvato = 1 WHERE codicePacchetto = ?");
 			stm.setString(1, codicePacchetto);
 			stm.executeUpdate();
+			conn.commit();	
 			
 			stm = conn.prepareStatement("UPDATE lezioni SET approvato = 1 WHERE codiceP = ?");
 			stm.setString(1, codicePacchetto);
 			stm.executeUpdate();
+			conn.commit();	
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void disapprovaInteroPacchetto(String codicePacchetto) {
+		try {
+			Connection conn = DriverManagerConnectionPool.getConnection();
+			PreparedStatement stm = conn.prepareStatement("UPDATE pacchetto SET approvato = -1 WHERE codicePacchetto = ?");
+			stm.setString(1, codicePacchetto);
+			stm.executeUpdate();
+			conn.commit();	
 			
+			stm = conn.prepareStatement("UPDATE lezioni SET approvato = -1 WHERE codiceP = ?");
+			stm.setString(1, codicePacchetto);
+			stm.executeUpdate();
+			conn.commit();	
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void approvaSingolaLezione(String url) {
+		try {	
+			Connection conn = DriverManagerConnectionPool.getConnection();
+			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET approvato = 1 WHERE url = ?");
+			stm.setString(1, url);
+			stm.executeUpdate();
+			conn.commit();	
+		} catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void disapprovaSingolaLezione(String url) {
+		try {
+			Connection conn = DriverManagerConnectionPool.getConnection();
+			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET approvato = -1 WHERE url = ?");
+			stm.setString(1, url);
+			stm.executeUpdate();
+			conn.commit();	
 		} catch(SQLException e){
 			e.printStackTrace();
 		}

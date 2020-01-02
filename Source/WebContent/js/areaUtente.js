@@ -36,9 +36,19 @@ function showApprovals(){
 		url: "GestoreServlet",
 		method : 'POST',
 		data: {
-			azione = action
+			action: action
 		}
 	}).done(data => {})
+}
+
+function mostraConferma(){
+	document.getElementById("confermaPacchetto").style.display = ("block");
+	document.getElementById("singoloPacchetto").style.display = "none";
+}
+
+function mostraConfermaLezione(){
+	document.getElementById("confermaLezione").style.display = ("block");
+	document.getElementById("singoloPacchetto").style.display = "none";
 }
 
 function showAddPackage(){
@@ -245,13 +255,62 @@ function approvaInteroPacchetto(){
 	let caller = event.target;
 	const pacchettoDaApprovare = caller.getAttribute("data");
 	const action = "approvaInteroPacchetto";
+	caller.setAttribute("action", action);
 	
 	$.ajax({
         url: "GestoreServlet",
         method: 'POST',
         data:{
-        	azione = action,
-        	codicePacchetto = pacchettoDaApprovare
+        	action: action,
+        	codicePacchetto: pacchettoDaApprovare
         }
     }).done()
- }
+}
+
+function disapprovaInteroPacchetto(){
+	let caller = event.target;
+	const pacchettoDaDisapprovare = caller.getAttribute("data");
+	const action = "disapprovaInteroPacchetto";
+	caller.setAttribute("action", action);
+	
+	$.ajax({
+        url: "GestoreServlet",
+        method: 'POST',
+        data:{
+        	action: action,
+        	codicePacchetto: pacchettoDaDisapprovare
+        }
+    }).done()
+}
+
+function approvaSingolaLezione(){
+	let caller = event.target;
+	const url = caller.getAttribute("data");
+	const action = "approvaSingolaLezione";
+	caller.setAttribute("action", action);
+	
+	$.ajax({
+        url: "GestoreServlet",
+        method: 'POST',
+        data:{
+        	action: action,
+        	urlLezione: url
+        }
+    }).done()
+}
+
+function disapprovaSingolaLezione(){
+	let caller = event.target;
+	const url = caller.getAttribute("data");
+	const action = "disapprovaSingolaLezione";
+	caller.setAttribute("action", action);
+	
+	$.ajax({
+        url: "GestoreServlet",
+        method: 'POST',
+        data:{
+        	action: action,
+        	urlLezione: url
+        }
+    }).done()
+}

@@ -29,7 +29,7 @@ public class GestoreServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String azione = request.getParameter("azione");
+		String azione = request.getParameter("action");
 		
 		if(azione.equals("mostraPacchettiDaApprovare")) {
 			ArrayList<PacchettoBean> pacchettiDaApprovare = new ArrayList<PacchettoBean>();
@@ -59,6 +59,18 @@ public class GestoreServlet extends HttpServlet {
 			String codicePacchetto = request.getParameter("codicePacchetto");
 			GestoreDao manager = new GestoreDao();
 			manager.approvaInteroPacchetto(codicePacchetto);
+		} else if (azione.equals("disapprovaInteroPacchetto")) {
+			String codicePacchetto = request.getParameter("codicePacchetto");
+			GestoreDao manager = new GestoreDao();
+			manager.disapprovaInteroPacchetto(codicePacchetto);
+		} else if (azione.equals("approvaSingolaLezione")) {
+			String urlLezione = request.getParameter("urlLezione");
+			GestoreDao manager = new GestoreDao();
+			manager.approvaSingolaLezione(urlLezione);
+		}else if(azione.equals("disapprovaSingolaLezione")) {
+			String urlLezione = request.getParameter("urlLezione");
+			GestoreDao manager = new GestoreDao();
+			manager.disapprovaSingolaLezione(urlLezione);
 		}
 	}
 }
