@@ -53,99 +53,210 @@ public class InsegnanteServlet extends HttpServlet {
 		String vecchioTitolo = request.getParameter("vecchioTitolo");
 
 		//Modifica pacchetto
-		//Aggiungi pacchetto
-		if(action.equalsIgnoreCase("aggiungiPacchetto")) {
-			String nuovoCodice = request.getParameter("nuovoCodice");
-			String nuovaSottocategoria = request.getParameter("sottocategoria");
-			String nuovoTitolo = request.getParameter("titolo");
-			String nuovaFoto =  request.getParameter("foto");
-			double nuovoPrezzo = 0;
-			try {
-				nuovoPrezzo = Double.parseDouble(request.getParameter("prezzo"));
-			}catch(NumberFormatException e){
-				nuovoPrezzo = 0;
-			}
-			String nuovaDescrizione = request.getParameter("descrizione");
-			
-			if(nuovoCodice == null || nuovaSottocategoria == null || nuovoPrezzo == 0 || nuovaDescrizione == null || nuovoTitolo == null || nuovaFoto == null) {
-				JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
-				out.print(gson.toJson(jsonResponse));
-				return;
-			}
-			
-			SottocategoriaDao sottocategoriaDao = new SottocategoriaDao();
-			
-			//Controllo che i codici di categoria e sottocategoria siano validi
-			try {
-				Object sottocategoria = sottocategoriaDao.findByKey(nuovaSottocategoria);
-				
-				if(sottocategoria == null) {
-					JSONResponse jsonResponse = new JSONResponse(false, NO_SOTTOCATEGORY);
+		//Cambia codice
+				if(action.equalsIgnoreCase("cambiaCodice")) { 
+					String nuovoCodice = request.getParameter("nuovoCodice");
+					
+					PacchettoDao pacchettoDao = new PacchettoDao();
+					PacchettoBean pacchettoEsistente = pacchettoDao.getPacchetto(nuovoCodice);
+					
+					if(pacchettoEsistente != null) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_CODE);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					
+					pacchetto.setCodicePacchetto(nuovoCodice);
+					InsegnanteDao manager = new InsegnanteDao();
+					manager.updateCode(vecchioCodice, nuovoCodice);		
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
-					return;	
+				}//Cambia titolo
+				else if(action.equalsIgnoreCase("cambiaTitolo")){
+					String nuovoTitolo = request.getParameter("nuovoTitolo");
+					pacchetto.setTitolo(nuovoTitolo);
+					InsegnanteDao manager = new InsegnanteDao();
+					manager.updateTitle(vecchioCodice, nuovoTitolo);
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
+					out.print(gson.toJson(jsonResponse));
+				}//Cambia prezzo
+				else if(action.equalsIgnoreCase("cambiaPrezzo")){
+					double nuovoPrezzo = 0;
+					try {
+						nuovoPrezzo = Double.parseDouble(request.getParameter("nuovoPrezzo"));
+					} catch(NumberFormatException e) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_PRICE);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					pacchetto.setPrezzo(nuovoPrezzo);
+					InsegnanteDao manager = new InsegnanteDao();
+					manager.updatePrice(vecchioCodice, nuovoPrezzo);
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
+					out.print(gson.toJson(jsonResponse));
+				}//Cambia descrizione
+				else if(action.equalsIgnoreCase("cambiaDescrizione")){
+					String nuovaDescrizione = request.getParameter("nuovaDescrizione");
+					pacchetto.setDescrizione(nuovaDescrizione);
+					InsegnanteDao manager = new InsegnanteDao();
+					manager.updateDescr(vecchioCodice, nuovaDescrizione);	
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
+					out.print(gson.toJson(jsonResponse));
+				}//Rimuovi pacchetto
+				else if(action.equalsIgnoreCase("rimuovi")) {
+					if(vecchioCodice == null || vecchioCodice.length() == 0) {
+						JSONResponse jsonResponse = new JSONResponse(false, NO_CODE);
+						out.print(gson.toJson(jsonResponse));
+						return;	
+					}
+					InsegnanteDao manager = new InsegnanteDao();
+					manager.deletePacchetto(vecchioCodice);
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
+					out.print(gson.toJson(jsonResponse));
 				}
-			} catch (SQLException e) {
-				JSONResponse jsonResponse = new JSONResponse(false, NO_INSERT);
-				out.print(gson.toJson(jsonResponse));
-				return;	
-			}
+		//Aggiungi pacchetto
+				else if(action.equalsIgnoreCase("aggiungiPacchetto")) {
+					String nuovoCodice = request.getParameter("nuovoCodice");
+					String nuovaSottocategoria = request.getParameter("sottocategoria");
+					String nuovoTitolo = request.getParameter("titolo");
+					String nuovaFoto =  request.getParameter("foto");
+					double nuovoPrezzo = 0;
+					try {
+						nuovoPrezzo = Double.parseDouble(request.getParameter("prezzo"));
+					}catch(NumberFormatException e){
+						nuovoPrezzo = 0;
+					}
+					String nuovaDescrizione = request.getParameter("descrizione");
 			
-			HttpSession session = request.getSession();
-			UtenteBean utente = (UtenteBean) session.getAttribute("User");
-			String nomeUtente = utente.getNomeUtente();
-			System.out.println(nomeUtente);
+					if(nuovoCodice == null || nuovaSottocategoria == null || nuovoPrezzo == 0 || nuovaDescrizione == null || nuovoTitolo == null || nuovaFoto == null) {
+						JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
 			
-			InsegnanteDao manager = new InsegnanteDao();
-			PacchettoBean pacchettoDaInserire = manager.inserPacchetto(nuovoCodice, nomeUtente, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
+					SottocategoriaDao sottocategoriaDao = new SottocategoriaDao();
 			
-			if(pacchettoDaInserire == null){
-				JSONResponse jsonResponse = new JSONResponse(false);
-				out.print(gson.toJson(jsonResponse));
-				return;	
-			}else {
-				JSONResponse jsonResponse = new JSONResponse(true, COMPLETE);
-				out.print(gson.toJson(jsonResponse));
-			}	
-			session.setAttribute("PacchettoAttuale", pacchettoDaInserire);
-		}//Aggiungi lezione
-		else if(action.equalsIgnoreCase("aggiungiLezione")) {
-			String url = request.getParameter("url");
-			String titolo = request.getParameter("titolo");
-			String durata = request.getParameter("durata");
+					//Controllo che i codici di categoria e sottocategoria siano validi
+					try {
+						Object sottocategoria = sottocategoriaDao.findByKey(nuovaSottocategoria);
+				
+						if(sottocategoria == null) {
+							JSONResponse jsonResponse = new JSONResponse(false, NO_SOTTOCATEGORY);
+							out.print(gson.toJson(jsonResponse));
+							return;	
+						}
+					} catch (SQLException e) {
+						JSONResponse jsonResponse = new JSONResponse(false, NO_INSERT);
+						out.print(gson.toJson(jsonResponse));
+						return;	
+					}
+					
+					HttpSession session = request.getSession();
+					UtenteBean utente = (UtenteBean) session.getAttribute("User");
+					String nomeUtente = utente.getNomeUtente();
+					
 			
-			if(url == null || url.length() == 0 || titolo == null || titolo.length() == 0 || durata == null || durata.length() == 0) {
-				JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
-				out.print(gson.toJson(jsonResponse));
-				return;
-			}
+					InsegnanteDao manager = new InsegnanteDao();
+					PacchettoBean pacchettoDaInserire = manager.inserPacchetto(nuovoCodice, nomeUtente, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
 			
-			Pattern pattern = Pattern.compile("https:\\/\\/www.youtube.com\\/embed\\/\\w+");
-			Matcher matcher = pattern.matcher(url);
+					if(pacchettoDaInserire == null){
+						JSONResponse jsonResponse = new JSONResponse(false);
+						out.print(gson.toJson(jsonResponse));
+						return;	
+					}else {
+						JSONResponse jsonResponse = new JSONResponse(true, COMPLETE);
+						out.print(gson.toJson(jsonResponse));
+					}	
+					session.setAttribute("PacchettoAttuale", pacchettoDaInserire);
+				}//Aggiungi lezione
+				else if(action.equalsIgnoreCase("aggiungiLezione")) {
+					String url = request.getParameter("url");
+					String titolo = request.getParameter("titolo");
+					String durata = request.getParameter("durata");
+			 
+					if(url == null || url.length() == 0 || titolo == null || titolo.length() == 0 || durata == null || durata.length() == 0) {
+						JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
 			
-			if(!matcher.find()) {
-				JSONResponse jsonResponse = new JSONResponse(false, NO_URL);
-				out.print(gson.toJson(jsonResponse));
-				return;	
-			}
+					Pattern pattern = Pattern.compile("https:\\/\\/www.youtube.com\\/embed\\/\\w+");
+					Matcher matcher = pattern.matcher(url);
 			
-			HttpSession session = request.getSession();
-			PacchettoBean pacchettoAtt = (PacchettoBean) session.getAttribute("PacchettoAttuale");
-			String codicePacchettoAttuale = pacchettoAtt.getCodicePacchetto();
+					if(!matcher.find()) {
+						JSONResponse jsonResponse = new JSONResponse(false, NO_URL);
+						out.print(gson.toJson(jsonResponse));
+						return;	
+					}
 			
-			InsegnanteDao manager = new InsegnanteDao();
-			LezioniBean res = manager.insertLesson(codicePacchettoAttuale, url, titolo, durata);
+					HttpSession session = request.getSession();
+					System.out.println(session);
 			
-			if(res == null){
-				JSONResponse jsonResponse = new JSONResponse(false, NO_INSERT);
-				out.print(gson.toJson(jsonResponse));
-				return;	
-			}else {
-				JSONResponse jsonResponse = new JSONResponse(true, "OK");
-				out.print(gson.toJson(jsonResponse));		
-			}
+					PacchettoBean pacchettoAtt = (PacchettoBean) session.getAttribute("PacchettoAttuale");
+					InsegnanteDao manager = new InsegnanteDao();
+					LezioniBean res =null;
+					if(pacchettoAtt!=null)
+					{	
+						String codicePacchettoAttuale = pacchettoAtt.getCodicePacchetto();
+						res = manager.insertLesson(codicePacchettoAttuale, url, titolo, durata);
+					}else
+					{
+						if(vecchioCodice!=null && vecchioCodice.length() != 0 )
+							res = manager.insertLesson(vecchioCodice, url, titolo, durata);
+					}
 			
-			session.setAttribute("LezioneAttuale", res);
-		}//Modifica lezione
+					if(res == null){
+						JSONResponse jsonResponse = new JSONResponse(false, NO_INSERT);
+						out.print(gson.toJson(jsonResponse));
+						return;	
+					}else {
+						JSONResponse jsonResponse = new JSONResponse(true, "OK");
+						out.print(gson.toJson(jsonResponse));		
+					}
+			
+					session.setAttribute("LezioneAttuale", res);
+				}//Modifica lezione
+				else if(action.equalsIgnoreCase("modificaNomeLezione")){
+					String nuovoNomeLezione = request.getParameter("nuovoNomeLezione");
+					lezione.setTitolo(nuovoNomeLezione);
+					InsegnanteDao  manager = new InsegnanteDao();
+					manager.updateTitleLesson(vecchioTitolo, nuovoNomeLezione);
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
+					out.print(gson.toJson(jsonResponse));
+				}//Cambia url lezione
+				else if(action.equalsIgnoreCase("modificaVideoLezione")){
+					String nuovoUrlLezione = request.getParameter("nuovoUrlLezione");
+					lezione.setUrl(nuovoUrlLezione);
+			
+					Pattern pattern = Pattern.compile("https:\\/\\/www.youtube.com\\/embed\\/\\w+");
+					Matcher matcher = pattern.matcher(nuovoUrlLezione);
+			
+					if(!matcher.find()) {
+						JSONResponse jsonResponse = new JSONResponse(false, NO_URL);
+						out.print(gson.toJson(jsonResponse));
+						return;	
+					}
+						
+					InsegnanteDao manager = new InsegnanteDao();
+					manager.updateUrlLesson(vecchioTitolo, nuovoUrlLezione);
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
+					out.print(gson.toJson(jsonResponse));
+				}//Cambia durata
+				else if(action.equalsIgnoreCase("modificaDurataLezione")){
+					String nuovaDurataLezione = request.getParameter("nuovaDurataLezione");
+					lezione.setDurata(nuovaDurataLezione);
+					InsegnanteDao manager = new InsegnanteDao();
+					manager.updateDurationLesson(vecchioTitolo, nuovaDurataLezione);
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
+					out.print(gson.toJson(jsonResponse));
+				}//rimuovi lezione
+				else if(action.equalsIgnoreCase("rimuoviLezione")){
+					InsegnanteDao manager = new InsegnanteDao();
+					manager.deleteLesson(vecchioTitolo);
+					JSONResponse jsonResponse = new JSONResponse(true, "OK");
+					out.print(gson.toJson(jsonResponse));		
+				}
+
 	}
 	
 	private static final String NO_URL = "Url non valido!";

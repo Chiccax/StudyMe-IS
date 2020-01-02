@@ -98,7 +98,7 @@ function updatePackage(){
 	let newDesc = document.getElementById("newDesc");
 	console.log(action);
 	$.ajax({
-        url: "AmministratoreServlet",
+        url: "InsegnanteServlet",
         method: 'POST',
         data:{
         	azione: action,

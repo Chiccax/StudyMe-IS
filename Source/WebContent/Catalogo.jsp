@@ -45,7 +45,7 @@
         	if(insegnante.equals(userName)){
         			if(pacchetto.getApprovato()==-1){%>
         				<button class="approvazione" id="rosso"></button>
-        		 <%}if(pacchetto.getApprovato()==1){%>
+        		 <%}else if(pacchetto.getApprovato()==1){%>
         				<button class="approvazione" id="verde"></button>
         		 <%}else{%>
         		 		<button class="approvazione" id="giallo"></button>
@@ -60,11 +60,23 @@
 	           	 <p><%= pacchetto.getDescrizione()%>...</p>
 	           	 <%}%>
 	        <div class="buy-now">
+		        <%if(insegnante.equals(userName)){ %>
+	       		<div class="amministratore">
+	       		 	<span class ="modifica" onClick = "mostraModifiche('<%=pacchetto.getCodicePacchetto()%>')">
+			        	Modifica
+			        </span>
+				    <span class ="catalogo catalogoAmministratore">
+				       <a href = "LezioneServlet?codicePacchetto=<%=pacchetto.getCodicePacchetto()%>">
+				        	Lezioni
+				        </a>
+				    </span>	       
+		        </div>
+		        <%} else{ %>
 		        <a href = "LezioneServlet?codicePacchetto=<%=pacchetto.getCodicePacchetto()%>"> 
 			        <span class ="catalogo">
 			        	Anteprima
 			        </span>
-		        </a>    	
+		        </a><%}%>    	
 	        </div>
     	</div>
     	<%}%>

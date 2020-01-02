@@ -51,7 +51,7 @@
 	   							<div id="dettagli">
 	   								<%if(lezione.getApprovato()==-1){%>
         								<button class="approvazione" id="rosso"></button>
-        		 					<%}if(lezione.getApprovato()==1){%>
+        		 					<%}else if(lezione.getApprovato()==1){%>
         								<button class="approvazione" id="verde"></button>
         		 					<%}else{%>
         		 						<button class="approvazione" id="giallo"></button>

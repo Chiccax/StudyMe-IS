@@ -41,7 +41,7 @@
 			           	 <p><%= pacchetto.getDescrizione()%>...</p>
 			           	 <%}%>
 			        <div class="buy-now">
-			       		<a href = "LessonServlet?codicePacchetto=<%=pacchetto.getCodicePacchetto()%>"> 
+			       		<a href = "LezioneServlet?codicePacchetto=<%=pacchetto.getCodicePacchetto()%>"> 
 				        	<span class ="catalogo">
 				        		Anteprima
 				        	</span>
