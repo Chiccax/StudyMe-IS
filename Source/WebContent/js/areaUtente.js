@@ -14,6 +14,11 @@ function showUpdateAccount(){
 	}, 500);
 }
 
+$(document).ready(function() {
+	$("form").submit(function( event ) {
+		  event.preventDefault();
+	});
+});
 
 function showApprovals(){
 	const action = "mostraPacchettiDaApprovare";
@@ -38,11 +43,70 @@ function showApprovals(){
 		data: {
 			action: action
 		}
-	}).done(data => {})
+	}).done(data => {
+		const response = JSON.parse(data);
+		if(response.ok == true) {
+			const element = document.querySelector("#pacchettiDaApprovare");
+			let data = element.getAttribute("data-isLoaded");
+			if(data == "false"){
+				element.setAttribute("data-isLoaded", "true");
+				const content = response.content;
+				let pacchetti = content.pacchettiDaApprovare;
+				let lezioniPacchetti = content.lezioniPacchettoDaApprovare;
+				
+				if(pacchetti.length == 0){
+					let div = "<h1 id = 'titoloFinestra'>Non ci sono pacchetti da approvare</h1>";
+					div += "<img src = 'img/utility/approvazioni.png'>";
+					element.innerHTML = element.innerHTML + div;	
+				}
+			
+				pacchetti.forEach(function(pacchettoBean){	
+					let div = "<div id = 'pacchetto'>";
+					div += "<div id = 'singoloPacchetto'>";
+					div += "<div id = 'riquadroPacchetto'>";
+					div += "<img src='" + pacchettoBean.foto +"'/>";
+					div += "<div id = 'infoPacchetto'>";
+					div += "<h1 class = 'titolo'>" + pacchettoBean.titolo +"</h1>";
+					div += "<h1 class = 'descrizione'>" + pacchettoBean.descrizione + "</h1>";
+					div += "</div>";
+					div += "<i class ='fas fa-gavel' onClick ='mostraConferma()'></i>";
+					div += "</div>";
+					div += "<div id = 'riquadroLezioni'>";
+
+					let lezioniPacchetto = lezioniPacchetti[pacchettoBean.codicePacchetto];
+					if(lezioniPacchetto.length > 1){
+						lezioniPacchetto.forEach(function(lezioniBean){
+						div += "<div id = 'singolaLezione'>";
+						div += "<h1 id = 'titoloLezioniDaApprovare'>" + lezioniBean.titolo + "</h1>";		
+						div +=	"<i class= 'far fa-check-circle' id = 'approva' onClick = 'approvaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
+						div += " <i class='far fa-times-circle' id = 'disapprova'onClick = 'disapprovaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
+						div += "</div>";
+					})
+					} else {
+						lezioniPacchetto.forEach(function(lezioniBean){
+							div += "<div id = 'singolaLezione'>";
+							div += "<h1 id = 'titoloLezioniDaApprovare'>" + lezioniBean.titolo + "</h1>";	
+							div += "</div>";
+						})
+					}
+					
+					div += "</div>";
+					div += "</div>";
+					div += "<div id = 'confermaPacchetto'>";
+					div += "<h1>Questa operazione sar&agrave; effettuata automaticamente anche su tutte le lezioni del pacchetto, sei sicuro ?</h1>";
+					div += 	"<i class='far fa-check-circle' id = 'true' onClick = 'approvaInteroPacchetto(event)' data = '" + pacchettoBean.codicePacchetto + "'></i>";
+					div += "<i class='far fa-times-circle' id = 'false' onClick = 'disapprovaInteroPacchetto(event)' data ='" + pacchettoBean.codicePacchetto +"'></i>"
+					div += "</div>";
+														
+					element.innerHTML = element.innerHTML + div;
+				})
+			}
+		}
+	})
 }
 
 function mostraConferma(){
-	document.getElementById("confermaPacchetto").style.display = ("block");
+	document.getElementById("confermaPacchetto").style.display = "block";
 	document.getElementById("singoloPacchetto").style.display = "none";
 }
 
@@ -251,12 +315,11 @@ function addLesson(){
    })
 }
 
-function approvaInteroPacchetto(){
+function approvaInteroPacchetto(event){
 	let caller = event.target;
 	const pacchettoDaApprovare = caller.getAttribute("data");
 	const action = "approvaInteroPacchetto";
 	caller.setAttribute("action", action);
-	
 	$.ajax({
         url: "GestoreServlet",
         method: 'POST',
@@ -264,10 +327,17 @@ function approvaInteroPacchetto(){
         	action: action,
         	codicePacchetto: pacchettoDaApprovare
         }
-    }).done()
+    }).done(data => {
+    	const response = JSON.parse(data);
+	 
+    	if(response.ok == true){
+    		caller.parentElement.style.display= "none";
+    		document.getElementById("confermaPacchetto").style.display = "none";
+    	}
+    })
 }
 
-function disapprovaInteroPacchetto(){
+function disapprovaInteroPacchetto(event){
 	let caller = event.target;
 	const pacchettoDaDisapprovare = caller.getAttribute("data");
 	const action = "disapprovaInteroPacchetto";
@@ -280,10 +350,17 @@ function disapprovaInteroPacchetto(){
         	action: action,
         	codicePacchetto: pacchettoDaDisapprovare
         }
-    }).done()
+    }).done(data => {
+    	const response = JSON.parse(data);
+	 
+    	if(response.ok == true){
+    		caller.parentElement.style.display= "none";
+    		document.getElementById("confermaPacchetto").style.display = "none";
+    	}
+    })
 }
 
-function approvaSingolaLezione(){
+function approvaSingolaLezione(event){
 	let caller = event.target;
 	const url = caller.getAttribute("data");
 	const action = "approvaSingolaLezione";
@@ -296,10 +373,16 @@ function approvaSingolaLezione(){
         	action: action,
         	urlLezione: url
         }
-    }).done()
+    }).done(data => {
+    	const response = JSON.parse(data);
+	 
+    	if(response.ok == true){
+    		caller.parentElement.style.display= "none";
+    	}
+    })
 }
 
-function disapprovaSingolaLezione(){
+function disapprovaSingolaLezione(event){
 	let caller = event.target;
 	const url = caller.getAttribute("data");
 	const action = "disapprovaSingolaLezione";
@@ -312,5 +395,11 @@ function disapprovaSingolaLezione(){
         	action: action,
         	urlLezione: url
         }
-    }).done()
+    }).done(data => {
+    	const response = JSON.parse(data);
+    	
+    	if(response.ok == true){
+    		caller.parentElement.style.display= "none";
+    	}
+    })
 }

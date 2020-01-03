@@ -1,6 +1,7 @@
 package control;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
+import control.util.JSONResponse;
 import modelBean.LezioniBean;
 import modelBean.PacchettoBean;
 import modelDao.GestoreDao;
@@ -30,6 +34,8 @@ public class GestoreServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String azione = request.getParameter("action");
+		PrintWriter out = response.getWriter();
+		Gson gson = new Gson();
 		
 		if(azione.equals("mostraPacchettiDaApprovare")) {
 			ArrayList<PacchettoBean> pacchettiDaApprovare = new ArrayList<PacchettoBean>();
@@ -39,38 +45,57 @@ public class GestoreServlet extends HttpServlet {
 			pacchettiDaApprovare = manager.visualizzaPacchettiDaApprovare();
 			lezioniDaApprovare = manager.visualizzaLezioniDaApprovare();
 			
-			HttpSession session = request.getSession();
-			session.setAttribute("pacchettiDaApprovare", pacchettiDaApprovare);
-			session.setAttribute("lezioniDaApprovare", lezioniDaApprovare);
+			if(pacchettiDaApprovare == null) {
+				JSONResponse jsonResponse = new JSONResponse(false);
+				out.print(gson.toJson(jsonResponse));
+			}
 			
 			Map<String, ArrayList<LezioniBean>> lezioniPacchettoDaApprovare = new HashMap<String, ArrayList<LezioniBean>>();
 			for(PacchettoBean pacchetto : pacchettiDaApprovare) {
+				lezioniPacchetto = new ArrayList<LezioniBean>();
 				for(LezioniBean lezioni : lezioniDaApprovare) {
-					if(lezioni.getPacchetto().equals(pacchetto.getCodicePacchetto())) {
-						lezioniPacchetto = new ArrayList<LezioniBean>();
-						lezioniPacchetto.add(lezioni);
+						if(lezioni.getPacchetto().equals(pacchetto.getCodicePacchetto())) {
+							lezioniPacchetto.add(lezioni);
 					} 
 				}
 				lezioniPacchettoDaApprovare.put(pacchetto.getCodicePacchetto(), lezioniPacchetto);
 			}
 			
-			session.setAttribute("lezioniPacchettoDaApprovare", lezioniPacchettoDaApprovare);
+			Map<String, Object> pacchettiELezioniDaApprovare = new HashMap<String, Object>();
+			pacchettiELezioniDaApprovare.put("pacchettiDaApprovare", pacchettiDaApprovare);
+			pacchettiELezioniDaApprovare.put("lezioniPacchettoDaApprovare", lezioniPacchettoDaApprovare); 
+			
+			JSONResponse jsonResponse = new JSONResponse(true, "ok", pacchettiELezioniDaApprovare);
+			out.print(gson.toJson(jsonResponse));
+			
 		} else if (azione.equals("approvaInteroPacchetto")) {
 			String codicePacchetto = request.getParameter("codicePacchetto");
 			GestoreDao manager = new GestoreDao();
 			manager.approvaInteroPacchetto(codicePacchetto);
+			
+			JSONResponse jsonResponse = new JSONResponse(true);
+			out.print(gson.toJson(jsonResponse));
 		} else if (azione.equals("disapprovaInteroPacchetto")) {
 			String codicePacchetto = request.getParameter("codicePacchetto");
 			GestoreDao manager = new GestoreDao();
 			manager.disapprovaInteroPacchetto(codicePacchetto);
+			
+			JSONResponse jsonResponse = new JSONResponse(true);
+			out.print(gson.toJson(jsonResponse));
 		} else if (azione.equals("approvaSingolaLezione")) {
 			String urlLezione = request.getParameter("urlLezione");
 			GestoreDao manager = new GestoreDao();
 			manager.approvaSingolaLezione(urlLezione);
+			
+			JSONResponse jsonResponse = new JSONResponse(true);
+			out.print(gson.toJson(jsonResponse));
 		}else if(azione.equals("disapprovaSingolaLezione")) {
 			String urlLezione = request.getParameter("urlLezione");
 			GestoreDao manager = new GestoreDao();
 			manager.disapprovaSingolaLezione(urlLezione);
+			
+			JSONResponse jsonResponse = new JSONResponse(true);
+			out.print(gson.toJson(jsonResponse));
 		}
 	}
 }

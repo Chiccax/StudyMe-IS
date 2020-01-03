@@ -215,55 +215,11 @@
 										<button id = "tre"></button>
 									</div>						               					 
 		  						</div>	 
-				  				
-							<% } else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){
-									ArrayList<PacchettoBean> pacchettiDaApprovare = (ArrayList<PacchettoBean>) session.getAttribute("pacchettiDaApprovare");
-									ArrayList<LezioniBean> lezioniDaApprovare = (ArrayList<LezioniBean>) session.getAttribute("lezioniDaApprovare");
-									HashMap<String, ArrayList<LezioniBean>> lezioniPacchettoDaApprovare = (HashMap<String, ArrayList<LezioniBean>>) session.getAttribute("lezioniPacchettoDaApprovare");
-									
-								%>	
-							
-								<div id="pacchettiDaApprovare">
-									<% if(pacchettiDaApprovare == null){%>
-	               					 <h1 id = "titoloFinestra">Non ci sono pacchetti da approvare</h1>
-	               					 <img src = "img/utility/approvazioni.png">
-	               				    <% }else{%>
-										<h1 id = "titoloFinestra">PACCHETTI DA APPROVARE</h1>
-								
-										 <div id = "pacchetto">
-	               							<%	for(PacchettoBean b : pacchettiDaApprovare){
-	               							
-	               							%>
-	               							<div id = "singoloPacchetto">
-		               								<div id = "riquadroPacchetto">
-			               								<img src = "<%=b.getFoto()%>">
-			               								<div id = "infoPacchetto">
-				               								<h1 class = "titolo"><%=b.getTitolo()%></h1>
-				               								<h1 class = "descrizione"><%=b.getDescrizione()%></h1>
-			               								</div>
-			               								<i class="fas fa-gavel" onClick = "mostraConferma()"></i>
-		               								</div>    	               								    								
-		               								<% 
-		               									ArrayList<LezioniBean> lezioni = lezioniPacchettoDaApprovare.get(b.getCodicePacchetto());		          
-     							
-		               									for(LezioniBean l : lezioni){	
-		               								%>
-		               									<div id = riquadroLezioni>
-			               									<h1 id = "titoloLezioniDaApprovare"><%=l.getTitolo()%></h1>		
-			               									<i class="far fa-check-circle" onClick = "approvaSingolaLezione()" data = <%= l.getUrl()%>></i>
-			               									<i class="far fa-times-circle" onClick = "disapprovaSingolaLezione()" data = <%= l.getUrl()%>></i>
-		               									</div>
-	               									</div>
-	               									<%} %>
-	               									<div id = "confermaPacchetto">
-														<h1> Confermando approvi automaticamente tutte le lezioni del pacchetto, sei sicuro?</h1>
-														<i class="far fa-check-circle" id = "true" onClick = "approvaInteroPacchetto()" data = <%= b.getCodicePacchetto() %>></i>
-														<i class="far fa-check-circle" id = "false" onClick = "disapprovaInteroPacchetto()" data = <%= b.getCodicePacchetto() %>></i>
-
-													</div> 
-	               								<%}%>		
-	               							<%}
-	               						}%>               									
+								<% } else if(loggedUser != null && loggedUser.getTipo().equals("gestorecatalogo")){ %>
+									<div id="pacchettiDaApprovare" data-isLoaded = "false">
+										<h1 id = 'titoloFinestra'>PACCHETTI DA APPROVARE</h1>
+									</div>
+								<%}%> 					               									
 						</div>	
 					</div>
 				</div>

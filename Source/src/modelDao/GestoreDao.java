@@ -42,7 +42,9 @@ public class GestoreDao {
 				pacchettoDaApprovare.setDescrizione(descrizionePacchetto);
 				pacchettoDaApprovare.setTitolo(titoloPacchetto);
 				pacchettoDaApprovare.setFoto(fotoPacchetto);
-			}	
+						
+				pacchetti.add(pacchettoDaApprovare);
+		}
 			return pacchetti;
 		} catch(SQLException e){
 			e.printStackTrace();
