@@ -1,6 +1,6 @@
 <!-- Barra di navigazione -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="java.util.*" import="modelBean.UtenteBean" import="modelBean.PacchettoBean"%>
+	pageEncoding="ISO-8859-1" import="java.util.*" import="modelBean.UtenteBean" import="modelBean.PacchettoBean" %>
 <%
 	UtenteBean loggedUser = (UtenteBean) session.getAttribute("User");
 
@@ -16,7 +16,6 @@
 		initial = loggedUser.getNomeUtente().substring(0, 2);
 	}
 %>
-
 <div class="navbar">
 	<div id="logo">
 		<div class="navbar-item" id="logo-item">

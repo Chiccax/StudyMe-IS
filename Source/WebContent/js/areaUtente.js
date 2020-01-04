@@ -15,10 +15,10 @@ function showUpdateAccount(){
 }
 
 $(document).ready(function() {
-	$("form").submit(function( event ) {
-		  event.preventDefault();
+	$("#lezioni").submit(function( event ) {
+		 event.preventDefault();
 	});
-});
+}); 
 
 function showApprovals(){
 	const action = "mostraPacchettiDaApprovare";
@@ -74,7 +74,7 @@ function showApprovals(){
 					div += "<div id = 'riquadroLezioni'>";
 
 					let lezioniPacchetto = lezioniPacchetti[pacchettoBean.codicePacchetto];
-					if(lezioniPacchetto.length > 1){
+					if(lezioniPacchetto.C > 1){
 						lezioniPacchetto.forEach(function(lezioniBean){
 						div += "<div id = 'singolaLezione'>";
 						div += "<h1 id = 'titoloLezioniDaApprovare'>" + lezioniBean.titolo + "</h1>";		
@@ -331,6 +331,13 @@ function approvaInteroPacchetto(event){
     	const response = JSON.parse(data);
 	 
     	if(response.ok == true){
+    		var matches = document.querySelectorAll("div#singoloPacchetto");
+    		if((matches.length-1) == 0){
+    			const element = document.querySelector("#pacchettiDaApprovare");
+    				let div = "<h1 id = 'titoloFinestra'>Non ci sono pacchetti da approvare</h1>";
+    				div += "<img src = 'img/utility/approvazioni.png'>";
+    				element.innerHTML = element.innerHTML + div;	
+    		}
     		caller.parentElement.style.display= "none";
     		document.getElementById("confermaPacchetto").style.display = "none";
     	}
@@ -354,6 +361,13 @@ function disapprovaInteroPacchetto(event){
     	const response = JSON.parse(data);
 	 
     	if(response.ok == true){
+    		var matches = document.querySelectorAll("div#singoloPacchetto");
+    		if((matches.length-1) == 0){
+    			const element = document.querySelector("#pacchettiDaApprovare");
+    				let div = "<h1 id = 'titoloFinestra'>Non ci sono pacchetti da approvare</h1>";
+    				div += "<img src = 'img/utility/approvazioni.png'>";
+    				element.innerHTML = element.innerHTML + div;	
+    		}
     		caller.parentElement.style.display= "none";
     		document.getElementById("confermaPacchetto").style.display = "none";
     	}
