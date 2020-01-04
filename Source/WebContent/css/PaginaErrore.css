@@ -1,0 +1,55 @@
+@charset "ISO-8859-1";
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+   font-family: 'Mali', cursive;
+    font-weight: bold;
+}
+
+.error {
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.error .error-code {
+    font-size: 100px;
+}
+
+.error-message {
+    text-align: center;
+    font-size: 30px;
+}
+
+.button {
+    display: block;
+    padding: 20px 30px;
+    margin: 30px auto;
+    width: 30%;
+    
+    background-color: rgb(40, 185, 35);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+   
+
+    transition: background-color .4s;
+}
+
+.collegamento{
+	 text-decoration: none;
+}
+
+.button:hover {
+    background-color: #1CCE51;
+    cursor: pointer;
+}
