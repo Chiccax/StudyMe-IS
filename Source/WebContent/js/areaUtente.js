@@ -417,3 +417,20 @@ function disapprovaSingolaLezione(event){
     	}
     })
 }
+
+function riaggiungiPacchetto(){
+	document.querySelector("#ordini #UpdateUserName").style.display = "block";
+	var someimage = document.getElementById("foto");
+	var myimg = someimage.getElementsByTagName('img')[0];
+	myimg.remove();
+	document.getElementById("riepilogo").style.display= "none";
+	document.getElementById("newCode").value = null;
+	document.getElementById("newSottoCat").value = null;
+	document.getElementById("newTitle").value = null;
+	document.getElementById("newPhoto").value = null;
+	document.getElementById("newPrice").value = null;
+	document.getElementById("newDesc").value = null;
+	document.getElementById("url").value = null;
+	document.getElementById("title").value = null;
+	document.getElementById("duration").value = null;
+}

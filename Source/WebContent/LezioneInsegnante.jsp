@@ -49,18 +49,19 @@
 	   						<div class = "lezione">
 	   							<iframe src= <%=lezione.getUrl()%> width="200px" height="150px"></iframe>
 	   							<div id="dettagli">
-	   								<%if(lezione.getApprovato()==-1){%>
-        								<button class="approvazione" id="rosso"></button>
-        		 					<%}else if(lezione.getApprovato()==1){%>
-        								<button class="approvazione" id="verde"></button>
-        		 					<%}else{%>
-        		 						<button class="approvazione" id="giallo"></button>
-        		 					<%}%>
-		   							<span id = "TitoloLezione">
-		   								<%=lezione.getTitolo()%>
-		   								<%nomeTitolo = lezione.getTitolo();%>
-		   							</span>
-		   						
+	   								<div id ="dettagliPrimaRiga">
+		   								<%if(lezione.getApprovato()==-1){%>
+	        								<button class="approvazione" id="rosso"></button>
+	        		 					<%}else if(lezione.getApprovato()==1){%>
+	        								<button class="approvazione" id="verde"></button>
+	        		 					<%}else{%>
+	        		 						<button class="approvazione" id="giallo"></button>
+	        		 					<%}%>
+			   							<span id = "TitoloLezione">
+			   								<%=lezione.getTitolo()%>
+			   								<%nomeTitolo = lezione.getTitolo();%>
+			   							</span>
+		   							</div>
 				   					<div class = "modificaLezione" onClick = "mostraModificaLezione(`<%=lezione.getTitolo()%>`)"> Modifica lezione <i class="fas fa-pencil-alt"></i></div>
 		   						</div>
 	   						</div>

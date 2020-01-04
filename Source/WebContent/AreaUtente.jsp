@@ -208,6 +208,8 @@
 		               					 	<h2 id = "durataLezione"></h2>		 
 		               					 </div>			
 	               					 </div>
+	               					 <br>
+	               					 <button class = "bottoneDefault" type="submit" onClick="riaggiungiPacchetto()">Inserisci un altro pacchetto</button>
 
 									<div id = "nextBottons">
 										<button id = "uno"></button>

@@ -36,7 +36,7 @@
 	font-family:'Coming Soon', cursive;
 	text-align: center;
     display: block;
-    margin: 0 auto;
+    margin: auto 0;
 }
 
 #TitoloLezione i {
@@ -243,6 +243,11 @@ iframe{
 }
 #giallo{
 	background-color: yellow; 
+}
+
+#dettagliPrimaRiga{
+	display: grid;
+    grid-template-columns: 5% 85%;
 }
 
 @media only screen and (max-width: 768px){

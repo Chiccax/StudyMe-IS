@@ -10,14 +10,18 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import modelBean.UtenteBean;
 
+/**
+ * Servlet Filter implementation class ProtectedPageFilter
+ */
+@WebFilter(urlPatterns = {"/GestoreServlet"})
+public class CatalogManagerProtectedPageFilter implements Filter {
 
-
-@WebFilter(urlPatterns = {"/InsegnanteServlet", "/GestoreServlet","/LezioneInsegnante.jsp"})
-public class PageFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		
 		HttpServletRequest httpRequest = null;
 		HttpServletResponse httpResponse = null;
 		
@@ -27,27 +31,23 @@ public class PageFilter implements Filter {
 		}
 		
 		if(httpRequest != null) {
-			httpRequest = (HttpServletRequest)request;
-			UtenteBean utente = (UtenteBean) httpRequest.getSession().getAttribute("insegnante");
-			UtenteBean utente2 = (UtenteBean) httpRequest.getSession().getAttribute("gestorecatalogo");
+			HttpSession session = httpRequest.getSession();
+			UtenteBean utente = (UtenteBean) session.getAttribute("User");
 			
-			if(utente == null) {
+			if(utente == null || !utente.getTipo().equals("gestorecatalogo")) {
 				httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN);
 				return;
-			}else 
-				if(utente2 == null) {
-					httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN);
-					return;
-				}
-		}	
+			}
+		}
+		
 		chain.doFilter(request, response);
 	}
 
 	@Override
-	public void destroy() {}
+	public void destroy() { } 
 
 	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {}
+	public void init(FilterConfig filterConfig) throws ServletException { }
 
 }
 
