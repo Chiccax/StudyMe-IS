@@ -20,13 +20,13 @@
         	}else{
 		    	switch(errorCode){
 		    		case "400":
-		    			message = "Qualcosa � andato storto";
+		    			message = "Qualcosa &egrave andato storto";
 		    			break;
 		    		case "403":
 		    			message = "Non dovresti essere qui!";
 		    			break;    			
 		    		case "404": 
-						message = "Quello che cerchi non � qui.";
+						message = "Quello che cerchi non &egrave qui.";
 						break;
 		    		case "500":
 		    			message = "Abbiamo riscontrato quelche problemino";

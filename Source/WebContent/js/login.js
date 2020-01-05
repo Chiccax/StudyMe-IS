@@ -149,7 +149,7 @@ function nascondi() {
 	document.getElementById("newEmail").style.border= "1px solid #ccc";
 	document.getElementById("regPass").style.border= "1px solid #ccc";
 	document.getElementById("regPassRepeat").style.border= "1px solid #ccc";
-	document.getElementsByClassName("registrazioneEffettuata").style.border= "1px solid #ccc";
+	$(".registrazioneEffettuata").css("border", "1px solid #ccc");
 }
 
 /*
@@ -250,6 +250,12 @@ const onSignUpSubmit = event => {
 /*Modificare form nel momento in cui si invia la mail*/
 const recoveryPassword = event => {
 	    event.preventDefault();
+	    const form = $(event.target);
+	    const button = form.find(".bottoneDefault");
+	    const originalColor = button.css("background-color");
+	    
+	    button.attr("disabled", true);
+	    button.css("background-color", "#829683");
 	    
 	    let userEmail = document.getElementById("emailF");
 
@@ -261,18 +267,22 @@ const recoveryPassword = event => {
 	    	}
 	    }).done(data => {
 		    const response = JSON.parse(data);
-	    	 
+		    const messageError = $(".recuperoPassword #signUpMessageError");
+		    
 	    	 if(response.ok == true){
+	    		messageError.css("opacity", "0");
 	    		document.getElementById("recovery").innerHTML = "La tua nuova password ti &egrave stata inviata per email!";
 	    		document.getElementById("formRecovery").style.display="none";
 	    		$("#recovery").css("text-align", "center");
 	  	   	}else {
-		  	   	const messageError = $(".recuperoPassword #signUpMessageError");
 		        messageError.text(response.message);
 		        messageError.css("opacity", "1");
 		        userEmail.style.border = "1px solid red";
 		        userEmail.value = null;
 	  	   	}     
+	    }).always(()=>{
+	    	button.attr("disabled", false);
+	    	button.css("background-color", originalColor);
 	    })
 	}
 

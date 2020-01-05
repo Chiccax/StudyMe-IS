@@ -96,7 +96,7 @@ const createOrderFunction = (data, actions) => {
 
     return new Promise((resolve, reject) => {
         $.ajax({
-            url: "CheckOutServlet",//vedere cosa è
+            url: "TerminaOrdineServlet",
             method: 'POST'
           }).done(datas => {
               let orderInfo = ajaxCallbackFunction(datas);
