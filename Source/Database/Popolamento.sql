@@ -103,7 +103,7 @@ INSERT into sottoCategoria(idSottocat,nomeSott)
 
 /*LEZIONI*/
 INSERT INTO lezioni(url,titolo,durata,codiceP,approvato)
-	values	('https://www.youtube.com/embed/4ynmgioiuJU','Introduzione alla programmazione in C','7:11','pac001','1'),
+	values	('https://www.youtube.com/embed/4ynmgioiuJU','Introduzione alla programmazione in C','7:11','pac001','0'),
 			('https://www.youtube.com/embed/cQBIHAEcjxw','Variabili cosa sono e come si usano','34:19','pac001','1'), 
 			('https://www.youtube.com/embed/maObxTDOcF8','Espressioni e output di variabili','06:23','pac001','1'), 
 			('https://www.youtube.com/embed/kawt09xztZ8','Costanti e Input','04:39','pac001','1'), 

@@ -108,6 +108,7 @@
 						<div id="updateButton" data = "cambiaTitolo" onClick="updatePackage()">
 							<i class="fas fa-arrow-right"></i>
 						</div>
+						
 					</div>
 					<div id="updatePrice">
 						<label for="uname"><b>Nuovo prezzo: </b></label> <input type="text" placeholder = "Inserire prezzo" name="prezzo" id="newPrice">

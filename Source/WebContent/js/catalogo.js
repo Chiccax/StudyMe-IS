@@ -2,6 +2,8 @@ const redirectTo = url => {
 	document.location.href = url;
 }
 
+
+
 function mostraLezioneGratis(url){
 	document.getElementById("sfondoVideo").style.display = "block";
 	var iframe = document.createElement('iframe');
@@ -120,6 +122,9 @@ function updatePackage(){
 	        messageError.css("display", "block");
 	        messageError.css("color", "red");
      		oldCode.style.border = "1px solid red";
+     		newTitle.style.border = "1px solid red";
+     		newPrice.style.border = "1px solid red";
+     		newDesc.style.border = "1px solid red";
     	 }
     })
 }
@@ -160,7 +165,14 @@ function addReview(){
       		 window.location.reload();
       	 }
       	 else {
-      		 console.log("Errore");
+      		console.log(response.message);
+      		const messageError = $("#insuccess");
+    		console.log(messageError);
+    		messageError.html(response.message);
+	        messageError.css("display", "block");
+	        messageError.css("color", "red");
+	        titoloRecensione.style.border = "1px solid red";
+	        testoRecensione.style.border = "1px solid red";
       	 }
-     });
+     })
 }

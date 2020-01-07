@@ -28,7 +28,7 @@ import modelDao.SottocategoriaDao;
 @WebServlet("/InsegnanteServlet")
 public class InsegnanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	    
     public InsegnanteServlet() {
         super();
     }
@@ -60,6 +60,7 @@ public class InsegnanteServlet extends HttpServlet {
 					PacchettoDao pacchettoDao = new PacchettoDao();
 					PacchettoBean pacchettoEsistente = pacchettoDao.getPacchetto(nuovoCodice);
 					
+					//pacchetto già esistente con tale codice
 					if(pacchettoEsistente != null) {
 						JSONResponse jsonResponse = new JSONResponse(false, INVALID_CODE);
 						out.print(gson.toJson(jsonResponse));
@@ -74,6 +75,24 @@ public class InsegnanteServlet extends HttpServlet {
 				}//Cambia titolo
 				else if(action.equalsIgnoreCase("cambiaTitolo")){
 					String nuovoTitolo = request.getParameter("nuovoTitolo");
+					
+					//controllo se è tra i 5 e i 40 caratteri
+					if(nuovoTitolo.length() < 5 || nuovoTitolo.length() > 40 ) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					
+					PacchettoDao pacchettoDao = new PacchettoDao();
+					PacchettoBean pacchettoEsistente = pacchettoDao.getPacchettoByTitolo(nuovoTitolo);
+					
+					//pacchetto già esistente con tale titolo
+					if(pacchettoEsistente != null) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE2);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					
 					pacchetto.setTitolo(nuovoTitolo);
 					InsegnanteDao manager = new InsegnanteDao();
 					manager.updateTitle(vecchioCodice, nuovoTitolo);
@@ -97,6 +116,13 @@ public class InsegnanteServlet extends HttpServlet {
 				}//Cambia descrizione
 				else if(action.equalsIgnoreCase("cambiaDescrizione")){
 					String nuovaDescrizione = request.getParameter("nuovaDescrizione");
+					//controllo se è tra i 10 e i 30 caratteri
+					if(nuovaDescrizione.length() < 10 || nuovaDescrizione.length() > 30 ) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_DES);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+
 					pacchetto.setDescrizione(nuovaDescrizione);
 					InsegnanteDao manager = new InsegnanteDao();
 					manager.updateDescr(vecchioCodice, nuovaDescrizione);	
@@ -133,7 +159,21 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-			
+					PacchettoDao pacchettoDao = new PacchettoDao();
+					PacchettoBean pacchettoEsistente = pacchettoDao.getPacchettoByTitolo(nuovoTitolo);
+					
+					//pacchetto già esistente con tale titolo
+					if(pacchettoEsistente != null) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE2);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					//controllo se è tra i 5 e i 20 caratteri
+					if(nuovoTitolo.length() < 5 || nuovoTitolo.length() > 20 ) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
 					SottocategoriaDao sottocategoriaDao = new SottocategoriaDao();
 			
 					//Controllo che i codici di categoria e sottocategoria siano validi
@@ -179,10 +219,34 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-			
+					//titolo compreso tra 5 e 20
+					if(titolo.length() < 5 || titolo.length() > 20 ) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					PacchettoDao pacchettoDao = new PacchettoDao();
+					ArrayList<LezioniBean> lezioneTitoloEsistente = pacchettoDao.getLezioniByTitolo(titolo);
+					
+					//lezione già esistente con tale titolo
+					if(!lezioneTitoloEsistente.isEmpty()) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE2);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
 					Pattern pattern = Pattern.compile("https:\\/\\/www.youtube.com\\/embed\\/\\w+");
 					Matcher matcher = pattern.matcher(url);
-			
+					pacchettoDao = new PacchettoDao();
+					ArrayList<LezioniBean> lezioneEsistente = pacchettoDao.getLezioniByURl(url);
+					
+					//lezione già esistente con tale url
+					if(!lezioneEsistente.isEmpty()) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_URL);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					
+					//controllo validità url
 					if(!matcher.find()) {
 						JSONResponse jsonResponse = new JSONResponse(false, NO_URL);
 						out.print(gson.toJson(jsonResponse));
@@ -190,7 +254,6 @@ public class InsegnanteServlet extends HttpServlet {
 					}
 			
 					HttpSession session = request.getSession();
-					System.out.println(session);
 			
 					PacchettoBean pacchettoAtt = (PacchettoBean) session.getAttribute("PacchettoAttuale");
 					InsegnanteDao manager = new InsegnanteDao();
@@ -218,6 +281,21 @@ public class InsegnanteServlet extends HttpServlet {
 				}//Modifica lezione
 				else if(action.equalsIgnoreCase("modificaNomeLezione")){
 					String nuovoNomeLezione = request.getParameter("nuovoNomeLezione");
+					//titolo compreso tra 5 e 20
+					if(nuovoNomeLezione.length() < 5 || nuovoNomeLezione.length() > 20 ) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					PacchettoDao pacchettoDao = new PacchettoDao();
+					ArrayList<LezioniBean> lezioneTitoloEsistente =pacchettoDao.getLezioniByTitolo(nuovoNomeLezione);
+					
+					//lezione già esistente con tale titolo
+					if(!lezioneTitoloEsistente.isEmpty()) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE2);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
 					lezione.setTitolo(nuovoNomeLezione);
 					InsegnanteDao  manager = new InsegnanteDao();
 					manager.updateTitleLesson(vecchioTitolo, nuovoNomeLezione);
@@ -230,11 +308,22 @@ public class InsegnanteServlet extends HttpServlet {
 			
 					Pattern pattern = Pattern.compile("https:\\/\\/www.youtube.com\\/embed\\/\\w+");
 					Matcher matcher = pattern.matcher(nuovoUrlLezione);
+					
 			
 					if(!matcher.find()) {
 						JSONResponse jsonResponse = new JSONResponse(false, NO_URL);
 						out.print(gson.toJson(jsonResponse));
 						return;	
+					}
+					
+					PacchettoDao pacchettoDao = new PacchettoDao();
+					ArrayList<LezioniBean> lezioneEsistente = pacchettoDao.getLezioniByURl(nuovoUrlLezione);
+					
+					//lezione già esistente con tale url
+					if(!lezioneEsistente.isEmpty()) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_URL);
+						out.print(gson.toJson(jsonResponse));
+						return;
 					}
 						
 					InsegnanteDao manager = new InsegnanteDao();
@@ -258,11 +347,16 @@ public class InsegnanteServlet extends HttpServlet {
 				}
 
 	}
-	
+	private static final String INVALID_TITLE = "Inserire un titolo compreso tra i 5 e 20 caratteri";
+	private static final String INVALID_TITLE2 = "titolo gi&agrave esistente";
+	private static final String INVALID_DES = "inserire una descrizione compresa tra i 10 e i 30 caratteri";
+	private static final String INVALID_URL = "url già esistente";
+  
 	private static final String NO_URL = "Url non valido!";
 	private static final String NO_INSERT = "Inserimento non riuscito!";
 	private static final String COMPLETE = "Pacchetto inserito con successo!";
 	private static final String INVALID_PRICE = "Prezzo non valido";
+	
 	private static final String INVALID_CODE = "Codice pacchetto gi&agrave; in uso";
 	private static final String NO_CODE = "Inserire codice per proseguire!";
 	private static final String NO_ARGUMENT = "Tutti i parametri devono essere compilati";

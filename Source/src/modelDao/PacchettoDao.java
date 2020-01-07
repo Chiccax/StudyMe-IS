@@ -97,6 +97,41 @@ public class PacchettoDao {
 		}
 		
 	}
+	//torna tutti i pacchetti con tale titolo
+	public PacchettoBean getPacchettoByTitolo(String titolo) {
+		Connection conn;
+		try {
+			conn = DriverManagerConnectionPool.getConnection();
+			PreparedStatement stm = conn.prepareStatement("SELECT * FROM pacchetto WHERE titolo = ?");
+			stm.setString(1, titolo);
+			ResultSet res=stm.executeQuery();
+			conn.commit();
+			if(res.next()) {
+				PacchettoBean pa= new PacchettoBean();
+				pa.setCodicePacchetto(res.getString(1));
+				pa.setCatagoria(res.getString(2));
+				pa.setSottocategoria(res.getString(3));
+				pa.setPrezzo(res.getDouble(4));
+				pa.setDescrizione(res.getString(5));
+				pa.setTitolo(res.getString(6));
+				pa.setFoto(res.getString(7));
+				
+				
+				return pa;
+			}
+			else {
+				return null;
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+			
+		}
+		
+	}
 	
 	public boolean delPacchetto(String codiceP) {
 		Connection conn;
@@ -289,6 +324,67 @@ public class PacchettoDao {
 
 			PreparedStatement stm = conn.prepareStatement(sql);
 			stm.setString(1, codicePacchetto);
+			ResultSet res = stm.executeQuery();
+			conn.commit();
+
+			ArrayList<LezioniBean> lezioni = new ArrayList<LezioniBean>();
+			
+			while (res.next()) {
+				LezioniBean lezione = new LezioniBean();
+				lezione.setUrl(res.getString(1));
+				lezione.setTitolo(res.getString(2));
+				lezione.setDurata(res.getString(3));
+				lezione.setPacchetto(res.getString(4));
+				
+				lezione.setApprovato(res.getInt(5));
+
+				lezioni.add(lezione);
+			}
+			return lezioni;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	public ArrayList<LezioniBean> getLezioniByURl(String url){
+		try {
+			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
+
+			String sql = "SELECT * " + "FROM lezioni " + "WHERE url = ?";
+
+			PreparedStatement stm = conn.prepareStatement(sql);
+			stm.setString(1, url);
+			ResultSet res = stm.executeQuery();
+			conn.commit();
+
+			ArrayList<LezioniBean> lezioni = new ArrayList<LezioniBean>();
+			
+			while (res.next()) {
+				LezioniBean lezione = new LezioniBean();
+				lezione.setUrl(res.getString(1));
+				lezione.setTitolo(res.getString(2));
+				lezione.setDurata(res.getString(3));
+				lezione.setPacchetto(res.getString(4));
+				
+				lezione.setApprovato(res.getInt(5));
+
+				lezioni.add(lezione);
+			}
+			return lezioni;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public ArrayList<LezioniBean> getLezioniByTitolo(String titolo){
+		try {
+			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
+
+			String sql = "SELECT * " + "FROM lezioni " + "WHERE titolo = ?";
+
+			PreparedStatement stm = conn.prepareStatement(sql);
+			stm.setString(1, titolo);
 			ResultSet res = stm.executeQuery();
 			conn.commit();
 

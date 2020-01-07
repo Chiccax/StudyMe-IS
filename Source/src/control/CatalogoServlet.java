@@ -1,12 +1,10 @@
 package control;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
-
-
-import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,7 +28,7 @@ import modelDao.PacchettoDao;
 @WebServlet("/CatalogoServlet")
 public class CatalogoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
     public CatalogoServlet() {
         super();
       
@@ -81,15 +79,14 @@ public class CatalogoServlet extends HttpServlet {
 		request.setAttribute("insegnante", insegnante);
 		request.setAttribute("userName", userName);
 		
-		
-
 		RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Catalogo.jsp");
 		dispatcher.forward(request, response);
-		}
+	 }
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+		
 
 }

@@ -40,6 +40,16 @@ public class RecensioneServlet extends HttpServlet {
 			out.print(gson.toJson(jsonResponse));
 			return;
 		}
+		if(titoloRecensione.length() < 5 || titoloRecensione.length() > 30 ) {
+			JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
+			out.print(gson.toJson(jsonResponse));
+			return;
+		}
+		if(testoRecensione.length() < 10 || testoRecensione.length() > 30 ) {
+			JSONResponse jsonResponse = new JSONResponse(false, INVALID_TEXT);
+			out.print(gson.toJson(jsonResponse));
+			return;
+		}
 		
 		RecensioneDao recensionedao = new RecensioneDao();	
 		recensionedao.aggiungiRecensione(nomeUtente, codicePacchetto, titoloRecensione, testoRecensione);
@@ -48,4 +58,6 @@ public class RecensioneServlet extends HttpServlet {
 	}
 	
 	private static final String NO_ARGUMENT = "Tutti i parametri devono essere passati";
+	private static final String INVALID_TITLE = "il titolo deve essere tra i 5 e i 30 caratteri";
+	private static final String INVALID_TEXT = "il testo deve essere tra i 10 e i 30 caratteri";
 }

@@ -84,5 +84,20 @@ function modificaLezione(){
         }
     }).done(data => {
     	 window.location.reload();
-   })	
+    	 const response = JSON.parse(data);
+      	 
+      	 if(response.ok == true){
+      		 window.location.reload();
+      	 }
+      	 else {
+      		console.log(response.message);
+      		const messageError = $("#insuccess");
+    		console.log(messageError);
+    		messageError.html(response.message);
+	        messageError.css("display", "block");
+	        messageError.css("color", "red");
+	        vecchioTitolo.style.border = "1px solid red";
+	        nuovoUrlLezione.style.border = "1px solid red";
+	        }
+    })
 }

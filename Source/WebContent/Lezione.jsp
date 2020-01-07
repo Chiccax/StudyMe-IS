@@ -90,7 +90,7 @@
 			<div id = "containerRecensione">
 				<div id="aggiungiRecensione">
 					<h2>Lascia una recensione</h2>
-					<div id="messageError"></div> 
+					<div id="insuccess"></div>
 					<input type="hidden" value= "<%=pacchetto.getCodicePacchetto()%>" id="pacchettoDaRecensire" required readonly>
 					<input type="hidden" value= "" id="nomeUtenteRecensore" required readonly>
 					<div id="add">
@@ -102,7 +102,7 @@
 							<label for="uname"><b>Recensione: </b></label>
 							<textarea rows="3" cols="55" placeholder = "Inserire recensione" id="txtRecensione"></textarea>
 						</div>
-						<button onClick="addReview()">Aggiungi recensione</button>
+						<button class="bottoneDefault" onClick="addReview()">Aggiungi recensione</button>
 					</div>
 				</div>
 			</div>	
