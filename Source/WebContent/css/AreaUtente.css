@@ -564,6 +564,20 @@ hr {
 	font-size: 40px;
 }
 
+#listaSottocategorie{
+	position: relative;
+    font-size: 12px;
+    font-family: 'Mali', cursive;
+    width: 100%;
+    margin: 0;
+    padding: 15px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px 5px 5px 5px;
+    line-height: 150%;
+}
+
 @media screen and (min-width: 320px){
 	#foto img{
 		margin-left: 15%;

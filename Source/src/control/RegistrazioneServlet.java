@@ -50,6 +50,12 @@ public class RegistrazioneServlet extends HttpServlet {
 			return;
 		}
 		
+		if(nomeUtente.length() < 4) {
+			JSONResponse jsonResponse = new JSONResponse(false, INVALID_USER);
+			out.print(gson.toJson(jsonResponse));
+			return;
+		}
+		
 		if(password.length() < 8) {
 			JSONResponse jsonResponse = new JSONResponse(false, INVALID_PASSWORD);
 			out.print(gson.toJson(jsonResponse));
@@ -89,4 +95,5 @@ public class RegistrazioneServlet extends HttpServlet {
 	private static final String NO_PASSWORD = "Le password non coincidono";
 	private static final String NO_USER = "Utente già esistente";
 	private static final String NO_EMAILVALIDATE = "Formato email non valido";
+	private static final String INVALID_USER = "Inserire un nome utente da almeno 4 caratteri";
 }

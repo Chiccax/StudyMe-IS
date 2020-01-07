@@ -2,6 +2,7 @@ package modelDao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import java.sql.PreparedStatement;
@@ -48,6 +49,43 @@ public class SottocategoriaDao implements Model_interface<SottocategoriaBean> {
 		}
 		
 		return bean;
+	}
+	
+	public ArrayList<SottocategoriaBean> selezionaSottocagorieInsegnante(String utente){
+		try {
+			
+			ArrayList<SottocategoriaBean> sottocategorie = new ArrayList<SottocategoriaBean>();
+			
+			Connection conn = DriverManagerConnectionPool.getConnection();
+			PreparedStatement stm = conn.prepareStatement("SELECT nomeCategoria FROM categoria WHERE insegnante = ?");
+			stm.setString(1, utente);
+			ResultSet res = stm.executeQuery();
+			
+			if(!res.next()) 
+				return null;
+			
+			stm = conn.prepareStatement("SELECT DISTINCT idSott FROM pacchetto WHERE categoria = ?");
+			stm.setString(1, res.getString(1));
+			res = stm.executeQuery();
+			
+			while(res.next()) {
+				stm = conn.prepareStatement("SELECT * FROM sottocategoria WHERE idSottocat = ?");
+				stm.setString(1, res.getString(1));
+				ResultSet res2 = stm.executeQuery();
+				
+				while(res2.next()) {	
+					SottocategoriaBean s = new SottocategoriaBean();
+					s.setIdSottoCat(res2.getString(1));
+					s.setNomeSott(res2.getString(2));
+					
+					sottocategorie.add(s);			
+				}
+			}
+			return sottocategorie;
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return null;
+		}	
 	}
 
 	@Override

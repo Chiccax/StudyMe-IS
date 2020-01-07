@@ -350,7 +350,7 @@ public class InsegnanteServlet extends HttpServlet {
 	private static final String INVALID_TITLE = "Inserire un titolo compreso tra i 5 e 20 caratteri";
 	private static final String INVALID_TITLE2 = "titolo gi&agrave esistente";
 	private static final String INVALID_DES = "inserire una descrizione compresa tra i 10 e i 30 caratteri";
-	private static final String INVALID_URL = "url già esistente";
+	private static final String INVALID_URL = "Url già esistente";
   
 	private static final String NO_URL = "Url non valido!";
 	private static final String NO_INSERT = "Inserimento non riuscito!";
@@ -360,6 +360,5 @@ public class InsegnanteServlet extends HttpServlet {
 	private static final String INVALID_CODE = "Codice pacchetto gi&agrave; in uso";
 	private static final String NO_CODE = "Inserire codice per proseguire!";
 	private static final String NO_ARGUMENT = "Tutti i parametri devono essere compilati";
-	private static final String NO_CATEGORY = "Categoria non valida";
 	private static final String NO_SOTTOCATEGORY = "Codice sottocategoria non valido";
 }

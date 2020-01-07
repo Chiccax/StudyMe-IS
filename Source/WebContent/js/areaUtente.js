@@ -116,11 +116,35 @@ function mostraConfermaLezione(){
 }
 
 function showAddPackage(){
-	document.getElementById("UpdateUserName").style.display = ("none");
-	document.getElementById("ordini").style.display = ("block");
-	var name = event.target;
-	name.classList.add("active");
-	document.getElementById("updateAccount").classList.remove("active");
+	let caller = event.target;
+	const utente = caller.getAttribute("data");
+	
+	$.ajax({
+		url: "SottocategoriaInsegnanteServlet",
+		method : 'POST',
+		data: {
+			utente: utente
+		}
+	}).done(data => {
+		const response = JSON.parse(data);
+		if(response.ok == true) {
+			const element = document.querySelector("#listaSottocategorie");
+			let sottocategorie = response.content;
+		
+			sottocategorie.forEach(function(sottocategoriaBean){	
+				let div = "<option id = 'sottocatId' value = '"+ sottocategoriaBean.idSottoCat +"'>" + sottocategoriaBean.nomeSott + "</option>";
+				div += "</div>";
+				element.innerHTML = element.innerHTML + div;
+			})
+				
+			document.getElementById("UpdateUserName").style.display = ("none");
+			document.getElementById("ordini").style.display = ("block");
+			
+			caller.classList.add("active");
+			document.getElementById("updateAccount").classList.remove("active");
+			
+		}
+	})
 }
 
 function showOrders(){	
@@ -254,7 +278,7 @@ function addPackage(){
 	let caller = event.target;
 	const action = caller.getAttribute("data");
 	let nuovoCodice = document.getElementById("newCode");
-	let nuovaSottocategoria = document.getElementById("newSottoCat");
+	let nuovaSottocategoria = document.getElementById("sottocatId");
 	let nuovoTitolo = document.getElementById("newTitle");
 	let nuovaFoto = document.getElementById("newPhoto")
 	let nuovoPrezzo = document.getElementById("newPrice");

@@ -45,7 +45,7 @@
 								<i class="far fa-user-circle"></i>
 									<span>Account</span>
 							</li>
-							<li  id = "myOrder" onClick = "showAddPackage()">
+							<li  id = "myOrder" onClick = "showAddPackage()" data="<%=loggedUser.getNomeUtente()%>">
 								<i class="fas fa-folder-plus"></i>
 								<span>Inserimento</span>
 							</li>
@@ -128,7 +128,8 @@
 								
 								<h2>Sottocategoria: </h2>	
 								<form name="insertSott">
-									<input type="text" id = "newSottoCat" placeholder="Inserisci id sottocategoria">	
+									<select id = "listaSottocategorie">									  
+									</select>
 								</form>
 								
 								<h2>Titolo: </h2>	
@@ -230,5 +231,4 @@
 	
 		<%@ include file="Footer.jsp"%>  
 	</div>
-	 <script type="text/javascript" src="./js/areaUtente.js"></script>
 </body>

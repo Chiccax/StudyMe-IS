@@ -65,11 +65,18 @@ public class ModificaAreaUtenteServlet extends HttpServlet {
 				}
 			} else if(nuovaEmailUtente == null && nuovaPasswordUtente != null) {
 				if(nuovaPasswordUtente.equals(confermaNuovaPasswordUtente)) {
-					if(nuovaPasswordUtente.length() <= 0 || nuovaPasswordUtente.length() < 8) {
+					if(nuovaPasswordUtente.length() < 8) {
 						JSONResponse jsonResponse = new JSONResponse(false, NO_VALIDEPASSWORD);
 						out.print(gson.toJson(jsonResponse));
 						return;	
 					}
+					
+					if(nuovaPasswordUtente.length() <= 0){
+						JSONResponse jsonResponse = new JSONResponse(false, EMPTY_PASSWORD);
+						out.print(gson.toJson(jsonResponse));
+						return;	
+					}
+					
 					UtenteDao manager = new UtenteDao();
 					String passwordBase64format  = Base64.getEncoder().encodeToString(nuovaPasswordUtente.getBytes()); 
 					boolean res = manager.updatePassword(emailUtente, passwordBase64format);
@@ -90,8 +97,9 @@ public class ModificaAreaUtenteServlet extends HttpServlet {
 		}
 	}
 	
-	private static final String NO_EMAIL = "Email non valida";
+	private static final String NO_EMAIL = "Campo email vuoto";
 	private static final String NO_USER = "Utente non esistente";
-	private static final String NO_VALIDEPASSWORD = "Password non valida";
+	private static final String NO_VALIDEPASSWORD = "Inserire password di almeno 8 caratteri";
 	private static final String NO_PASSWORD = "Le password non coincidono";
+	private static final String EMPTY_PASSWORD = "Campo password vuoto";
 }
