@@ -19,7 +19,9 @@ import modelBean.OrdineAcquistoBean;
 
 import modelBean.UtenteBean;
 import modelDao.OrdineAcquistoDao;
-
+/** 
+ * Gestisce l'ordine dell'acquirente 
+ **/
 @WebServlet("/OrdiniServlet")
 public class OrdiniServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

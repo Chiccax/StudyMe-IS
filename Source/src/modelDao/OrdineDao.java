@@ -11,7 +11,13 @@ import modelBean.OrdineBean;
 
 public class OrdineDao {
 	 public OrdineDao() {}
-	  
+	 /**
+	  * Inserisce un ordine 
+	  * @param ordine 
+	  * @return int  
+	  * context OrdineDao::insert(OrdineBean ordine)
+	  * @pre ordine!=null
+	  * **/
 	 public int insert(OrdineBean ordine){
 		 OrdineBean ord = null;
 		 try {

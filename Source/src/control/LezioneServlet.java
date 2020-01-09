@@ -26,7 +26,9 @@ import modelDao.OrdineAcquistoDao;
 import modelDao.PacchettoDao;//ds
 import modelDao.RecensioneDao;
 import modelDao.UtenteDao;
-
+/** 
+ * Gestisce le lezioni
+ **/
 
 @WebServlet("/LezioneServlet")
 public class LezioneServlet extends HttpServlet {

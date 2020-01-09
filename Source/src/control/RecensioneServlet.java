@@ -13,7 +13,9 @@ import com.google.gson.Gson;
 
 import control.util.JSONResponse;
 import modelDao.RecensioneDao;
-
+/** 
+ * Gestisce l'inserimento di una recensione
+ **/
 @WebServlet("/RecensioneServlet")
 public class RecensioneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

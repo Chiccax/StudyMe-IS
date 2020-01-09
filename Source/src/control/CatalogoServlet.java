@@ -20,10 +20,8 @@ import modelBean.UtenteBean;
 import modelDao.CategoriaDao;
 import modelDao.PacchettoDao;
 
-
-
 /**
- * Servlet implementation class CatalogoServlet
+ * Gestisce la visualizzazione dei pacchetti nelle varie categorie
  */
 @WebServlet("/CatalogoServlet")
 public class CatalogoServlet extends HttpServlet {
@@ -84,7 +82,7 @@ public class CatalogoServlet extends HttpServlet {
 	 }
 
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 		

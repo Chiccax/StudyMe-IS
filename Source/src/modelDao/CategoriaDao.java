@@ -25,7 +25,15 @@ public class CategoriaDao implements Model_interface<CategoriaBean> {
 		public boolean remove(Object codiceP) throws SQLException {
 			return false;
 		}
-
+		/**
+		 * Recupera la categoria 
+		 * @param codiceP codice del pacchetto
+		 * @return CategoriaBean categoria
+		 * @throws SQLEXception
+		 * context CategoriaDao::findByKey(Object codiceP)
+		 * @pre codiceP != null
+		 * 
+		 **/
 		@Override
 		public CategoriaBean findByKey(Object codiceP) throws SQLException {
 			if(!(codiceP instanceof String))

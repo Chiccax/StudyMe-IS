@@ -20,7 +20,7 @@ import modelBean.UtenteBean;
 import modelDao.UtenteDao;
 
 /**
- * Servlet implementation class LoginServlet
+ * Gestisce l'operazione di login
  */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {

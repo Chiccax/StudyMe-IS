@@ -24,7 +24,9 @@ import modelDao.InsegnanteDao;
 import modelDao.CategoriaDao;
 import modelDao.PacchettoDao;
 import modelDao.SottocategoriaDao;
-
+/** 
+ * Gestisce l' inserimento pacchetti e lezioni da parte dell'insegnnante
+ **/ 
 @WebServlet("/InsegnanteServlet")
 public class InsegnanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -140,7 +142,7 @@ public class InsegnanteServlet extends HttpServlet {
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}
-		//Aggiungi pacchetto
+				//Aggiungi pacchetto
 				else if(action.equalsIgnoreCase("aggiungiPacchetto")) {
 					String nuovoCodice = request.getParameter("nuovoCodice");
 					String nuovaSottocategoria = request.getParameter("sottocategoria");

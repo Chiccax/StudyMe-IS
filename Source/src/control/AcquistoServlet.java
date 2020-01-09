@@ -20,7 +20,7 @@ import modelDao.AcquistoDao;
 import modelDao.OrdineDao;
 
 /**
- * Servlet implementation class CheckoutServelet
+ * Gestisce l'acquisto di un corso
  */
 @WebServlet("/AcquistoServlet")
 public class AcquistoServlet extends HttpServlet {
@@ -35,7 +35,7 @@ public class AcquistoServlet extends HttpServlet {
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {		
 		HttpSession session = request.getSession();

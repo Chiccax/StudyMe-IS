@@ -16,6 +16,14 @@ public class UtenteDao {
 	public UtenteDao() {
 		
 	}
+	/**
+	 * Effettua il login di un Account
+	 * @param nomeUtente nomeUtente dell'utente
+	 * @param password password dell'utente
+	 * @return L'utente
+	 * context UtenteDao::login(String nomeUtente, String password) 
+	 * @pre nomeUtente !null && nomeutente presente nel db password !null && password presente nel db
+	 **/
 	public UtenteBean login(String nomeUtente, String password) {
 		UtenteBean user = null;
 		try {
@@ -45,7 +53,16 @@ public class UtenteDao {
 		}
 		return user;
 	}
-	
+	/**
+	 * Registra un nuovo utente
+	 * @param email email del nuovo utente
+	 * @param nomeUtente nomeUtente del nuovo utente
+	 * @param password password del nuovo utente
+	 * @return true
+	 * context UtenteDao::registration(String email, String nomeUtente, String password)
+	 * @pre email != null && email non presente nel db && nomeUtente != null && nomeUtente non presente nel db && password != null
+	 * @post nuovo utente presente nel db
+	 **/
 	public boolean registration(String email, String nomeUtente, String password){
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -70,7 +87,15 @@ public class UtenteDao {
 		}	
 		return true;
 	}
-	
+	/**
+	 * Modifica la password di un Account
+	 * @param email 
+	 * @param password 
+	 * @return false
+	 * context UtenteDao::updatePassword(String email, String password)
+	 * @pre email!=null && password!=null
+	 * @post password aggiornata
+	 **/
 	public boolean updatePassword(String email, String password) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -94,7 +119,15 @@ public class UtenteDao {
 		}
 		return false;
 	}
-	
+	/**
+	 * Modifica la password di un Account
+	 * @param email 
+	 * @param newEmail 
+	 * @return false
+	 * context UtenteDao::updateEmail(String email, String newEmail) 
+	 * @pre mail!=null && email presente nel database && newMail != null && newEmail non presente nel database
+	 * @post email aggiornata
+	 **/
 	public boolean updateEmail(String email, String newEmail) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();

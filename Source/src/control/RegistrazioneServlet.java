@@ -1,6 +1,7 @@
 package control;
 
 import java.io.IOException;
+
 import java.util.regex.Matcher;
 import java.io.PrintWriter;
 import java.sql.Date;
@@ -20,6 +21,11 @@ import com.google.gson.Gson;
 import control.util.JSONResponse;
 import modelBean.UtenteBean;
 import modelDao.UtenteDao;
+
+/** 
+ * Gestisce la registrazione di un nuovo utente
+ **/
+
 @WebServlet("/RegistrazioneServlet")
 public class RegistrazioneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

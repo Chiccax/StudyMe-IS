@@ -25,7 +25,14 @@ public class SottocategoriaDao implements Model_interface<SottocategoriaBean> {
 	public boolean remove(Object codiceP) throws SQLException {
 		return false;
 	}
-
+	/**
+	 * Recupera la sottocategoria 
+	 * @param codiceP codice del pacchetto
+	 * @return SottocategoriaBean sottocategoria
+	 * @throws SQLEXception
+	 * context  SottocategoriaDao::findByKey(Object codiceP)
+	 * @pre codiceP != null && codiceP presente nel database
+	 **/
 	@Override
 	public SottocategoriaBean findByKey(Object codiceP) throws SQLException {
 		if(!(codiceP instanceof String))
@@ -47,10 +54,15 @@ public class SottocategoriaDao implements Model_interface<SottocategoriaBean> {
 			bean.setIdSottoCat(ris.getString(1));
 			bean.setNomeSott(ris.getString(2));
 		}
-		
 		return bean;
 	}
-	
+	/**
+	 * Recupera la sottocategoria dell'insegnante
+	 * @param utente utente
+	 * @return ArrayList<SottocategoriaBean> array di sottocategoria
+	 * context  SottocategoriaDao:: selezionaSottocagorieInsegnante(String utente)
+	 * @pre utente != null
+	 **/
 	public ArrayList<SottocategoriaBean> selezionaSottocagorieInsegnante(String utente){
 		try {
 			
@@ -87,7 +99,6 @@ public class SottocategoriaDao implements Model_interface<SottocategoriaBean> {
 			return null;
 		}	
 	}
-
 	@Override
 	public Collection<SottocategoriaBean> findAll() throws SQLException {
 		

@@ -18,7 +18,7 @@ import modelBean.UtenteBean;
 import modelDao.UtenteDao;
 
 /**
- * Servlet implementation class ModificaAreaUtenteServlet
+ * Gestisce la modifica dei dati personali
  */
 @WebServlet("/ModificaAreaUtenteServlet")
 public class ModificaAreaUtenteServlet extends HttpServlet {

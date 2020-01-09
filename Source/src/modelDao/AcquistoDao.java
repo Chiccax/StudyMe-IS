@@ -12,7 +12,13 @@ public class AcquistoDao {
 	public AcquistoDao() {
 		
 	}
-	
+	/**
+	 * Aggiunge un acquisto
+	 * @param bean bean acquisto
+	 * @return 
+	 * context AcquistoDao::insertAcquisto(AcquistoBean bean)
+	 * @pre bean!=null 
+	 * **/
 	public void insertAcquisto(AcquistoBean bean) {
 		 try {
 			 	Connection conn = DriverManagerConnectionPool.getConnection();

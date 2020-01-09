@@ -18,7 +18,9 @@ import com.google.gson.Gson;
 import control.util.JSONResponse;
 import modelBean.PacchettoBean;
 import modelBean.UtenteBean;
-
+/** 
+ * Gestisce la conclusione di un ordine 
+ **/
 
 @WebServlet("/TerminaOrdineServlet")
 public class TerminaOrdineServlet extends HttpServlet {

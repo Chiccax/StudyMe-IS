@@ -29,9 +29,12 @@ public class PacchettoDao {
 	public PacchettoDao() {
 		
 	}
-	
-	//prende tutti i pacchetti dal database
-	
+	/**
+	 * Recupera tutti i pacchetti dal database
+	 * @param
+	 * @return ArrayList<PacchettoBean> un array di pacchetti
+	 * context PacchettoDao::ArrayList<PacchettoBean> getAllPacchetti()
+	 **/
 	public ArrayList<PacchettoBean> getAllPacchetti(){
 		try {
 			
@@ -61,8 +64,14 @@ public class PacchettoDao {
 			return null;
 		}	
 	}
-	
-	//prende un singolo pacchetto dal database
+	/**
+	 * Recupera un singolo pacchetto dal database
+	 * @param codiceP codice del pacchetto
+	 * @return PacchettoBean un pacchetto
+	 * context PacchettoDao::getPacchetto(String codiceP)
+	 * @pre codiceP != null
+	 **/
+
 	public PacchettoBean getPacchetto(String codiceP) {
 		Connection conn;
 		try {
@@ -81,23 +90,23 @@ public class PacchettoDao {
 				pa.setTitolo(res.getString(6));
 				pa.setFoto(res.getString(7));
 				
-				
 				return pa;
 			}
 			else {
 				return null;
-			}
-			
-			
-			
+			}	
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
-			
-		}
-		
+		}	
 	}
-	//torna tutti i pacchetti con tale titolo
+	/**
+	 * Recupera tutti i pacchetti con un determinato titolo dal database
+	 * @param titolo titolo del pacchetto
+	 * @return PacchettoBean un pacchetto
+	 * context PacchettoDao::getPacchettoByTitolo(String titolo)
+	 * @pre titolo != null && titolo presente nel db
+	 **/
 	public PacchettoBean getPacchettoByTitolo(String titolo) {
 		Connection conn;
 		try {
@@ -116,23 +125,24 @@ public class PacchettoDao {
 				pa.setTitolo(res.getString(6));
 				pa.setFoto(res.getString(7));
 				
-				
 				return pa;
 			}
 			else {
 				return null;
 			}
-			
-			
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
-			
 		}
-		
 	}
-	
+	/**
+	 * Elimina il pacchetto
+	 * @param codiceP codice del pacchetto
+	 * @return false
+	 * context PacchettoDao::delPacchetto(String codiceP)
+	 * @pre codiceP !=null
+	 * @post pacchetto eliminato
+	 **/
 	public boolean delPacchetto(String codiceP) {
 		Connection conn;
 		try {
@@ -153,6 +163,14 @@ public class PacchettoDao {
 			
 		}	
 	}
+	/**
+	 * Recupera le informazioni base sui corsi che hanno un nome corrispondente alla stringa si ricerca
+	 * @param word stringa di ricerca
+	 * @return ArrayList<PacchettoBean> array di pacchetti
+	 * context PacchettoDao::searchPackage(String word)
+	 * @pre word != null
+	 * 
+	 **/
 	public ArrayList<PacchettoBean> searchPackage(String word){
 		try {
 			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
@@ -184,7 +202,13 @@ public class PacchettoDao {
 			return null;
 		}
 	}
-	
+	/**
+	 * Raggruppa tutti i pacchetti che appartengono ad una determinata categoria
+	 * @param categoria categoria di appartenenza 
+	 * @return Map<String,ArrayList<PacchettoBean>> 
+	 * context PacchettoDao::getCategoriaRaggruppato(String categoria)
+	 * @pre categoria != null
+	 * **/
 	public Map<String,ArrayList<PacchettoBean>> getCategoriaRaggruppato(String categoria) {
 		Map<String, ArrayList<PacchettoBean>> result = new HashMap<String, ArrayList<PacchettoBean>>();
 		Map<String, String>  sottocategorie = new HashMap<String, String>();
@@ -215,8 +239,6 @@ public class PacchettoDao {
 
 				String valueSottocategoria = null;
 				
-				//Se ho già estratto il valore della sottocategoria dal db lo vado a prendere dalla mappa
-				//altrimenti lo vado dal db
 				if(sottocategorie.containsKey(pacchetto1.getSottocategoria())) {
 					valueSottocategoria = sottocategorie.get(pacchetto1.getSottocategoria());
 				} else {
@@ -237,7 +259,13 @@ public class PacchettoDao {
 		
 		return result;
 	}
-	
+	/**
+	 * Raggruppa tutti i pacchetti che appartengono ad una determinata categoria che sono approvati
+	 * @param categoria categoria di appartenenza 
+	 * @return Map<String,ArrayList<PacchettoBean>> 
+	 * context PacchettoDao:: getCategoriaRaggruppatoApprovato(String categoria)
+	 * @pre categoria != null
+	**/
 	public Map<String,ArrayList<PacchettoBean>> getCategoriaRaggruppatoApprovato(String categoria) {
 		Map<String, ArrayList<PacchettoBean>> result = new HashMap<String, ArrayList<PacchettoBean>>();
 		Map<String, String>  sottocategorie = new HashMap<String, String>();
@@ -282,16 +310,19 @@ public class PacchettoDao {
 				
 				result.get(valueSottocategoria).add(pacchetto1);
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
-		
 		return result;
 	}
-
-	
+	/**
+	 * Recupera la categoria di un pacchetto
+	 * @param categoria categoria del pacchetto 
+	 * @return categoria 
+	 * context PacchettoDao::getBeanCategoria(String categoria)
+	 * @pre categoria != null
+	 **/
 	public CategoriaBean getBeanCategoria(String categoria) {
 		
 		try {
@@ -315,7 +346,13 @@ public class PacchettoDao {
 			return null;
 		}
 	}
-	
+	/**
+	 * Recupera tutte le lezioni del pacchetto
+	 * @param codicePacchetto codice del pacchetto
+	 * @return ArrayList<LezioniBean> array di lezioni 
+	 * context PacchettoDao::getLezioni(String codicePacchetto)
+	 * @pre codicePacchetto != null && codicePacchetto presente nel database
+	 **/
 	public ArrayList<LezioniBean> getLezioni(String codicePacchetto){
 		try {
 			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
@@ -346,6 +383,13 @@ public class PacchettoDao {
 			return null;
 		}
 	}
+	/**
+	 * Recupera tutte le lezioni tramite url
+	 * @param url url della lezione
+	 * @return ArrayList<LezioniBean> array di lezioni 
+	 * context PacchettoDao::getLezioniByURl(String url
+	 * @pre url != null && url presente nel database
+	 **/
 	public ArrayList<LezioniBean> getLezioniByURl(String url){
 		try {
 			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
@@ -376,7 +420,13 @@ public class PacchettoDao {
 			return null;
 		}
 	}
-	
+	/**
+	 * Recupera tutte le lezioni tramite il titolo
+	 * @param titolo titolo della lezione
+	 * @return ArrayList<LezioniBean> array di lezioni 
+	 * context PacchettoDao::getLezioniByTitolo(String titolo)
+	 * @pre titolo != null && titolo presente nel database
+	 **/
 	public ArrayList<LezioniBean> getLezioniByTitolo(String titolo){
 		try {
 			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
@@ -407,7 +457,13 @@ public class PacchettoDao {
 			return null;
 		}
 	}
-	
+	/**
+	 * Recupera tutte le lezioni del pacchetto che sono state approvate
+	 * @param codicePacchetto codice del pacchetto
+	 * @return ArrayList<LezioniBean> array di lezioni 
+	 * context PacchettoDao:: getLezioniApprovate(String codicePacchetto)
+	 * @pre codicePacchetto != null && codicePacchetto non presente nel database
+	 **/
 	public ArrayList<LezioniBean> getLezioniApprovate(String codicePacchetto){
 		try {
 			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
@@ -436,7 +492,13 @@ public class PacchettoDao {
 			return null;
 		}
 	}
-	
+	/**
+	 * Recupera tutte le recensioni del pacchetto
+	 * @param codicePacchetto codice del pacchetto
+	 * @return ArrayList<RecensioneBean> array di recensioni
+	 * context PacchettoDao::getRecensioni(String codicePacchetto)
+	 * @pre codicePacchetto != null
+	 **/
 	public ArrayList<RecensioneBean> getRecensioni(String codicePacchetto){
 		try {
 			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
@@ -466,6 +528,4 @@ public class PacchettoDao {
 			return null;
 		}
 	}
-
-
 }

@@ -14,8 +14,20 @@ import modelBean.PacchettoBean;
 public class InsegnanteDao {
 
 	public InsegnanteDao() {}
-	
-	//Aggiungi pacchetto
+	/**
+	 * Inserisce un nuovo pacchetto 
+	 * @param nuovoCodice codice del pacchetto
+	 * @param nomeUtente nome utente
+	 * @param nuovaSottocategoria sottocategoria del pacchetto
+	 * @param nuovoPrezzo prezzo del pacchettp
+	 * @param nuovaDescrzione descrzione del pacchetto
+	 * @param nuovoTitolo titolo del pacchetto
+	 * @param nuovaFoto foro del pacchetto
+	 * @return PacchettoBean pacchetto
+	 * context InsegnanteDao::inserPacchetto(String nuovoCodice, String nomeUtente, String nuovaSottocategoria, double nuovoPrezzo, String nuovaDescrizione, String nuovoTitolo, String nuovaFoto)
+	 * @pre nuovoCodice !=null && nuovoCodice non presente nel db && nuovaSottocategoria presente nel db && nuovaDescrizione !=null  && nuovoTitolo !=null && nuovaFoto!= null
+	 * @post pacchetto presente nel db
+	 **/
 	public PacchettoBean inserPacchetto(String nuovoCodice, String nomeUtente, String nuovaSottocategoria, double nuovoPrezzo, String nuovaDescrizione, String nuovoTitolo, String nuovaFoto) {
 			String categoria;
 		try {
@@ -79,8 +91,14 @@ public class InsegnanteDao {
 		}
 		return null;
 	}
-	
-	//Rimuovi pacchetto
+	/***
+	 * Elimina il pacchetto
+	 * @param codicePacchetto codice del pacchetto
+	 * @return 
+	 * context InsegnanteDao::deletePacchetto(String codicePacchetto)
+	 * @pre codicePacchetto != null
+	 * @post pacchetto non presente nel db
+	 **/
 	public void  deletePacchetto(String codicePacchetto) {	
 		try {
 			Connection conn= DriverManagerConnectionPool.getConnection();
@@ -100,8 +118,15 @@ public class InsegnanteDao {
 			e.printStackTrace();			
 		}
 	}
-	
-	//ModificaPacchetto
+	/***
+	 * Modifica il codice del pacchetto
+	 * @param vecchioCodice vecchio codice del pacchetto
+	 * @param nuovoCodice nuovo codice del pacchetto
+	 * @return
+	 * context InsegnanteDao::updateCode(String vecchioCodice, String nuovoCodice) 
+	 * @pre nuovoCodice != null && nuovoCodice non presente nel db
+	 * @post codice del pacchetto aggiornato
+	 **/
 	public void updateCode(String vecchioCodice, String nuovoCodice) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -123,7 +148,15 @@ public class InsegnanteDao {
 		}
 		
 	}
-	
+	/***
+	 * Modifica il titolo del pacchetto
+	 * @param vecchioCodice vecchio codice del pacchetto
+	 * @param nuovoTitolo nuovo titolo del pacchetto
+	 * @return
+	 * context InsegnanteDao::updateTitle(String vecchioCodice, String nuovoTitolo)
+	 * @pre nuovoTitolo != null && nuovoTitolo non è presente nel db
+	 * @post titolo del pacchetto aggiornato
+	 **/
 	public void updateTitle(String vecchioCodice, String nuovoTitolo) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -143,7 +176,15 @@ public class InsegnanteDao {
 			e.printStackTrace();			
 		}
 	}
-	
+	/***
+	 * Modifica il prezzo del pacchetto
+	 * @param vecchioCodice vecchio codice del pacchetto
+	 * @param nuovoPrezzo nuovo prezzo del pacchetto
+	 * @return
+	 * context InsegnanteDao::updatePrice(String vecchioCodice, double nuovoPrezzo)
+	 * @pre nuovoPrezzo != 0
+	 * @post prezzo del pacchetto aggiornato
+	 **/
 	public void updatePrice(String vecchioCodice, double nuovoPrezzo) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -163,7 +204,15 @@ public class InsegnanteDao {
 			e.printStackTrace();			
 		}
 	}
-	
+	/***
+	 * Modifica la descrizione del pacchetto
+	 * @param vecchioCodice vecchio codice del pacchetto
+	 * @param nuovaDescrzione nuova descrizione del pacchetto
+	 * @return
+	 * context InsegnanteDao::updateDescr(String vecchioCodice, String nuovaDescrizione)
+	 * @pre nuovaDescrizone != null
+	 * @post descrizione del pacchetto aggiornata
+	 **/
 	public void updateDescr(String vecchioCodice, String nuovaDescrizione) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -183,8 +232,16 @@ public class InsegnanteDao {
 			e.printStackTrace();			
 		}
 	}
-
-	//Aggiungi lezione
+	/**
+	 * Inserisce una lezione
+	 * @param codiceP codice della lezione
+	 * @param url url della lezione
+	 * @param titolo titolo della lezione
+	 * @param durata durata della lezione
+	 * @return LezioniBean lezione
+	 * @pre codiceP != null && codiceP non presente nel db && url != null && url non presente nel db && titolo!= null && durata != null
+	 * @post lezione inserita nel db
+	 * **/
 	public LezioniBean insertLesson(String codiceP, String url, String titolo, String durata) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -218,8 +275,13 @@ public class InsegnanteDao {
 		}
 		return null;
 	}
-	
-	//Modifica lezione
+	/***
+	 * Modifica il titolo della lezione
+	 * @param vecchioTitolo vecchio titolo della lezione
+	 * @param nuovoTitolo nuovo titolo della lezione
+	 * @return
+	 * @pre nuovoTitolo != null && nuovoTitolo non presente nel db
+	 **/
 	public void updateTitleLesson(String vecchioTitolo, String nuovoTitolo) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -233,7 +295,13 @@ public class InsegnanteDao {
 			e.printStackTrace();			
 		}
 	}
-	
+	/***
+	 * Modifica l' url della lezione
+	 * @param vecchioTitolo vecchio titolo della lezione
+	 * @param nuovoUrl nuovo url della lezione
+	 * @return
+	 * @pre nuovoUrl != null && nuovoUrl non presente nel db
+	 **/
 	public void updateUrlLesson(String vecchioTitolo, String nuovoUrl) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -247,7 +315,13 @@ public class InsegnanteDao {
 			e.printStackTrace();			
 		}
 	}
-	
+	/***
+	 * Modifica ladurata della lezione
+	 * @param vecchioTitolo vecchio titolo della lezione
+	 * @param nuovaDurata nuovo url della lezione
+	 * @return
+	 * @pre nuovaDurata != null
+	 **/
 	public void updateDurationLesson(String vecchioTitolo, String nuovaDurata) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -261,8 +335,12 @@ public class InsegnanteDao {
 			e.printStackTrace();			
 		}
 	}
-	
-	//Cancella lezione
+	/**
+	 * Cancella la lezione
+	 * @param titolo
+	 * @return 
+	 * @pre titolo != null
+	 **/
 	public void deleteLesson(String titolo) {	
 		try {
 			Connection conn= DriverManagerConnectionPool.getConnection();
@@ -275,7 +353,12 @@ public class InsegnanteDao {
 			e.printStackTrace();			
 		}
 	}
-	
+	/**
+	 *Restitusice l'ordine del cliente
+	 *@param nomeCliente nome del cliente
+	 *@return ArrayList<OrdineBean> 
+	 *@pre nomeCliente != null
+	 **/
 	public ArrayList<OrdineBean> getOrdine(String nomeCliente) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -288,8 +371,6 @@ public class InsegnanteDao {
 			
 			ArrayList <OrdineBean> ordini= new ArrayList<OrdineBean>();
 		
-			
-			
 			return ordini;
 		} catch (SQLException e) {
 			e.printStackTrace();

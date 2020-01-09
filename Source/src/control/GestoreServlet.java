@@ -19,7 +19,9 @@ import control.util.JSONResponse;
 import modelBean.LezioniBean;
 import modelBean.PacchettoBean;
 import modelDao.GestoreDao;
-
+/** 
+ * Gestisce i pacchetti (approvazione e disapprovazione dei pacchetti)
+ **/
 @WebServlet("/GestoreServlet")
 public class GestoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

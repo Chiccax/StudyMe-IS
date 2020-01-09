@@ -33,6 +33,9 @@ import modelDao.RecensioneDao;
 import modelDao.SottocategoriaDao;
 import modelDao.UtenteDao;
 
+/**
+ * Gestisce la sottocategoria dell'insegnante 
+ **/
 
 @WebServlet("/SottocategoriaInsegnanteServlet")
 public class SottocategoriaInsegnanteServlet extends HttpServlet {

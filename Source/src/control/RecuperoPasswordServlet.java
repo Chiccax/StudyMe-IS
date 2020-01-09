@@ -16,7 +16,9 @@ import com.google.gson.Gson;
 import control.util.JSONResponse;
 import modelDao.UtenteDao;
 import utility.EmailSender;
-
+/** 
+ * Gestisce il recupero della password
+ **/
 @WebServlet("/RecuperoPasswordServlet")
 public class RecuperoPasswordServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

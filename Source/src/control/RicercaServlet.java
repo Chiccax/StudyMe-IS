@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import modelBean.PacchettoBean;
 import modelDao.PacchettoDao;
 import modelDao.UtenteDao;
-
+/** 
+ * Gestisce la ricerca di un pacchetto
+ **/
 
 @WebServlet("/RicercaServlet")
 public class RicercaServlet extends HttpServlet {

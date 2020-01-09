@@ -20,7 +20,7 @@ import modelBean.UtenteBean;
 import modelDao.OrdineAcquistoDao;
 import modelDao.PacchettoDao;
 /**
- * La servlet Libreria  gestisce la visualizzazione dei pacchetti acquistati.
+ * Gestisce la visualizzazione dei pacchetti acquistati dall'acquirente
  */
 
 @WebServlet("/LibreriaServlet")

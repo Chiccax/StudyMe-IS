@@ -13,7 +13,14 @@ import modelBean.OrdineBean;
 import modelBean.PacchettoBean;
 
 public class OrdineAcquistoDao {
-
+	/**
+	 * Recupera gli ordini dei clienti 
+	 * @param nomeCliente nome del cliente 
+	 * @return ArrayList<OrdineAcquistoBean> arry di acquisti
+	 * @throws SQLEception
+	 * context OrdineAcquistoDao::ArrayList<OrdineAcquistoBean> findByNomeCliente(Object nomeCliente)
+	 * @pre nomeCleinte presente nel database
+	 **/
 	public ArrayList<OrdineAcquistoBean> findByNomeCliente(Object nomeCliente) throws SQLException {
 		if(!(nomeCliente instanceof String))
 			throw new IllegalArgumentException("La chiave primaria deve essere di tipo String");
@@ -32,7 +39,7 @@ public class OrdineAcquistoDao {
 		
 		ArrayList<OrdineAcquistoBean> ordineCompleto = new ArrayList<OrdineAcquistoBean>();
 		
-		//Estraggo l'ordine
+		/* Estraggo l'ordine */
 		while(res.next()) {
 			OrdineAcquistoBean ordine= new OrdineAcquistoBean();
 			ordine.setNumOrdine(res.getInt(1));
@@ -47,7 +54,7 @@ public class OrdineAcquistoDao {
 			
 			ResultSet ris1 = stm.executeQuery();
 			
-			//Estraggo i dettagli dell'ordine in base al numero d'ordine
+			/* Estraggo i dettagli dell'ordine in base al numero d'ordine */
 			while(ris1.next()) {
 				String codiceP = ris1.getString(3);
 				
@@ -73,7 +80,13 @@ public class OrdineAcquistoDao {
 		}
 		return ordineCompleto;
 	}
-
+	/**
+	 * Recupera gli ordini di tutti i clienti
+	 * @param
+	 * @return ArrayList<OrdineAcquistoBean>  array di ordini
+	 * @throws SQLException
+	 * context OrdineAcquistoDao::ArrayList<OrdineAcquistoBean> findAllClient()
+	 **/
 public ArrayList<OrdineAcquistoBean> findAllClient() throws SQLException {
 	Connection conn = DriverManagerConnectionPool.getConnection();
 
@@ -86,7 +99,7 @@ public ArrayList<OrdineAcquistoBean> findAllClient() throws SQLException {
 	
 	ArrayList<OrdineAcquistoBean> ordineCompleto = new ArrayList<OrdineAcquistoBean>();
 	
-	//Estraggo l'ordine
+	/* Estraggo l'ordine */
 	while(res.next()) {
 		OrdineAcquistoBean ordine= new OrdineAcquistoBean();
 		ordine.setNumOrdine(res.getInt(1));
@@ -101,7 +114,7 @@ public ArrayList<OrdineAcquistoBean> findAllClient() throws SQLException {
 		
 		ResultSet ris1 = stm.executeQuery();
 		
-		//Estraggo i dettagli dell'ordine in base al numero d'ordine
+		/* Estraggo i dettagli dell'ordine in base al numero d'ordine */
 		while(ris1.next()) {
 			String codiceP = ris1.getString(3);
 			

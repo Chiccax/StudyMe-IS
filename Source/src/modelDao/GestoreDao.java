@@ -12,8 +12,13 @@ import modelBean.PacchettoBean;
 public class GestoreDao {
 	
 	public GestoreDao() {}
-	
-	//Pacchetti da approvare
+	/**
+	 * Visualizza i pacchetti da approvare
+	 * @param
+	 * @return ArrayList<PacchettoBean> array di pacchetti
+	 * context GestoreDao::visualizzaPacchettiDaApprovare()
+	 * 
+	 * **/
 	public ArrayList<PacchettoBean> visualizzaPacchettiDaApprovare(){
 		PacchettoBean pacchettoDaApprovare;
 		ArrayList<PacchettoBean> pacchetti = new ArrayList<PacchettoBean>();
@@ -52,7 +57,12 @@ public class GestoreDao {
 			
 			return null;
 	}
-	
+	/**
+	 *Visualizza le lezioni da approvare 
+	 *@param
+	 *@return ArrayList<LezioniBean>
+	 * context GestoreDao::visualizzaLezioniDaApprovare()
+	 **/
 	public ArrayList<LezioniBean> visualizzaLezioniDaApprovare(){
 		LezioniBean lezioniDaApprovare;
 		ArrayList<LezioniBean> lezioni = new ArrayList<LezioniBean>();
@@ -84,7 +94,14 @@ public class GestoreDao {
 		}
 			return null;
 	}
-
+	/**
+	 *Approva l'intero pacchetto di lezioni
+	 *@param codicePacchetto codice del pacchetto
+	 *@return 
+	 *context GestoreDao::approvaInteroPacchetto(String codicePacchetto)
+	 *@pre codicePacchetto != null && codicePacchetto presente nel db 
+	 * 
+	 **/
 	public void approvaInteroPacchetto(String codicePacchetto) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -101,7 +118,13 @@ public class GestoreDao {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Disapprova l'intero pacchetto di lezioni
+	 * @param codicePacchetto codice del pacchetto
+	 * @return 
+	 * context GestoreDao::disapprovaInteroPacchetto(String codicePacchetto)
+	 * @pre codicePacchetto != null && codicePacchetto presente nel db 
+	 **/
 	public void disapprovaInteroPacchetto(String codicePacchetto) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -118,7 +141,14 @@ public class GestoreDao {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 *Approva la singola lezione
+	 *@param url url della lezione
+	 *@return 
+	 *context GestoreDao::approvaSingolaLezione(String url)
+	 *@pre url != null && url non presente nel db
+	 * 
+	 **/
 	public void approvaSingolaLezione(String url) {
 		try {	
 			Connection conn = DriverManagerConnectionPool.getConnection();
@@ -130,7 +160,14 @@ public class GestoreDao {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 *Disapprova la singola lezione
+	 *@param url url della lezione
+	 *@return 
+	 *context GestoreDao::disapprovaSingolaLezione(String url)
+	 *@pre url != null && url non presente nel db
+	 * 
+	 **/
 	public void disapprovaSingolaLezione(String url) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();

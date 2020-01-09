@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.catalina.servlet4preview.RequestDispatcher;
 
 /**
- * Servlet implementation class LogoutServlet
+ * Consente di effettuare il logout
  */
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
