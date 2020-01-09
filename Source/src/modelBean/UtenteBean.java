@@ -1,11 +1,20 @@
 package modelBean;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import control.util.Observer;
+import control.util.Subject;
+import utility.EmailSender;
+
 /**
  * Classe identificante una classe Utente
  * @author Claudia Buono 
  * @version 1.1
  * @since  18/12/2019 
  */
-public class UtenteBean {
+public class UtenteBean implements Observer {
 	/**
 	 * Costruttore generico dell'Utente
 	 * 
@@ -67,8 +76,28 @@ public class UtenteBean {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
+	
+	public void attach(Subject s) {
+		if (s != null) {
+			this.s = s;
+			this.s.addObserver(this);
+		}
+	}
+	
+	public void detach() {
+		if(s != null) {
+			s.removeObserver(this);
+			s = null;
+		}
+	}
+	
+	@Override
+	public void update() {
+		EmailSender emailSender = EmailSender.GetInstance();
+		emailSender.SendEmail("Nuova Lezione", "Gentile " + this.nomeUtente + ", è stata aggiunta una nuova lezione per uno dei pacchetti che hai acquistato. Ti invitiamo a scoprire qual è! Distinti saluti", this.email);
+	}	
 	
 	String nomeUtente, password, email, tipo;
+	Subject s;
 
 }

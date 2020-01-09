@@ -14,6 +14,7 @@ import javax.mail.internet.MimeMessage;
 
 public class EmailSender {
 
+	//Singleton
 	private static EmailSender instance;
 	
 	public static EmailSender GetInstance(){

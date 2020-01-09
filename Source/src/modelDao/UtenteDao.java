@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import model.DriverManagerConnectionPool;
 import modelBean.PacchettoBean;
@@ -58,7 +59,7 @@ public class UtenteDao {
 	 * @param email email del nuovo utente
 	 * @param nomeUtente nomeUtente del nuovo utente
 	 * @param password password del nuovo utente
-	 * @return true
+	 * @return true se è andato a buon fine, false altrimenti
 	 * context UtenteDao::registration(String email, String nomeUtente, String password)
 	 * @pre email != null && email non presente nel db && nomeUtente != null && nomeUtente non presente nel db && password != null
 	 * @post nuovo utente presente nel db
@@ -123,7 +124,7 @@ public class UtenteDao {
 	 * Modifica la password di un Account
 	 * @param email 
 	 * @param newEmail 
-	 * @return false
+	 * @return true se è andato a buon fine, false altrimenti
 	 * context UtenteDao::updateEmail(String email, String newEmail) 
 	 * @pre mail!=null && email presente nel database && newMail != null && newEmail non presente nel database
 	 * @post email aggiornata
@@ -152,5 +153,31 @@ public class UtenteDao {
 			}
 			return false;
 		}
-
+	
+	public List<UtenteBean> getAllAcquirenti() {
+		List<UtenteBean> acquirenti = new ArrayList<UtenteBean>();
+		
+		String SQL = "SELECT DISTINCT utente.* FROM utente, ordine WHERE ordine.nomeCliente = utente.nomeUtente";
+		try {
+			Connection conn = DriverManagerConnectionPool.getConnection();
+			
+			PreparedStatement stm = conn.prepareStatement(SQL);
+			
+			ResultSet res = stm.executeQuery();
+			while(res.next()) {
+				UtenteBean utente = new UtenteBean();
+				utente.setNomeUtente(res.getString(1));
+				utente.setPassword(res.getString(2));
+				utente.setEmail(res.getString(3));
+				utente.setTipo(res.getString(4));
+				
+				acquirenti.add(utente);
+			}
+			}catch (SQLException e) {
+				e.printStackTrace();
+				return acquirenti;
+			}
+		
+		return acquirenti;
+	}
 }

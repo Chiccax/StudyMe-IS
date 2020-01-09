@@ -1,11 +1,14 @@
 package modelBean;
+
+
+
 /**
  * Classe identificante una classe Pacchetto
  * @author Claudia Buono 
  * @version 1.1
  * @since  18/12/2019 
  */
-public class PacchettoBean {
+public class PacchettoBean{
 	/**
 	 * Costruttore generico del Pacchetto
 	 * 
@@ -123,11 +126,11 @@ public class PacchettoBean {
 	 */
 	public void setApprovato(int approvato) {
 		this.approvato=approvato;
+		
 	}
 	
 	private String codicePacchetto, descrizione, titolo, catagoria, sottocategoria,foto;
 	private double prezzo;
-	//nw
 	private int approvato;	//Valore di default=0
 
 }

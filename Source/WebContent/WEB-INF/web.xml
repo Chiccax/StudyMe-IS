@@ -16,4 +16,10 @@
     <error-code>500</error-code>
     <location>/PaginaErrore.jsp?code=500</location>
   </error-page>
+  
+  <listener>
+  	<listener-class>
+  		control.util.StartupUtility
+  	</listener-class>
+  </listener>
 </web-app>

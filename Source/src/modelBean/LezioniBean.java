@@ -1,11 +1,14 @@
 package modelBean;
+
+import control.util.Subject;
+
 /**
  * Classe identificante una classe Lezioni
  * @author Claudia Buono 
  * @version 1.1
  * @since  18/12/2019 
  */
-public class LezioniBean {
+public class LezioniBean extends Subject {
 	/**
 	 * Costruttore generico delle Lezioni
 	 * 
@@ -80,10 +83,13 @@ public class LezioniBean {
 	 */
 	public void setApprovato(int approvato) {
 		this.approvato=approvato;
+		
+		if(this.approvato == 1) {
+			notifyObservers();
+		}
 	}
 
 	
 	private String url, titolo, pacchetto, durata;
-	//nw
 	private int approvato;	 // Valore di default=0; 
 	}
