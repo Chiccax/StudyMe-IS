@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import modelBean.AcquistoBean;
-import modelBean.OrdineBean;
-import modelBean.PacchettoBean;
-import modelBean.UtenteBean;
-import modelDao.AcquistoDao;
-import modelDao.OrdineDao;
+import model.bean.AcquistoBean;
+import model.bean.OrdineBean;
+import model.bean.PacchettoBean;
+import model.bean.UtenteBean;
+import model.dao.AcquistoDao;
+import model.dao.OrdineDao;
 
 /**
  * Gestisce l'acquisto di un corso

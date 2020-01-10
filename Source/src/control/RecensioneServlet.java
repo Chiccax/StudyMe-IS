@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import modelDao.RecensioneDao;
+import model.dao.RecensioneDao;
 /** 
  * Gestisce l'inserimento di una recensione
  **/

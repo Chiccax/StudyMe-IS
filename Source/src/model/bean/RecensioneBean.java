@@ -1,4 +1,4 @@
-package modelBean;
+package model.bean;
 /**
  * Classe identificante una classe Recensione
  * @author Claudia Buono 

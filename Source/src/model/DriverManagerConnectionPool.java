@@ -20,7 +20,7 @@ public class DriverManagerConnectionPool  {
 		String port = "3306";
 		String db = "studyme";
 		String username = "root";
-		String password = "tripodi";
+		String password = "claudia";
 
 		newConnection = DriverManager.getConnection("jdbc:mysql://"+ ip+":"+ port+ "/"+ db + "?useSSL=false", username, password);
 		newConnection.setAutoCommit(false);

@@ -1,4 +1,4 @@
-package modelDao;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.DriverManagerConnectionPool;
-import modelBean.LezioniBean;
-import modelBean.OrdineBean;
-import modelBean.PacchettoBean;
+import model.bean.LezioniBean;
+import model.bean.OrdineBean;
+import model.bean.PacchettoBean;
 
 public class InsegnanteDao {
 
@@ -136,7 +136,7 @@ public class InsegnanteDao {
 			ResultSet res = stm.executeQuery();
 			
 			if(res.next()) {
-				stm = conn.prepareStatement("UPDATE pacchetto SET codicePacchetto = ? , approvato = 0 WHERE codicePacchetto = ?");
+				stm = conn.prepareStatement("UPDATE pacchetto SET codicePacchetto = ? WHERE codicePacchetto = ?");
 				stm.setString(1, nuovoCodice);
 				stm.setString(2, vecchioCodice);
 				stm.executeUpdate();
@@ -165,7 +165,7 @@ public class InsegnanteDao {
 			stm.setString(1, vecchioCodice);
 			ResultSet res = stm.executeQuery();
 			if(res.next()) {
-				stm = conn.prepareStatement("UPDATE pacchetto SET titolo = ? , approvato = 0 WHERE codicePacchetto = ?");
+				stm = conn.prepareStatement("UPDATE pacchetto SET titolo = ? WHERE codicePacchetto = ?");
 				stm.setString(1, nuovoTitolo);
 				stm.setString(2, vecchioCodice);
 				stm.executeUpdate();
@@ -193,7 +193,7 @@ public class InsegnanteDao {
 			stm.setString(1, vecchioCodice);
 			ResultSet res = stm.executeQuery();
 			if(res.next()) {
-				stm = conn.prepareStatement("UPDATE pacchetto SET prezzo = ? , approvato = 0 WHERE codicePacchetto = ?");
+				stm = conn.prepareStatement("UPDATE pacchetto SET prezzo = ? WHERE codicePacchetto = ?");
 				stm.setDouble(1, nuovoPrezzo);
 				stm.setString(2, vecchioCodice);
 				stm.executeUpdate();
@@ -221,7 +221,7 @@ public class InsegnanteDao {
 			stm.setString(1, vecchioCodice);
 			ResultSet res = stm.executeQuery();
 			if(res.next()) {
-				stm = conn.prepareStatement("UPDATE pacchetto SET descrizione = ? , approvato = 0 WHERE codicePacchetto = ?");
+				stm = conn.prepareStatement("UPDATE pacchetto SET descrizione = ? WHERE codicePacchetto = ?");
 				stm.setString(1, nuovaDescrizione);
 				stm.setString(2, vecchioCodice);
 				stm.executeUpdate();
@@ -285,7 +285,7 @@ public class InsegnanteDao {
 	public void updateTitleLesson(String vecchioTitolo, String nuovoTitolo) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
-			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET titolo = ? , approvato = 0 WHERE titolo = ? ");
+			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET titolo = ? WHERE titolo = ? ");
 			stm.setString(1, nuovoTitolo);
 			stm.setString(2, vecchioTitolo);
 			stm.executeUpdate();
@@ -305,7 +305,7 @@ public class InsegnanteDao {
 	public void updateUrlLesson(String vecchioTitolo, String nuovoUrl) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
-			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET url = ? , approvato = 0 WHERE titolo = ?");
+			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET url = ? WHERE titolo = ?");
 			stm.setString(1, nuovoUrl);
 			stm.setString(2, vecchioTitolo);
 			stm.executeUpdate();
@@ -325,7 +325,7 @@ public class InsegnanteDao {
 	public void updateDurationLesson(String vecchioTitolo, String nuovaDurata) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
-			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET durata = ? , approvato = 0 WHERE titolo = ?");
+			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET durata = ? WHERE titolo = ?");
 			stm.setString(1, nuovaDurata);
 			stm.setString(2, vecchioTitolo);
 			stm.executeUpdate();

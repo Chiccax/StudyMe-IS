@@ -14,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import modelBean.LezioniBean;
-import modelBean.PacchettoBean;
-import modelDao.GestoreDao;
+import model.bean.LezioniBean;
+import model.bean.PacchettoBean;
+import model.dao.GestoreDao;
 /** 
  * Gestisce i pacchetti (approvazione e disapprovazione dei pacchetti)
  **/

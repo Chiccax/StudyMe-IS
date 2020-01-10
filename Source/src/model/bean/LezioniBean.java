@@ -1,4 +1,4 @@
-package modelBean;
+package model.bean;
 
 import control.util.Subject;
 

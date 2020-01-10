@@ -1,6 +1,6 @@
 <!-- Barra di navigazione -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="java.util.*" import="modelBean.UtenteBean" import="modelBean.PacchettoBean" %>
+	pageEncoding="ISO-8859-1" import="java.util.*" import="model.bean.UtenteBean" import="model.bean.PacchettoBean" %>
 <%
 	UtenteBean loggedUser = (UtenteBean) session.getAttribute("User");
 

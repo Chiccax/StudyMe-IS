@@ -1,4 +1,4 @@
-package modelDao;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 
 import model.DriverManagerConnectionPool;
-import modelBean.CategoriaBean;
+import model.bean.CategoriaBean;
 
 public class CategoriaDao implements Model_interface<CategoriaBean> {
 

@@ -14,16 +14,16 @@ import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 
-import modelBean.CategoriaBean;
-import modelBean.LezioniBean;
-import modelBean.OrdineAcquistoBean;
-import modelBean.PacchettoBean;
-import modelBean.RecensioneBean;
-import modelBean.UtenteBean;
-import modelDao.CategoriaDao;
-import modelDao.OrdineAcquistoDao;
-import modelDao.PacchettoDao;//ds
-import modelDao.RecensioneDao;
+import model.bean.CategoriaBean;
+import model.bean.LezioniBean;
+import model.bean.OrdineAcquistoBean;
+import model.bean.PacchettoBean;
+import model.bean.RecensioneBean;
+import model.bean.UtenteBean;
+import model.dao.CategoriaDao;
+import model.dao.OrdineAcquistoDao;
+import model.dao.PacchettoDao;
+import model.dao.RecensioneDao;
 /** 
  * Gestisce le lezioni
  **/

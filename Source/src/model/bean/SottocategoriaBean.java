@@ -1,4 +1,4 @@
-package modelBean;
+package model.bean;
 /**
  * Classe identificante una classe Sottocategoria
  * @author Claudia Buono 

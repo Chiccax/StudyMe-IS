@@ -1,6 +1,6 @@
-<%@page import="modelDao.OrdineDao"%>
+<%@page import="model.dao.OrdineDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="java.util.*, modelBean.*"%>
+	pageEncoding="ISO-8859-1" import="java.util.*, model.bean.*"%>
 	
 <!DOCTYPE html>
 <head>

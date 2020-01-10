@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList" %>
-<%@page import="modelBean.*" %>
-<%@page import="modelDao.*" %>
+<%@page import="model.bean.*" %>
+<%@page import="model.dao.*" %>
 
 <%
 	ArrayList<LezioniBean> result = (ArrayList<LezioniBean>)request.getAttribute("lezioni");

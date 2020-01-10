@@ -1,4 +1,4 @@
-package modelDao;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import model.DriverManagerConnectionPool;
-import modelBean.OrdineAcquistoBean;
-import modelBean.PacchettoBean;
+import model.bean.OrdineAcquistoBean;
+import model.bean.PacchettoBean;
 
 public class OrdineAcquistoDao {
 	/**

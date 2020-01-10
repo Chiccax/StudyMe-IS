@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import modelDao.UtenteDao;
+import model.dao.UtenteDao;
 import utility.EmailSender;
 /** 
  * Gestisce il recupero della password

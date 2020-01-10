@@ -3,13 +3,13 @@ package control.util;
 import java.sql.SQLException;
 import java.util.*;
 
-import modelBean.*;
-import modelDao.OrdineAcquistoDao;
-import modelDao.PacchettoDao;
-import modelDao.UtenteDao;
-
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+
+import model.bean.*;
+import model.dao.OrdineAcquistoDao;
+import model.dao.PacchettoDao;
+import model.dao.UtenteDao;
 
 public class StartupUtility implements ServletContextListener {
 

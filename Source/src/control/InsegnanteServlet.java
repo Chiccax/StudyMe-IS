@@ -18,12 +18,12 @@ import com.google.gson.Gson;
 
 import control.util.JSONResponse;
 import control.util.StartupUtility;
-import modelBean.LezioniBean;
-import modelBean.PacchettoBean;
-import modelBean.UtenteBean;
-import modelDao.InsegnanteDao;
-import modelDao.PacchettoDao;
-import modelDao.SottocategoriaDao;
+import model.bean.LezioniBean;
+import model.bean.PacchettoBean;
+import model.bean.UtenteBean;
+import model.dao.InsegnanteDao;
+import model.dao.PacchettoDao;
+import model.dao.SottocategoriaDao;
 /** 
  * Gestisce l' inserimento pacchetti e lezioni da parte dell'insegnnante
  **/ 
@@ -78,8 +78,8 @@ public class InsegnanteServlet extends HttpServlet {
 				else if(action.equalsIgnoreCase("cambiaTitolo")){
 					String nuovoTitolo = request.getParameter("nuovoTitolo");
 					
-					//controllo se è tra i 5 e i 40 caratteri
-					if(nuovoTitolo.length() < 5 || nuovoTitolo.length() > 40 ) {
+					//controllo se è tra i 5 e i 35 caratteri
+					if(nuovoTitolo.length() < 5 || nuovoTitolo.length() > 35 ) {
 						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
 						out.print(gson.toJson(jsonResponse));
 						return;
@@ -170,8 +170,8 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-					//controllo se è tra i 5 e i 20 caratteri
-					if(nuovoTitolo.length() < 5 || nuovoTitolo.length() > 20 ) {
+					//controllo se è tra i 5 e i 35 caratteri
+					if(nuovoTitolo.length() < 5 || nuovoTitolo.length() > 35 ) {
 						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
 						out.print(gson.toJson(jsonResponse));
 						return;
@@ -221,8 +221,8 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-					//titolo compreso tra 5 e 20
-					if(titolo.length() < 5 || titolo.length() > 20 ) {
+					//titolo compreso tra 5 e 35
+					if(titolo.length() < 5 || titolo.length() > 35 ) {
 						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
 						out.print(gson.toJson(jsonResponse));
 						return;
@@ -295,8 +295,8 @@ public class InsegnanteServlet extends HttpServlet {
 				}//Modifica lezione
 				else if(action.equalsIgnoreCase("modificaNomeLezione")){
 					String nuovoNomeLezione = request.getParameter("nuovoNomeLezione");
-					//titolo compreso tra 5 e 20
-					if(nuovoNomeLezione.length() < 5 || nuovoNomeLezione.length() > 20 ) {
+					//titolo compreso tra 5 e 35
+					if(nuovoNomeLezione.length() < 5 || nuovoNomeLezione.length() > 35 ) {
 						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
 						out.print(gson.toJson(jsonResponse));
 						return;
@@ -361,7 +361,7 @@ public class InsegnanteServlet extends HttpServlet {
 				}
 
 	}
-	private static final String INVALID_TITLE = "Inserire un titolo compreso tra i 5 e 20 caratteri";
+	private static final String INVALID_TITLE = "Inserire un titolo compreso tra i 5 e 35 caratteri";
 	private static final String INVALID_TITLE2 = "titolo gi&agrave esistente";
 	private static final String INVALID_DES = "inserire una descrizione compresa tra i 10 e i 30 caratteri";
 	private static final String INVALID_URL = "Url già esistente";

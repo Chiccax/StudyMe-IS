@@ -1,4 +1,4 @@
-package modelDao;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.DriverManagerConnectionPool;
-import modelBean.UtenteBean;
+import model.bean.UtenteBean;
 
 
 public class UtenteDao {

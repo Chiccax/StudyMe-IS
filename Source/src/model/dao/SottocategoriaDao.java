@@ -1,4 +1,4 @@
-package modelDao;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import model.DriverManagerConnectionPool;
-import modelBean.SottocategoriaBean;
+import model.bean.SottocategoriaBean;
 
 public class SottocategoriaDao implements Model_interface<SottocategoriaBean> {
 

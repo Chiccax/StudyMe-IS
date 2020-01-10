@@ -1,4 +1,4 @@
-package modelDao;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import model.DriverManagerConnectionPool;
-import modelBean.OrdineBean;
+import model.bean.OrdineBean;
 
 public class OrdineDao {
 	 public OrdineDao() {}

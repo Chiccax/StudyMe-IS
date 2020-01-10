@@ -15,8 +15,8 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import modelBean.PacchettoBean;
-import modelBean.UtenteBean;
+import model.bean.PacchettoBean;
+import model.bean.UtenteBean;
 /** 
  * Gestisce la conclusione di un ordine 
  **/

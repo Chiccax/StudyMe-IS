@@ -1,4 +1,4 @@
-package modelBean;
+package model.bean;
 /**
  * Classe identificante una classe Categoria
  * @author Claudia Buono 

@@ -2,8 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.Map" %>
-<%@page import="modelBean.*" %>
-<%@page import="modelDao.*" %>
+<%@page import="model.bean.*" %>
+<%@page import="model.dao.*" %>
 
 <% 	Map<String, ArrayList<PacchettoBean>> result =(Map<String, ArrayList<PacchettoBean>>) request.getAttribute("pacchetti"); 
 	String categoria = (String) request.getAttribute("categoria");

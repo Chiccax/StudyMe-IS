@@ -15,10 +15,9 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import modelBean.OrdineAcquistoBean;
-
-import modelBean.UtenteBean;
-import modelDao.OrdineAcquistoDao;
+import model.bean.OrdineAcquistoBean;
+import model.bean.UtenteBean;
+import model.dao.OrdineAcquistoDao;
 /** 
  * Gestisce l'ordine dell'acquirente 
  **/

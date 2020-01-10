@@ -1,4 +1,4 @@
-package modelDao;
+package model.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 import control.util.StartupUtility;
 import model.DriverManagerConnectionPool;
-import modelBean.LezioniBean;
-import modelBean.PacchettoBean;
+import model.bean.LezioniBean;
+import model.bean.PacchettoBean;
 
 public class GestoreDao {
 	

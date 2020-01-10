@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelBean.PacchettoBean;
-import modelDao.PacchettoDao;
+import model.bean.PacchettoBean;
+import model.dao.PacchettoDao;
 /** 
  * Gestisce la ricerca di un pacchetto
  **/

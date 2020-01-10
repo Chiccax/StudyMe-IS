@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import modelBean.UtenteBean;
-import modelDao.UtenteDao;
+import model.bean.UtenteBean;
+import model.dao.UtenteDao;
 
 /**
  * Gestisce la modifica dei dati personali

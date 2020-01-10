@@ -1,11 +1,11 @@
-package modelDao;
+package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import model.DriverManagerConnectionPool;
-import modelBean.AcquistoBean;
+import model.bean.AcquistoBean;
 
 public class AcquistoDao {
 	

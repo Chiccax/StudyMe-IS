@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import modelBean.LezioniBean;
-import modelBean.OrdineAcquistoBean;
-import modelBean.PacchettoBean;
-import modelBean.UtenteBean;
-import modelDao.OrdineAcquistoDao;
-import modelDao.PacchettoDao;
+import model.bean.LezioniBean;
+import model.bean.OrdineAcquistoBean;
+import model.bean.PacchettoBean;
+import model.bean.UtenteBean;
+import model.dao.OrdineAcquistoDao;
+import model.dao.PacchettoDao;
 /**
  * Gestisce la visualizzazione dei pacchetti acquistati dall'acquirente
  */

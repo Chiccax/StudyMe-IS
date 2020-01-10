@@ -1,4 +1,4 @@
-package modelBean;
+package model.bean;
 /**
  * Classe identificante una classe Acquisto 
  * @author Claudia Buono 

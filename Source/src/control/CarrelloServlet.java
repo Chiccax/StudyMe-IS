@@ -16,8 +16,8 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import control.util.JSONResponse;
-import modelBean.PacchettoBean;
-import modelDao.PacchettoDao;
+import model.bean.PacchettoBean;
+import model.dao.PacchettoDao;
 /** 
  * Gestisce l'acquisto di un pacchetto
  **/

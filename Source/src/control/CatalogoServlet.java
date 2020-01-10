@@ -14,11 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import modelBean.CategoriaBean;
-import modelBean.PacchettoBean;
-import modelBean.UtenteBean;
-import modelDao.CategoriaDao;
-import modelDao.PacchettoDao;
+import model.bean.CategoriaBean;
+import model.bean.PacchettoBean;
+import model.bean.UtenteBean;
+import model.dao.CategoriaDao;
+import model.dao.PacchettoDao;
 
 /**
  * Gestisce la visualizzazione dei pacchetti nelle varie categorie

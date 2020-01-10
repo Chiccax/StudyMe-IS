@@ -1,4 +1,4 @@
-package modelDao;
+package model.dao;
 
 import java.sql.Connection;
 
@@ -11,12 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import model.DriverManagerConnectionPool;
-import modelBean.CategoriaBean;
-import modelBean.LezioniBean;
-import modelBean.PacchettoBean;
-import modelBean.RecensioneBean;
-import modelBean.UtenteBean;
-import modelDao.SottocategoriaDao;
+import model.bean.CategoriaBean;
+import model.bean.LezioniBean;
+import model.bean.PacchettoBean;
+import model.bean.RecensioneBean;
+import model.bean.UtenteBean;
+import model.dao.SottocategoriaDao;
 
 public class PacchettoDao {
 	public PacchettoDao() {

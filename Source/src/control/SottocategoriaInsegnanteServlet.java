@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import modelBean.SottocategoriaBean;
-import modelDao.SottocategoriaDao;
+import model.bean.SottocategoriaBean;
+import model.dao.SottocategoriaDao;
 
 /**
  * Gestisce la sottocategoria dell'insegnante 

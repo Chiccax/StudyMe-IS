@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList" %>
-<%@page import="modelBean.*" %>
-<%@page import="modelDao.*" %>
+<%@page import="model.bean.*" %>
+<%@page import="model.dao.*" %>
 
 <%
 	ArrayList<LezioniBean> result = (ArrayList<LezioniBean>)request.getAttribute("lezioni");
