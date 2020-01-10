@@ -9,20 +9,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 import model.DriverManagerConnectionPool;
 import modelBean.CategoriaBean;
 import modelBean.LezioniBean;
 import modelBean.PacchettoBean;
 import modelBean.RecensioneBean;
+import modelBean.UtenteBean;
 import modelDao.SottocategoriaDao;
 
 public class PacchettoDao {
@@ -523,6 +516,37 @@ public class PacchettoDao {
 				recensioni.add(recensione);
 			}
 			return recensioni;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public ArrayList<UtenteBean> getAcquirenti(String codicePacchetto){
+		try {
+			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();
+
+			String sql = "SELECT acquisto.numOrdine, ordine.nomeCliente, utente.*\r\n" + 
+						 "FROM studyme.acquisto, studyme.ordine, studyme.utente\r\n" + 
+						 "WHERE acquisto.codiceP = ? AND ordine.numOrdine = acquisto.numOrdine AND utente.nomeUtente = ordine.nomeCliente";
+
+			PreparedStatement stm = conn.prepareStatement(sql);
+			stm.setString(1, codicePacchetto);
+			ResultSet res = stm.executeQuery();
+			conn.commit();
+
+			ArrayList<UtenteBean> acquirenti = new ArrayList<UtenteBean>();
+			
+			while (res.next()) {
+				UtenteBean acquirente = new UtenteBean();
+				acquirente.setNomeUtente(res.getString(3));
+				acquirente.setPassword(res.getString(4));
+				acquirente.setEmail(res.getString(5));
+				acquirente.setTipo(res.getString(6));
+
+				acquirenti.add(acquirente);
+			}
+			return acquirenti;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;

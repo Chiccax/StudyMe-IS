@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.DriverManagerConnectionPool;
-import modelBean.PacchettoBean;
 import modelBean.UtenteBean;
 
 

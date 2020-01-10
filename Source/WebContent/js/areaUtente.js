@@ -74,7 +74,7 @@ function showApprovals(){
 					div += "<div id = 'riquadroLezioni'>";
 
 					let lezioniPacchetto = lezioniPacchetti[pacchettoBean.codicePacchetto];
-					if(lezioniPacchetto.C > 1){
+					if(lezioniPacchetto.length > 1){
 						lezioniPacchetto.forEach(function(lezioniBean){
 						div += "<div id = 'singolaLezione'>";
 						div += "<h1 id = 'titoloLezioniDaApprovare'>" + lezioniBean.titolo + "</h1>";		
@@ -86,6 +86,8 @@ function showApprovals(){
 						lezioniPacchetto.forEach(function(lezioniBean){
 							div += "<div id = 'singolaLezione'>";
 							div += "<h1 id = 'titoloLezioniDaApprovare'>" + lezioniBean.titolo + "</h1>";	
+							div +=	"<i class= 'far fa-check-circle' id = 'approva' onClick = 'approvaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
+							div += " <i class='far fa-times-circle' id = 'disapprova'onClick = 'disapprovaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
 							div += "</div>";
 						})
 					}
@@ -422,7 +424,7 @@ function disapprovaInteroPacchetto(event){
     				let div = "<h1 id = 'titoloFinestra'>Non ci sono pacchetti da approvare</h1>";
     				div += "<img src = 'img/utility/approvazioni.png'>";
     				element.innerHTML = element.innerHTML + div;	
-    		}
+    		} 
     		caller.parentElement.style.display= "none";
     		document.getElementById("confermaPacchetto").style.display = "none";
     	}

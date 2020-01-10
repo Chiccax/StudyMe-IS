@@ -5,11 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
-
 import model.DriverManagerConnectionPool;
 import modelBean.OrdineAcquistoBean;
-import modelBean.OrdineBean;
 import modelBean.PacchettoBean;
 
 public class OrdineAcquistoDao {

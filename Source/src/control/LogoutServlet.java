@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import org.apache.catalina.servlet4preview.RequestDispatcher;
-
 /**
  * Consente di effettuare il logout
  */

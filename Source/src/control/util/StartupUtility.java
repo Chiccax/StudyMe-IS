@@ -5,7 +5,6 @@ import java.util.*;
 
 import modelBean.*;
 import modelDao.OrdineAcquistoDao;
-import modelDao.OrdineDao;
 import modelDao.PacchettoDao;
 import modelDao.UtenteDao;
 
@@ -24,10 +23,7 @@ public class StartupUtility implements ServletContextListener {
 
 	  @Override
 	  public void contextInitialized(ServletContextEvent arg0) {
-		  //Quando il server si avvia
-		  
-		  System.out.println("Mi sto avviando");
-		  
+		  //Quando il server si avvia		  
 		  UtenteDao utenteDao = new UtenteDao();
 		  List<UtenteBean> utenti = utenteDao.getAllAcquirenti();
 		  
@@ -50,7 +46,6 @@ public class StartupUtility implements ServletContextListener {
 							  if(lezioneCorrente.getApprovato() == 0) {
 								  map.put(lezioneCorrente.getUrl(), lezioneCorrente);
 								  utente.attach(lezioneCorrente);
-								  System.out.println(utente.getNomeUtente() + " " + lezioneCorrente.getTitolo());
 							  }
 								  
 						  }
@@ -66,6 +61,10 @@ public class StartupUtility implements ServletContextListener {
 	  
 	  public static void addLezioneSubject(LezioniBean lezione) {
 		  map.put(lezione.getUrl(), lezione);
+	  }
+	  
+	  public static LezioniBean getLezione(String key) {
+		  return map.get(key);
 	  }
 
 }

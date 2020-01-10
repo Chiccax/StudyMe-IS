@@ -17,11 +17,11 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
+import control.util.StartupUtility;
 import modelBean.LezioniBean;
 import modelBean.PacchettoBean;
 import modelBean.UtenteBean;
 import modelDao.InsegnanteDao;
-import modelDao.CategoriaDao;
 import modelDao.PacchettoDao;
 import modelDao.SottocategoriaDao;
 /** 
@@ -264,10 +264,22 @@ public class InsegnanteServlet extends HttpServlet {
 					{	
 						String codicePacchettoAttuale = pacchettoAtt.getCodicePacchetto();
 						res = manager.insertLesson(codicePacchettoAttuale, url, titolo, durata);
-					}else
-					{
-						if(vecchioCodice!=null && vecchioCodice.length() != 0 )
+					}else if(vecchioCodice!=null && vecchioCodice.length() != 0 ) {
 							res = manager.insertLesson(vecchioCodice, url, titolo, durata);
+							LezioniBean l = new LezioniBean();
+							l.setPacchetto(vecchioCodice);
+							l.setUrl(url);
+							l.setDurata(durata);
+							l.setTitolo(titolo);
+							
+							ArrayList<UtenteBean> acquirenti = new ArrayList<UtenteBean>();
+							acquirenti = pacchettoDao.getAcquirenti(vecchioCodice);
+							
+							for(UtenteBean u : acquirenti) {
+								l.addObserver(u);
+							}
+												
+							StartupUtility.addLezioneSubject(l);
 					}
 			
 					if(res == null){

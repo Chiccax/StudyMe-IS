@@ -2,13 +2,9 @@ package control;
 
 import java.io.IOException;
 
-import java.util.regex.Matcher;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.util.Base64;
-import java.util.regex.Pattern;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

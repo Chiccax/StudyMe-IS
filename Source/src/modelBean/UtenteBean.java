@@ -1,9 +1,5 @@
 package modelBean;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import control.util.Observer;
 import control.util.Subject;
 import utility.EmailSender;
@@ -94,7 +90,7 @@ public class UtenteBean implements Observer {
 	@Override
 	public void update() {
 		EmailSender emailSender = EmailSender.GetInstance();
-		emailSender.SendEmail("Nuova Lezione", "Gentile " + this.nomeUtente + ", è stata aggiunta una nuova lezione per uno dei pacchetti che hai acquistato. Ti invitiamo a scoprire qual è! Distinti saluti", this.email);
+		emailSender.SendEmail("Nuova Lezione", "Gentile " + this.nomeUtente + ", è stata aggiunta una nuova lezione per uno dei pacchetti che hai acquistato. Ti invitiamo a scoprire qual è! Saluti da StudyMe.", this.email);
 	}	
 	
 	String nomeUtente, password, email, tipo;

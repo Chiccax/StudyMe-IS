@@ -16,6 +16,7 @@
 		initial = loggedUser.getNomeUtente().substring(0, 2);
 	}
 %>
+
 <div class="navbar">
 	<div id="logo">
 		<div class="navbar-item" id="logo-item">
@@ -230,7 +231,7 @@
 							<i class="fas fa-folder-plus" onClick= "showAddPackage()"></i>
 						</div>
 						<div class="navbar-item-description">
-							<div id="pulsante-accedi" onClick= "showAddPackage()">Inserimento</div>
+							<div id="pulsante-accedi"  onClick = "showAddPackage()" data="<%=loggedUser.getNomeUtente()%>">Inserimento</div>
 						</div>
 					</div>
 				</li>

@@ -9,29 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import modelBean.CarrelloBean;
-import modelBean.CategoriaBean;
-import modelBean.LezioniBean;
-import modelBean.OrdineAcquistoBean;
-import modelBean.PacchettoBean;
-import modelBean.RecensioneBean;
 import modelBean.SottocategoriaBean;
-import modelBean.UtenteBean;
-import modelDao.CategoriaDao;
-import modelDao.OrdineAcquistoDao;
-import modelDao.PacchettoDao;//ds
-import modelDao.RecensioneDao;
 import modelDao.SottocategoriaDao;
-import modelDao.UtenteDao;
 
 /**
  * Gestisce la sottocategoria dell'insegnante 

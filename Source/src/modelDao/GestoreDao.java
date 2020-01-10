@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import control.util.StartupUtility;
 import model.DriverManagerConnectionPool;
 import modelBean.LezioniBean;
 import modelBean.PacchettoBean;
@@ -26,8 +27,11 @@ public class GestoreDao {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
 			
-			PreparedStatement stm = conn.prepareStatement("SELECT * FROM pacchetto WHERE approvato = 0");
+			PreparedStatement stm = conn.prepareStatement("SELECT distinct pacchetto.* \r\n" + 
+					"FROM studyme.lezioni, studyme.pacchetto\r\n" + 
+					"WHERE studyme.lezioni.approvato = 0 AND studyme.pacchetto.approvato = 0 || studyme.lezioni.approvato = 0 AND studyme.pacchetto.approvato = 1 AND studyme.lezioni.codiceP = studyme.pacchetto.codicePacchetto;");
 			ResultSet res = stm.executeQuery();
+			
 			conn.commit();
 			
 			while(res.next()) {
@@ -105,15 +109,11 @@ public class GestoreDao {
 	public void approvaInteroPacchetto(String codicePacchetto) {
 		try {
 			Connection conn = DriverManagerConnectionPool.getConnection();
-			PreparedStatement stm = conn.prepareStatement("UPDATE pacchetto SET approvato = 1 WHERE codicePacchetto = ?");
+			PreparedStatement stm = conn.prepareStatement("UPDATE pacchetto, lezioni SET pacchetto.approvato = 1 AND lezioni.approvato = 1 WHERE pacchetto.codicePacchetto = ? AND lezioni.codiceP = ?");
 			stm.setString(1, codicePacchetto);
+			stm.setString(2, codicePacchetto);
 			stm.executeUpdate();
-			conn.commit();	
-			
-			stm = conn.prepareStatement("UPDATE lezioni SET approvato = 1 WHERE codiceP = ?");
-			stm.setString(1, codicePacchetto);
-			stm.executeUpdate();
-			conn.commit();	
+			conn.commit();		
 		} catch(SQLException e){
 			e.printStackTrace();
 		}
@@ -155,6 +155,8 @@ public class GestoreDao {
 			PreparedStatement stm = conn.prepareStatement("UPDATE lezioni SET approvato = 1 WHERE url = ?");
 			stm.setString(1, url);
 			stm.executeUpdate();
+			LezioniBean l = StartupUtility.getLezione(url);
+			l.setApprovato(1);
 			conn.commit();	
 		} catch(SQLException e){
 			e.printStackTrace();

@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 
-import modelBean.CarrelloBean;
 import modelBean.CategoriaBean;
 import modelBean.LezioniBean;
 import modelBean.OrdineAcquistoBean;
@@ -25,7 +24,6 @@ import modelDao.CategoriaDao;
 import modelDao.OrdineAcquistoDao;
 import modelDao.PacchettoDao;//ds
 import modelDao.RecensioneDao;
-import modelDao.UtenteDao;
 /** 
  * Gestisce le lezioni
  **/
