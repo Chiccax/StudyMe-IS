@@ -108,8 +108,9 @@ function showApprovals(){
 }
 
 function mostraConferma(){
-	document.getElementById("confermaPacchetto").style.display = "block";
-	document.getElementById("singoloPacchetto").style.display = "none";
+	var par = $(event.target).parent().parent().parent();
+	par.find("#confermaPacchetto").css("display", "block");
+	par.find("#singoloPacchetto").css("display", "none");
 }
 
 function mostraConfermaLezione(){
@@ -136,15 +137,25 @@ function showAddPackage(){
 			sottocategorie.forEach(function(sottocategoriaBean){	
 				let div = "<option id = 'sottocatId' value = '"+ sottocategoriaBean.idSottoCat +"'>" + sottocategoriaBean.nomeSott + "</option>";
 				div += "</div>";
-				element.innerHTML = element.innerHTML + div;
+				
+				if(element != null)
+					element.innerHTML = element.innerHTML + div;
 			})
 				
 			document.getElementById("UpdateUserName").style.display = ("none");
+			
 			document.getElementById("ordini").style.display = ("block");
 			
 			caller.classList.add("active");
 			document.getElementById("updateAccount").classList.remove("active");
+
+			$("#updateAccount").animate({
+				padding: "0"
+			}, 500);
 			
+			$("#myOrder").animate({
+				padding: "10px"
+			}, 500);
 		}
 	})
 }
@@ -358,12 +369,14 @@ function addLesson(){
    		var source = document.createElement("source");
 		source.src = url.value;
 		var src = document.getElementById("urlLezione");
-		src.appendChild(img);
+		if(src != null){
+			src.appendChild(img);
+		}
    	 }else{
    		const messageError = $("#messErr");
       	messageError.text(response.message);
- 		document.getElementById("messErr").style.display = "block";
- 		document.getElementById("messErr").style.color = "red";
+ 		document.getElementById("success").style.display = "block";
+ 		document.getElementById("success").style.color = "red";
  		
    		url.style.border = "1px solid red";
    		titolo.style.border = "1px solid red";
@@ -482,7 +495,7 @@ function riaggiungiPacchetto(){
 	myimg.remove();
 	document.getElementById("riepilogo").style.display= "none";
 	document.getElementById("newCode").value = null;
-	document.getElementById("newSottoCat").value = null;
+	document.getElementById("sottocatId").value = null;
 	document.getElementById("newTitle").value = null;
 	document.getElementById("newPhoto").value = null;
 	document.getElementById("newPrice").value = null;

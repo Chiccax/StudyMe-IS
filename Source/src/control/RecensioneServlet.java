@@ -60,6 +60,6 @@ public class RecensioneServlet extends HttpServlet {
 	}
 	
 	private static final String NO_ARGUMENT = "Tutti i parametri devono essere passati";
-	private static final String INVALID_TITLE = "il titolo deve essere tra i 5 e i 30 caratteri";
-	private static final String INVALID_TEXT = "il testo deve essere tra i 10 e i 30 caratteri";
+	private static final String INVALID_TITLE = "Il titolo deve essere tra i 5 e i 30 caratteri";
+	private static final String INVALID_TEXT = "Il testo deve essere tra i 10 e i 30 caratteri";
 }

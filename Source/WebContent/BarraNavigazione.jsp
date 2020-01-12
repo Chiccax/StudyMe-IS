@@ -189,7 +189,8 @@
 							</div>
 						</div>
 					</div>
-				</li>		
+				</li>
+				<%if(request.getRequestURI().equals("/StudyMe/AreaUtente.jsp")){%>
 				<li>			
 					<div class="navbar-item">		
 						<div class="navbar-item-image">
@@ -200,6 +201,7 @@
 						</div>
 					</div>
 				</li>
+				<%}%>
 				<li>
 					<div id="formSearch">
 						<i class="fas fa-search" onClick="ShowSearchBar()"></i>
@@ -225,16 +227,18 @@
 						</div>
 					</div>
 				</li>	
+				<%if(request.getRequestURI().equals("/StudyMe/AreaUtente.jsp")){%>
 				<li>			
 					<div class="navbar-item">		
 						<div class="navbar-item-image">
-							<i class="fas fa-folder-plus" onClick= "showAddPackage()"></i>
+							<i class="fas fa-folder-plus" onClick = "showAddPackage()" data="<%=loggedUser.getNomeUtente()%>"></i>
 						</div>
 						<div class="navbar-item-description">
-							<div id="pulsante-accedi"  onClick = "showAddPackage()" data="<%=loggedUser.getNomeUtente()%>">Inserimento</div>
+							<div id="pulsante-accedi" onClick = "showAddPackage()" data="<%=loggedUser.getNomeUtente()%>">Inserimento</div>
 						</div>
 					</div>
 				</li>
+				<%}%>
 				<li>
 					<div id="formSearch">
 						<i class="fas fa-search" onClick="ShowSearchBar()"></i>

@@ -35,6 +35,12 @@ public class GestoreDao {
 			conn.commit();
 			
 			while(res.next()) {
+				stm = conn.prepareStatement("SELECT * FROM lezioni WHERE codiceP = ?");
+				stm.setString(1, res.getString(1));
+				ResultSet res2 = stm.executeQuery();
+				if(res2 == null) {
+					return null;
+				} else {
 				String codicePacchetto = res.getString(1);
 				String categoriaPacchetto = res.getString(2);
 				String sottocategoriaPacchetto = res.getString(3);
@@ -53,6 +59,7 @@ public class GestoreDao {
 				pacchettoDaApprovare.setFoto(fotoPacchetto);
 						
 				pacchetti.add(pacchettoDaApprovare);
+			}
 		}
 			return pacchetti;
 		} catch(SQLException e){
