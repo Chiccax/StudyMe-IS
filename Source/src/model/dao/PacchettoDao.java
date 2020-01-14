@@ -64,7 +64,6 @@ public class PacchettoDao {
 	 * context PacchettoDao::getPacchetto(String codiceP)
 	 * @pre codiceP != null
 	 **/
-
 	public PacchettoBean getPacchetto(String codiceP) {
 		Connection conn;
 		try {
@@ -131,7 +130,7 @@ public class PacchettoDao {
 	/**
 	 * Elimina il pacchetto
 	 * @param codiceP codice del pacchetto
-	 * @return false
+	 * @return true se elimina il pacchetto, false altrimenti
 	 * context PacchettoDao::delPacchetto(String codiceP)
 	 * @pre codiceP !=null
 	 * @post pacchetto eliminato
@@ -521,7 +520,13 @@ public class PacchettoDao {
 			return null;
 		}
 	}
-	
+	/**
+	 * Recupera tutti gli acquirenti che hanno acquistato un determinato pacchetto
+	 * @param codicePacchetto codice del pacchetto
+	 * @return ArrayList<UtenteBean> array di utenti
+	 * context PacchettoDao::getAcquirenti(String codicePacchetto)
+	 * @pre codicePacchetto != null
+	 **/
 	public ArrayList<UtenteBean> getAcquirenti(String codicePacchetto){
 		try {
 			java.sql.Connection conn = DriverManagerConnectionPool.getConnection();

@@ -46,7 +46,7 @@ public class RecensioneDao {
 	 * Verifica che un corso è già stato visto dall'acquirente 
 	 * @param nomeUtente nome utente dell'acquirente
 	 * @param codicePacchetto codice del pacchetto
-	 * @return false
+	 * @return true se il pacchetto è stato visualizzato, false altrimenti
 	 * @throws SQLException
 	 * context RecensioneDao::isAlwreadyReviewed(String nomeUtente, String codicePacchetto)
 	 * @pre nomeUtente != null && codicePacchetto != null

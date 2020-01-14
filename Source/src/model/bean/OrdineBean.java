@@ -9,8 +9,7 @@ import java.sql.Date;
  */
 public class OrdineBean {
 	/**
-	 * Costruttore generico dell' Ordine
-	 * 
+	 * Costruttore generico dell' Ordine 
 	 */
 	public OrdineBean() {
 	}

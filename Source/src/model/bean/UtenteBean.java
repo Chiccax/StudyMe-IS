@@ -12,8 +12,7 @@ import utility.EmailSender;
  */
 public class UtenteBean implements Observer {
 	/**
-	 * Costruttore generico dell'Utente
-	 * 
+	 * Costruttore generico dell'Utente 
 	 */
 	public UtenteBean() {}
 	/**
@@ -72,21 +71,30 @@ public class UtenteBean implements Observer {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	
+	/**
+	 * Aggiunge un nuovo Subject s
+	 * @param Subject s
+	 * **/
 	public void attach(Subject s) {
 		if (s != null) {
 			this.s = s;
 			this.s.addObserver(this);
 		}
 	}
-	
+	/**
+	 *Rimuove s dagli osservatori
+	 * @return 
+	 **/
 	public void detach() {
 		if(s != null) {
 			s.removeObserver(this);
 			s = null;
 		}
 	}
-	
+	/**
+	 *Notifica all'acquirente che è satata aggiunta una nuova lezione ad un pacchetto che già ha acquistato
+	 *@return 
+	 **/
 	@Override
 	public void update() {
 		EmailSender emailSender = EmailSender.GetInstance();

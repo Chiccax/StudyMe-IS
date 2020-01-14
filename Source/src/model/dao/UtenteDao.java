@@ -20,7 +20,7 @@ public class UtenteDao {
 	 * Effettua il login di un Account
 	 * @param nomeUtente nomeUtente dell'utente
 	 * @param password password dell'utente
-	 * @return L'utente
+	 * @return user l'utente
 	 * context UtenteDao::login(String nomeUtente, String password) 
 	 * @pre nomeUtente !null && nomeutente presente nel db password !null && password presente nel db
 	 **/
@@ -91,7 +91,7 @@ public class UtenteDao {
 	 * Modifica la password di un Account
 	 * @param email 
 	 * @param password 
-	 * @return false
+	 * @return true se è andato a buon fine, false altrimenti
 	 * context UtenteDao::updatePassword(String email, String password)
 	 * @pre email!=null && password!=null
 	 * @post password aggiornata
@@ -152,7 +152,12 @@ public class UtenteDao {
 			}
 			return false;
 		}
-	
+	/**
+	 * Recupera tutti gli utenti che hanno effettuato un determinato ordine
+	 * @param 
+	 * @return List<UtenteBean> lista di utenti
+	 * context UtenteDao: getAllAcquirenti 
+	 **/
 	public List<UtenteBean> getAllAcquirenti() {
 		List<UtenteBean> acquirenti = new ArrayList<UtenteBean>();
 		

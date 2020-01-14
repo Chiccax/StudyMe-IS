@@ -21,28 +21,28 @@ public class AcquistoBean {
 	}
 	/**
 	 * Preleva il valore del numero dell'acquisto.
-	 * @return int: numAcquisto 
+	 * @return int numAcquisto 
 	 */
 	public int getNumAcquisto() {
 		return numAcquisto;
 	}
 	/**
 	 * Preleva il valore del numero dell'ordine.
-	 * @return int: numOrdine 
+	 * @return int numOrdine 
 	 */
 	public int getNumOrdine() {
 		return numOrdine;
 	}
 	/**
 	 * Preleva il valore del numero dell'importo.
-	 * @return int: importo 
+	 * @return double importo 
 	 */
 	public double getImporto() {
 		return importo;
 	}
 	/**
 	 * Preleva il valore del numero del codice del pacchetto.
-	 * @return String: codiceP
+	 * @return String codiceP
 	 */
 	public String getCodiceP() {
 		return codiceP;
@@ -70,7 +70,7 @@ public class AcquistoBean {
 	}
 	/**
 	 * Preleva il titolo del pacchetto.
-	 * @return String: titoloPacchetto
+	 * @return String titoloPacchetto
 	 */
 	public String getTitoloPacchetto() {
 		return titoloPacchetto;
