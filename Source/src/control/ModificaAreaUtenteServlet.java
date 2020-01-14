@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import control.util.JSONResponse;
 import model.bean.UtenteBean;
 import model.dao.UtenteDao;
+import model.manager.UtenteManager;
 
 /**
  * Gestisce la modifica dei dati personali
@@ -35,7 +36,7 @@ public class ModificaAreaUtenteServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		Gson gson = new Gson();
-	
+		UtenteManager utenteManager= new UtenteManager();
 		String nuovaEmailUtente = request.getParameter("NuovaEmailUtente");
 		String nuovaPasswordUtente = request.getParameter("NuovaPasswordUtente");
 		String confermaNuovaPasswordUtente = request.getParameter("ConfermaNuovaPasswordUtente");
@@ -52,8 +53,8 @@ public class ModificaAreaUtenteServlet extends HttpServlet {
 					return;	
 				}
 				
-				UtenteDao manager = new UtenteDao();
-				boolean res = manager.updateEmail(emailUtente, nuovaEmailUtente);
+				
+				boolean res = utenteManager.setEmail(emailUtente, nuovaEmailUtente);
 				if(res == false) {
 					JSONResponse jsonResponse = new JSONResponse(false, NO_USER);
 					out.print(gson.toJson(jsonResponse));
@@ -70,16 +71,13 @@ public class ModificaAreaUtenteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;	
 					}
-					
 					if(nuovaPasswordUtente.length() <= 0){
 						JSONResponse jsonResponse = new JSONResponse(false, EMPTY_PASSWORD);
 						out.print(gson.toJson(jsonResponse));
 						return;	
 					}
-					
-					UtenteDao manager = new UtenteDao();
 					String passwordBase64format  = Base64.getEncoder().encodeToString(nuovaPasswordUtente.getBytes()); 
-					boolean res = manager.updatePassword(emailUtente, passwordBase64format);
+					boolean res = utenteManager.setPassword(emailUtente, passwordBase64format);
 					if(res == false) {
 						JSONResponse jsonResponse = new JSONResponse(false, NO_USER);
 						out.print(gson.toJson(jsonResponse));

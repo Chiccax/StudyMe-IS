@@ -19,6 +19,7 @@ import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
 import model.dao.CategoriaDao;
 import model.dao.PacchettoDao;
+import model.manager.CatalogoManager;
 
 /**
  * Gestisce la visualizzazione dei pacchetti nelle varie categorie
@@ -31,16 +32,9 @@ public class CatalogoServlet extends HttpServlet {
         super();
       
     }
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String categoria=request.getParameter("categoria");	
-		
-		Map<String,ArrayList<PacchettoBean>> pacchetti = null;
-		CategoriaBean fotoCat= null;
-		CategoriaBean categoriaBean= null;
-		String insegnante= null;
 		String userName= null;
-		
 		HttpSession session = request.getSession();
 		UtenteBean user = (UtenteBean) session.getAttribute("User");
 		
@@ -49,40 +43,25 @@ public class CatalogoServlet extends HttpServlet {
 		}else{
 			userName = user.getNomeUtente();//nomeUtente della sessione
 		}
-		CategoriaDao daoCategoria= new CategoriaDao();
-		PacchettoDao dao = new PacchettoDao();
 		
-		fotoCat= dao.getBeanCategoria(categoria);
-		try {
-			categoriaBean= daoCategoria.findByKey(categoria);
-			insegnante= categoriaBean.getInsegnante();//insegnante categoria
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		if(insegnante.equals(userName)){
-			pacchetti = dao.getCategoriaRaggruppato(categoria);
-		}else{
-			pacchetti= dao.getCategoriaRaggruppatoApprovato(categoria);
-		}
-		
+		CatalogoManager catalogoManager= new CatalogoManager();
+		Map<String,ArrayList<PacchettoBean>> pacchetti= catalogoManager.getPacchettiPerCategoria(categoria, userName);
 		if(pacchetti == null || pacchetti.size()==0) {
 			response.sendError(HttpServletResponse.SC_NOT_FOUND);
 			return;
 		}
-		
+		CategoriaBean foto= catalogoManager.getFotoCat(categoria);
+		String insegnante= catalogoManager.getInsegnante();
 		request.setAttribute("categoria", categoria);
 		request.setAttribute("pacchetti", pacchetti);
-		request.setAttribute("fotoCat", fotoCat);
+		request.setAttribute("fotoCat", foto);
 		request.setAttribute("insegnante", insegnante);
 		request.setAttribute("userName", userName);
 		
 		RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Catalogo.jsp");
 		dispatcher.forward(request, response);
 	 }
-
-		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 		

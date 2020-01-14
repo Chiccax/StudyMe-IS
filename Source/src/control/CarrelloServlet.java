@@ -18,13 +18,14 @@ import com.google.gson.Gson;
 import control.util.JSONResponse;
 import model.bean.PacchettoBean;
 import model.dao.PacchettoDao;
+import model.manager.CarrelloManager;
 /** 
  * Gestisce l'acquisto di un pacchetto
  **/
 @WebServlet("/CarrelloServlet")
 public class CarrelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static PacchettoDao dao = new PacchettoDao();
+	
        
    public CarrelloServlet() {
         super();
@@ -57,20 +58,10 @@ public class CarrelloServlet extends HttpServlet {
 		}
 			
 		if (action.equalsIgnoreCase("aggiungiAlCarrello")) {
-				boolean nelCarrello = false;
-				PacchettoBean pacchetto = new PacchettoBean();
-				pacchetto = dao.getPacchetto(codiceP);
-				for (PacchettoBean p : carrello) {
-					if (p.getCodicePacchetto().equalsIgnoreCase(pacchetto.getCodicePacchetto())) {
-						nelCarrello = true;
-						break;
-					}
-				}
-				if (!nelCarrello) {
-					carrello.add(pacchetto);
-				}
+				CarrelloManager carrelloManager= new CarrelloManager();
+				carrelloManager.aggiungiAlCarrello(carrello, codiceP);
 
-			} else if (action.equalsIgnoreCase("rimuoviDalCarrello")) {
+		} else if (action.equalsIgnoreCase("rimuoviDalCarrello")) {
 				for (int i = 0; i < carrello.size(); i++) {
 					if (codiceP.equalsIgnoreCase(carrello.get(i).getCodicePacchetto())) {
 						carrello.remove(i);
@@ -78,9 +69,9 @@ public class CarrelloServlet extends HttpServlet {
 					}
 				}
 
-			} else if (action.equalsIgnoreCase("rimuovitutto")) {
+		} else if (action.equalsIgnoreCase("rimuovitutto")) {
 				carrello.clear();
-			}
+		}
 		
 		Map<String, Object> responseContent = new HashMap<String, Object>();
 		responseContent.put("qta", carrello.size());

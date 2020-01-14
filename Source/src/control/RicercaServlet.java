@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.bean.PacchettoBean;
 import model.dao.PacchettoDao;
+import model.manager.RicercaManager;
 /** 
  * Gestisce la ricerca di un pacchetto
  **/
@@ -34,10 +35,8 @@ public class RicercaServlet extends HttpServlet {
 		}
 		
 		argument = argument.trim();
-		
-		ArrayList<PacchettoBean> pacchettiRicercati = null;
-		PacchettoDao manager = new PacchettoDao();
-		pacchettiRicercati = manager.searchPackage(argument);
+		RicercaManager ricercaManager= new RicercaManager(); 
+		ArrayList<PacchettoBean> pacchettiRicercati= ricercaManager.ricercaPacchetto(argument);
 		
 		request.setAttribute("pacchetti", pacchettiRicercati);
 		request.setAttribute("argomento", argument);

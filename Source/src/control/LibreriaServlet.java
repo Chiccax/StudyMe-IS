@@ -18,6 +18,7 @@ import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
 import model.dao.OrdineAcquistoDao;
 import model.dao.PacchettoDao;
+import model.manager.LibreriaManager;
 /**
  * Gestisce la visualizzazione dei pacchetti acquistati dall'acquirente
  */
@@ -30,12 +31,10 @@ public class LibreriaServlet extends HttpServlet {
         super();
        
     }
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		UtenteBean user =(UtenteBean)session.getAttribute("User");
 		
@@ -43,36 +42,13 @@ public class LibreriaServlet extends HttpServlet {
 			response.sendError(HttpServletResponse.SC_FORBIDDEN);
 			return;
 		}
-		
-		String nomeUtente=user.getNomeUtente();
-		
-		ArrayList<ArrayList<LezioniBean>> lezioni= new ArrayList<ArrayList<LezioniBean>>();
-		ArrayList<PacchettoBean> pacchetti = new ArrayList<PacchettoBean>();
-		ArrayList<OrdineAcquistoBean> pacchettiAcquistati= new ArrayList<OrdineAcquistoBean>(); //Array che contiene i pacchetti acquistati
-		OrdineAcquistoDao dao = new OrdineAcquistoDao();
-		
-		PacchettoDao pacchetto=new PacchettoDao();
-		
-		try {			
-			pacchettiAcquistati = dao.findByNomeCliente(nomeUtente); // prende i pacchetti acquistati da un utente  e   ritorna un array di pacchetti ascquistati dall'utente		
-			for(OrdineAcquistoBean e: pacchettiAcquistati) {
-				ArrayList<PacchettoBean> pacchettiOrdineAttuale = e.getPacchettiAcquistati();
-				pacchetti.addAll(pacchettiOrdineAttuale);// chiama il metodo getLezioni per prendere le lezioni del pacchetto e gli passa il codice			
-				for(PacchettoBean p : pacchettiOrdineAttuale) {
-					//Per ogni pacchetto ottengo tutte le lezioni
-					ArrayList<LezioniBean> lezione = new ArrayList<LezioniBean>();
-					lezione = pacchetto.getLezioni(p.getCodicePacchetto());// aggiunge le lezioni all'arrayList lezioni 	
-					lezioni.add(lezione);
-				}
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		LibreriaManager libreriaManager= new LibreriaManager();
+		ArrayList<PacchettoBean> pacchetti= libreriaManager.getPacchetti(user);
+		ArrayList<ArrayList<LezioniBean>> lezioni= libreriaManager.getLezioni();
 		request.setAttribute("pacchetti", pacchetti);
 		request.setAttribute("lezioni", lezioni);
 		
 		RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/Libreria.jsp");
 		dispatcher.forward(request, response);
 	}
-
 }

@@ -24,6 +24,7 @@ import model.dao.CategoriaDao;
 import model.dao.OrdineAcquistoDao;
 import model.dao.PacchettoDao;
 import model.dao.RecensioneDao;
+import model.manager.LezioneManager;
 /** 
  * Gestisce le lezioni
  **/
@@ -40,43 +41,26 @@ public class LezioneServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String codicePacchetto = request.getParameter("codicePacchetto");
-		String insegnante= null;
-		String categoria= null;
 		
-		ArrayList<OrdineAcquistoBean> ordiniCliente = null;
-		OrdineAcquistoDao dao = new OrdineAcquistoDao();
-		ArrayList<LezioniBean> lezioni = null;
-		PacchettoBean pacchetto = null;
-		ArrayList<RecensioneBean> recensioni = null;
+		String categoria= null;
+		boolean recensito = false;
+		
 		boolean comprato = false;
 		boolean nelCarrello = false;
-		boolean recensito = false;
 		String tipo= null;
-		CategoriaBean categoriaBean= null;
 		String nomeUtente= null;
 		
-		
-		PacchettoDao manager = new PacchettoDao();
-		
-		pacchetto = manager.getPacchetto(codicePacchetto);
+		LezioneManager lezioneManager= new LezioneManager();
+		PacchettoBean pacchetto = lezioneManager.getPacchetto(codicePacchetto);
 		if(pacchetto == null) {
 			response.sendError(HttpServletResponse.SC_NOT_FOUND);
 			return;
 		}
-		CategoriaDao daoCategoria= new CategoriaDao();
-		try {
-			categoria= pacchetto.getCatagoria();
-			categoriaBean= daoCategoria.findByKey(categoria);
-			insegnante= categoriaBean.getInsegnante();//insegnante categoria
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		recensioni = manager.getRecensioni(codicePacchetto);
 		
+		ArrayList<RecensioneBean> recensioni= lezioneManager.getRecensioni(codicePacchetto);
 		HttpSession session = request.getSession();
 		UtenteBean user = (UtenteBean) session.getAttribute("User");
 		ArrayList<PacchettoBean> cart = (ArrayList<PacchettoBean>) session.getAttribute("carrello") ;
-		
 		if(cart == null) {
 			cart = new ArrayList<PacchettoBean>();
 			session.setAttribute("carrello", cart);
@@ -88,11 +72,8 @@ public class LezioneServlet extends HttpServlet {
 			tipo= user.getTipo();
 			nomeUtente = user.getNomeUtente();
 			ArrayList<PacchettoBean> pacchettiAcquistati = null;
-			try {
-				ordiniCliente = dao.findByNomeCliente(nomeUtente);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			
+			ArrayList<OrdineAcquistoBean> ordiniCliente= lezioneManager.getOrdiniCliente(nomeUtente);
 			for(OrdineAcquistoBean o : ordiniCliente) {
 				pacchettiAcquistati = o.getPacchettiAcquistati();
 				for(PacchettoBean p : pacchettiAcquistati) {
@@ -101,9 +82,7 @@ public class LezioneServlet extends HttpServlet {
 						break;
 					}
 				}
-				
 			}
-			
 			if(!comprato) {
 				//Controlla che sia nel carrello
 				for(PacchettoBean product : cart) {
@@ -113,22 +92,18 @@ public class LezioneServlet extends HttpServlet {
 					}
 				}
 			}else {
-				RecensioneDao recensionedao = new RecensioneDao();
 				try {
-					recensito = recensionedao.isAlwreadyReviewed(nomeUtente, codicePacchetto);
+					recensito= lezioneManager.getRecensito(nomeUtente, codicePacchetto);
 				} catch (SQLException e) {
 					e.printStackTrace();
 					response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR );
 					return;
 				}
-				
 			}
 		}
-		if(insegnante.equals(nomeUtente)) {
-			lezioni = manager.getLezioni(codicePacchetto);
-		}else{
-			lezioni = manager.getLezioniApprovate(codicePacchetto);
-		}
+		CategoriaBean categoriaBean= lezioneManager.getCategoria(pacchetto);
+		String insegnante= lezioneManager.getInsegnante(categoriaBean);
+		ArrayList<LezioniBean> lezioni= lezioneManager.getLezioni(codicePacchetto,nomeUtente);
 		
 		request.setAttribute("lezioni", lezioni);
 		request.setAttribute("pacchetto", pacchetto);
@@ -138,7 +113,6 @@ public class LezioneServlet extends HttpServlet {
 		request.setAttribute("recensito", recensito);
 		request.setAttribute("tipo",tipo);
 	
-		//se insegnante.equals(nomeUtente))
 		if(insegnante.equals(nomeUtente)) {
 			RequestDispatcher dispatcher= getServletContext().getRequestDispatcher("/LezioneInsegnante.jsp");
 			dispatcher.forward(request, response);	

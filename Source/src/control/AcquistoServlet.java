@@ -18,6 +18,7 @@ import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
 import model.dao.AcquistoDao;
 import model.dao.OrdineDao;
+import model.manager.AcquistoManager;
 
 /**
  * Gestisce l'acquisto di un corso
@@ -44,37 +45,9 @@ public class AcquistoServlet extends HttpServlet {
 		@SuppressWarnings("unchecked")
 		ArrayList<PacchettoBean> carrello = (ArrayList<PacchettoBean>) session.getAttribute("carrello");
 		
-		OrdineBean ordineBean = new OrdineBean();
-		AcquistoBean acquistoBean = new AcquistoBean();
-		OrdineDao ordine = new OrdineDao();
-		AcquistoDao acquisto = new AcquistoDao();
+		AcquistoManager acquistoManager= new AcquistoManager();
 		String userName = user.getNomeUtente();
-
-		GregorianCalendar gc = new GregorianCalendar();
-		int ggoggi = gc.get(Calendar.DAY_OF_MONTH);
-		int mmoggi = gc.get(Calendar.MONTH) + 1;
-		int aaoggi = gc.get(Calendar.YEAR);
-
-		String dataOdierna = aaoggi + "-" + mmoggi + "-" + ggoggi;
-
-		int numOrd = 0;
-		
-		ordineBean.setCliente(userName);
-		ordineBean.setData(Date.valueOf(dataOdierna));
-
-		numOrd = ordine.insert(ordineBean);
-		
-		for (PacchettoBean p : carrello) {
-			String codiceP = p.getCodicePacchetto();
-			String titoloPacchetto = p.getTitolo();
-			double prezzo = p.getPrezzo();
-
-			acquistoBean.setNumOrdine(numOrd);
-			acquistoBean.setCodiceP(codiceP);
-			acquistoBean.setTitoloPacchetto(titoloPacchetto);
-			acquistoBean.setImporto(prezzo);
-			acquisto.insertAcquisto(acquistoBean);
-		}
+		acquistoManager.getOrdine(userName, carrello);
 		
 		carrello.clear();
 		session.setAttribute("carrello", carrello);

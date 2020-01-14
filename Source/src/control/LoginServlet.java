@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import control.util.JSONResponse;
 import model.bean.UtenteBean;
 import model.dao.UtenteDao;
+import model.manager.UtenteManager;
 
 /**
  * Gestisce l'operazione di login
@@ -48,9 +49,8 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		String passwordBase64format  = Base64.getEncoder().encodeToString(password.getBytes()); 
-	
-		UtenteDao manager = new UtenteDao();
-		UtenteBean user = manager.login(nomeUtente, passwordBase64format);
+		UtenteManager utenteManager= new UtenteManager(); 
+		UtenteBean user = utenteManager.getUtente(nomeUtente, passwordBase64format);
 				
 		if(user == null) {
 			JSONResponse jsonResponse = new JSONResponse(false, NO_USER);
