@@ -7,11 +7,18 @@ import model.dao.PacchettoDao;
 
 public class CarrelloManager {
 	private PacchettoDao dao = new PacchettoDao();
-	
+	/**
+	 * Costruttore vuoto. 
+	 **/
 	public CarrelloManager(){
 		
 	}
-	
+	/**
+	 * Aggiunge pacchetti al carrello.
+	 * @param  ArrayList<PacchettoBean> carrello
+	 * @param String codiceP
+	 * @return
+	 **/
 	public void aggiungiAlCarrello(ArrayList<PacchettoBean> carrello,String codiceP){
 		boolean nelCarrello = false;
 		PacchettoBean pacchetto = new PacchettoBean();

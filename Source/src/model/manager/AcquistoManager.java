@@ -12,17 +12,16 @@ import model.dao.AcquistoDao;
 import model.dao.OrdineDao;
 
 public class AcquistoManager {
-	
-	OrdineBean ordineBean = new OrdineBean();
-	AcquistoBean acquistoBean = new AcquistoBean();
-	OrdineDao ordine = new OrdineDao();
-	AcquistoDao acquisto = new AcquistoDao();
-
-	
+	/**
+	 * Costruttore vuoto. 
+	 **/
 	public AcquistoManager(){
 		
 	}
-	
+	/**
+	 * Preleva la data odierna.
+	 * @return String dataOdierna 
+	 **/
 	public String getDataOdierna(){
 		GregorianCalendar gc = new GregorianCalendar();
 		int ggoggi = gc.get(Calendar.DAY_OF_MONTH);
@@ -33,7 +32,12 @@ public class AcquistoManager {
 		return dataOdierna;
 		
 	}
-	
+	/**
+	 * Preleva gli ordini di un utente.
+	 * @param String userName
+	 * @param  ArrayList<PacchettoBean> carrello
+	 * @return
+	 **/
 	public void getOrdine(String userName, ArrayList<PacchettoBean> carrello){
 		
 		ordineBean.setCliente(userName);
@@ -53,4 +57,8 @@ public class AcquistoManager {
 			acquisto.insertAcquisto(acquistoBean);
 		}
 	}
+	OrdineBean ordineBean = new OrdineBean();
+	AcquistoBean acquistoBean = new AcquistoBean();
+	OrdineDao ordine = new OrdineDao();
+	AcquistoDao acquisto = new AcquistoDao();
 }

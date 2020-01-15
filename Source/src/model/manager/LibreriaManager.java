@@ -18,10 +18,16 @@ public class LibreriaManager {
 	OrdineAcquistoDao dao = new OrdineAcquistoDao();
 	
 	PacchettoDao pacchetto=new PacchettoDao();
+	/**
+	 *Costruttore vuoto 
+	 **/
 	public LibreriaManager(){
-		
 	}
-	
+	/**
+	 * Preleva i pacchetti dell'utente.
+	 * @param UtenteBean user
+	 * @return ArrayList<PacchettoBean> pacchetti
+	 **/
 	public ArrayList<PacchettoBean> getPacchetti(UtenteBean user){
 		String nomeUtente=user.getNomeUtente();
 		try {			
@@ -41,8 +47,11 @@ public class LibreriaManager {
 		}
 		return pacchetti;
 	}
-	public ArrayList<ArrayList<LezioniBean>> getLezioni()
-	{
+	/**
+	 * Preleva i pacchetti dell'utente.
+	 * @return ArrayList<ArrayList<LezioniBean>> lezioni
+	 **/
+	public ArrayList<ArrayList<LezioniBean>> getLezioni(){
 		return lezioni;
 	}
 }

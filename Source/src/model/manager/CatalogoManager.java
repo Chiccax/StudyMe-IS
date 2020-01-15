@@ -10,30 +10,37 @@ import model.dao.CategoriaDao;
 import model.dao.PacchettoDao;
 
 public class CatalogoManager {
-
-	CategoriaDao daoCategoria= new CategoriaDao();
-	PacchettoDao dao = new PacchettoDao();
-	CategoriaBean fotoCat= null;
-	CategoriaBean categoriaBean= null;
-	String insegnante= null;
-	Map<String,ArrayList<PacchettoBean>> pacchetti = null;
-	
+	/**
+	 * Costruttore vuoto. 
+	 **/
 	public CatalogoManager(){
 		
 	}
-	
+	/**
+	 * Preleva la foto della categoria.
+	 * @param String categoria
+	 * @return CategoriaBean fotoCat
+	 **/
 	public CategoriaBean getFotoCat(String categoria)
 	{
 		fotoCat= dao.getBeanCategoria(categoria);
 		return fotoCat;
 	}
-	
+	/**
+	 * Preleva l'insegnante.
+	 * @return String insegnante
+	 **/
 	public String getInsegnante()
 	{
 		insegnante=  categoriaBean.getInsegnante();
 		return insegnante;
 	}
-	
+	/**
+	 * Preleva una lista di pacchetti per categoria.
+	 * @param String categoria
+	 * @param String userName
+	 * @return  Map<String,ArrayList<PacchettoBean>> pacchetti
+	 **/
 	public Map<String,ArrayList<PacchettoBean>> getPacchettiPerCategoria(String categoria, String userName){
 		String docente="";
 		try {
@@ -51,4 +58,10 @@ public class CatalogoManager {
 		}
 		return pacchetti;
 	}
+	CategoriaDao daoCategoria= new CategoriaDao();
+	PacchettoDao dao = new PacchettoDao();
+	CategoriaBean fotoCat= null;
+	CategoriaBean categoriaBean= null;
+	String insegnante= null;
+	Map<String,ArrayList<PacchettoBean>> pacchetti = null;
 }
