@@ -14,8 +14,11 @@ import javax.mail.internet.MimeMessage;
 
 public class EmailSender {
 
-	//Singleton
 	private static EmailSender instance;
+	
+	private EmailSender(){
+		this(EmailSender.EMAIL, EmailSender.PASSWORD);
+	}
 	
 	public static EmailSender GetInstance(){
 		if(instance == null)
@@ -23,11 +26,7 @@ public class EmailSender {
 		
 		return instance;
 	}
-	
-	private EmailSender(){
-		this(EmailSender.EMAIL, EmailSender.PASSWORD);
-	}
-	
+
 	private EmailSender(String email, String password){
 		this.email = email;
 		this.password = password;

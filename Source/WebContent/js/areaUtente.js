@@ -60,48 +60,52 @@ function showApprovals(){
 					element.innerHTML = element.innerHTML + div;	
 				}
 			
-				pacchetti.forEach(function(pacchettoBean){	
-					let div = "<div id = 'pacchetto'>";
-					div += "<div id = 'singoloPacchetto'>";
-					div += "<div id = 'riquadroPacchetto'>";
-					div += "<img src='" + pacchettoBean.foto +"'/>";
-					div += "<div id = 'infoPacchetto'>";
-					div += "<h1 class = 'titolo'>" + pacchettoBean.titolo +"</h1>";
-					div += "<h1 class = 'descrizione'>" + pacchettoBean.descrizione + "</h1>";
-					div += "</div>";
-					div += "<i class ='fas fa-gavel' onClick ='mostraConferma()'></i>";
-					div += "</div>";
-					div += "<div id = 'riquadroLezioni'>";
-
-					let lezioniPacchetto = lezioniPacchetti[pacchettoBean.codicePacchetto];
-					if(lezioniPacchetto.length > 1){
-						lezioniPacchetto.forEach(function(lezioniBean){
-						div += "<div id = 'singolaLezione'>";
-						div += "<h1 id = 'titoloLezioniDaApprovare'>" + lezioniBean.titolo + "</h1>";		
-						div +=	"<i class= 'far fa-check-circle' id = 'approva' onClick = 'approvaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
-						div += " <i class='far fa-times-circle' id = 'disapprova'onClick = 'disapprovaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
+				pacchetti.forEach(function(pacchettoBean) {
+					let div;
+					
+					if(pacchettoBean.approvato == 0){
+						div = "<div id = 'pacchetto'>";
+						div += "<div id = 'singoloPacchetto'>";
+						div += "<div id = 'riquadroPacchetto'>";
+						div += "<img src='" + pacchettoBean.foto +"'/>";
+						div += "<div id = 'infoPacchetto'>";
+						div += "<h1 class = 'titolo'>" + pacchettoBean.titolo +"</h1>";
+						div += "<h1 class = 'descrizione'>" + pacchettoBean.descrizione + "</h1>";
 						div += "</div>";
-					})
+						div += "<i class ='fas fa-gavel' onClick ='mostraConferma()'></i>";
+						div += "</div>";
+						div += "<div id = 'riquadroLezioni'>";
 					} else {
-						lezioniPacchetto.forEach(function(lezioniBean){
-							div += "<div id = 'singolaLezione'>";
-							div += "<h1 id = 'titoloLezioniDaApprovare'>" + lezioniBean.titolo + "</h1>";	
-							div +=	"<i class= 'far fa-check-circle' id = 'approva' onClick = 'approvaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
-							div += " <i class='far fa-times-circle' id = 'disapprova'onClick = 'disapprovaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
-							div += "</div>";
-						})
+						div = "<div id = 'pacchetto'>";
+						div += "<div id = 'singoloPacchetto'>";
+						div += "<div id = 'riquadroPacchetto'>";
+						div += "<img src='" + pacchettoBean.foto +"'/>";
+						div += "<div id = 'infoPacchetto'>";
+						div += "<h1 class = 'titolo'>" + pacchettoBean.titolo +"</h1>";
+						div += "<h1 class = 'descrizione'>" + pacchettoBean.descrizione + "</h1>";
+						div += "</div>";
+						div += "</div>";
+						div += "<div id = 'riquadroLezioni'>";
 					}
 					
+					let lezioniPacchetto = lezioniPacchetti[pacchettoBean.codicePacchetto];
+					lezioniPacchetto.forEach(function(lezioniBean){
+					div += "<div id = 'singolaLezione'>";
+					div += "<h1 id = 'titoloLezioniDaApprovare'>" + lezioniBean.titolo + "</h1>";		
+					div +=	"<i class= 'far fa-check-circle' id = 'approva' onClick = 'approvaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
+					div += " <i class='far fa-times-circle' id = 'disapprova'onClick = 'disapprovaSingolaLezione(event)' data = '" + lezioniBean.url + "'></i>";
+					div += "</div>";
+					})
+
 					div += "</div>";
 					div += "</div>";
 					div += "<div id = 'confermaPacchetto'>";
 					div += "<h1>Questa operazione sar&agrave; effettuata automaticamente anche su tutte le lezioni del pacchetto, sei sicuro ?</h1>";
 					div += 	"<i class='far fa-check-circle' id = 'true' onClick = 'approvaInteroPacchetto(event)' data = '" + pacchettoBean.codicePacchetto + "'></i>";
 					div += "<i class='far fa-times-circle' id = 'false' onClick = 'disapprovaInteroPacchetto(event)' data ='" + pacchettoBean.codicePacchetto +"'></i>"
-					div += "</div>";
-														
+					div += "</div>";										
 					element.innerHTML = element.innerHTML + div;
-				})
+				})	
 			}
 		}
 	})
@@ -375,8 +379,8 @@ function addLesson(){
    	 }else{
    		const messageError = $("#messErr");
       	messageError.text(response.message);
- 		document.getElementById("success").style.display = "block";
- 		document.getElementById("success").style.color = "red";
+ 		document.getElementById("messErr").style.display = "block";
+ 		document.getElementById("messErr").style.color = "red";
  		
    		url.style.border = "1px solid red";
    		titolo.style.border = "1px solid red";
@@ -459,11 +463,24 @@ function approvaSingolaLezione(event){
         }
     }).done(data => {
     	const response = JSON.parse(data);
-	 
+   	 
     	if(response.ok == true){
-    		caller.parentElement.style.display= "none";
+    		var matches = document.querySelectorAll("div#singolaLezione");
+    		var matchesPackage = document.querySelectorAll("div#singoloPacchetto");
+    		if((matchesPackage.length-1) == 0 && (matches.length-1) == 0 ){
+    			const element = document.querySelector("#pacchettiDaApprovare");
+				let div = "<h1 id = 'titoloFinestra'>Non ci sono pacchetti da approvare</h1>";
+				div += "<img src = 'img/utility/approvazioni.png'>";
+				element.innerHTML = element.innerHTML + div;	
+				var par = $(event.target).parent().parent().parent().parent();
+	    		par.find("#singoloPacchetto").css("display", "none");
+    		} else if((matchesPackage.length-1) != 0 && (matches.length-1) == 0){
+	    		var par = $(event.target).parent().parent().parent().parent();
+	    		par.find("#singoloPacchetto").css("display", "none");
+    		} 
     	}
     })
+ 
 }
 
 function disapprovaSingolaLezione(event){
@@ -483,7 +500,19 @@ function disapprovaSingolaLezione(event){
     	const response = JSON.parse(data);
     	
     	if(response.ok == true){
-    		caller.parentElement.style.display= "none";
+    		var matches = document.querySelectorAll("div#singolaLezione");
+    		var matchesPackage = document.querySelectorAll("div#singoloPacchetto");
+    		if((matchesPackage.length-1) == 0 && (matches.length-1) == 0 ){
+    			const element = document.querySelector("#pacchettiDaApprovare");
+				let div = "<h1 id = 'titoloFinestra'>Non ci sono pacchetti da approvare</h1>";
+				div += "<img src = 'img/utility/approvazioni.png'>";
+				element.innerHTML = element.innerHTML + div;	
+				var par = $(event.target).parent().parent().parent().parent();
+	    		par.find("#singoloPacchetto").css("display", "none");
+    		} else if((matchesPackage.length-1) != 0 && (matches.length-1) == 0){
+	    		var par = $(event.target).parent().parent().parent().parent();
+	    		par.find("#singoloPacchetto").css("display", "none");
+    		} 
     	}
     })
 }

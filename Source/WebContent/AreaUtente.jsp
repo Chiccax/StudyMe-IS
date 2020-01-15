@@ -164,7 +164,7 @@
 							<!-- Inserisci lezione -->
 							<div id="lezioni">
 								<h1>Aggiungi lezione</h1>
-									<div id = "success"></div>											
+									<div id = "messErr"></div>											
 										<h2>Inserire url: </h2>	
 											<form name="insertCod">
 												<input type="text" id = "url" placeholder="Inserire url nuova lezione">	
