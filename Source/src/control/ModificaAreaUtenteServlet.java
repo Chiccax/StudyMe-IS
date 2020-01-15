@@ -15,7 +15,6 @@ import com.google.gson.Gson;
 
 import control.util.JSONResponse;
 import model.bean.UtenteBean;
-import model.dao.UtenteDao;
 import model.manager.UtenteManager;
 
 /**

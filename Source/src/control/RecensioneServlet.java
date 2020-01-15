@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import model.dao.RecensioneDao;
+import model.manager.RecensioneManager;
 /** 
  * Gestisce l'inserimento di una recensione
  **/
@@ -53,8 +53,8 @@ public class RecensioneServlet extends HttpServlet {
 			return;
 		}
 		
-		RecensioneDao recensionedao = new RecensioneDao();	
-		recensionedao.aggiungiRecensione(nomeUtente, codicePacchetto, titoloRecensione, testoRecensione);
+		RecensioneManager recensioneManager= new RecensioneManager();
+		recensioneManager.aggiungiRecensione(nomeUtente, codicePacchetto, titoloRecensione, testoRecensione);
 		JSONResponse jsonResponse = new JSONResponse(true);
 		out.print(gson.toJson(jsonResponse));
 	}

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.bean.PacchettoBean;
-import model.dao.PacchettoDao;
 import model.manager.RicercaManager;
 /** 
  * Gestisce la ricerca di un pacchetto

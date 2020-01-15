@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 
 import control.util.JSONResponse;
-import model.dao.UtenteDao;
+import model.manager.UtenteManager;
 import utility.EmailSender;
 /** 
  * Gestisce il recupero della password
@@ -53,12 +53,13 @@ public class RecuperoPasswordServlet extends HttpServlet {
 	    String newPassword = random[0];
 	    
 		EmailSender sender = EmailSender.GetInstance();
+		//
 		sender.SendEmail("Recupero password", "Ecco la tua nuova password: " + newPassword , emailUtente);
 		
 		String passwordBase64format  = Base64.getEncoder().encodeToString(newPassword.getBytes()); 
 		
-		UtenteDao manager = new UtenteDao();	
-		boolean resp = manager.updatePassword(emailUtente, passwordBase64format);
+		UtenteManager utenteManager= new UtenteManager();
+		boolean resp = utenteManager.setPassword(emailUtente, passwordBase64format);
 		if(resp == false) {
 			JSONResponse jsonResponse = new JSONResponse(false, NO_USEREMAIL);
 			out.print(gson.toJson(jsonResponse));

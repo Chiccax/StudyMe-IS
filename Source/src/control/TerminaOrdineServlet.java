@@ -25,18 +25,13 @@ import model.bean.UtenteBean;
 public class TerminaOrdineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-  
-    public TerminaOrdineServlet() {
+   public TerminaOrdineServlet() {
         super();
-      
     }
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);		
 	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		ArrayList<PacchettoBean> carrello=(ArrayList<PacchettoBean>)session.getAttribute("carrello");
 		UtenteBean user=(UtenteBean)session.getAttribute("User");
@@ -56,7 +51,6 @@ public class TerminaOrdineServlet extends HttpServlet {
 		for(PacchettoBean pacchettoAcquistato : carrello) {
 			totale = (pacchettoAcquistato.getPrezzo() + totale);
 		}
-		
 		total += totale;
 		
 		content.put("totale", total);

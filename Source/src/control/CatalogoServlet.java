@@ -1,8 +1,6 @@
 package control;
 
 import java.io.IOException;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -17,8 +15,6 @@ import javax.servlet.http.HttpSession;
 import model.bean.CategoriaBean;
 import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
-import model.dao.CategoriaDao;
-import model.dao.PacchettoDao;
 import model.manager.CatalogoManager;
 
 /**

@@ -16,7 +16,7 @@ import com.google.gson.Gson;
 
 import control.util.JSONResponse;
 import model.bean.UtenteBean;
-import model.dao.UtenteDao;
+import model.manager.UtenteManager;
 
 /** 
  * Gestisce la registrazione di un nuovo utente
@@ -76,15 +76,15 @@ public class RegistrazioneServlet extends HttpServlet {
 			return;	
 		}else {
 			String passwordBase64format  = Base64.getEncoder().encodeToString(password.getBytes()); 
-			UtenteDao manager = new UtenteDao();
-			boolean res = manager.registration(email, nomeUtente, passwordBase64format);
+			UtenteManager utenteManager= new UtenteManager();
+			boolean res =utenteManager.registrazione(email, nomeUtente, passwordBase64format);
 	
 			if(!res) {
 				JSONResponse jsonResponse = new JSONResponse(false, NO_USER);
 				out.print(gson.toJson(jsonResponse));
 				return;			
 			}else {
-				UtenteBean user = manager.login(nomeUtente, passwordBase64format);
+				UtenteBean user =utenteManager.login(nomeUtente, passwordBase64format);
 				HttpSession session = request.getSession();
 				session.setAttribute("User", user);
 				JSONResponse jsonResponse = new JSONResponse(true, "OK");

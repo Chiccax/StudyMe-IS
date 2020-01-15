@@ -1,17 +1,15 @@
 package control;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import java.sql.SQLException;
-import java.util.ArrayList;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpSession;
 
 import model.bean.CategoriaBean;
@@ -20,10 +18,6 @@ import model.bean.OrdineAcquistoBean;
 import model.bean.PacchettoBean;
 import model.bean.RecensioneBean;
 import model.bean.UtenteBean;
-import model.dao.CategoriaDao;
-import model.dao.OrdineAcquistoDao;
-import model.dao.PacchettoDao;
-import model.dao.RecensioneDao;
 import model.manager.LezioneManager;
 /** 
  * Gestisce le lezioni
@@ -42,7 +36,6 @@ public class LezioneServlet extends HttpServlet {
 		
 		String codicePacchetto = request.getParameter("codicePacchetto");
 		
-		String categoria= null;
 		boolean recensito = false;
 		
 		boolean comprato = false;

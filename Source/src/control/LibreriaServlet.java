@@ -1,7 +1,6 @@
 package control;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -13,11 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.bean.LezioniBean;
-import model.bean.OrdineAcquistoBean;
 import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
-import model.dao.OrdineAcquistoDao;
-import model.dao.PacchettoDao;
 import model.manager.LibreriaManager;
 /**
  * Gestisce la visualizzazione dei pacchetti acquistati dall'acquirente

@@ -24,6 +24,8 @@ import model.bean.UtenteBean;
 import model.dao.InsegnanteDao;
 import model.dao.PacchettoDao;
 import model.dao.SottocategoriaDao;
+import model.manager.InsegnanteManager;
+import model.manager.SottocategoriaManager;
 /** 
  * Gestisce l' inserimento pacchetti e lezioni da parte dell'insegnnante
  **/ 
@@ -43,6 +45,7 @@ public class InsegnanteServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		PacchettoBean pacchetto = new PacchettoBean();
 		LezioniBean lezione = new LezioniBean();
+		InsegnanteManager insegnanteManager= new InsegnanteManager();
 		Gson gson = new Gson();
 		String action = request.getParameter("azione");
 		
@@ -58,9 +61,7 @@ public class InsegnanteServlet extends HttpServlet {
 		//Cambia codice
 				if(action.equalsIgnoreCase("cambiaCodice")) { 
 					String nuovoCodice = request.getParameter("nuovoCodice");
-					
-					PacchettoDao pacchettoDao = new PacchettoDao();
-					PacchettoBean pacchettoEsistente = pacchettoDao.getPacchetto(nuovoCodice);
+					PacchettoBean pacchettoEsistente = insegnanteManager.getPacchetto(nuovoCodice);
 					
 					//pacchetto già esistente con tale codice
 					if(pacchettoEsistente != null) {
@@ -70,8 +71,7 @@ public class InsegnanteServlet extends HttpServlet {
 					}
 					
 					pacchetto.setCodicePacchetto(nuovoCodice);
-					InsegnanteDao manager = new InsegnanteDao();
-					manager.updateCode(vecchioCodice, nuovoCodice);		
+					insegnanteManager.updateCode(vecchioCodice, nuovoCodice);		
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}//Cambia titolo
@@ -84,10 +84,7 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-					
-					PacchettoDao pacchettoDao = new PacchettoDao();
-					PacchettoBean pacchettoEsistente = pacchettoDao.getPacchettoByTitolo(nuovoTitolo);
-					
+					PacchettoBean pacchettoEsistente = insegnanteManager.getPacchettoByTitolo(nuovoTitolo);
 					//pacchetto già esistente con tale titolo
 					if(pacchettoEsistente != null) {
 						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE2);
@@ -96,8 +93,7 @@ public class InsegnanteServlet extends HttpServlet {
 					}
 					
 					pacchetto.setTitolo(nuovoTitolo);
-					InsegnanteDao manager = new InsegnanteDao();
-					manager.updateTitle(vecchioCodice, nuovoTitolo);
+					insegnanteManager.updateTitle(vecchioCodice, nuovoTitolo);
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}//Cambia prezzo
@@ -111,8 +107,7 @@ public class InsegnanteServlet extends HttpServlet {
 						return;
 					}
 					pacchetto.setPrezzo(nuovoPrezzo);
-					InsegnanteDao manager = new InsegnanteDao();
-					manager.updatePrice(vecchioCodice, nuovoPrezzo);
+					insegnanteManager.updatePrice(vecchioCodice, nuovoPrezzo);
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}//Cambia descrizione
@@ -126,8 +121,7 @@ public class InsegnanteServlet extends HttpServlet {
 					}
 
 					pacchetto.setDescrizione(nuovaDescrizione);
-					InsegnanteDao manager = new InsegnanteDao();
-					manager.updateDescr(vecchioCodice, nuovaDescrizione);	
+					insegnanteManager.updateDescr(vecchioCodice, nuovaDescrizione);	
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}//Rimuovi pacchetto
@@ -137,8 +131,7 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;	
 					}
-					InsegnanteDao manager = new InsegnanteDao();
-					manager.deletePacchetto(vecchioCodice);
+					insegnanteManager.deletePacchetto(vecchioCodice);
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}
@@ -161,8 +154,7 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-					PacchettoDao pacchettoDao = new PacchettoDao();
-					PacchettoBean pacchettoEsistente = pacchettoDao.getPacchettoByTitolo(nuovoTitolo);
+					PacchettoBean pacchettoEsistente = insegnanteManager.getPacchettoByTitolo(nuovoTitolo);
 					
 					//pacchetto già esistente con tale titolo
 					if(pacchettoEsistente != null) {
@@ -176,11 +168,11 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-					SottocategoriaDao sottocategoriaDao = new SottocategoriaDao();
+					SottocategoriaManager sottocategoriaManager = new SottocategoriaManager();
 			
 					//Controllo che i codici di categoria e sottocategoria siano validi
 					try {
-						Object sottocategoria = sottocategoriaDao.findByKey(nuovaSottocategoria);
+						Object sottocategoria = sottocategoriaManager.findByKey(nuovaSottocategoria);
 				
 						if(sottocategoria == null) {
 							JSONResponse jsonResponse = new JSONResponse(false, NO_SOTTOCATEGORY);
@@ -197,9 +189,7 @@ public class InsegnanteServlet extends HttpServlet {
 					UtenteBean utente = (UtenteBean) session.getAttribute("User");
 					String nomeUtente = utente.getNomeUtente();
 					
-			
-					InsegnanteDao manager = new InsegnanteDao();
-					PacchettoBean pacchettoDaInserire = manager.inserPacchetto(nuovoCodice, nomeUtente, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
+					PacchettoBean pacchettoDaInserire = insegnanteManager.inserPacchetto(nuovoCodice, nomeUtente, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
 			
 					if(pacchettoDaInserire == null){
 						JSONResponse jsonResponse = new JSONResponse(false);
@@ -227,8 +217,7 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-					PacchettoDao pacchettoDao = new PacchettoDao();
-					ArrayList<LezioniBean> lezioneTitoloEsistente = pacchettoDao.getLezioniByTitolo(titolo);
+					ArrayList<LezioniBean> lezioneTitoloEsistente = insegnanteManager.getLezioniByTitolo(titolo);
 					
 					//lezione già esistente con tale titolo
 					if(!lezioneTitoloEsistente.isEmpty()) {
@@ -238,8 +227,7 @@ public class InsegnanteServlet extends HttpServlet {
 					}
 					Pattern pattern = Pattern.compile("https:\\/\\/www.youtube.com\\/embed\\/\\w+");
 					Matcher matcher = pattern.matcher(url);
-					pacchettoDao = new PacchettoDao();
-					ArrayList<LezioniBean> lezioneEsistente = pacchettoDao.getLezioniByURl(url);
+					ArrayList<LezioniBean> lezioneEsistente = insegnanteManager.getLezioniByURl(url);
 					
 					//lezione già esistente con tale url
 					if(!lezioneEsistente.isEmpty()) {
@@ -258,14 +246,13 @@ public class InsegnanteServlet extends HttpServlet {
 					HttpSession session = request.getSession();
 			
 					PacchettoBean pacchettoAtt = (PacchettoBean) session.getAttribute("PacchettoAttuale");
-					InsegnanteDao manager = new InsegnanteDao();
 					LezioniBean res =null;
 					if(pacchettoAtt!=null)
 					{	
 						String codicePacchettoAttuale = pacchettoAtt.getCodicePacchetto();
-						res = manager.insertLesson(codicePacchettoAttuale, url, titolo, durata);
+						res = insegnanteManager.insertLesson(codicePacchettoAttuale, url, titolo, durata);
 					}else if(vecchioCodice!=null && vecchioCodice.length() != 0 ) {
-							res = manager.insertLesson(vecchioCodice, url, titolo, durata);
+							res = insegnanteManager.insertLesson(vecchioCodice, url, titolo, durata);
 							LezioniBean l = new LezioniBean();
 							l.setPacchetto(vecchioCodice);
 							l.setUrl(url);
@@ -273,7 +260,7 @@ public class InsegnanteServlet extends HttpServlet {
 							l.setTitolo(titolo);
 							
 							ArrayList<UtenteBean> acquirenti = new ArrayList<UtenteBean>();
-							acquirenti = pacchettoDao.getAcquirenti(vecchioCodice);
+							acquirenti = insegnanteManager.getAcquirenti(vecchioCodice);
 							
 							for(UtenteBean u : acquirenti) {
 								l.addObserver(u);
@@ -301,8 +288,7 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
-					PacchettoDao pacchettoDao = new PacchettoDao();
-					ArrayList<LezioniBean> lezioneTitoloEsistente =pacchettoDao.getLezioniByTitolo(nuovoNomeLezione);
+					ArrayList<LezioniBean> lezioneTitoloEsistente =insegnanteManager.getLezioniByTitolo(nuovoNomeLezione);
 					
 					//lezione già esistente con tale titolo
 					if(!lezioneTitoloEsistente.isEmpty()) {
@@ -311,8 +297,7 @@ public class InsegnanteServlet extends HttpServlet {
 						return;
 					}
 					lezione.setTitolo(nuovoNomeLezione);
-					InsegnanteDao  manager = new InsegnanteDao();
-					manager.updateTitleLesson(vecchioTitolo, nuovoNomeLezione);
+					insegnanteManager.updateTitleLesson(vecchioTitolo, nuovoNomeLezione);
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}//Cambia url lezione
@@ -330,8 +315,7 @@ public class InsegnanteServlet extends HttpServlet {
 						return;	
 					}
 					
-					PacchettoDao pacchettoDao = new PacchettoDao();
-					ArrayList<LezioniBean> lezioneEsistente = pacchettoDao.getLezioniByURl(nuovoUrlLezione);
+					ArrayList<LezioniBean> lezioneEsistente = insegnanteManager.getLezioniByURl(nuovoUrlLezione);
 					
 					//lezione già esistente con tale url
 					if(!lezioneEsistente.isEmpty()) {
@@ -340,22 +324,19 @@ public class InsegnanteServlet extends HttpServlet {
 						return;
 					}
 						
-					InsegnanteDao manager = new InsegnanteDao();
-					manager.updateUrlLesson(vecchioTitolo, nuovoUrlLezione);
+					insegnanteManager.updateUrlLesson(vecchioTitolo, nuovoUrlLezione);
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}//Cambia durata
 				else if(action.equalsIgnoreCase("modificaDurataLezione")){
 					String nuovaDurataLezione = request.getParameter("nuovaDurataLezione");
 					lezione.setDurata(nuovaDurataLezione);
-					InsegnanteDao manager = new InsegnanteDao();
-					manager.updateDurationLesson(vecchioTitolo, nuovaDurataLezione);
+					insegnanteManager.updateDurationLesson(vecchioTitolo, nuovaDurataLezione);
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));
 				}//rimuovi lezione
 				else if(action.equalsIgnoreCase("rimuoviLezione")){
-					InsegnanteDao manager = new InsegnanteDao();
-					manager.deleteLesson(vecchioTitolo);
+					insegnanteManager.deleteLesson(vecchioTitolo);
 					JSONResponse jsonResponse = new JSONResponse(true, "OK");
 					out.print(gson.toJson(jsonResponse));		
 				}

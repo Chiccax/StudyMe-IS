@@ -17,36 +17,29 @@ import com.google.gson.Gson;
 import control.util.JSONResponse;
 import model.bean.OrdineAcquistoBean;
 import model.bean.UtenteBean;
-import model.dao.OrdineAcquistoDao;
+import model.manager.OrdineManager;
 /** 
  * Gestisce l'ordine dell'acquirente 
  **/
 @WebServlet("/OrdiniServlet")
 public class OrdiniServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-    public OrdiniServlet() {
+	public OrdiniServlet() {
         super();
        
     }
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArrayList<OrdineAcquistoBean> listaOrdine = new ArrayList<OrdineAcquistoBean>();
-		
-		OrdineAcquistoDao ordineAcquistoDao = new OrdineAcquistoDao();
+		OrdineManager ordineManager= new OrdineManager();
 		HttpSession session = request.getSession();
 		UtenteBean user =(UtenteBean)session.getAttribute("User");
-		
 		String nomeUtente=user.getNomeUtente();
-		
 		JSONResponse result;
-		
 		try {	
-			listaOrdine = ordineAcquistoDao.findByNomeCliente(nomeUtente);
+			listaOrdine= ordineManager.RicercaNomeCliente(nomeUtente);
 			result = new JSONResponse(true, "ok" , listaOrdine);
 			if(listaOrdine.size() == 0) {
 				result = new JSONResponse(false, "Non ci sono ordini");
@@ -55,7 +48,6 @@ public class OrdiniServlet extends HttpServlet {
 		catch(SQLException e) {
 			result = new JSONResponse(false, "Problema con il database");
 		}
-		
 		response.getWriter().print(new Gson().toJson(result));
 	}
 }

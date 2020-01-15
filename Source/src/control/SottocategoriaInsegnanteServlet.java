@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 
 import control.util.JSONResponse;
 import model.bean.SottocategoriaBean;
-import model.dao.SottocategoriaDao;
+import model.manager.SottocategoriaManager;
 
 /**
  * Gestisce la sottocategoria dell'insegnante 
@@ -29,27 +29,23 @@ public class SottocategoriaInsegnanteServlet extends HttpServlet {
         super();
        
     }
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String utente = request.getParameter("utente");
 		PrintWriter out = response.getWriter();
 		Gson gson = new Gson();
 		
-		SottocategoriaDao manager = new SottocategoriaDao();
-		ArrayList<SottocategoriaBean> sottocategorie = manager.selezionaSottocagorieInsegnante(utente);
+		SottocategoriaManager sottoCategoriaManager= new SottocategoriaManager();
+		ArrayList<SottocategoriaBean> sottocategorie = sottoCategoriaManager.selezionaSottocagorieInsegnante(utente);
 		
 		if(sottocategorie != null) {
 			JSONResponse jsonResponse = new JSONResponse(true, "ok", sottocategorie);
 			out.print(gson.toJson(jsonResponse));
 			return;
 		}
-		
 		JSONResponse jsonResponse = new JSONResponse(false);
 		out.print(gson.toJson(jsonResponse));
 	}
-
-}
+   }

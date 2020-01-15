@@ -17,7 +17,6 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 import control.util.JSONResponse;
 import model.bean.PacchettoBean;
-import model.dao.PacchettoDao;
 import model.manager.CarrelloManager;
 /** 
  * Gestisce l'acquisto di un pacchetto
