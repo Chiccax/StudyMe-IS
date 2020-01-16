@@ -7,21 +7,22 @@ import model.bean.SottocategoriaBean;
 import model.dao.SottocategoriaDao;
 
 public class SottocategoriaManager {
+	
 	/**
 	 * Costruttore vuoto 
 	 **/
-	public SottocategoriaManager(){
-		
-	}
+	public SottocategoriaManager(){}
+	
 	/**
 	 * Seleziona la sottocategoria dell'insegnante
 	 * @param String utente
 	 * @return ArrayList<SottocategoriaBean> sottocategorie
 	 **/
 	public ArrayList<SottocategoriaBean> selezionaSottocagorieInsegnante(String utente){
-		ArrayList<SottocategoriaBean> sottocategorie = manager.selezionaSottocagorieInsegnante(utente);
+		sottocategorie = manager.selezionaSottocagorieInsegnante(utente);
 		return sottocategorie;
 	}
+	
 	/**
 	 * Seleziona la sottocategoria dell'insegnante
 	 * @param String nuovaSottocategoria
@@ -29,9 +30,11 @@ public class SottocategoriaManager {
 	 * @throws SQLException
 	 **/
 	public Object findByKey(String nuovaSottocategoria) throws SQLException{
-		Object sottocategorie = manager.findByKey(nuovaSottocategoria);
-		return sottocategorie;
+		sottocategoria = manager.findByKey(nuovaSottocategoria);
+		return sottocategoria;
 	}
 	
 	SottocategoriaDao manager = new SottocategoriaDao();
+	Object sottocategoria = null;
+	ArrayList<SottocategoriaBean> sottocategorie = new ArrayList<SottocategoriaBean>();
 }

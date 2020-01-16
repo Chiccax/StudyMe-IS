@@ -357,7 +357,7 @@ function addPackage(){
     		document.getElementById("prezzoPacchetto").innerHTML = ("Prezzo: " + nuovoPrezzo.value + "&euro;");
        	 }else{
     		const messageError = $("#success");
-          	messageError.text(response.message);
+          	messageError.html(response.message);
      		document.getElementById("success").style.display = "block";
      		document.getElementById("success").style.color = "red";
      		
@@ -404,7 +404,7 @@ function addLesson(){
 		}
    	 }else{
    		const messageError = $("#messErr");
-      	messageError.text(response.message);
+      	messageError.html(response.message);
  		document.getElementById("messErr").style.display = "block";
  		document.getElementById("messErr").style.color = "red";
  		
@@ -480,7 +480,7 @@ function approvaSingolaLezione(event){
 	const action = "approvaSingolaLezione";
 	caller.setAttribute("action", action);
 	
-	/*$.ajax({
+	$.ajax({
         url: "GestoreServlet",
         method: 'POST',
         data:{
@@ -490,7 +490,7 @@ function approvaSingolaLezione(event){
     }).done(data => {
     	const response = JSON.parse(data);
    	 
-    	if(response.ok == true){*/
+    	if(response.ok == true){
     		var matches = document.querySelectorAll("div#singolaLezione");
     		var matchesPackage = document.querySelectorAll("div#singoloPacchetto");
     		//Caso in cui i pacchetti sono terminati
@@ -517,8 +517,8 @@ function approvaSingolaLezione(event){
     			var pacchetto = caller.parentElement;
     			pacchetto.style.display="none";
     		}
-    /*	}
-    })*/
+    	}
+    })
 }
 
 function disapprovaSingolaLezione(event){

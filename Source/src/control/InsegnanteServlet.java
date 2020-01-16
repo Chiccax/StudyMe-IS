@@ -142,14 +142,25 @@ public class InsegnanteServlet extends HttpServlet {
 					String nuovoTitolo = request.getParameter("titolo");
 					String nuovaFoto =  request.getParameter("foto");
 					double nuovoPrezzo = 0;
+					
+					PacchettoBean pacchettoEsistenteConCodice = insegnanteManager.getPacchetto(nuovoCodice);
+					//pacchetto già esistente con tale codice
+					if(pacchettoEsistenteConCodice != null) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_CODE);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					
 					try {
 						nuovoPrezzo = Double.parseDouble(request.getParameter("prezzo"));
 					}catch(NumberFormatException e){
-						nuovoPrezzo = 0;
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_PRICE);
+						out.print(gson.toJson(jsonResponse));
+						return;
 					}
 					String nuovaDescrizione = request.getParameter("descrizione");
 			
-					if(nuovoCodice == null || nuovaSottocategoria == null || nuovoPrezzo == 0 || nuovaDescrizione == null || nuovoTitolo == null || nuovaFoto == null) {
+					if(nuovoCodice == "" || nuovaSottocategoria == null || nuovoPrezzo == 0 || nuovaDescrizione == "" || nuovoTitolo == "" || nuovaFoto == "") {
 						JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
 						out.print(gson.toJson(jsonResponse));
 						return;
@@ -162,12 +173,20 @@ public class InsegnanteServlet extends HttpServlet {
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
+					
 					//controllo se è tra i 5 e i 35 caratteri
 					if(nuovoTitolo.length() < 5 || nuovoTitolo.length() > 35 ) {
 						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
 						out.print(gson.toJson(jsonResponse));
 						return;
 					}
+					
+					if(nuovaDescrizione.length() < 10 || nuovaDescrizione.length() > 30) {
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_DES);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					
 					SottocategoriaManager sottocategoriaManager = new SottocategoriaManager();
 			
 					//Controllo che i codici di categoria e sottocategoria siano validi
