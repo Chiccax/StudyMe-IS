@@ -42,6 +42,11 @@ public class RecensioneServlet extends HttpServlet {
 			out.print(gson.toJson(jsonResponse));
 			return;
 		}
+		if(titoloRecensione == ""  || testoRecensione == "") {
+			JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
+			out.print(gson.toJson(jsonResponse));
+			return;
+		}
 		if(titoloRecensione.length() < 5 || titoloRecensione.length() > 30 ) {
 			JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
 			out.print(gson.toJson(jsonResponse));

@@ -52,7 +52,7 @@ function addLesson(){
    		 window.location.reload();
    	 }else{
    		const messageError = $("#messErr");
-      	messageError.text(response.message);
+      	messageError.html(response.message);
  		document.getElementById("messErr").style.display = "block";
  		document.getElementById("messErr").style.color = "red";
  		
@@ -83,8 +83,7 @@ function modificaLezione(){
         	nuovaDurataLezione: nuovaDurataLezione.value,
         }
     }).done(data => {
-    	 window.location.reload();
-    	 const response = JSON.parse(data);
+    	const response = JSON.parse(data);
       	 
       	 if(response.ok == true){
       		 window.location.reload();

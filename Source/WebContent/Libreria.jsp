@@ -34,7 +34,7 @@
         			<img src="img/utility/libreriaVuota.png" id = "libreriaVuota" alt="Libreria vuota">
         		 	<h1 id = "noAcquisti">Non hai effettuato acquisti</h1>
         		 	<a href = "RicercaServlet?argument=">
-						<button id="buyNow">Acquista ora!</button>
+						<button class="bottoneDefault" id="buyNow">Acquista ora!</button>
 					</a>
         		</div>
         	<%} else{ %>
@@ -75,7 +75,8 @@
 						<i class="far fa-times-circle"></i>
 				 	</div>
 				<div id ="video"></div>
-			</div>
+			</div><br> <br><br>
+	           
 			<%@ include file="Footer.jsp"%> 
 			</div>       
         <script src="js/libreria.js" charset="utf-8"></script>
