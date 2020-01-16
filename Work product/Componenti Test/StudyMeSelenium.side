@@ -1,0 +1,2289 @@
+{
+  "id": "4e99ff0f-486e-4694-90f1-3ef1c6d86501",
+  "version": "2.0",
+  "name": "StudyMeSelenium",
+  "url": "http://localhost:8080/Source/HomePage.jsp",
+  "tests": [{
+    "id": "0341e623-20d9-4dde-8734-e6b3eb390e41",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "82294167-3a00-4f65-bc1a-fc36e5cebff6",
+    "name": "TCS39",
+    "commands": [{
+      "id": "80e2975b-6f2a-4074-90d4-2ffc3d00d362",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46c7dc14-bfa5-4339-8ce4-592c3a3b90b6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1168x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "164b1d04-902c-4da7-921d-3a078642a37d",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8b133f0-603f-49cf-8899-a216e08eefa9",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1130,269"
+    }, {
+      "id": "7426d805-220f-4fd2-a8d8-4b96c9871f2a",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1130,269"
+    }, {
+      "id": "60a8650d-f19b-42a5-b95c-4c83bd0f85d4",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1130,269"
+    }, {
+      "id": "b6428100-3a00-422e-acdc-096465ec0e1d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cd3b72b-92f4-4763-bd13-7e8b3ace22ae",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-plus-square",
+      "targets": [
+        ["css=.fa-plus-square", "css:finder"],
+        ["xpath=//div[@id='AggiungiLezione']/i", "xpath:idRelative"],
+        ["xpath=//div[7]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55d767af-c392-4a08-8568-aee79f2044e1",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0027a1a0-d4d8-46c8-8673-55da5169d24c",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "j"
+    }, {
+      "id": "2a965de8-fad0-4436-aa1a-7864f508428d",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58bc8b7c-3fa2-465b-a9c4-a7d21804b9f7",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "prova"
+    }, {
+      "id": "519c8c8c-2958-4f9c-a787-0ed328ae3b6a",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "prova lezione nuova"
+    }, {
+      "id": "64dd3310-195f-4ca3-a28e-e8d5c6a2351d",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": "11:11"
+    }, {
+      "id": "2343c303-d889-4388-b0f6-f764d3b2700d",
+      "comment": "",
+      "command": "click",
+      "target": "id=addLesson",
+      "targets": [
+        ["id=addLesson", "id"],
+        ["css=#addLesson", "css:finder"],
+        ["xpath=//div[@id='addLesson']", "xpath:attributes"],
+        ["xpath=//form[@id='add']/div[5]", "xpath:idRelative"],
+        ["xpath=//form/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6321abc4-c749-438e-a25f-7a22415d7c66",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=(//div[@id='modificaLez']/div)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Url non valido!"
+    }]
+  }, {
+    "id": "a515275e-0ba8-4952-a105-b9dc7a025d30",
+    "name": "TCS40",
+    "commands": [{
+      "id": "02bd5f7b-e69f-4001-b8a2-7f14111e2112",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97d1d811-0f39-4a12-96c2-5a84599c3534",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1168x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "918b228b-64eb-46bc-87e0-b79d31d6933b",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a01b9ed9-3d00-4af8-b35c-6ba52a059b65",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1150,242"
+    }, {
+      "id": "90d9223d-2732-491a-9e7b-7bd5dd9d5e78",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1150,242"
+    }, {
+      "id": "e2d3e097-a7c2-41de-8c0a-f8c10d3c4cf3",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1150,242"
+    }, {
+      "id": "9a51c702-4569-4f7d-8d72-fd9b5d2a487e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a74c4ba0-669a-41ad-b55c-1044411e1c49",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-plus-square",
+      "targets": [
+        ["css=.fa-plus-square", "css:finder"],
+        ["xpath=//div[@id='AggiungiLezione']/i", "xpath:idRelative"],
+        ["xpath=//div[7]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d837f3c0-c8f8-41d0-8d6f-8c2bc32fdcfa",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3348eec3-11ee-4da2-b407-c9b550a407d8",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/KYjwcntuEKk"
+    }, {
+      "id": "83c9d241-c3b2-4b21-926c-6b52de38b227",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1180a17-e41f-416a-ba19-1a126a7c7322",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "prova matematica"
+    }, {
+      "id": "0bd0293d-c29e-4d8f-9542-3ad9946a294f",
+      "comment": "",
+      "command": "click",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43824fdc-8028-4866-99b9-65725f6ee798",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": "11:11"
+    }, {
+      "id": "3462a0d7-d3c5-4776-8b36-4781030cd54f",
+      "comment": "",
+      "command": "click",
+      "target": "id=addLesson",
+      "targets": [
+        ["id=addLesson", "id"],
+        ["css=#addLesson", "css:finder"],
+        ["xpath=//div[@id='addLesson']", "xpath:attributes"],
+        ["xpath=//form[@id='add']/div[5]", "xpath:idRelative"],
+        ["xpath=//form/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6929ef7-90cc-46c6-80b6-62c0638bc8ad",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=(//div[@id='modificaLez']/div)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Url gi&agrave esistente"
+    }]
+  }, {
+    "id": "d1299cac-0f91-45ec-bdf6-d5e299d6af91",
+    "name": "TCS41",
+    "commands": [{
+      "id": "ed61709d-4da5-4807-922e-b08ea50133a0",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "66771fed-ab23-43e3-9d30-70a94fc348eb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1168x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53f3b484-02a5-4a74-8706-061d04302f4a",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02637d75-a4bb-407a-9f61-69dcb77a9a53",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1143,325"
+    }, {
+      "id": "8e655529-2809-4aee-9ffc-ea637d2b0efc",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1143,325"
+    }, {
+      "id": "0a2dcf7f-dfd5-4f80-96c7-43a7d53e000d",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1143,325"
+    }, {
+      "id": "32704db4-ee42-4b1a-8bfc-a2b7f0854efd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c3a64ad6-d68f-4576-9260-fb9152f79f53",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-plus-square",
+      "targets": [
+        ["css=.fa-plus-square", "css:finder"],
+        ["xpath=//div[@id='AggiungiLezione']/i", "xpath:idRelative"],
+        ["xpath=//div[7]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a79cfb42-3a55-4c43-8d30-d308d006c4c1",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ac6ae22-af34-4e61-b4ae-978651bacb1a",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/KYjwcntuEKk"
+    }, {
+      "id": "40ca465d-4e70-4ce2-8ff4-5f47c439da29",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "615c8343-5fe9-4f0e-ae23-b04716a3c180",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "A"
+    }, {
+      "id": "353e1a00-c587-4a12-b0dd-ef1d1589b502",
+      "comment": "",
+      "command": "click",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b3ded1b-ccd4-4817-b455-295d840f12b5",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": "11:11"
+    }, {
+      "id": "43ae34e5-ce54-425a-9bfd-e5d02b7a7c52",
+      "comment": "",
+      "command": "click",
+      "target": "id=addLesson",
+      "targets": [
+        ["id=addLesson", "id"],
+        ["css=#addLesson", "css:finder"],
+        ["xpath=//div[@id='addLesson']", "xpath:attributes"],
+        ["xpath=//form[@id='add']/div[5]", "xpath:idRelative"],
+        ["xpath=//form/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db96b4fb-fabf-4e71-822b-a70fdac23244",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=(//div[@id='modificaLez']/div)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Inserire un titolo compreso tra i 5 e 35 caratteri"
+    }]
+  }, {
+    "id": "fcbc70e1-4d54-4ba2-a92d-460a3a38a9f4",
+    "name": "TCS42",
+    "commands": [{
+      "id": "8aaf1fd1-8b54-4b55-afc3-5b46eadf66da",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91418e4c-4ba2-4424-b56e-3770ee6b6392",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1165x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8b4d2b9-0e25-41ce-a7c0-b31b0a12eaca",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a59a46f-d20a-4ac4-ada4-4ca47f725293",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b979bb5-69f2-45cb-8a07-568cb3fcacf9",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=addL",
+      "targets": [
+        ["id=addL", "id"],
+        ["css=#addL", "css:finder"],
+        ["xpath=//span[@id='addL']", "xpath:attributes"],
+        ["xpath=//div[@id='AggiungiLezione']/span", "xpath:idRelative"],
+        ["xpath=//div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Aggiungi lezione')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bdcde1b-a071-423d-9251-6549e6fc4a36",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=addL",
+      "targets": [
+        ["id=addL", "id"],
+        ["css=#addL", "css:finder"],
+        ["xpath=//span[@id='addL']", "xpath:attributes"],
+        ["xpath=//div[@id='AggiungiLezione']/span", "xpath:idRelative"],
+        ["xpath=//div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Aggiungi lezione')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d839356-bcee-44ff-91e4-eb31f424d444",
+      "comment": "",
+      "command": "click",
+      "target": "id=AggiungiLezione",
+      "targets": [
+        ["id=AggiungiLezione", "id"],
+        ["css=#AggiungiLezione", "css:finder"],
+        ["xpath=//div[@id='AggiungiLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='pacchetto']/div", "xpath:idRelative"],
+        ["xpath=//div[7]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9234e826-0b30-47d4-8848-fd1798161c1b",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a512790-aca2-4aa3-8488-eff0a35a3122",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/KYjwcntuEKk"
+    }, {
+      "id": "63f2e847-69c4-4ec7-bc11-3e02821cda6e",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3afedc88-529e-4911-a64a-a700bfff66eb",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83e00b64-dbd8-4c4b-b7db-57d2e71a92f9",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "matematica nuova"
+    }, {
+      "id": "c8c98ecf-c860-4ae4-bd9d-db59e77a9615",
+      "comment": "",
+      "command": "click",
+      "target": "id=addLesson",
+      "targets": [
+        ["id=addLesson", "id"],
+        ["css=#addLesson", "css:finder"],
+        ["xpath=//div[@id='addLesson']", "xpath:attributes"],
+        ["xpath=//form[@id='add']/div[5]", "xpath:idRelative"],
+        ["xpath=//form/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42b0b2dd-3818-4daf-a448-4e7064dbcbf3",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=(//div[@id='modificaLez']/div)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Tutti i parametri devono essere compilati"
+    }]
+  }, {
+    "id": "b7278635-e1bb-4498-8e55-883903afd45e",
+    "name": "TCS43",
+    "commands": [{
+      "id": "ddab648c-6476-40f2-95ac-3c2e06b83508",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70bcc9b5-5e8a-41bd-b99a-8944f0f76bee",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1165x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dffd8556-2082-4630-b0e9-baa24018b576",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cff7ad30-fb10-44e7-96c6-dafaf27dd715",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1129,270"
+    }, {
+      "id": "b3fa6617-0f1c-4c34-b1b7-70442cd0da0b",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1129,270"
+    }, {
+      "id": "90a786a7-a8bd-4d8e-8f2a-69276b567d1e",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1129,270"
+    }, {
+      "id": "1651ee6b-bce8-4daf-9f9b-8f2eb8ab5264",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c5431e9-9af7-4cb3-bf7c-784afd5db763",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.fa-plus-square",
+      "targets": [
+        ["css=.fa-plus-square", "css:finder"],
+        ["xpath=//div[@id='AggiungiLezione']/i", "xpath:idRelative"],
+        ["xpath=//div[7]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bb4d782-762c-4d12-bc3c-b570e6d67f15",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-plus-square",
+      "targets": [
+        ["css=.fa-plus-square", "css:finder"],
+        ["xpath=//div[@id='AggiungiLezione']/i", "xpath:idRelative"],
+        ["xpath=//div[7]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0abaed8-e407-4c82-87f1-4d73bd98320a",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.fa-plus-square",
+      "targets": [
+        ["css=.fa-plus-square", "css:finder"],
+        ["xpath=//div[@id='AggiungiLezione']/i", "xpath:idRelative"],
+        ["xpath=//div[7]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e98d82b5-8406-4b3e-8d01-324cf4da8c4a",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71c412ad-3c93-445d-90a2-4cc4763333cc",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/jHp8DNQrVHs"
+    }, {
+      "id": "06d4ff8a-9b5d-4063-9837-862bd834175a",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88497a54-ce91-4741-aa5b-2a9d990368c2",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "Lezione 1 - Violino"
+    }, {
+      "id": "ca9b6d97-f1d4-41f0-8509-509eefd39320",
+      "comment": "",
+      "command": "click",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c66acf1c-4a73-43d3-999a-6912649688cb",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": "11:11"
+    }, {
+      "id": "e2f559ea-3533-4b4d-8ac2-e53b0500d23b",
+      "comment": "",
+      "command": "click",
+      "target": "id=addLesson",
+      "targets": [
+        ["id=addLesson", "id"],
+        ["css=#addLesson", "css:finder"],
+        ["xpath=//div[@id='addLesson']", "xpath:attributes"],
+        ["xpath=//form[@id='add']/div[5]", "xpath:idRelative"],
+        ["xpath=//form/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2a7410e2-67ee-4828-824f-d663872930e5",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=(//div[@id='modificaLez']/div)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Titolo gi&agrave esistente"
+    }]
+  }, {
+    "id": "1eb1d363-794e-45b9-9099-b83820c3703e",
+    "name": "TCS46",
+    "commands": [{
+      "id": "5d12394c-03d8-4225-9afa-b5f7969bc151",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b92d50e-34d6-4451-85e2-52b4f22cb032",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1165x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d5cd418-c774-4dbc-9ac9-042d74a2c6f0",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f72eb3ed-d7a4-4ae5-abbc-70779c94aa7b",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1136,267"
+    }, {
+      "id": "211877f2-fdfd-4edf-af89-b79acfd64766",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1136,267"
+    }, {
+      "id": "b49acc64-9e25-417b-a82c-11ad795b53de",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1136,267"
+    }, {
+      "id": "cbec2a77-f1b8-4843-ba60-01b27f47a8ce",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18f37a68-adc9-4505-b76f-24515f732ec8",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.lezione:nth-child(1) .modificaLezione",
+      "targets": [
+        ["css=.lezione:nth-child(1) .modificaLezione", "css:finder"],
+        ["xpath=//div[@onclick='mostraModificaLezione(`prova nuova lezione`)']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagli']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5ec539b-2c85-47bd-9829-3d7c86a70ef9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.lezione:nth-child(1) .modificaLezione",
+      "targets": [
+        ["css=.lezione:nth-child(1) .modificaLezione", "css:finder"],
+        ["xpath=//div[@onclick='mostraModificaLezione(`prova nuova lezione`)']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagli']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cd5cc97-1c32-4719-976c-29b5ea810ae6",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.lezione:nth-child(1) .modificaLezione",
+      "targets": [
+        ["css=.lezione:nth-child(1) .modificaLezione", "css:finder"],
+        ["xpath=//div[@onclick='mostraModificaLezione(`prova nuova lezione`)']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagli']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8539531-7658-4063-aa52-e4442099c152",
+      "comment": "",
+      "command": "click",
+      "target": "id=nomeModificaLezione",
+      "targets": [
+        ["id=nomeModificaLezione", "id"],
+        ["name=newName", "name"],
+        ["css=#nomeModificaLezione", "css:finder"],
+        ["xpath=//input[@id='nomeModificaLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='updateName']/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e31d2e3-901b-47b8-a95f-64a789c48af1",
+      "comment": "",
+      "command": "type",
+      "target": "id=nomeModificaLezione",
+      "targets": [
+        ["id=nomeModificaLezione", "id"],
+        ["name=newName", "name"],
+        ["css=#nomeModificaLezione", "css:finder"],
+        ["xpath=//input[@id='nomeModificaLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='updateName']/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "a"
+    }, {
+      "id": "c96585b3-cc72-4bb9-8ae9-1a9ca27e0104",
+      "comment": "",
+      "command": "click",
+      "target": "id=updateButton",
+      "targets": [
+        ["id=updateButton", "id"],
+        ["css=#updateName > #updateButton", "css:finder"],
+        ["xpath=//div[@id='updateButton']", "xpath:attributes"],
+        ["xpath=//div[@id='updateName']/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "744be6af-07af-4941-8181-d56f045d7697",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='modificaLez']/div", "xpath:idRelative"],
+        ["xpath=//div[9]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Inserire un titolo compreso tra i 5 e 35 caratteri"
+    }]
+  }, {
+    "id": "c396c03c-26d9-4243-ac01-f6fdcb096abd",
+    "name": "TCS49",
+    "commands": [{
+      "id": "16d05a72-c711-4991-9eb5-adebdb979b74",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86ae0046-82c2-4f4b-ae82-58d60ff8c4fe",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1165x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "308703b4-fd66-4eab-9257-3f4b5c9e9863",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a64bd76e-6c02-479c-99f7-f376901d496d",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1143,328"
+    }, {
+      "id": "63606838-36e8-424a-8dbe-bc903e28b0ed",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1143,328"
+    }, {
+      "id": "ed7d0370-549e-40a9-a9bc-64ddcc348505",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1143,328"
+    }, {
+      "id": "2f1d71d5-fa71-4eec-9f5e-34ee1c96f558",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1cb6420-2c51-4e60-972d-a61ec60603ca",
+      "comment": "",
+      "command": "click",
+      "target": "css=.lezione:nth-child(1) .modificaLezione",
+      "targets": [
+        ["css=.lezione:nth-child(1) .modificaLezione", "css:finder"],
+        ["xpath=//div[@onclick='mostraModificaLezione(`prova nuova lezione`)']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagli']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "015eeef7-ba04-41d3-a1d2-0734bc2ebc19",
+      "comment": "",
+      "command": "click",
+      "target": "id=urlModificaLezione",
+      "targets": [
+        ["id=urlModificaLezione", "id"],
+        ["name=newUrls", "name"],
+        ["css=#urlModificaLezione", "css:finder"],
+        ["xpath=//input[@id='urlModificaLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='updateUrl']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e418a94e-5f06-41a4-aa1e-d68fb17b78c3",
+      "comment": "",
+      "command": "type",
+      "target": "id=urlModificaLezione",
+      "targets": [
+        ["id=urlModificaLezione", "id"],
+        ["name=newUrls", "name"],
+        ["css=#urlModificaLezione", "css:finder"],
+        ["xpath=//input[@id='urlModificaLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='updateUrl']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "i"
+    }, {
+      "id": "ec235a82-0285-4242-b1db-d84d197d5125",
+      "comment": "",
+      "command": "click",
+      "target": "css=#updateUrl > #updateButton",
+      "targets": [
+        ["css=#updateUrl > #updateButton", "css:finder"],
+        ["xpath=(//div[@id='updateButton'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='updateUrl']/div", "xpath:idRelative"],
+        ["xpath=//form/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "898641b0-f7ff-4f29-b6cb-c309f62da0b7",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='modificaLez']/div", "xpath:idRelative"],
+        ["xpath=//div[9]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Url non valido!"
+    }]
+  }, {
+    "id": "70cefe43-310b-4909-9e75-1d2a627cdbab",
+    "name": "TCS50",
+    "commands": [{
+      "id": "d6f588e2-ffd7-4d5f-b0d2-eb1d080386ca",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de2b9319-8858-497a-b836-aee1458d0029",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1165x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd66d11a-88b6-4780-8c1b-9712ed1af927",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "88a7eefa-446f-4696-a5dc-b8d5970b05e8",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1140,242"
+    }, {
+      "id": "c6d057d5-c129-4b9c-a623-29cddd3d7cdd",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1140,242"
+    }, {
+      "id": "87aede8f-a780-4c78-b6c1-e948df03cc46",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1140,242"
+    }, {
+      "id": "f85f54f6-7212-4796-afd3-6883e10d6b7d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "776a2231-973d-4a8f-94e0-c0fcb9f5988c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.lezione:nth-child(1) .modificaLezione",
+      "targets": [
+        ["css=.lezione:nth-child(1) .modificaLezione", "css:finder"],
+        ["xpath=//div[@onclick='mostraModificaLezione(`prova nuova lezione`)']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagli']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13159048-15e8-4e1d-95c9-fe7b102a8d12",
+      "comment": "",
+      "command": "click",
+      "target": "id=urlModificaLezione",
+      "targets": [
+        ["id=urlModificaLezione", "id"],
+        ["name=newUrls", "name"],
+        ["css=#urlModificaLezione", "css:finder"],
+        ["xpath=//input[@id='urlModificaLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='updateUrl']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5dd01619-786e-43ca-b7b4-377487955d23",
+      "comment": "",
+      "command": "type",
+      "target": "id=urlModificaLezione",
+      "targets": [
+        ["id=urlModificaLezione", "id"],
+        ["name=newUrls", "name"],
+        ["css=#urlModificaLezione", "css:finder"],
+        ["xpath=//input[@id='urlModificaLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='updateUrl']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/KYjwcntuEKk"
+    }, {
+      "id": "a6f7be56-e131-4eea-b5c5-a9de8989ac2d",
+      "comment": "",
+      "command": "click",
+      "target": "css=#updateUrl > #updateButton",
+      "targets": [
+        ["css=#updateUrl > #updateButton", "css:finder"],
+        ["xpath=(//div[@id='updateButton'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='updateUrl']/div", "xpath:idRelative"],
+        ["xpath=//form/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f85cdd1e-6b12-47dc-9c28-263cbbe277b5",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='modificaLez']/div", "xpath:idRelative"],
+        ["xpath=//div[9]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Url già esistente"
+    }]
+  }, {
+    "id": "971b2d37-a2ba-4285-b99d-67bbde4aca7b",
+    "name": "TCS53",
+    "commands": [{
+      "id": "6cc1d9c6-faae-4e6f-ae89-e41f7c2ac332",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "05d14a77-143a-4e31-9736-4830408fb0b7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1165x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "824974f5-c8e0-41d6-bd5a-bc998350ee1d",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(6) .sfondo",
+      "targets": [
+        ["css=a:nth-child(6) .sfondo", "css:finder"],
+        ["xpath=//a[6]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd1ef749-ca37-42a4-8f6c-3502d0654e62",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1128,256"
+    }, {
+      "id": "6a057215-b55f-4ee8-8868-0863d44066a1",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1128,256"
+    }, {
+      "id": "2a72e958-73b5-46e2-8479-441d5ac26e4e",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1128,256"
+    }, {
+      "id": "b69e498c-af0f-4fe0-96c9-726c0c959cb5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .catalogo",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .catalogo", "css:finder"],
+        ["xpath=//div[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Anteprima')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6a066cd-55db-4a2c-a661-fd73eb5afcae",
+      "comment": "",
+      "command": "click",
+      "target": "id=recensione",
+      "targets": [
+        ["id=recensione", "id"],
+        ["css=#recensione", "css:finder"],
+        ["xpath=//div[@id='recensione']", "xpath:attributes"],
+        ["xpath=//div[@id='bottoni']/div", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2532f2f-f7d7-455b-8ab4-396b20e8699e",
+      "comment": "",
+      "command": "click",
+      "target": "id=titoloR",
+      "targets": [
+        ["id=titoloR", "id"],
+        ["css=#titoloR", "css:finder"],
+        ["xpath=//input[@id='titoloR']", "xpath:attributes"],
+        ["xpath=//div[@id='titoloRecensione']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69ce7672-68d1-49e0-850b-ad7953d9b21d",
+      "comment": "",
+      "command": "type",
+      "target": "id=titoloR",
+      "targets": [
+        ["id=titoloR", "id"],
+        ["css=#titoloR", "css:finder"],
+        ["xpath=//input[@id='titoloR']", "xpath:attributes"],
+        ["xpath=//div[@id='titoloRecensione']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "o"
+    }, {
+      "id": "edd0f8b5-3b9f-4ff1-8255-62a7ab3d833a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(3)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(3)", "css:finder"],
+        ["xpath=//button[@onclick='addReview()']", "xpath:attributes"],
+        ["xpath=//div[@id='add']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi recensione')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b82a08e5-8090-40c6-bbc5-647fe75e0d91",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='aggiungiRecensione']/div", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Il titolo deve essere tra i 5 e i 30 caratteri"
+    }]
+  }, {
+    "id": "6aa907bb-d4f8-4fc4-9731-12b926312067",
+    "name": "TCS55",
+    "commands": [{
+      "id": "a9458f37-d4f5-4863-a117-c4d2bb851edf",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cb46b29b-1350-4124-bb7c-426624fab997",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1165x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce49f3be-2552-43ce-abc5-8bfd29f0ce2a",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(6) .sfondo",
+      "targets": [
+        ["css=a:nth-child(6) .sfondo", "css:finder"],
+        ["xpath=//a[6]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "faaac9ee-54c8-4adf-8fe0-91a8d27c72d1",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1141,217"
+    }, {
+      "id": "d28554a0-e452-467f-9b53-79e5879bcae7",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1141,217"
+    }, {
+      "id": "8b9bc9c5-14c4-460f-a0d0-8b359ef636f0",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1141,217"
+    }, {
+      "id": "9200eef7-0ff4-4637-88a3-f0ec46fa64b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .catalogo",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .catalogo", "css:finder"],
+        ["xpath=//div[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Anteprima')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6763d18f-8585-40a1-a0f5-3686d499ce3f",
+      "comment": "",
+      "command": "click",
+      "target": "id=recensione",
+      "targets": [
+        ["id=recensione", "id"],
+        ["css=#recensione", "css:finder"],
+        ["xpath=//div[@id='recensione']", "xpath:attributes"],
+        ["xpath=//div[@id='bottoni']/div", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "813951ba-f478-4cf3-b0a3-5e5cd0d05145",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(3)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(3)", "css:finder"],
+        ["xpath=//button[@onclick='addReview()']", "xpath:attributes"],
+        ["xpath=//div[@id='add']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi recensione')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "21f4eba5-8816-4b29-b610-55e2cb5fbb3f",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='aggiungiRecensione']/div", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Tutti i parametri devono essere passati"
+    }]
+  }, {
+    "id": "902c62dd-4d10-4280-a838-57e2c55816c8",
+    "name": "TCS54",
+    "commands": [{
+      "id": "49f36c58-be83-456a-9f78-6f566bb78d1d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45b77f64-ad5c-4cf0-902f-15e3bd81fbd3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1165x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "015d3389-c6eb-4a4c-a3ad-ec8e414efabf",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(6) .sfondo",
+      "targets": [
+        ["css=a:nth-child(6) .sfondo", "css:finder"],
+        ["xpath=//a[6]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e868d1dc-509f-4449-905c-63b53b2abfd4",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1144,204"
+    }, {
+      "id": "53abf143-b99d-4305-a084-3e749ba74b19",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1144,204"
+    }, {
+      "id": "c8cc6aee-5f59-4a3a-a242-dea0008b29ed",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1144,204"
+    }, {
+      "id": "572f621a-a1b4-443b-bfc8-741132ab283d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .catalogo",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .catalogo", "css:finder"],
+        ["xpath=//div[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Anteprima')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d95ef114-f5ac-4582-a41d-d87bfe95af02",
+      "comment": "",
+      "command": "click",
+      "target": "id=recensione",
+      "targets": [
+        ["id=recensione", "id"],
+        ["css=#recensione", "css:finder"],
+        ["xpath=//div[@id='recensione']", "xpath:attributes"],
+        ["xpath=//div[@id='bottoni']/div", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "647c1ba5-c3aa-4c70-aa89-19c1150b2f97",
+      "comment": "",
+      "command": "click",
+      "target": "id=titoloR",
+      "targets": [
+        ["id=titoloR", "id"],
+        ["css=#titoloR", "css:finder"],
+        ["xpath=//input[@id='titoloR']", "xpath:attributes"],
+        ["xpath=//div[@id='titoloRecensione']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66f3b9c7-bb8b-43a9-9046-b21033efbe49",
+      "comment": "",
+      "command": "type",
+      "target": "id=titoloR",
+      "targets": [
+        ["id=titoloR", "id"],
+        ["css=#titoloR", "css:finder"],
+        ["xpath=//input[@id='titoloR']", "xpath:attributes"],
+        ["xpath=//div[@id='titoloRecensione']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "bellissima"
+    }, {
+      "id": "db944ab4-d583-4b5e-8bea-79b39fb0b8db",
+      "comment": "",
+      "command": "click",
+      "target": "id=txtRecensione",
+      "targets": [
+        ["id=txtRecensione", "id"],
+        ["css=#txtRecensione", "css:finder"],
+        ["xpath=//textarea[@id='txtRecensione']", "xpath:attributes"],
+        ["xpath=//div[@id='testoRecensione']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae379049-657f-4e70-adb9-31ac02c5afb4",
+      "comment": "",
+      "command": "type",
+      "target": "id=txtRecensione",
+      "targets": [
+        ["id=txtRecensione", "id"],
+        ["css=#txtRecensione", "css:finder"],
+        ["xpath=//textarea[@id='txtRecensione']", "xpath:attributes"],
+        ["xpath=//div[@id='testoRecensione']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "si"
+    }, {
+      "id": "2127dbe2-93fb-42fa-9d2b-972e0275530d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(3)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(3)", "css:finder"],
+        ["xpath=//button[@onclick='addReview()']", "xpath:attributes"],
+        ["xpath=//div[@id='add']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi recensione')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b5c43f3-0e10-4e4b-9dd3-b88930b0ecad",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='aggiungiRecensione']/div", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Il testo deve essere tra i 10 e i 30 caratteri"
+    }]
+  }, {
+    "id": "45359604-7107-4fbf-93a5-e9278695defd",
+    "name": "TCS45",
+    "commands": [{
+      "id": "ec24bdd2-f8fc-42a4-af62-3c05cd88ea3e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8529a44-cfad-4dc0-8a22-36f834c49e57",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e26c272-8390-4b0b-8747-6d7dcd0a745f",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "79def84e-0ba5-4642-87fb-e9ba8824768e",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,228"
+    }, {
+      "id": "4a4af76a-1743-4277-af0f-636eca5f46cb",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,228"
+    }, {
+      "id": "fcf5665e-e3c6-489b-b0e5-54515165d6e9",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,228"
+    }, {
+      "id": "0cdf8ce9-42c1-4f53-91a0-2df5f7db5f29",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2531c029-0486-496a-85d3-448d10c33d3b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.fa-plus-square",
+      "targets": [
+        ["css=.fa-plus-square", "css:finder"],
+        ["xpath=//div[@id='AggiungiLezione']/i", "xpath:idRelative"],
+        ["xpath=//div[7]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b1e176b-a61e-4f11-94c0-2d543ff375a1",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83db4c7c-d03a-4bbb-9d18-1e6100a0300d",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=(//div[@id='addUrl']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/2OiAvMeNP6E"
+    }, {
+      "id": "90772481-b079-4aa5-9c6e-8db89d04d23c",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a19e0bba-c337-4d9a-bdb7-e6d1a3390ea8",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='addTitle']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "prima elementare"
+    }, {
+      "id": "8c1d400f-48ef-40e9-b4db-1ed6f0f5b42a",
+      "comment": "",
+      "command": "click",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9a0322c-1a0a-4058-abd1-5b1e9df72d6a",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='addTime']/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/form/div[4]/input", "xpath:position"]
+      ],
+      "value": "11:11"
+    }, {
+      "id": "d5e3af01-a0ee-4423-b3d1-dc1787c0f0bd",
+      "comment": "",
+      "command": "click",
+      "target": "id=addLesson",
+      "targets": [
+        ["id=addLesson", "id"],
+        ["css=#addLesson", "css:finder"],
+        ["xpath=//div[@id='addLesson']", "xpath:attributes"],
+        ["xpath=//form[@id='add']/div[5]", "xpath:idRelative"],
+        ["xpath=//form/div[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebe9a8fc-66ee-4ed5-9879-8d3560a5f17d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=TitoloLezione",
+      "targets": [
+        ["id=TitoloLezione", "id"],
+        ["css=.lezione:nth-child(1) > #dettagli #TitoloLezione", "css:finder"],
+        ["xpath=//span[@id='TitoloLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagliPrimaRiga']/span", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'prima elementare')]", "xpath:innerText"]
+      ],
+      "value": "prima elementare"
+    }]
+  }, {
+    "id": "20bc0fdc-9e23-4210-8e40-023f402c1023",
+    "name": "TCS47",
+    "commands": [{
+      "id": "1d479422-9d0f-4b1a-a3c2-e1a54543e488",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54305db8-92a0-4f5b-b779-f561d06aa689",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "73361b99-1f25-41c4-a0ad-08986a28252f",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) .sfondo",
+      "targets": [
+        ["css=a:nth-child(7) .sfondo", "css:finder"],
+        ["xpath=//a[7]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d16682b-3ae7-4f20-9704-d800a4fee825",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,256"
+    }, {
+      "id": "aea368e3-fb60-40be-bea7-bfadaf720598",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,256"
+    }, {
+      "id": "ea2c5fca-f68c-4751-9f04-07b943d218e7",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,256"
+    }, {
+      "id": "28984407-12aa-4bf5-9413-1efb91b8bd6e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) a",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lezioni')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'LezioneServlet?codicePacchetto=Pac100')]", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/span[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d47d00cd-6710-4f63-a6cc-cbc0a276d750",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,212)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06028bd0-a846-4337-9a13-b9ede52537ec",
+      "comment": "",
+      "command": "click",
+      "target": "css=.lezione:nth-child(1) .modificaLezione",
+      "targets": [
+        ["css=.lezione:nth-child(1) .modificaLezione", "css:finder"],
+        ["xpath=//div[@onclick='mostraModificaLezione(`prima elementare`)']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagli']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30821d44-3f6a-48ba-9644-6c503c89cd3e",
+      "comment": "",
+      "command": "click",
+      "target": "id=nomeModificaLezione",
+      "targets": [
+        ["id=nomeModificaLezione", "id"],
+        ["name=newName", "name"],
+        ["css=#nomeModificaLezione", "css:finder"],
+        ["xpath=//input[@id='nomeModificaLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='updateName']/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "03c0dbbf-ece0-49a8-bbba-cd51b00292a1",
+      "comment": "",
+      "command": "type",
+      "target": "id=nomeModificaLezione",
+      "targets": [
+        ["id=nomeModificaLezione", "id"],
+        ["name=newName", "name"],
+        ["css=#nomeModificaLezione", "css:finder"],
+        ["xpath=//input[@id='nomeModificaLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='updateName']/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div[2]/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "corso matematica bimbi"
+    }, {
+      "id": "fb5451d5-13ad-4552-b785-bdfbef15497b",
+      "comment": "",
+      "command": "click",
+      "target": "id=updateButton",
+      "targets": [
+        ["id=updateButton", "id"],
+        ["css=#updateName > #updateButton", "css:finder"],
+        ["xpath=//div[@id='updateButton']", "xpath:attributes"],
+        ["xpath=//div[@id='updateName']/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "42de3d29-fa4e-4b16-86d1-1ae8522f63ad",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.lezione:nth-child(1) .modificaLezione",
+      "targets": [
+        ["css=.lezione:nth-child(1) .modificaLezione", "css:finder"],
+        ["xpath=//div[@onclick='mostraModificaLezione(`corso matematica bimbi`)']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagli']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5942933-1535-4e81-9463-00bd9c240120",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=TitoloLezione",
+      "targets": [
+        ["id=TitoloLezione", "id"],
+        ["css=.lezione:nth-child(1) > #dettagli #TitoloLezione", "css:finder"],
+        ["xpath=//span[@id='TitoloLezione']", "xpath:attributes"],
+        ["xpath=//div[@id='dettagliPrimaRiga']/span", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'corso matematica bimbi')]", "xpath:innerText"]
+      ],
+      "value": "corso matematica bimbi"
+    }]
+  }, {
+    "id": "26ae89ea-ec83-4dbf-aee6-7bb6f70f530b",
+    "name": "TCS56",
+    "commands": [{
+      "id": "7866c184-b831-4f46-8de6-04ca704a3b36",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Source/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ad5324ea-e14e-4312-9068-fb11fd079409",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bb2b8bbe-eb4c-4e7b-9c37-7d1bf6a801e6",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(1) .sfondo",
+      "targets": [
+        ["css=a:nth-child(1) .sfondo", "css:finder"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55bdaff5-5a8c-4f63-9b61-05044d2c181d",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,160"
+    }, {
+      "id": "61d5089f-f730-4b5b-aec0-bbbb9b91f048",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,160"
+    }, {
+      "id": "00350e6d-8d11-4a35-8379-54a85006d40e",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container",
+      "targets": [
+        ["css=.container", "css:finder"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": "1365,160"
+    }, {
+      "id": "d3d8a5cd-5175-4f1f-ad68-6b951f855d1a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pacchetto:nth-child(4) .catalogo",
+      "targets": [
+        ["css=.pacchetto:nth-child(4) .catalogo", "css:finder"],
+        ["xpath=//div[4]/div[2]/a/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f258436c-b198-40a9-a7c0-bd7a2db025d1",
+      "comment": "",
+      "command": "click",
+      "target": "id=recensione",
+      "targets": [
+        ["id=recensione", "id"],
+        ["css=#recensione", "css:finder"],
+        ["xpath=//div[@id='recensione']", "xpath:attributes"],
+        ["xpath=//div[@id='bottoni']/div", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7302eacf-3180-486a-9d25-60ca3c104516",
+      "comment": "",
+      "command": "click",
+      "target": "id=titoloR",
+      "targets": [
+        ["id=titoloR", "id"],
+        ["css=#titoloR", "css:finder"],
+        ["xpath=//input[@id='titoloR']", "xpath:attributes"],
+        ["xpath=//div[@id='titoloRecensione']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39ec94b8-20c1-4bcb-a7b2-297f48d190b7",
+      "comment": "",
+      "command": "type",
+      "target": "id=titoloR",
+      "targets": [
+        ["id=titoloR", "id"],
+        ["css=#titoloR", "css:finder"],
+        ["xpath=//input[@id='titoloR']", "xpath:attributes"],
+        ["xpath=//div[@id='titoloRecensione']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "recensione"
+    }, {
+      "id": "044ebec9-f5c9-4dcd-9351-820fdf31e332",
+      "comment": "",
+      "command": "click",
+      "target": "id=txtRecensione",
+      "targets": [
+        ["id=txtRecensione", "id"],
+        ["css=#txtRecensione", "css:finder"],
+        ["xpath=//textarea[@id='txtRecensione']", "xpath:attributes"],
+        ["xpath=//div[@id='testoRecensione']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f683d27-c935-4af8-ba4c-f55e0f4f5507",
+      "comment": "",
+      "command": "type",
+      "target": "id=txtRecensione",
+      "targets": [
+        ["id=txtRecensione", "id"],
+        ["css=#txtRecensione", "css:finder"],
+        ["xpath=//textarea[@id='txtRecensione']", "xpath:attributes"],
+        ["xpath=//div[@id='testoRecensione']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "bella ed emozionante"
+    }, {
+      "id": "31244db9-1a36-41cc-b6ad-825bad52a6fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(3)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(3)", "css:finder"],
+        ["xpath=//button[@onclick='addReview()']", "xpath:attributes"],
+        ["xpath=//div[@id='add']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Aggiungi recensione')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9a41a74-5c34-4293-80bd-dbffafbc202e",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=recensore",
+      "targets": [
+        ["id=recensore", "id"],
+        ["css=#recensore", "css:finder"],
+        ["xpath=//p[@id='recensore']", "xpath:attributes"],
+        ["xpath=//div[@id='recensioni']/p[2]", "xpath:idRelative"],
+        ["xpath=//div[8]/p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Adele')]", "xpath:innerText"]
+      ],
+      "value": "Adele"
+    }]
+  }],
+  "suites": [{
+    "id": "e8b0b76b-7a6d-4629-a2bd-b219dcf3ad66",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0341e623-20d9-4dde-8734-e6b3eb390e41"]
+  }],
+  "urls": ["http://localhost:8080/Source/HomePage.jsp"],
+  "plugins": []
+}
