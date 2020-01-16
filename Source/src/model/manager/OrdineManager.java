@@ -7,16 +7,20 @@ import model.bean.OrdineAcquistoBean;
 import model.dao.OrdineAcquistoDao;
 
 public class OrdineManager {
-	OrdineAcquistoDao ordineAcquistoDao = new OrdineAcquistoDao();
-	
-	public OrdineManager(){
-		
+	/**
+	 * Costruttore vuoto 
+	 **/
+	public OrdineManager(){	
 	}
-	
-	public ArrayList<OrdineAcquistoBean> RicercaNomeCliente(String nomeUtente) throws SQLException
-	{
+	/**
+	 * Ricerca il nome del cliente 
+	 * @param String nomeUtente
+	 * @return  ArrayList<OrdineAcquistoBean> listaOrdine
+	 * @throws SQLException
+	 **/
+	public ArrayList<OrdineAcquistoBean> RicercaNomeCliente(String nomeUtente) throws SQLException{
 		ArrayList<OrdineAcquistoBean> listaOrdine = ordineAcquistoDao.findByNomeCliente(nomeUtente);
 		return listaOrdine;
 	}
-	
+	OrdineAcquistoDao ordineAcquistoDao = new OrdineAcquistoDao();
 }

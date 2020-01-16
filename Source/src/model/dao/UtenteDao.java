@@ -136,7 +136,7 @@ public class UtenteDao {
 			stm.setString(1, email);
 			
 			ResultSet res = stm.executeQuery();
-			if(res.next()) {
+			if(!res.next()) {
 				stm = conn.prepareStatement("UPDATE utente SET email = ? WHERE email = ?");
 				stm.setString(1, newEmail);
 				stm.setString(2, email);
@@ -184,4 +184,5 @@ public class UtenteDao {
 		
 		return acquirenti;
 	}
+	
 }

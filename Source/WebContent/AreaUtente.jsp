@@ -85,7 +85,7 @@
 						<h3 id = "email">Email modificata</h3>
 						<div id = "messageErrorEmail"></div>
 						<form name="updateEmail" id = "formEmail">
-							<input type="email" placeholder="Inserisci nuova email" name="Email" id = "changeEmail">	
+							<input type="text" placeholder="Inserisci nuova email" name="Email" id = "changeEmail">	
 							<button class = "bottoneDefault" type="submit">Invio</button>
 						</form>
 										

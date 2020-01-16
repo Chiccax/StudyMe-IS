@@ -2,7 +2,6 @@ package model.manager;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Map;
 
 import model.bean.CategoriaBean;
 import model.bean.LezioniBean;

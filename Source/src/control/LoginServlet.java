@@ -46,6 +46,11 @@ public class LoginServlet extends HttpServlet {
 			out.print(gson.toJson(jsonResponse));
 			return;
 		}
+		if(nomeUtente == "" || password == "") {
+			JSONResponse jsonResponse = new JSONResponse(false, NO_ARGUMENT);
+			out.print(gson.toJson(jsonResponse));
+			return;
+		}
 
 		String passwordBase64format  = Base64.getEncoder().encodeToString(password.getBytes()); 
 		UtenteManager utenteManager= new UtenteManager(); 

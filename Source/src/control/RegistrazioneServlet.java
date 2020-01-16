@@ -95,7 +95,7 @@ public class RegistrazioneServlet extends HttpServlet {
 	private static final String INVALID_PASSWORD = "Inserire una password da almeno 8 caratteri";
 	private static final String NO_ARGUMENT = "Tutti i parametri devono essere passati";
 	private static final String NO_PASSWORD = "Le password non coincidono";
-	private static final String NO_USER = "Utente gi&agrave esistente";
+	private static final String NO_USER = "Utente già esistente ";
 	private static final String NO_EMAILVALIDATE = "Formato email non valido";
 	private static final String INVALID_USER = "Inserire un nome utente da almeno 4 caratteri";
 }

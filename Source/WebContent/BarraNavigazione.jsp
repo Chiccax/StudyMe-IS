@@ -322,11 +322,11 @@
 			<div id="messageError"></div>
 			<form name="login">
 				<label for="uname"><b>Nome utente</b></label> <input type="text"
-					placeholder="Inserisci nome utente" name="NomeUtente" id="myName"
-					required> <label for="psw"><b>Password</b></label>
+					placeholder="Inserisci nome utente" name="NomeUtente" id="myName"> 
+					<label for="psw"><b>Password</b></label>
 				<div class="input-with-icon">
 					<input type="password" placeholder="Inserisci password"
-						name="Password" id="myPass" required> <i
+						name="Password" id="myPass"> <i
 						class="fas fa-eye-slash" onclick="togglePassword(event)"></i>
 				</div>
 				<span class="dim" onclick="mostraRecuperoPassword()">Password
@@ -360,11 +360,11 @@
 				<label for="surname"><b>Nome Utente</b></label><br> <input
 					type="text" placeholder="Inserisci nome utente" name="NomeUtente"
 					required id="newName"> <label for="email"><b>Email</b></label><br>
-				<input type="email" placeholder="Inserisci email" name="Email"
+				<input type="text" placeholder="Inserisci email" name="Email"
 				required id="newEmail"> <label for="password"
 					class="control-label"><b>Password</b></label>
 				<div class="input-with-icon">
-					<input type="password" minlength="8" placeholder="Inserisci password"
+					<input type="password"  placeholder="Inserisci password"
 						name="Password" id="regPass" required> <i
 						class="fas fa-eye-slash" onclick="togglePassword(event)"></i>
 				</div>
@@ -372,7 +372,7 @@
 				<label for="confPass"><b>Conferma password</b></label>
 
 				<div class="input-with-icon">
-					<input type="password" minlength="8" placeholder="Reinserisci password"
+					<input type="password" placeholder="Reinserisci password"
 						name="Conf_Password" id="regPassRepeat" required> <i
 						class="fas fa-eye-slash" onclick="togglePassword(event)"></i>
 				</div>

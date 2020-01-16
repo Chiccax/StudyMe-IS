@@ -11,13 +11,6 @@ import model.dao.OrdineAcquistoDao;
 import model.dao.PacchettoDao;
 
 public class LibreriaManager {
-
-	ArrayList<ArrayList<LezioniBean>> lezioni= new ArrayList<ArrayList<LezioniBean>>();
-	ArrayList<PacchettoBean> pacchetti = new ArrayList<PacchettoBean>();
-	ArrayList<OrdineAcquistoBean> pacchettiAcquistati= new ArrayList<OrdineAcquistoBean>(); //Array che contiene i pacchetti acquistati
-	OrdineAcquistoDao dao = new OrdineAcquistoDao();
-	
-	PacchettoDao pacchetto=new PacchettoDao();
 	/**
 	 *Costruttore vuoto 
 	 **/
@@ -54,4 +47,9 @@ public class LibreriaManager {
 	public ArrayList<ArrayList<LezioniBean>> getLezioni(){
 		return lezioni;
 	}
+	ArrayList<ArrayList<LezioniBean>> lezioni= new ArrayList<ArrayList<LezioniBean>>();
+	ArrayList<PacchettoBean> pacchetti = new ArrayList<PacchettoBean>();
+	ArrayList<OrdineAcquistoBean> pacchettiAcquistati= new ArrayList<OrdineAcquistoBean>(); //Array che contiene i pacchetti acquistati
+	OrdineAcquistoDao dao = new OrdineAcquistoDao();
+	PacchettoDao pacchetto=new PacchettoDao();
 }
