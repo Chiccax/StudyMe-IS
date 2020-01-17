@@ -40,7 +40,7 @@ public class GestoreDao {
 				ResultSet res2 = stm.executeQuery();
 				if(res2 == null) {
 					return null;
-				} else {
+				} else { 
 				String codicePacchetto = res.getString(1);
 				String categoriaPacchetto = res.getString(2);
 				String sottocategoriaPacchetto = res.getString(3);

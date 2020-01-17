@@ -1,7 +1,7 @@
+
 package model.manager;
 
 import java.util.ArrayList;
-
 import model.bean.LezioniBean;
 import model.bean.PacchettoBean;
 import model.bean.UtenteBean;

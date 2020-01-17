@@ -37,7 +37,7 @@ public class InsegnanteServlet extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
@@ -51,7 +51,7 @@ public class InsegnanteServlet extends HttpServlet {
 		
 		if(action == null) {
 			response.sendError(HttpServletResponse.SC_BAD_REQUEST);
-			return;
+			return; 
 		}
 		
 		String vecchioCodice = request.getParameter("vecchioCodice");

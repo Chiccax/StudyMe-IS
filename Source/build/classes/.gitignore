@@ -1,5 +1,6 @@
-/modelDao/
-/control/
-/modelBean/
+/test/
 /model/
-/utility/
+/managertest/
+/testmanager/
+/control/
+/testdao/

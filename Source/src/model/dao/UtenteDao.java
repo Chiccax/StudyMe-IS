@@ -136,7 +136,7 @@ public class UtenteDao {
 			stm.setString(1, email);
 			
 			ResultSet res = stm.executeQuery();
-			if(!res.next()) {
+			if(res.next()) {
 				stm = conn.prepareStatement("UPDATE utente SET email = ? WHERE email = ?");
 				stm.setString(1, newEmail);
 				stm.setString(2, email);
@@ -145,13 +145,13 @@ public class UtenteDao {
 				conn.commit();
 				return true;
 			}
-				else
-					return false;
-			}catch (SQLException e) {
-				e.printStackTrace();			
-			}
-			return false;
+			else
+				return false;
+		}catch (SQLException e) {
+			e.printStackTrace();			
 		}
+		return false;
+	}
 	/**
 	 * Recupera tutti gli utenti che hanno effettuato un determinato ordine
 	 * @param 
