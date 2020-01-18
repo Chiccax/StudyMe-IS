@@ -1,7 +1,7 @@
 package test.dao;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.Base64;
@@ -18,7 +18,7 @@ class UtenteDaoTest {
 	String email;
 	
 	@BeforeEach
-	void setUp() throws Exception{
+	void setUp() throws Exception{ 
 		utente = new UtenteDao();
 	}
 
