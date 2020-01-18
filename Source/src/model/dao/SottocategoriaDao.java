@@ -34,11 +34,11 @@ public class SottocategoriaDao implements Model_interface<SottocategoriaBean> {
 	 * @pre codiceP != null && codiceP presente nel database
 	 **/
 	@Override
-	public SottocategoriaBean findByKey(Object codiceP) throws SQLException {
-		if(!(codiceP instanceof String))
+	public SottocategoriaBean findByKey(Object codiceS) throws SQLException {
+		if(!(codiceS instanceof String))
 			throw new IllegalArgumentException("La chiave primaria deve essere di tipo stringa");
 		
-		String key = (String)codiceP;
+		String key = (String)codiceS;
 		String sql = "SELECT * FROM sottocategoria WHERE idSottocat = ?";
 		
 		Connection conn = DriverManagerConnectionPool.getConnection();

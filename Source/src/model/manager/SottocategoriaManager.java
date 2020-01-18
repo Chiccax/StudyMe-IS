@@ -29,8 +29,8 @@ public class SottocategoriaManager {
 	 * @return Object sottocategorie
 	 * @throws SQLException
 	 **/
-	public Object findByKey(Object codiceP) throws SQLException{
-		sottocategoria = manager.findByKey(codiceP);
+	public Object findByKey(Object codiceS) throws SQLException{
+		sottocategoria = manager.findByKey(codiceS);
 		return sottocategoria;
 	}
 	

@@ -54,11 +54,11 @@ class SottocategoriaManagerTest extends Mockito {
 		sMock.setNomeSott("Sviluppo");
 		SottocategoriaBean s = new SottocategoriaBean();
 		
-		when(sottocategoriaMock.findByKey("pac001")).thenReturn(sMock);
+		when(sottocategoriaMock.findByKey("svi001")).thenReturn(sMock);
 		
-		s = (SottocategoriaBean) sottocategoria.findByKey("pac001");
+		s = (SottocategoriaBean) sottocategoria.findByKey("svi001");
 		
-		assertEquals(s.getNomeSott(), "Sviluppo");
+		assertNotNull(s);
 	}
 
 }
