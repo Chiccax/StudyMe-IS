@@ -27,7 +27,7 @@ public class ModificaAreaUtenteServlet extends HttpServlet {
     public ModificaAreaUtenteServlet() {
         super();
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
@@ -51,7 +51,7 @@ public class ModificaAreaUtenteServlet extends HttpServlet {
 					out.print(gson.toJson(jsonResponse));
 					return;	
 				}
-				
+		
 				String pattern = "[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}";
 				
 				if(!nuovaEmailUtente.matches(pattern)){

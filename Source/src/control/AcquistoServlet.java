@@ -20,12 +20,14 @@ import model.manager.AcquistoManager;
 public class AcquistoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	AcquistoManager acquistoManager= new AcquistoManager();
+	
 	public AcquistoServlet() {
 		super();
 
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
@@ -38,7 +40,7 @@ public class AcquistoServlet extends HttpServlet {
 		@SuppressWarnings("unchecked")
 		ArrayList<PacchettoBean> carrello = (ArrayList<PacchettoBean>) session.getAttribute("carrello");
 		
-		AcquistoManager acquistoManager= new AcquistoManager();
+		
 		String userName = user.getNomeUtente();
 		acquistoManager.getOrdine(userName, carrello);
 		

@@ -33,7 +33,7 @@ class UtenteManagerTest extends Mockito{
 		utenteLoggato.setPassword(passwordBase64format);
 		
 		UtenteBean utenteM = new UtenteBean();
-		
+	
 		when(utenteMock.login("Martina", passwordBase64format)).thenReturn(utenteLoggato);
 		utenteM = utenteManager.login("Martina", passwordBase64format);
 		assertEquals(utenteM.getNomeUtente(), utenteLoggato.getNomeUtente());

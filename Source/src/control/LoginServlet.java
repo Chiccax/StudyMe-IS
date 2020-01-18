@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		Gson gson = new Gson();
 		response.setContentType("text/html");
-		
+
 		String nomeUtente = request.getParameter("NomeUtente");
 		String password = request.getParameter("Password");
 		boolean isChecked = Boolean.parseBoolean(request.getParameter("Ricordami"));

@@ -24,7 +24,7 @@ import model.manager.CatalogoManager;
 public class CatalogoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-    public CatalogoServlet() {
+	protected CatalogoServlet() {
         super();
       
     }

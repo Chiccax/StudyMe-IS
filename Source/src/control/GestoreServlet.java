@@ -28,7 +28,7 @@ public class GestoreServlet extends HttpServlet {
         super();
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
@@ -45,7 +45,7 @@ public class GestoreServlet extends HttpServlet {
 			
 			pacchettiDaApprovare = utenteManager.visualizzaPacchettiDaApprovare();
 			lezioniDaApprovare = utenteManager.visualizzaLezioniDaApprovare();
-			
+
 			if(pacchettiDaApprovare == null) {
 				JSONResponse jsonResponse = new JSONResponse(false);
 				out.print(gson.toJson(jsonResponse));
@@ -56,14 +56,15 @@ public class GestoreServlet extends HttpServlet {
 				for(LezioniBean lezioni : lezioniDaApprovare) {
 						if(lezioni.getPacchetto().equals(pacchetto.getCodicePacchetto())) {
 							lezioniPacchetto.add(lezioni);
-					} 
+		
+						}
 				}
 				lezioniPacchettoDaApprovare.put(pacchetto.getCodicePacchetto(), lezioniPacchetto);
-			}
+		}
 			Map<String, Object> pacchettiELezioniDaApprovare = new HashMap<String, Object>();
 			pacchettiELezioniDaApprovare.put("pacchettiDaApprovare", pacchettiDaApprovare);
 			pacchettiELezioniDaApprovare.put("lezioniPacchettoDaApprovare", lezioniPacchettoDaApprovare); 
-			
+	
 			JSONResponse jsonResponse = new JSONResponse(true, "ok", pacchettiELezioniDaApprovare);
 			out.print(gson.toJson(jsonResponse));
 		} else if (azione.equals("approvaInteroPacchetto")) {

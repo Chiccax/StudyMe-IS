@@ -31,7 +31,7 @@ public class CarrelloServlet extends HttpServlet {
        
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doPost(request, response);
 	}
@@ -44,6 +44,7 @@ public class CarrelloServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		Gson gson = new Gson();
 
+		@SuppressWarnings("unchecked")
 		ArrayList<PacchettoBean> carrello = (ArrayList<PacchettoBean>) session.getAttribute("carrello");
 
 		if (carrello == null) {

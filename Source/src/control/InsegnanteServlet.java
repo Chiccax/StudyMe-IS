@@ -21,9 +21,6 @@ import control.util.StartupUtility;
 import model.bean.LezioniBean;
 import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
-import model.dao.InsegnanteDao;
-import model.dao.PacchettoDao;
-import model.dao.SottocategoriaDao;
 import model.manager.InsegnanteManager;
 import model.manager.SottocategoriaManager;
 /** 
