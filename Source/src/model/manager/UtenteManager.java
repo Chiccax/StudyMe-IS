@@ -88,30 +88,63 @@ public class UtenteManager {
 	 * @param String codicePacchetto
 	 **/
 	public void approvaInteroPacchetto(String codicePacchetto){
-		gestoreDao.approvaInteroPacchetto(codicePacchetto);
+		GestoreDao g;
+		if(dao != null) {
+			g = dao;
+		} else {
+			g= new GestoreDao();
+		}
+		
+		g.approvaInteroPacchetto(codicePacchetto);
 	}
 	/**
 	 * Disapprova intero pacchetto
 	 * @param String codicePacchetto
 	 **/
 	public void disapprovaInteroPacchetto(String codicePacchetto){
-		gestoreDao.disapprovaInteroPacchetto(codicePacchetto);
+		GestoreDao g;
+		if(dao != null) {
+			g = dao;
+		} else {
+			g= new GestoreDao();
+		}
+		
+		g.disapprovaInteroPacchetto(codicePacchetto);
 	}
 	/**
 	 * Approva la singola lezione
 	 * @param String urlLezione
 	 **/
 	public void approvaSingolaLezione(String urlLezione){
-		gestoreDao.approvaSingolaLezione(urlLezione);
+		GestoreDao g;
+		if(dao != null) {
+			g = dao;
+		} else {
+			g = new GestoreDao();
+		}
+		
+		g.approvaSingolaLezione(urlLezione);
 	}
 	/**
 	 * Disapprova  la singola lezione
 	 * @param String urlLezione
 	 **/
 	public void disapprovaSingolaLezione(String urlLezione){
-		gestoreDao.disapprovaSingolaLezione(urlLezione);
+		GestoreDao g;
+		if(dao != null) {
+			g = dao;
+		} else {
+			g= new GestoreDao();
+		}
+		
+		g.disapprovaSingolaLezione(urlLezione);
 	}
 	
+	public void setDao(GestoreDao g) {
+		this.dao = g;
+	}
+	
+	private GestoreDao dao;
 	UtenteDao utenteDao = new UtenteDao();
 	GestoreDao gestoreDao = new GestoreDao();
 }

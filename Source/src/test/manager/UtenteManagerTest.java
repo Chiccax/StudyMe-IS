@@ -106,7 +106,7 @@ class UtenteManagerTest extends Mockito{
 	void testApprovaInteroPacchetto() throws IOException{
 		gestoreMock = (GestoreDao)Mockito.mock(GestoreDao.class);
 		utenteManager = new UtenteManager();
-		
+		utenteManager.setDao(gestoreMock);
 		utenteManager.approvaInteroPacchetto("pac001");
 		verify(gestoreMock).approvaInteroPacchetto("pac001");
 	}
@@ -115,6 +115,7 @@ class UtenteManagerTest extends Mockito{
 	void testDisapprovaInteroPacchetto() throws IOException{
 		gestoreMock = (GestoreDao)Mockito.mock(GestoreDao.class);
 		utenteManager = new UtenteManager();
+		utenteManager.setDao(gestoreMock);
 		utenteManager.disapprovaInteroPacchetto("pac001");
 		verify(gestoreMock).disapprovaInteroPacchetto("pac001");
 	}
@@ -123,6 +124,7 @@ class UtenteManagerTest extends Mockito{
 	void testApprovaSingolaLezione() throws IOException{
 		gestoreMock = (GestoreDao)Mockito.mock(GestoreDao.class);
 		utenteManager = new UtenteManager();
+		utenteManager.setDao(gestoreMock);
 		utenteManager.approvaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
 		verify(gestoreMock).approvaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
 	}
@@ -131,6 +133,7 @@ class UtenteManagerTest extends Mockito{
 	void testDisapprovaSingolaLezione() throws IOException{
 		gestoreMock = (GestoreDao)Mockito.mock(GestoreDao.class);
 		utenteManager = new UtenteManager(); 
+		utenteManager.setDao(gestoreMock);
 		utenteManager.disapprovaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
 		verify(gestoreMock).disapprovaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
 	}

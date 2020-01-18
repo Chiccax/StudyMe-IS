@@ -1,5 +1,6 @@
 package model.manager;
 
+import model.dao.GestoreDao;
 import model.dao.RecensioneDao;
 
 public class RecensioneManager {
@@ -17,8 +18,18 @@ public class RecensioneManager {
 	 * @return 
 	 **/
 	public void aggiungiRecensione(String nomeUtente, String codicePacchetto,String titoloRecensione,String testoRecensione){
-		recensionedao.aggiungiRecensione(nomeUtente, codicePacchetto, titoloRecensione, testoRecensione);
+		RecensioneDao r;
+		if(dao != null) {
+			r = dao;
+		} else {
+			r = new RecensioneDao();
+		}
+		r.aggiungiRecensione(nomeUtente, codicePacchetto, titoloRecensione, testoRecensione);
 	}
 	
-	RecensioneDao recensionedao = new RecensioneDao();
+	public void setDao(RecensioneDao r) {
+		this.dao = r;
+	}
+	
+	private RecensioneDao dao;
 }

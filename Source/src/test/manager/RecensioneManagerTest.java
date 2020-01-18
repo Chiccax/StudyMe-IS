@@ -14,8 +14,9 @@ class RecensioneManagerTest extends Mockito {
 	@Test
 	void testAggiungiRecensione() {
 		recensioneMock = (RecensioneDao)Mockito.mock(RecensioneDao.class);
-		recensioneMock.aggiungiRecensione("Annarella", "pac001", "Ottimo corso", "Corso consigliato a tutti!");
-		
+		RecensioneManager manager = new RecensioneManager();
+		manager.setDao(recensioneMock);
+		manager.aggiungiRecensione("Annarella", "pac001", "Ottimo corso", "Corso consigliato a tutti!");
 		verify(recensioneMock).aggiungiRecensione("Annarella", "pac001", "Ottimo corso", "Corso consigliato a tutti!");
 	}
 

@@ -33,6 +33,11 @@ public class PacchettoBean{
 	 * Preleva iltitolo del pacchetto.
 	 * @return String: titolo 
 	 */
+	
+	public int getNelCatalogo() {
+		return nelCatalogo;
+	}
+	
 	public String getTitolo() {
 		return titolo;
 	}
@@ -131,6 +136,6 @@ public class PacchettoBean{
 	
 	private String codicePacchetto, descrizione, titolo, catagoria, sottocategoria,foto;
 	private double prezzo;
-	private int approvato;	//Valore di default=0
+	private int approvato, nelCatalogo; //Valore approvato di default=0
 
 }

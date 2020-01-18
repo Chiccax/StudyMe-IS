@@ -2,6 +2,8 @@ package test.manager;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -28,13 +30,16 @@ class AcquistoManagerTest extends Mockito{
 	void testGetOrdine() {
 		ordineMock = (OrdineDao)Mockito.mock(OrdineDao.class);
 		acquistoMock = (AcquistoDao)Mockito.mock(AcquistoDao.class);
+		ArrayList<PacchettoBean> carrello = new ArrayList<PacchettoBean>();
 		
 	
 		OrdineBean ordine = new OrdineBean();
 		AcquistoBean acquisto = new AcquistoBean();
-		ordineMock.insert(ordine);		
-		acquistoMock.insertAcquisto(acquisto);
-		verify(ordineMock).insert(ordine);
+		
+		when(ordineMock.insert(ordine)).thenReturn(1);
+
+		manager.setDao(acquistoMock);
+		manager.getOrdine("Annarella", carrello);
 		verify(acquistoMock).insertAcquisto(acquisto);
 	}
 }

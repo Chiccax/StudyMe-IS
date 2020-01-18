@@ -1,8 +1,10 @@
 package test.dao;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,21 +17,25 @@ class SottocategoriaDaoTest {
 	
 	@BeforeEach
 	void sutup() throws Exception {
-		sottocategoria =new SottocategoriaDao();
+		sottocategoria = new SottocategoriaDao();
 	}
+	
 	@Test
 	void testfindByKey() throws SQLException {
 		Object codiceS="fot003";
 		
-		sottocategoria.findByKey(codiceS);
-		assertEquals(codiceS, sottocategoria.findByKey(codiceS));
+		SottocategoriaBean s = new SottocategoriaBean();
+		s = sottocategoria.findByKey(codiceS);
+		assertEquals(codiceS, s.getIdSottoCat());
 	}
+	
 	@Test
 	void testselezionaSottocagorieInsegnante() {
-		String utente="Rachele";
+		String utente = "Rachele";
 		
-		sottocategoria.selezionaSottocagorieInsegnante(utente);
-		assertEquals(utente,sottocategoria.selezionaSottocagorieInsegnante(utente));
+		ArrayList<SottocategoriaBean> sottocategorie = new ArrayList<SottocategoriaBean>();
+		sottocategorie = sottocategoria.selezionaSottocagorieInsegnante(utente);
 		
+		assertNotNull(sottocategorie);
 	}	
 }

@@ -8,9 +8,8 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import model.bean.RecensioneBean;
+import model.dao.RecensioneDao;
 import model.manager.LezioneManager;
-import model.manager.RecensioneManager;
-
 class TestRecensioneManager {
 
 	@Test
@@ -30,6 +29,6 @@ class TestRecensioneManager {
 		
 	}
 
-	private RecensioneManager manager = new RecensioneManager();
+	private RecensioneDao manager = new RecensioneDao();
 	private LezioneManager managerLezioni = new LezioneManager();
 }

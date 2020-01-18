@@ -1,16 +1,21 @@
 package test.dao;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Map;
 
+import model.bean.CategoriaBean;
 import model.bean.LezioniBean;
 import model.bean.PacchettoBean;
+import model.bean.RecensioneBean;
+import model.bean.UtenteBean;
 import model.dao.PacchettoDao;
 
 class PacchettoDaoTest {
@@ -23,104 +28,124 @@ class PacchettoDaoTest {
 	}
 	
 	@Test
-	void testgetAllPacchetti() {
-		List<PacchettoBean> pac= new ArrayList<PacchettoBean>();
+	void testGetAllPacchetti() {
 		List<PacchettoBean> pacchetti= new ArrayList<PacchettoBean>();
 		pacchetti = pacchetto.getAllPacchetti();
-		assertEquals(pac,pacchetti);
+		assertNotNull(pacchetti);
 	}
 	@Test
-	void testgetPacchetto() {
-		String codiceP="pac455";
+	void testGetPacchetto() {
+		String codiceP="pac001";
 		
-		pacchetto.getPacchetto(codiceP);
-		assertEquals(codiceP,pacchetto.getPacchetto(codiceP));	
-	}
-	@Test
-	void testgetPacchettoByTitolo() {
-		String titolo="Corso di spagnolo per principianti - Impara la lingua spagnola";
+		PacchettoBean pac = new PacchettoBean();
+		pac = pacchetto.getPacchetto(codiceP);
 		
-		pacchetto.getLezioniByTitolo(titolo);
-		assertEquals(titolo,pacchetto.getLezioniByTitolo(titolo));
+		assertNotNull(pac);
 	}
+	
 	@Test
-	void testdeletePacchetto() {
-		String codiceP="pac458";
+	void testGetPacchettoByTitolo() {
+		String titolo = "Capire i fondamenti del linguaggio C";
+		PacchettoBean p = new PacchettoBean();
+		p = pacchetto.getPacchettoByTitolo(titolo);
+		assertNotNull(p);
+	}
+	
+	@Test
+	void testDeletePacchetto() {
+		String codiceP="pac002";
 
-		boolean resp=pacchetto.delPacchetto(codiceP);
+		boolean resp = pacchetto.delPacchetto(codiceP);
 		assertEquals(true, resp);
 	}
+	
 	@Test
-	void testsearchPackage() {
-		String word="programmazione";
+	void testSearchPackage() {
+		String word = "Programmazione";
 		
 		List<PacchettoBean> pacchetti= new ArrayList<PacchettoBean>();
-		pacchetti= pacchetto.searchPackage(word);
+		pacchetti = pacchetto.searchPackage(word);
+		assertNotNull(pacchetti);
 	}
+	
 	@Test 
-	void getCategoriaRaggruppato() {
+	void testGetCategoriaRaggruppato() {
 		String categoria="Sviluppo";
 		
-		pacchetto.getCategoriaRaggruppato(categoria);
-		assertEquals(categoria,pacchetto.getCategoriaRaggruppato(categoria));
+		Map<String, ArrayList<PacchettoBean>> result = new HashMap<String, ArrayList<PacchettoBean>>();
+		result = pacchetto.getCategoriaRaggruppato(categoria);
+		assertNotNull(result);
 	}
+	
 	@Test 
-	void testgetCategoriaRaggruppatoApprovato() {
+	void testGetCategoriaRaggruppatoApprovato() {
 		String categoria="Sviluppo";
 	
-		pacchetto.getCategoriaRaggruppatoApprovato(categoria);
-		assertEquals(categoria,pacchetto.getCategoriaRaggruppatoApprovato(categoria));
+		Map<String, ArrayList<PacchettoBean>> result = new HashMap<String, ArrayList<PacchettoBean>>();
+		result = pacchetto.getCategoriaRaggruppatoApprovato(categoria);
+		assertNotNull(result);
 	}
+	
 	@Test
-	void testgetBeanCategoria() {
+	void testGetBeanCategoria() {
 		String categoria="Sviluppo";
 		
-		pacchetto.getBeanCategoria(categoria);
-		assertEquals(categoria, pacchetto.getBeanCategoria(categoria));
+		CategoriaBean cat = new CategoriaBean();
+		cat = pacchetto.getBeanCategoria(categoria);
+		assertNotNull(cat);
 	}
+	
 	@Test
-	void testgetLezioni() {
+	void testGetLezioni() {
 		String codicePacchetto="pac005";
-		
-		List<LezioniBean> lez= new ArrayList<LezioniBean>();
+
 		List<LezioniBean> lezioni= new ArrayList<LezioniBean>();
 	
-		pacchetto.getLezioni(codicePacchetto);
-		assertEquals(lez, lezioni);
+		lezioni = pacchetto.getLezioni(codicePacchetto);
+		assertNotNull(lezioni);
 	}
+	
 	@Test 
-	void testgetLezioniByURl() {
+	void testGetLezioniByURl() {
 		String url="https://www.youtube.com/embed/G-smnUJNvnc";
 		
-		pacchetto.getLezioniByURl(url);
-		assertEquals(url, pacchetto.getLezioniByURl(url));
+		List<LezioniBean> lezioni= new ArrayList<LezioniBean>();
+		
+		lezioni = pacchetto.getLezioniByURl(url);
+		assertNotNull(lezioni);
 	}
+	
 	@Test
-	void testgetLezioniByTitolo() {
+	void testGetLezioniByTitolo() {
 		String titolo="Compilatori ed interpreti";
+		List<LezioniBean> lezioni= new ArrayList<LezioniBean>();
 		
-		pacchetto.getLezioniByTitolo(titolo);
-		assertEquals(titolo,pacchetto.getLezioniByTitolo(titolo));
+		lezioni = pacchetto.getLezioniByTitolo(titolo);
+		assertNotNull(lezioni);
 	}
+	
 	@Test
-	void testgetLezioniApprovate() {
+	void testGetLezioniApprovate() {
 		String codicePacchetto="pac002";
+		List<LezioniBean> lezioni= new ArrayList<LezioniBean>();
 		
-		pacchetto.getLezioniApprovate(codicePacchetto);
-		assertEquals(codicePacchetto,pacchetto.getLezioniApprovate(codicePacchetto));
+		lezioni = pacchetto.getLezioniApprovate(codicePacchetto);
+		assertNotNull(lezioni);
 	}
+	
 	@Test
-	void testgetRecensioni() {
+	void testGetRecensioni() {
 		String codicePacchetto="pac001";
-		
-		pacchetto.getRecensioni(codicePacchetto);
-		assertEquals(codicePacchetto,pacchetto.getRecensioni(codicePacchetto));
+		ArrayList<RecensioneBean> r = new ArrayList<RecensioneBean>();
+		r = pacchetto.getRecensioni(codicePacchetto);
+		assertNotNull(r);
 	}
 	@Test 
-	void testgetAcquirenti() {
+	void testGetAcquirenti() {
 		String codicePacchetto="pac002";
 		
-		pacchetto.getAcquirenti(codicePacchetto);
-		assertEquals(codicePacchetto,pacchetto.getAcquirenti(codicePacchetto));
+		ArrayList<UtenteBean> utenti = new ArrayList<UtenteBean>();
+		utenti = pacchetto.getAcquirenti(codicePacchetto);
+		assertNotNull(utenti);
 	}
 }

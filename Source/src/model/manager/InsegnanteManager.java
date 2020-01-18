@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import model.bean.LezioniBean;
 import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
+import model.dao.GestoreDao;
 import model.dao.InsegnanteDao;
 import model.dao.PacchettoDao;
 
@@ -54,7 +55,13 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void updateCode(String vecchioCodice, String nuovoCodice){
-		insegnanteManager.updateCode(vecchioCodice, nuovoCodice);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.updateCode(vecchioCodice, nuovoCodice);
 	}
 	/**
 	 * Modifica il titolo del pacchetto
@@ -63,7 +70,13 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void updateTitle(String vecchioCodice, String nuovoTitolo){
-		insegnanteManager.updateTitle(vecchioCodice, nuovoTitolo);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.updateTitle(vecchioCodice, nuovoTitolo);
 	}
 	/**
 	 * Modifica il prezzo  del pacchetto
@@ -72,7 +85,13 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void updatePrice(String vecchioCodice, double nuovoPrezzo){
-		insegnanteManager.updatePrice(vecchioCodice, nuovoPrezzo);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.updatePrice(vecchioCodice, nuovoPrezzo);
 	}
 	/**
 	 * Modifica la descrzione  del pacchetto
@@ -81,7 +100,13 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void updateDescr(String vecchioCodice, String nuovaDescrizione){
-		insegnanteManager.updateDescr(vecchioCodice, nuovaDescrizione);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.updateDescr(vecchioCodice, nuovaDescrizione);
 	}
 	/**
 	 * Cancella il  pacchetto
@@ -89,7 +114,13 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void deletePacchetto(String vecchioCodice){
-		insegnanteManager.deletePacchetto(vecchioCodice);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.deletePacchetto(vecchioCodice);
 	}
 	/**
 	 * Inserisce una nuova lezione
@@ -128,7 +159,13 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void updateTitleLesson(String vecchioTitolo, String nuovoNomeLezione){
-		insegnanteManager.updateTitleLesson(vecchioTitolo, nuovoNomeLezione);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.updateTitleLesson(vecchioTitolo, nuovoNomeLezione);
 	}
 	/**
 	 * Modifica la durata della lezione
@@ -137,7 +174,13 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void updateDurationLesson(String vecchioTitolo, String nuovaDurataLezione){
-		insegnanteManager.updateDurationLesson(vecchioTitolo, nuovaDurataLezione);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.updateDurationLesson(vecchioTitolo, nuovaDurataLezione);
 	}
 	/**
 	 * Cancella la  lezione
@@ -145,7 +188,13 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void deleteLesson(String titolo){
-		insegnanteManager.deleteLesson(titolo);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.deleteLesson(titolo);
 	}
 	/**
 	 * Preleva gli acquirenti
@@ -164,10 +213,22 @@ public class InsegnanteManager {
 	 * @return 
 	 * **/
 	public void updateUrlLesson(String vecchioCodice, String nuovoUrlLezione){
-		insegnanteManager.updateUrlLesson(vecchioCodice, nuovoUrlLezione);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		i.updateUrlLesson(vecchioCodice, nuovoUrlLezione);
 	}
-	PacchettoDao pacchettoDao = new PacchettoDao();
+	
+	public void setDao(InsegnanteDao i) {
+		this.dao = i;
+	}
+	
 	InsegnanteDao insegnanteManager = new InsegnanteDao();
+	PacchettoDao pacchettoDao = new PacchettoDao();
+	InsegnanteDao dao;
 	PacchettoBean pacchetto= new PacchettoBean();
 	PacchettoBean pacchettoEsistente= new PacchettoBean();
 	ArrayList<LezioniBean> lezioneEsistente = new ArrayList<LezioniBean>() ;

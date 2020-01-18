@@ -73,37 +73,45 @@ class InsegnanteManagerTest extends Mockito {
 	@Test
 	void testUpdateCode() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-			
-		insegnanteMock.updateCode("pac004", "pac444");
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.updateCode("pac004", "pac444");
 		verify(insegnanteMock).updateCode("pac004", "pac444");
 	}
 	
 	@Test
 	void testUpdateTitle() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-		
-		insegnanteMock.updateTitle("pac002", "Programmazione in C ++");
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.updateTitle("pac002", "Programmazione in C ++");
 		verify(insegnanteMock).updateTitle("pac002", "Programmazione in C ++");
 	}
 	
 	@Test
 	void testUpdatePrice() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-		insegnanteMock.updatePrice("pac002", 50);
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.updatePrice("pac002", 50);
 		verify(insegnanteMock).updatePrice("pac002", 50);
 	}
 	
 	@Test
 	void testUpdateDesc() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-		insegnanteMock.updateDescr("pac002", "Imparare come usare C ++.");
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.updateDescr("pac002", "Imparare come usare C ++.");
 		verify(insegnanteMock).updateDescr("pac002", "Imparare come usare C ++.");
 	}
 	
 	@Test
 	void testDeletePacchetto() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-		insegnanteMock.deletePacchetto("pac003");
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.deletePacchetto("pac003");
 		verify(insegnanteMock).deletePacchetto("pac003");
 	}
 	
@@ -165,32 +173,36 @@ class InsegnanteManagerTest extends Mockito {
 	@Test
 	void testUpdateTitleLesson() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-		insegnanteMock.updateTitleLesson("Video lezione di Strategia Aziendale ", "Video lezione di Strategia");
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.updateTitleLesson("Video lezione di Strategia Aziendale ", "Video lezione di Strategia");
 		verify(insegnanteMock).updateTitleLesson("Video lezione di Strategia Aziendale ", "Video lezione di Strategia");
 	}
 	
 	@Test
 	void testUpdateDurationLesson() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-		insegnanteMock.updateDurationLesson("6:26", "6:00" );
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.updateDurationLesson("6:26", "6:00" );
 		verify(insegnanteMock).updateDurationLesson("6:26", "6:00");
 	}
 	
 	@Test
 	void testUpdateUrlLesson() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-		insegnanteManager = new InsegnanteManager();
-		
-		insegnanteMock.updateUrlLesson("https://www.youtube.com/embed/_2gmtVuenfc", "https://www.youtube.com/embed/-cyYH6qGNF8");
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.updateUrlLesson("https://www.youtube.com/embed/_2gmtVuenfc", "https://www.youtube.com/embed/-cyYH6qGNF8");
 		verify(insegnanteMock).updateUrlLesson("https://www.youtube.com/embed/_2gmtVuenfc", "https://www.youtube.com/embed/-cyYH6qGNF8");
 	}
 	
 	@Test
 	void testDeleteLesson() {
 		insegnanteMock = (InsegnanteDao)Mockito.mock(InsegnanteDao.class);
-		insegnanteManager = new InsegnanteManager();
-		
-		insegnanteMock.deleteLesson("Video lezione di Strategia");
+		InsegnanteManager manager = new InsegnanteManager();
+		manager.setDao(insegnanteMock);
+		manager.deleteLesson("Video lezione di Strategia");
 		verify(insegnanteMock).deleteLesson("Video lezione di Strategia");
 	}
 

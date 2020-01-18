@@ -9,6 +9,7 @@ import model.bean.AcquistoBean;
 import model.bean.OrdineBean;
 import model.bean.PacchettoBean;
 import model.dao.AcquistoDao;
+import model.dao.GestoreDao;
 import model.dao.OrdineDao;
 
 public class AcquistoManager {
@@ -39,6 +40,12 @@ public class AcquistoManager {
 	 * @return
 	 **/
 	public void getOrdine(String userName, ArrayList<PacchettoBean> carrello){
+		AcquistoDao a;
+		if(dao != null) {
+			a = dao;
+		} else {
+			a = new AcquistoDao();
+		}
 		
 		ordineBean.setCliente(userName);
 		ordineBean.setData(Date.valueOf(getDataOdierna()));
@@ -54,11 +61,16 @@ public class AcquistoManager {
 			acquistoBean.setCodiceP(codiceP);
 			acquistoBean.setTitoloPacchetto(titoloPacchetto);
 			acquistoBean.setImporto(prezzo);
-			acquisto.insertAcquisto(acquistoBean);
+			a.insertAcquisto(acquistoBean);
 		}
 	}
+	
+	public void setDao(AcquistoDao a) {
+		this.dao = a;
+	}
+	
 	OrdineBean ordineBean = new OrdineBean();
 	AcquistoBean acquistoBean = new AcquistoBean();
 	OrdineDao ordine = new OrdineDao();
-	AcquistoDao acquisto = new AcquistoDao();
+	AcquistoDao dao;
 }
