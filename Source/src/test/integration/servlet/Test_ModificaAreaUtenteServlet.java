@@ -1,11 +1,10 @@
-package test.servlet;
+package test.integration.servlet;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -21,28 +20,28 @@ import com.google.gson.Gson;
 
 import control.ModificaAreaUtenteServlet;
 import control.util.JSONResponse;
-import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
 import model.manager.UtenteManager;
 
-public class TC_ModificaAreaUtenteServlet  extends Mockito{
+class Test_ModificaAreaUtenteServlet extends Mockito{
 	Gson gson = new Gson();
 	JSONResponse jsonResponse = new JSONResponse(true);
 	StringWriter stringWriter = new StringWriter();
 	PrintWriter writer = new PrintWriter(stringWriter);
-	  
-	UtenteManager utenteManager= new UtenteManager();
-	HttpServletRequest request = (HttpServletRequest)Mockito.mock(HttpServletRequest.class);
-	HttpServletResponse response = (HttpServletResponse)Mockito.mock(HttpServletResponse.class);
-	static UtenteBean loggedUser= new UtenteBean();
 	
-	ModificaAreaUtenteServlet servlet= new ModificaAreaUtenteServlet();
 	@AfterEach
 	protected void tearDown() throws Exception {
 		UtenteManager manager= new UtenteManager();
 		manager.setEmail("claudia@alice.it", "claudiabuono99@gmail.com");
 		manager.setPassword("claudiabuono99@gmail.com", "Y2xhdWRpYWJ1b25v");
+		
 	}
+	  
+	HttpServletRequest request = (HttpServletRequest)Mockito.mock(HttpServletRequest.class);
+	HttpServletResponse response = (HttpServletResponse)Mockito.mock(HttpServletResponse.class);
+	static UtenteBean loggedUser= new UtenteBean();
+	
+	ModificaAreaUtenteServlet servlet= new ModificaAreaUtenteServlet();
 	@BeforeAll
 	public static void init () {
 		loggedUser.setNomeUtente("Claudia");
@@ -50,7 +49,7 @@ public class TC_ModificaAreaUtenteServlet  extends Mockito{
 		loggedUser.setPassword("claudiabuono");
 		
 	}
-
+	
 	@Test
 	void modificaEmail() throws ServletException, IOException {
 		String nuovaEmailUtente = "claudia@alice.it";
@@ -64,16 +63,17 @@ public class TC_ModificaAreaUtenteServlet  extends Mockito{
 		when(request.getSession()).thenReturn(session);
 		when(session.getAttribute("User")).thenReturn(loggedUser);
 		when(response.getWriter()).thenReturn(writer);
-		
+	
 		servlet.doGet(request, response);
 		String result = stringWriter.getBuffer().toString().trim();
+		assertNotNull(result);
 		assertTrue(result.equals("{\"ok\":true,\"message\":\"OK\"}"));
 	}
 	@Test
 	void modificaPassword() throws ServletException, IOException {
 		String nuovaEmailUtente = null;
 		String emailUtente=null;
-		String nuovaPasswordUtente = "claudia99" ;
+		String nuovaPasswordUtente = "claudia99";
 		String confermaNuovaPasswordUtente="claudia99";
 		when(request.getParameter("NuovaEmailUtente")).thenReturn(nuovaEmailUtente);
 		when(request.getParameter("NuovaPasswordUtente")).thenReturn(nuovaPasswordUtente);
@@ -82,10 +82,12 @@ public class TC_ModificaAreaUtenteServlet  extends Mockito{
 		when(request.getSession()).thenReturn(session);
 		when(session.getAttribute("User")).thenReturn(loggedUser);
 		when(response.getWriter()).thenReturn(writer);
-		
+
 		servlet.doGet(request, response);
 		String result = stringWriter.getBuffer().toString().trim();
+		assertNotNull(result);
 		assertTrue(result.equals("{\"ok\":true,\"message\":\"OK\"}"));
 	}
 	
 }
+
