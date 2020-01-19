@@ -321,7 +321,7 @@ function addPackage(){
 	let caller = event.target;
 	const action = caller.getAttribute("data");
 	let nuovoCodice = document.getElementById("newCode");
-	let nuovaSottocategoria = document.getElementById("sottocatId");
+	let nuovaSottocategoria = document.querySelector("#listaSottocategorie");
 	let nuovoTitolo = document.getElementById("newTitle");
 	let nuovaFoto = document.getElementById("newPhoto")
 	let nuovoPrezzo = document.getElementById("newPrice");
@@ -571,7 +571,6 @@ function riaggiungiPacchetto(){
 	myimg.remove();
 	document.getElementById("riepilogo").style.display= "none";
 	document.getElementById("newCode").value = null;
-	document.getElementById("sottocatId").value = null;
 	document.getElementById("newTitle").value = null;
 	document.getElementById("newPhoto").value = null;
 	document.getElementById("newPrice").value = null;
