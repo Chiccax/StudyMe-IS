@@ -1,0 +1,4142 @@
+{
+  "id": "f7f95029-b5bf-4a37-8a57-18a989887d54",
+  "version": "2.0",
+  "name": "StudyMeSelenium",
+  "url": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+  "tests": [{
+    "id": "c39e468b-de35-4122-986f-44f0d453f808",
+    "name": "TCS34",
+    "commands": [{
+      "id": "9f4970f0-ca70-4012-ace3-c06d34fd5d1e",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) .sfondo",
+      "targets": [
+        ["css=a:nth-child(4) .sfondo", "css:finder"],
+        ["xpath=//a[4]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "acf82503-6958-4197-a0e3-ef39c6a21636",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(9) .pacchetto:nth-child(1) .modifica",
+      "targets": [
+        ["css=.sottocat:nth-child(9) .pacchetto:nth-child(1) .modifica", "css:finder"],
+        ["xpath=//span[@onclick=\"mostraModifiche('pac014')\"]", "xpath:attributes"],
+        ["xpath=//div[9]/div/div/div[2]/div/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a66d59a-c9aa-4e41-89e9-6a4fb8cb760e",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["name=titolo", "name"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e0160d5-cc97-4107-8ed6-d3aa72c815dd",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["name=titolo", "name"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/input", "xpath:position"]
+      ],
+      "value": "Corso sulla sicurezza"
+    }, {
+      "id": "8295df03-518f-4523-a9b3-2a774a704a3d",
+      "comment": "",
+      "command": "click",
+      "target": "css=#sfondoModificaPacchetto .far",
+      "targets": [
+        ["css=#sfondoModificaPacchetto .far", "css:finder"],
+        ["xpath=(//div[@id='close-icon']/i)[4]", "xpath:idRelative"],
+        ["xpath=//div[10]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b433d50-0719-4a16-8723-04fef07226fe",
+      "comment": "",
+      "command": "open",
+      "target": "/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "61c49171-e02e-4475-bcd8-b6580e301ee3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1364x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5fcf5d1e-d8e8-455a-a879-f568813735dd",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) .sfondo",
+      "targets": [
+        ["css=a:nth-child(4) .sfondo", "css:finder"],
+        ["xpath=//a[4]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "35bd0fb4-78b3-4a56-b098-6e7e3176bcdb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .modifica",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .modifica", "css:finder"],
+        ["xpath=//span[@onclick=\"mostraModifiche('pac013')\"]", "xpath:attributes"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "41f8bd80-1609-46a8-962c-87e90273d859",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["name=titolo", "name"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3c6b92d-a2ff-4bcf-8ce3-30f624811cf3",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["name=titolo", "name"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/input", "xpath:position"]
+      ],
+      "value": "A"
+    }, {
+      "id": "52400f81-f0cc-471f-a174-560808788b48",
+      "comment": "",
+      "command": "click",
+      "target": "css=#updateTitle > #updateButton",
+      "targets": [
+        ["css=#updateTitle > #updateButton", "css:finder"],
+        ["xpath=(//div[@id='updateButton'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/div", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53ec6ddf-0f2d-44ee-a741-8398d337d966",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='modificaPacchetto']/div", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Inserire un titolo compreso tra i 5 e 35 caratteri"
+    }]
+  }, {
+    "id": "85064ebb-671a-470e-a7cb-c306edecd4bb",
+    "name": "TCS35",
+    "commands": [{
+      "id": "f9827d82-c75a-4e52-adba-44264dea3aa8",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8c8191ba-c984-4deb-b4b3-fa98dbaeec50",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1364x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6a9cafa-b86e-42b5-93e8-9ad173fbddbe",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) .sfondo",
+      "targets": [
+        ["css=a:nth-child(4) .sfondo", "css:finder"],
+        ["xpath=//a[4]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f1a90d0-13a3-436b-97d2-4b4398ef48d7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .modifica",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .modifica", "css:finder"],
+        ["xpath=//span[@onclick=\"mostraModifiche('pac013')\"]", "xpath:attributes"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2cf7f980-3154-4fb3-a50c-3a63f1bb2cdf",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["name=titolo", "name"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a8c7bad-07fb-4778-b3fc-66901e530554",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["name=titolo", "name"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/input", "xpath:position"]
+      ],
+      "value": "Programmazione della shell Linux"
+    }, {
+      "id": "92786120-8c11-4974-8d74-2e1d4f307f95",
+      "comment": "",
+      "command": "click",
+      "target": "css=#updateTitle > #updateButton",
+      "targets": [
+        ["css=#updateTitle > #updateButton", "css:finder"],
+        ["xpath=(//div[@id='updateButton'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/div", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ef89a2d-32b5-4eb1-9460-62cb47ff51ad",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='modificaPacchetto']/div", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Titolo già esistente"
+    }]
+  }, {
+    "id": "4631cb5a-1f95-412c-9a09-4d0aa356e798",
+    "name": "TCS36",
+    "commands": [{
+      "id": "31a5961d-d8f4-4076-999d-4bb5583d1fe5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3d48bb2-4759-47e1-bd32-3533013acb49",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1364x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "db042d9b-39d5-480f-ae4b-184154817e90",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) .sfondo",
+      "targets": [
+        ["css=a:nth-child(4) .sfondo", "css:finder"],
+        ["xpath=//a[4]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05df6397-7820-43ca-9e61-e981cf3a5696",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .modifica",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .modifica", "css:finder"],
+        ["xpath=//span[@onclick=\"mostraModifiche('pac013')\"]", "xpath:attributes"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "073f3177-4dd8-4bef-9423-9f9987fb1de1",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["name=prezzo", "name"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='updatePrice']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9038066-9f71-4d86-a05e-38502045751f",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["name=prezzo", "name"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='updatePrice']/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "A"
+    }, {
+      "id": "d157edfa-5177-4076-be15-66d86b4dbda5",
+      "comment": "",
+      "command": "click",
+      "target": "css=#updatePrice > #updateButton",
+      "targets": [
+        ["css=#updatePrice > #updateButton", "css:finder"],
+        ["xpath=(//div[@id='updateButton'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='updatePrice']/div", "xpath:idRelative"],
+        ["xpath=//form/div/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25d7131c-a1bc-44c8-a90a-0a6856326a23",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='modificaPacchetto']/div", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Prezzo non valido"
+    }]
+  }, {
+    "id": "f5af317a-dccb-46b5-9277-3a066fd9c65b",
+    "name": "TCS37",
+    "commands": [{
+      "id": "63480c1f-2609-4cb8-b4c2-0b1b06487d2b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45271ecd-6d4d-4110-9223-4163ddb47476",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1364x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45a18b24-f28c-4dd5-be45-8acbb4f5aadd",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) .sfondo",
+      "targets": [
+        ["css=a:nth-child(4) .sfondo", "css:finder"],
+        ["xpath=//a[4]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c4a0ce9-ebbf-469d-910a-0056979a3f8e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .modifica",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .modifica", "css:finder"],
+        ["xpath=//span[@onclick=\"mostraModifiche('pac013')\"]", "xpath:attributes"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6f55b83-b10f-4b6c-b43f-977d4ad49b5b",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["name=descrizione", "name"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='updateDescr']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "668acb1c-0f1f-4154-9602-d4b4feaff5da",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["name=descrizione", "name"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='updateDescr']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "A"
+    }, {
+      "id": "bbf2b395-88a8-41d7-8ff0-bdfa3bc00f9b",
+      "comment": "",
+      "command": "click",
+      "target": "css=#updateDescr > #updateButton",
+      "targets": [
+        ["css=#updateDescr > #updateButton", "css:finder"],
+        ["xpath=(//div[@id='updateButton'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='updateDescr']/div", "xpath:idRelative"],
+        ["xpath=//form/div/div[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1871944-a27c-4006-a052-84b0ae39315c",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='modificaPacchetto']/div", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Inserire una descrizione compresa tra i 10 e i 30 caratteri"
+    }]
+  }, {
+    "id": "f2dbdee0-b483-4f8b-a25f-768948d608ae",
+    "name": "TCS33",
+    "commands": [{
+      "id": "a74163f4-f4bf-4d4f-9b60-e76c32d9f0b1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfb9fe55-f0f0-44ab-bf8b-450887970718",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1364x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0f8bdb61-ac77-421e-8c7e-2155e3e9cc7f",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) .sfondo",
+      "targets": [
+        ["css=a:nth-child(4) .sfondo", "css:finder"],
+        ["xpath=//a[4]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19a571b8-77b1-4892-9cc5-31d188c23f0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .modifica",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .modifica", "css:finder"],
+        ["xpath=//span[@onclick=\"mostraModifiche('pac013')\"]", "xpath:attributes"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fd5681f-041a-4fc2-b62d-cb9dbdb685e9",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["name=codPacc", "name"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='updateCod']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f007b19c-e8c0-4921-b20d-ba24e273a639",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["name=codPacc", "name"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='updateCod']/input)[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "pac001"
+    }, {
+      "id": "e46fd981-6632-43aa-91bb-0a886823579c",
+      "comment": "",
+      "command": "click",
+      "target": "id=updateButton",
+      "targets": [
+        ["id=updateButton", "id"],
+        ["css=#updateCod > #updateButton", "css:finder"],
+        ["xpath=//div[@id='updateButton']", "xpath:attributes"],
+        ["xpath=(//div[@id='updateCod']/div)[2]", "xpath:idRelative"],
+        ["xpath=//form/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "786d7852-a678-4608-ac47-785990efd971",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=insuccess",
+      "targets": [
+        ["id=insuccess", "id"],
+        ["css=#insuccess", "css:finder"],
+        ["xpath=//div[@id='insuccess']", "xpath:attributes"],
+        ["xpath=//div[@id='modificaPacchetto']/div", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Codice pacchetto già in uso"
+    }]
+  }, {
+    "id": "7d6f7b13-612c-4a4d-b279-fe1a83aa06d3",
+    "name": "TCS20",
+    "commands": [{
+      "id": "0b5b076e-b315-4bfc-8df9-7b650e42458d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1d455b3-f886-4e26-a43b-ee5ab2a73cec",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1361x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2d635c5-3f9c-4142-9c4d-4903d5c258f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav h1",
+      "targets": [
+        ["css=.nav h1", "css:finder"],
+        ["xpath=//div[@id='carrello']/nav/ul/li/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4248b86-d32d-4271-a8b9-dd7473629cfc",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8244a2c-c57f-4609-90f8-aade23a111db",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "691e6020-827a-4234-bf85-79220f7100b7",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac333"
+    }, {
+      "id": "7eaaf3ed-d702-45d2-aa7f-7a30c55d4b7c",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a23027d-69fe-4cfb-8db9-91f9c78f3216",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Sistema Operativo"
+    }, {
+      "id": "502ad000-a005-4e74-a9b4-7b740f1f15af",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba5cbbe0-f236-4479-8925-93eee2c7272c",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c72f54b-1cbc-417b-866a-79f835b2d6f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "A"
+    }, {
+      "id": "d429bd3f-1d2a-474c-92cb-b4e43510c125",
+      "comment": "",
+      "command": "click",
+      "target": "css=#ordini > #UpdateUserName",
+      "targets": [
+        ["css=#ordini > #UpdateUserName", "css:finder"],
+        ["xpath=(//div[@id='UpdateUserName'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='ordini']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16d4acb6-5a73-4733-a927-7bf01e77d034",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aec1fdd-0ec5-493b-90bd-ebfdf040d5f1",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "8b9107f9-fba8-433f-aabc-c90eada04d73",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06e7e32f-8f4c-4b85-97ce-f528a5928a6a",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "55"
+    }, {
+      "id": "2138c4f3-7256-4849-918f-251c5840bb37",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2fb3ea9-2682-4176-a91a-6c4119719934",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc3646de-e35b-47a0-9a6f-8d2f75982737",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Imparare a conoscere i threads"
+    }, {
+      "id": "d2dc9ca8-fe70-4d8f-aa59-f3f54bd82744",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "924f0c6e-e462-4488-867d-de5f1092ba63",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=success",
+      "targets": [
+        ["id=success", "id"],
+        ["css=#success", "css:finder"],
+        ["xpath=//h1[@id='success']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/h1[2]", "xpath:idRelative"],
+        ["xpath=//h1[2]", "xpath:position"],
+        ["xpath=//h1[contains(.,'Inserire un titolo compreso tra i 5 e 35 caratteri')]", "xpath:innerText"]
+      ],
+      "value": "Inserire un titolo compreso tra i 5 e 35 caratteri"
+    }]
+  }, {
+    "id": "29d81cba-9f89-4a29-95cd-f56b3e876c26",
+    "name": "TCS21",
+    "commands": [{
+      "id": "f6997561-e30c-4fca-9be0-7b5c07ed5ec6",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef1c2c8c-4bf7-4537-a420-d8757ba20f16",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1361x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd1991ee-2998-4dd6-877f-2d8c5a8f121f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav .cerchio",
+      "targets": [
+        ["css=.nav .cerchio", "css:finder"],
+        ["xpath=//div[@id='carrello']/nav/ul/li/div/div/div", "xpath:idRelative"],
+        ["xpath=//li/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98006309-c8a9-496f-a2ce-ea4f7e1c1a5d",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9c684db-133a-4e7e-a241-254bf047556a",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "645b6fed-ab30-4a0f-b29b-023199eca5d9",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac457"
+    }, {
+      "id": "e158bba9-ed07-4913-b715-fd08a2983995",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7d00fef-9feb-4129-90db-3289e105c4c6",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a4e3935-4d7b-4ae0-8283-b6d2756363a6",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "40f51cc4-055a-4647-a9bf-4f97b658bebe",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Programmazione della shell Linux"
+    }, {
+      "id": "95b3f016-f413-4503-b6a4-1d3f5229b9ec",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96364cfb-0296-4279-b794-76bf30c6c3bf",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a321c0c-06d0-408b-8b63-e83989461f74",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "6ed7dbd3-7393-4f57-9cd7-ea338f17e6f6",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a27c4b5-e7cd-4b05-8f06-bef6ade5a4be",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "55"
+    }, {
+      "id": "47f4125b-0318-49aa-9c70-c44697bcc20f",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "527f33f5-2a40-4881-a3a1-b38d76d9e0b2",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Imparare a programmare in shell"
+    }, {
+      "id": "9bb21e7c-f7b5-4f5f-9727-c58d60160fd9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "41bf63de-fab4-4731-b1ce-e491d3af20b7",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=success",
+      "targets": [
+        ["id=success", "id"],
+        ["css=#success", "css:finder"],
+        ["xpath=//h1[@id='success']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/h1[2]", "xpath:idRelative"],
+        ["xpath=//h1[2]", "xpath:position"],
+        ["xpath=//h1[contains(.,'Titolo già esistente')]", "xpath:innerText"]
+      ],
+      "value": "Titolo già esistente"
+    }]
+  }, {
+    "id": "41f8c8fa-07c0-4cde-aecf-10bc89f4312f",
+    "name": "TCS22",
+    "commands": [{
+      "id": "7d365b7e-4f23-4e80-8a46-2ccc2149bc99",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a96e110a-eda3-401d-89c1-fdd505cb36be",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1361x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5e213179-6b68-44b9-b137-3889b98f1a56",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav .navbar-item",
+      "targets": [
+        ["css=.nav .navbar-item", "css:finder"],
+        ["xpath=//div[@id='carrello']/nav/ul/li/div", "xpath:idRelative"],
+        ["xpath=//li/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98c9e9ad-3b06-40fc-84e1-40b7d872d68e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav h1",
+      "targets": [
+        ["css=.nav h1", "css:finder"],
+        ["xpath=//div[@id='carrello']/nav/ul/li/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33bb6e8c-9495-4e89-b566-2bedf6020390",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0cb9eb4b-9489-489b-b2c4-f6fbd8996011",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71c78b9e-b5b0-4cef-ad60-860ef3fb646c",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "PAC287"
+    }, {
+      "id": "db1c6880-a4ed-485e-afd4-79c9f8b9e0f9",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9fa3036-7044-4836-8f0b-95c5147c7c7b",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "I"
+    }, {
+      "id": "1315822e-4bc6-479c-a338-35dcf1a159c9",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfd33e90-195c-47da-a338-8ff0f31c6077",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Sistema Operativo"
+    }, {
+      "id": "a25ae406-7d94-422e-9e15-35cad80180f1",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19cb2acc-d003-4d19-a11a-1db2a54eed0e",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc7ae057-0cfd-42c1-b988-1e24d1a3737b",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Imparare ad usare i threads"
+    }, {
+      "id": "1b1c003a-021f-4dcb-816a-e4de0b9d3bdb",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "286ef677-3986-4120-a953-ee0b46141b88",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "0e8ae044-5913-4eca-af8f-d8232aee22ce",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "229446a7-6787-496f-a21a-a97eeadfd05d",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "AA"
+    }, {
+      "id": "035fa497-c9fe-47cc-842e-442d02e286bb",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44097d64-1983-445e-b7fa-df468731973a",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Imparare ad usare i threads"
+    }, {
+      "id": "a90ca356-06d1-466a-a413-e96a33880992",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5dedb5b0-73f6-4182-8440-485ef282635f",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=success",
+      "targets": [
+        ["id=success", "id"],
+        ["css=#success", "css:finder"],
+        ["xpath=//h1[@id='success']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/h1[2]", "xpath:idRelative"],
+        ["xpath=//h1[2]", "xpath:position"],
+        ["xpath=//h1[contains(.,'Prezzo non valido')]", "xpath:innerText"]
+      ],
+      "value": "Prezzo non valido"
+    }]
+  }, {
+    "id": "74e12580-2cb6-4107-b1ba-1939c4ba680f",
+    "name": "TCS23",
+    "commands": [{
+      "id": "97a1486c-0ff1-49c6-aae1-f22d7e8c0052",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "73dd44de-b5b7-49c8-99dc-98ffe605c76f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1361x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e21a7f14-dc96-4fb4-b1a0-ea367bec6bb9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav h1",
+      "targets": [
+        ["css=.nav h1", "css:finder"],
+        ["xpath=//div[@id='carrello']/nav/ul/li/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b830a6a-c9e9-497a-9afe-e254acd4f80d",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c31939d-bd4d-4ef4-b206-ceb538ee7990",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7eaf47c8-d396-4467-9549-bb3952aefa78",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac746"
+    }, {
+      "id": "330d77ad-1c9f-4d23-8c70-59e45c9b57f8",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "671358e0-1468-4e87-b6df-513c703b5edf",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Sistema Operativo"
+    }, {
+      "id": "78d2d118-6cb1-40e6-95b0-c5db76e3602d",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fb95bb6-5c2f-48f9-b476-066403f21a7c",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3037710-51bd-4f68-abe0-39d71671d66b",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Imparare ad usare i threads"
+    }, {
+      "id": "4fe7dec0-3672-49ce-9722-381ed74e3de1",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57f29afa-c28b-4564-9f98-51695577aa97",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "1f507736-7af6-4eef-950c-34b0ea14ad67",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1cbe63b-000b-49a0-b641-150888d83eeb",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "55"
+    }, {
+      "id": "42065c65-674e-45c0-9a30-c718de437a22",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea686f46-cf8a-4ff0-85e8-a06ba330bdf3",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=success",
+      "targets": [
+        ["id=success", "id"],
+        ["css=#success", "css:finder"],
+        ["xpath=//h1[@id='success']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/h1[2]", "xpath:idRelative"],
+        ["xpath=//h1[2]", "xpath:position"],
+        ["xpath=//h1[contains(.,'Tutti i parametri devono essere compilati')]", "xpath:innerText"]
+      ],
+      "value": "Tutti i parametri devono essere compilati"
+    }]
+  }, {
+    "id": "505d66b4-53d0-4d37-8e67-19179e476212",
+    "name": "TCS24",
+    "commands": [{
+      "id": "0b369a4d-48fc-4471-8c66-c1c594a804d1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2f84e14-0d46-4f91-9bfa-42e98f67d5f2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1361x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e602645-e1e9-4659-ab96-80b0c4ae53c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav h1",
+      "targets": [
+        ["css=.nav h1", "css:finder"],
+        ["xpath=//div[@id='carrello']/nav/ul/li/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f52537b0-e287-4e45-ab1c-b256247a935b",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a476dee8-b2e1-4383-b954-2fde4c306a20",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f21afbbe-5456-4514-8d82-60101752ce6d",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac349"
+    }, {
+      "id": "11032076-3e5e-47d5-bdf3-60e09ff00b08",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "278d586c-8304-49ec-bb37-0cc8851203b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2af181b5-fc42-4edd-a816-a41d6ba5aafe",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab95b50e-ad26-4397-b9bd-9dd378e4a6c2",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Corso di reti"
+    }, {
+      "id": "82e57fd3-941b-425f-9dd1-67443c252853",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b02b9eb1-4e8e-41d3-b3fd-a9d361c13820",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "b8dc0bcf-ceba-4fc6-baf4-c1eac4748bf7",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1fc06ddd-cb7b-42a7-b2c3-12c9e43b9069",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "55"
+    }, {
+      "id": "74ad417b-ac7e-4de6-9767-11bcee99272b",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9115799f-f2ee-4dcd-b6b2-039f0e2ad63f",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "A"
+    }, {
+      "id": "1898e2f5-af6b-48de-9d36-99769b47c2bc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8310643f-ccf5-4521-b6ae-fa3fd471613a",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=success",
+      "targets": [
+        ["id=success", "id"],
+        ["css=#success", "css:finder"],
+        ["xpath=//h1[@id='success']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/h1[2]", "xpath:idRelative"],
+        ["xpath=//h1[2]", "xpath:position"],
+        ["xpath=//h1[contains(.,'Inserire una descrizione compresa tra i 10 e i 30 caratteri')]", "xpath:innerText"]
+      ],
+      "value": "Inserire una descrizione compresa tra i 10 e i 30 caratteri"
+    }]
+  }, {
+    "id": "03c61a04-2d79-4c14-9049-7927f9edb12e",
+    "name": "TCS25",
+    "commands": [{
+      "id": "b5404ff4-b3cf-4a8d-9832-82d225d5fa1f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/HomePage.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0d9900f4-152b-46c5-adbf-179827fcef37",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1361x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44a5de2a-9952-401a-aa9a-06a8f40603f6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav h1",
+      "targets": [
+        ["css=.nav h1", "css:finder"],
+        ["xpath=//div[@id='carrello']/nav/ul/li/div/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "efb151b5-1b28-4078-90dd-bca45aff017f",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b341a2e0-09c4-4393-a304-38e85c9042f5",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "89451608-9e50-474e-81a4-8a068d89c426",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac250"
+    }, {
+      "id": "044cc7fc-995c-42b1-a1b1-8eed853a8460",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "223ec3c1-5a51-4476-9cc9-edc5fdad3123",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7a48bb6-b9bf-469a-b33f-f5d3df762a04",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f713acf7-adba-48c8-a810-9814bf861418",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Introduzione alle reti informatiche"
+    }, {
+      "id": "52488e8f-971c-4a27-9cbe-698f37313799",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "676db7e2-756a-4930-82ff-43d007bc324d",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.serin.pa.it/images/servizi_reti.jpg"
+    }, {
+      "id": "20b77311-8333-495f-a938-82c150743d81",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0fc4a85-f168-403e-be26-2f272eed5cbe",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "45"
+    }, {
+      "id": "e87fc1ad-442e-4519-a5d4-6d5c0e7dab2e",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "861e0b17-774d-489c-90b9-7c4a943a444e",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Corso di reti"
+    }, {
+      "id": "0d9bc071-f0c7-4078-801a-f16e61ce4f0c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7cc48eca-8b53-4bf9-9606-c64577e7a531",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9f23919-fdfd-4451-a2c5-432c34c51c4a",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e60fe964-97c8-45ce-8666-e5f98da9bc24",
+    "name": "TCS26",
+    "commands": [{
+      "id": "d41bbdd7-46fa-4c03-a276-b1ba2617f524",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f574019-3f19-434e-a522-cc8a7d402076",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1361x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "104a54cd-480c-4480-bd01-be381e7c8ca5",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ff0587b-53a1-4771-ae94-526ea0d22690",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0caad4fc-99c2-47d6-816f-92befafd2897",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac729"
+    }, {
+      "id": "a1aa1f8f-1cdf-4c39-9db5-6c74dd107b53",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "133102f0-abba-48e4-9ba2-4d9a5669a78d",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Sistema Operativo"
+    }, {
+      "id": "8fdfefcc-9083-4391-9f1c-7d8b5f6a007f",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfbfd323-17c2-43b8-94a4-4f1a72a89c1e",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "81e1e417-780b-41fe-bd5b-fca8945bfb6f",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Corso S.O."
+    }, {
+      "id": "5881328d-5374-4ad7-8f5e-472657e57178",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ca419bb-12d9-4505-836c-57daa3b1faa1",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "0e736006-4fa0-4596-940e-db5ae9cc2dc3",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06c806a6-3536-47f9-b0b1-b5cf4497962b",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "45"
+    }, {
+      "id": "4821e5a7-e947-4672-ae29-75db74019347",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2deabd8b-3e45-4719-9981-261299061c22",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Corso nuovo "
+    }, {
+      "id": "c9ce19d5-d7fe-45ec-a900-fffc0c782c97",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78c8b603-5117-41af-af3c-3dc041afc4c4",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": "AA"
+    }, {
+      "id": "bdf2d933-c29d-4d84-b5f4-672b52e885d4",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [],
+      "value": "Prima lezione"
+    }, {
+      "id": "942d7c7a-b80d-439a-95f5-c2279324edb1",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": "45:00"
+    }, {
+      "id": "da5a4346-9ab2-43fa-a5c2-b5d788f25e2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(9)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(9)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18ee1409-6f52-4450-afd3-3e34bb51d342",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": "Url non valido!"
+    }]
+  }, {
+    "id": "c52c5688-d4e3-4fdb-b93d-e67a60e98d25",
+    "name": "TCS27",
+    "commands": [{
+      "id": "6691daf5-996e-4a73-ad0a-d94e51d63ee0",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc9afe05-01e8-4d39-9dab-b4fa71ef48db",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1260x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "103808c0-a394-452d-b051-dd2ee7f2c117",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4135d67-4271-4091-80cc-370cd0b73287",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48fa5aca-205b-4f45-a6c3-bcd95778d60c",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac843"
+    }, {
+      "id": "08339eb8-9487-4bc5-a186-17fb2b8be448",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "456.859375,34.21875"
+    }, {
+      "id": "70ad9b6c-f9b3-4456-92b5-df3efe76cb70",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "456.859375,34.21875"
+    }, {
+      "id": "690b251a-ec36-4305-ab8d-757653e6048f",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "456.859375,34.21875"
+    }, {
+      "id": "d92a8a16-5160-4fc0-8131-de89e26532e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bdc07be7-c136-47ca-8be8-72fa2d1e981c",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Sistema Operativo"
+    }, {
+      "id": "1a7badc6-6d39-4d21-b797-d4b712054b95",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2a147ba-6188-426a-a328-1dcb36356134",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22c25ad3-2d5d-4041-955f-66a1a870addb",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Threads 2"
+    }, {
+      "id": "49237b33-62f5-4f64-a9c1-6edbbd2a7693",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e027e49-fc3a-4346-8cf9-215bc02a5e41",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "45676368-3490-418c-8c5b-54c147fc3e2e",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f60a2c4-3b8e-4722-a76a-5d3b76eecdbd",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "45"
+    }, {
+      "id": "ec003cb7-7bf2-4b4f-b17c-f01f3542de73",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db0eadf4-4b6d-4132-a502-d53ef1390c12",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Lezioni sui threads 2"
+    }, {
+      "id": "7c3c2f2d-2dd6-4dc8-ab7e-33a6e3f762b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7482e0cf-2583-483c-8084-db61f096cc02",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24c175fd-4102-433e-b822-588ee88c71fa",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/SAeCtA35C6o"
+    }, {
+      "id": "e36263b1-22c0-46e1-86fc-0afd95a6a017",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8d79d1b-c78d-495a-861e-89c75531a116",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "Prima"
+    }, {
+      "id": "24acb5f9-da22-479c-91e9-9e556e8dbeb0",
+      "comment": "",
+      "command": "click",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b47fcb79-3578-470b-b3f0-e0e76eed4a7d",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": "55:00"
+    }, {
+      "id": "548fb0d3-7e57-4bc1-87a2-fae21bd7aa47",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(9)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(9)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c1e64a4-7e16-4714-8f31-ce115fe43be8",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": "Url già esistente"
+    }]
+  }, {
+    "id": "f5175859-0265-4f31-9f4a-c5a2b65de7de",
+    "name": "TCS28",
+    "commands": [{
+      "id": "6644f232-3e1d-4673-aeca-b86794f909b3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1da96f10-6c11-44d4-89f3-0f9519b9beee",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x754",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0643e209-eb25-40e2-8e5a-a92a6e0ba475",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5be4ecb1-58c1-4ac5-a831-c6715526a137",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8b534ca-fa9c-4b8a-b6bc-ccf0ec4e4e63",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac998"
+    }, {
+      "id": "feb3cb47-dcc4-4891-a247-a866d9935316",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "986eec83-d086-4639-b7af-2eff4a0d77ea",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Reti"
+    }, {
+      "id": "25fb28a9-557b-427a-a46b-b6ca2f08b5df",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "937c81d6-7c6f-45ef-9bab-0cc92ad03142",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "84acbf0e-f525-4392-afaa-4b1060e05ef2",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Corso reti "
+    }, {
+      "id": "33a54e2f-625d-4d14-8593-33e3c055fd78",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b37e29e-5cad-45f6-ae5d-b896f1e58f6d",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "bbf78e15-f0ff-4671-b531-029f94e435e1",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a29f11b1-8292-47f2-98f6-4bc04e4b9183",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "45"
+    }, {
+      "id": "19e04fba-54a0-461b-85dc-95c3459c5463",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f5f5446-42ad-4ca7-833c-bb0eb16df3e4",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Corso approfondito su reti"
+    }, {
+      "id": "131205d8-0840-4773-848e-841dc72e67c2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a8b8c6cd-863c-4c32-9087-b127adcf2e77",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2390b41-2cde-438c-802c-3ccf80c45ab3",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/QRMUTBL4u-8"
+    }, {
+      "id": "f61f5526-ee7b-4173-9249-8ca98b8ce707",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "83197e34-db96-428a-a6f4-ef1493c5ff14",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "AA"
+    }, {
+      "id": "a3a7b32a-05d8-4c1b-a63a-fd9353126232",
+      "comment": "",
+      "command": "click",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "684160d3-1abb-4f58-8e45-133769ddf738",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": "55:00"
+    }, {
+      "id": "79d5bb15-58ad-4165-801e-40639a500808",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(9)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(9)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "67b7922a-c106-4d61-ab1d-803aff5639c5",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": "Inserire un titolo compreso tra i 5 e 35 caratteri"
+    }]
+  }, {
+    "id": "ae55a4ca-3ca5-448f-8cf1-37241a93f9ff",
+    "name": "TCS29",
+    "commands": [{
+      "id": "67c24d00-7d4f-4468-b80c-7caa6e447b6d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "906b22fe-c5fd-47f5-8132-857cfd3d1524",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1366x738",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aaba0428-14d7-4431-ac4b-cc1b6f1befa8",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43776168-ba6a-4721-8c6f-410adc64cad2",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "199e088b-a07e-425d-b0b3-b3ec511e1a53",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac775"
+    }, {
+      "id": "a7abbbeb-c5a0-4d2f-87c4-e78d07c65a17",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ff2aaae-97f4-48b1-9833-ad4ca2721c31",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Reti"
+    }, {
+      "id": "e32147ad-be1c-400e-8847-dd8ef075e628",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c14f4c5-9a16-409e-9d31-cee845d477f2",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "00c960c4-9182-4706-aeea-a66ec0ee2f97",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Corso shell 2"
+    }, {
+      "id": "7bfa129e-260f-4fc9-be78-698a25e9c7cc",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa7550c4-076a-477d-8621-30a98e376558",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "460506c4-678d-47b8-819d-cb334603f2ba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.grid-container-user",
+      "targets": [
+        ["css=.grid-container-user", "css:finder"],
+        ["xpath=//div[7]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de1b4dc5-9d8c-4f72-aeb2-a8ac981fbbda",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cf50ae3-f70c-4f87-ae56-9e4c5ad9a838",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "45"
+    }, {
+      "id": "d320958e-d7b1-45fc-8a60-14f12d434e7f",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a022f6f9-6dfe-477b-a094-7dd447544748",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Imparare la shell"
+    }, {
+      "id": "212c6688-e5ca-47ce-8ee8-5f3502a731c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8291a392-6d3a-4521-a528-d2cefd3e9acc",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9096444d-8f99-45cc-88fb-f82980fc0491",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/Hae3MfGs2Ww"
+    }, {
+      "id": "6d6bfda5-2ca3-453e-b532-aecf155a0768",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4554bd2-0138-4d32-82db-e9d08b7a3ee3",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "IMPARARE LA SHELL - INTRODUZIONE"
+    }, {
+      "id": "bfa94593-d488-45b9-b189-d3b395672db3",
+      "comment": "",
+      "command": "click",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7337e03b-d7eb-4a1c-a1ef-4367cb696801",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": "55:00"
+    }, {
+      "id": "e94d3137-a798-450a-a1d3-9ee0ce5b5df4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(9)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(9)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97cb5531-ba95-4ea7-9d87-009875a41219",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [],
+      "value": "Titolo già esistente"
+    }]
+  }, {
+    "id": "d65c34f0-8d4d-425f-9df7-8dc5420db1bc",
+    "name": "TCS30",
+    "commands": [{
+      "id": "dfa9a8ed-562d-4d52-a39b-914820638c36",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "afda125f-315c-457a-a594-2e5bab4c7de3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1260x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9e3a500-94ac-4b1a-95c1-675a37986b45",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e098fadb-1dd8-4fc6-a121-e04cf960fc22",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f97ddf10-9cd0-40a0-bbd9-4dc6692d22b7",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac454"
+    }, {
+      "id": "9b45f3a8-8878-409d-8f71-a7e7471638a1",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef64068f-8108-4f2e-a0d1-63b5452b2b68",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Reti"
+    }, {
+      "id": "6798c62b-09d5-4572-b0f2-58badd16946e",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44bb3cff-871c-4c31-a6dd-f4067ae8b448",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cac4e6e5-4f81-4d46-9bb8-7c6a5ee34393",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Corso reti II"
+    }, {
+      "id": "ca8b6eeb-9fa7-4832-931a-3c538b25226d",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dca7b452-883f-4da8-bd05-3d078f49832d",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "9a953f36-9d14-47dd-a428-68530db6fe62",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "856b3e6c-67f9-4823-9e42-8ac2829eb4cc",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "45"
+    }, {
+      "id": "5b213484-8436-497d-8c48-d81c9acf646a",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e22ea784-ddaa-490a-bab5-013e38437851",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Continuo corso reti"
+    }, {
+      "id": "64a69c69-4b6f-4225-8531-571ae945a041",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "05ea0cd9-18be-414a-9bbe-e4847b757c8a",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "697dc703-3c84-40e8-998a-c550de35f6cd",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/u-sC7b0WmgQ"
+    }, {
+      "id": "9518f71b-e61d-47ef-a0b6-ac844bd4bb41",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9ad029f-0357-44d4-98c0-a8851347e39d",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "Lezione 1"
+    }, {
+      "id": "dea2808c-2186-4b0e-9f90-d7400efd13c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(9)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(9)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbf7aa81-b51b-4b60-b480-90b12ac9e9a0",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=messErr",
+      "targets": [
+        ["id=messErr", "id"],
+        ["css=#messErr", "css:finder"],
+        ["xpath=//div[@id='messErr']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": "Tutti i parametri devono essere compilati"
+    }]
+  }, {
+    "id": "6122dd25-1835-4fae-ad90-fd63fff11a11",
+    "name": "TCS18",
+    "commands": [{
+      "id": "f6f53083-43cf-4370-a32c-2eade760c010",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a73e63c-1a3f-4e60-b951-a97cc89ffb6f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1260x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c64887be-9f98-4f4e-9320-8ad25f17572c",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "792ca5bb-a749-45c8-b325-650cf8bd4589",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e2e982e-1caa-49e6-94a6-1e6a00399d5a",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac001"
+    }, {
+      "id": "49cc1e67-07b1-4122-b2f5-7dc31406effe",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0eab74c2-5267-404e-a5c3-862f2d7847e7",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Reti"
+    }, {
+      "id": "a7d0f60b-d3e8-42a0-8067-142b12791acc",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1067fccf-6361-4301-becc-a72b620339cf",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04d907c9-0f5e-4d37-8a82-c923d15735ab",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Corso reti"
+    }, {
+      "id": "b34f6d86-2f10-4d5c-97f8-fa35a8bfd8a4",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "08279a6a-0ee1-482e-b026-ae33693b3fe8",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.sinonimi-contrari.it/includes/images/sharers/sinonimi-di-prova.png"
+    }, {
+      "id": "fff9f962-b473-47b5-94fa-c4f3120175cf",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b37b56b-dbfa-45cc-8d58-ce0896a2c2bf",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "35"
+    }, {
+      "id": "29799ef7-1d47-49cb-9c19-b9b4a8863d37",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2248c44-97b4-4884-8524-4d5f7d9785a7",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Introduzione corso reti"
+    }, {
+      "id": "f0223d3d-03b7-475b-8c64-30babfab0df6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1136e090-ae87-413e-9886-0ae7a5df9151",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=success",
+      "targets": [
+        ["id=success", "id"],
+        ["css=#success", "css:finder"],
+        ["xpath=//h1[@id='success']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/h1[2]", "xpath:idRelative"],
+        ["xpath=//h1[2]", "xpath:position"],
+        ["xpath=//h1[contains(.,'Codice pacchetto già in uso')]", "xpath:innerText"]
+      ],
+      "value": "Codice pacchetto già in uso"
+    }]
+  }, {
+    "id": "71f72251-7969-41de-b56b-886ef64bc50c",
+    "name": "TCS32",
+    "commands": [{
+      "id": "ac505882-14bb-4ee3-8ec3-74cc408d877d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd9eb947-304f-4380-af3c-b7122ae27441",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1260x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b5daaf1-c382-46e8-bd21-2fb450ba9de0",
+      "comment": "",
+      "command": "click",
+      "target": "id=myOrder",
+      "targets": [
+        ["id=myOrder", "id"],
+        ["css=#myOrder", "css:finder"],
+        ["xpath=//li[@id='myOrder']", "xpath:attributes"],
+        ["xpath=//ul[@id='navUser']/li[2]", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/div/nav/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f821eea-adc5-4aa7-8be0-7cd74e3d3afa",
+      "comment": "",
+      "command": "click",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1791626a-b4bd-461f-ae8d-4a1d6d35fd09",
+      "comment": "",
+      "command": "type",
+      "target": "id=newCode",
+      "targets": [
+        ["id=newCode", "id"],
+        ["css=#newCode", "css:finder"],
+        ["xpath=//input[@id='newCode']", "xpath:attributes"],
+        ["xpath=(//div[@id='UpdateUserName']/form/input)[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "pac241"
+    }, {
+      "id": "28b158a0-67b8-4375-90f6-9c52df6a06e3",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "341a419f-e003-4de9-8348-5c18c7115256",
+      "comment": "",
+      "command": "select",
+      "target": "id=listaSottocategorie",
+      "targets": [],
+      "value": "label=Reti"
+    }, {
+      "id": "f411abd2-b5e3-48bc-8725-c8d1346ca2cd",
+      "comment": "",
+      "command": "click",
+      "target": "id=listaSottocategorie",
+      "targets": [
+        ["id=listaSottocategorie", "id"],
+        ["css=#listaSottocategorie", "css:finder"],
+        ["xpath=//select[@id='listaSottocategorie']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7dcda80-192d-4ca6-b52f-23907df182de",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c53a1821-5568-46c3-85fe-9bef7a79b919",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10cb5220-d698-4582-8aaa-f8691de88fe6",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//form[3]/input", "xpath:position"]
+      ],
+      "value": "Introduzione alle reti "
+    }, {
+      "id": "803ad166-9899-43e5-9dc4-b48bb21baa4c",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59f09918-69dc-4cba-8333-358f7df86da2",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPhoto",
+      "targets": [
+        ["id=newPhoto", "id"],
+        ["css=#newPhoto", "css:finder"],
+        ["xpath=//input[@id='newPhoto']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[4]/input", "xpath:idRelative"],
+        ["xpath=//form[4]/input", "xpath:position"]
+      ],
+      "value": "https://www.serin.pa.it/images/servizi_reti.jpg"
+    }, {
+      "id": "354d9004-192a-45ef-8049-44e4205296da",
+      "comment": "",
+      "command": "click",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82dab900-135b-4436-8b81-a8b20ab5ecbb",
+      "comment": "",
+      "command": "type",
+      "target": "id=newPrice",
+      "targets": [
+        ["id=newPrice", "id"],
+        ["css=#newPrice", "css:finder"],
+        ["xpath=//input[@id='newPrice']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[5]/input", "xpath:idRelative"],
+        ["xpath=//form[5]/input", "xpath:position"]
+      ],
+      "value": "45"
+    }, {
+      "id": "7d56535e-0a21-487a-93a2-47cef93a0437",
+      "comment": "",
+      "command": "click",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "474dc10a-4630-4926-b8da-148c4c70dacf",
+      "comment": "",
+      "command": "type",
+      "target": "id=newDesc",
+      "targets": [
+        ["id=newDesc", "id"],
+        ["css=#newDesc", "css:finder"],
+        ["xpath=//textarea[@id='newDesc']", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/form[6]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Corso di reti"
+    }, {
+      "id": "2c9221af-9f3f-48ab-8c16-65f7073821ef",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(15)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(15)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='UpdateUserName']/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Procedi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc20f2ce-2dcb-4a1d-8e61-5005f5d8967f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.menu",
+      "targets": [
+        ["css=.menu", "css:finder"],
+        ["xpath=//div[7]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ddf141fa-364c-4c36-b249-f80106266dbb",
+      "comment": "",
+      "command": "click",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc60c3f5-c5e2-4695-b339-3ababeb21b14",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/form/input", "xpath:position"]
+      ],
+      "value": "https://www.youtube.com/embed/_PgVmkfBm14"
+    }, {
+      "id": "75a6189c-95be-4a32-8306-8633cd5d6d68",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9548599a-5ec9-492b-ac32-a1118d5af5c3",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[2]/input", "xpath:idRelative"],
+        ["xpath=//form[2]/input", "xpath:position"]
+      ],
+      "value": "Lezione 1 di 3"
+    }, {
+      "id": "ce0c7dff-1c56-49c5-9c49-4e5afc663fb1",
+      "comment": "",
+      "command": "click",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "000b0de3-998d-48e1-9857-317a144dd8b4",
+      "comment": "",
+      "command": "type",
+      "target": "id=duration",
+      "targets": [
+        ["id=duration", "id"],
+        ["css=#duration", "css:finder"],
+        ["xpath=//input[@id='duration']", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/form[3]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form[3]/input", "xpath:position"]
+      ],
+      "value": "18:00"
+    }, {
+      "id": "9bd16b79-5268-40ab-a7ac-11e27a448979",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottoneDefault:nth-child(9)",
+      "targets": [
+        ["css=.bottoneDefault:nth-child(9)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='lezioni']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5f223fd-ae8d-45f5-8f11-d9eee7ffe833",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=riepilogo",
+      "targets": [
+        ["id=riepilogo", "id"],
+        ["css=#riepilogo", "css:finder"],
+        ["xpath=//div[@id='riepilogo']", "xpath:attributes"],
+        ["xpath=//div[@id='ordini']/div[3]", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f2a5b95d-7e7c-4c89-831a-93e6775b7f27",
+    "name": "TCS38",
+    "commands": [{
+      "id": "27ef138f-3a03-42bc-9066-d5ee2c6bd619",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/StudyMe/AreaUtente.jsp",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b11f7613-9155-4cda-abfe-9bd76c377c0e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1260x718",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3d2f69f-da76-4238-a7e6-358c24e32116",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(4) .sfondo",
+      "targets": [
+        ["css=a:nth-child(4) .sfondo", "css:finder"],
+        ["xpath=//a[4]/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5771591-7085-4ca5-9fbb-d5cb6a4fb13e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.sottocat:nth-child(8) .pacchetto:nth-child(1) .modifica",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .pacchetto:nth-child(1) .modifica", "css:finder"],
+        ["xpath=//span[@onclick=\"mostraModifiche('pac013')\"]", "xpath:attributes"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Modifica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecfd2f48-c970-42a9-a098-0d70be50e90f",
+      "comment": "",
+      "command": "click",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["name=titolo", "name"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92d61640-bd04-4501-b9e2-5dcf23b0846e",
+      "comment": "",
+      "command": "type",
+      "target": "id=newTitle",
+      "targets": [
+        ["id=newTitle", "id"],
+        ["name=titolo", "name"],
+        ["css=#newTitle", "css:finder"],
+        ["xpath=//input[@id='newTitle']", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/input", "xpath:position"]
+      ],
+      "value": "Shell Linux"
+    }, {
+      "id": "c55f076b-c1c7-4958-ab17-6eacfdeaa629",
+      "comment": "",
+      "command": "click",
+      "target": "css=#updateTitle > #updateButton",
+      "targets": [
+        ["css=#updateTitle > #updateButton", "css:finder"],
+        ["xpath=(//div[@id='updateButton'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='updateTitle']/div", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba9229a8-8c2a-4c77-ac65-18ddd758f2de",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.sottocat:nth-child(8) .pacchetto:nth-child(1) > h1",
+      "targets": [
+        ["css=.sottocat:nth-child(8) .pacchetto:nth-child(1) > h1", "css:finder"],
+        ["xpath=//div[8]/div/div/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Shell Linux')]", "xpath:innerText"]
+      ],
+      "value": "Shell Linux"
+    }]
+  }],
+  "suites": [{
+    "id": "a431ba84-ed6d-48c6-aebf-6f15df51fc6f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c39e468b-de35-4122-986f-44f0d453f808"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/StudyMe/HomePage.jsp", "http://localhost:8080/StudyMe/AreaUtente.jsp"],
+  "plugins": []
+}
