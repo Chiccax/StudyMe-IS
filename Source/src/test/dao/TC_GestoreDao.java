@@ -17,7 +17,7 @@ import model.dao.GestoreDao;
 import model.dao.InsegnanteDao;
 import model.dao.PacchettoDao;
 
-class GestoreDaoTest {
+class TC_GestoreDao {
 
 	GestoreDao gestore;
 	

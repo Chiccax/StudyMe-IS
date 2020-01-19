@@ -171,6 +171,12 @@ public class InsegnanteServlet extends HttpServlet {
 						return;
 					}
 					
+					if(nuovoCodice.length() > 6){
+						JSONResponse jsonResponse = new JSONResponse(false, INVALID_CODE_LENGTH);
+						out.print(gson.toJson(jsonResponse));
+						return;
+					}
+					
 					//controllo se è tra i 5 e i 35 caratteri
 					if(nuovoTitolo.length() < 5 || nuovoTitolo.length() > 35 ) {
 						JSONResponse jsonResponse = new JSONResponse(false, INVALID_TITLE);
@@ -368,6 +374,7 @@ public class InsegnanteServlet extends HttpServlet {
 	private static final String COMPLETE = "Pacchetto inserito con successo!";
 	private static final String INVALID_PRICE = "Prezzo non valido";
 	
+	private static final String INVALID_CODE_LENGTH = "Inserire un codice pacchetto di massimo 6 caretteri";
 	private static final String INVALID_CODE = "Codice pacchetto gi&agrave; in uso";
 	private static final String NO_CODE = "Inserire codice per proseguire!";
 	private static final String NO_ARGUMENT = "Tutti i parametri devono essere compilati";

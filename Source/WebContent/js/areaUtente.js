@@ -361,7 +361,9 @@ function addPackage(){
      		document.getElementById("success").style.display = "block";
      		document.getElementById("success").style.color = "red";
      		
-     		datiNuovoPacchetto.forEach(element => {
+     		const daResettare = [nuovoCodice, nuovoTitolo, nuovaFoto, nuovoPrezzo, nuovaDescrizione];
+     		
+     		daResettare.forEach(element => {
     			element.style.border = "1px solid red";
     			element.value = null;
     		});
@@ -432,7 +434,7 @@ function approvaInteroPacchetto(event){
 	 
     	if(response.ok == true){
     		var matches = document.querySelectorAll("div#singoloPacchetto");
-    		if((matches.length-1) == 0){
+    		if((matches.length-1) <= 0){
     			const element = document.querySelector("#pacchettiDaApprovare");
     				let div = "<h1 id = 'titoloFinestra'>Non ci sono pacchetti da approvare</h1>";
     				div += "<img src = 'img/utility/approvazioni.png'>";
@@ -491,7 +493,7 @@ function approvaSingolaLezione(event){
     	const response = JSON.parse(data);
    	 
     	if(response.ok == true){
-    		var matches = document.querySelectorAll("div#singolaLezione");
+    		var matches = event.target.parentElement.parentElement.querySelectorAll("div#singolaLezione");
     		var matchesPackage = document.querySelectorAll("div#singoloPacchetto");
     		//Caso in cui i pacchetti sono terminati
     		if((matchesPackage.length-1) == 0 && (matches.length-1) == 0 ){
@@ -538,7 +540,7 @@ function disapprovaSingolaLezione(event){
     	const response = JSON.parse(data);
     	
     	if(response.ok == true){
-    		var matches = document.querySelectorAll("div#singolaLezione");
+    		var matches = event.target.parentElement.parentElement.querySelectorAll("div#singolaLezione");
     		var matchesPackage = document.querySelectorAll("div#singoloPacchetto");
     		//Caso in cui i pacchetti sono terminati
     		if((matchesPackage.length-1) == 0 && (matches.length-1) == 0 ){

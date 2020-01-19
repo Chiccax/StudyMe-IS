@@ -20,7 +20,7 @@ import model.dao.InsegnanteDao;
 import model.dao.PacchettoDao;
 import model.manager.UtenteManager;
 
-class InsegnanteDaoTest {
+class TC_InsegnanteDao {
 	InsegnanteDao insegnante;
 	PacchettoDao pacchetto= new PacchettoDao();
 	@AfterEach

@@ -7,7 +7,8 @@ INSERT into utente(nomeUtente, password,email,tipo)
            ('Francesco', 'YW1vcmVtaW8=', 'francesco@libero.it', 'insegnante'),
            ('Vincent', 'dmluY2VudA==', 'vincentM@gmail.com', 'insegnante'),
            ('Lorenzo', 'ZmlkYW56YXRvR2l1c3k=', 'lorenzo@live.it', 'insegnante'),
-           ('Martina', 'Y3VvY2E=', 'martina@gmail.com', 'gestorecatalogo');
+           ('Martina', 'Y3VvY2E=', 'martina@gmail.com', 'gestorecatalogo'),
+           ('Damiana', 'ZGFtaWFuYTIwMDA=', 'damiana2000@live.it', 'acquirente');
   
  /*CATEGORIA*/
  INSERT  into categoria(nomeCategoria,foto, insegnante)
@@ -50,7 +51,7 @@ INSERT into sottoCategoria(idSottocat,nomeSott)
             
     /*PACCHETTO*/
     INSERT into pacchetto(codicePacchetto,categoria,idSott,prezzo,descrizione,titolo,foto,nelCatalogo, approvato)
-	values	('pac001','Sviluppo','svi001',49.90,'C &egrave; un linguaggio utile per quasi tutti i programmatori di computer. Alla fine di questo corso, capirai i fondamenti del linguaggio di programmazione C e ti renderai pi&ugrave; commerciabile per le posizioni di programmazione entry level','Programmazione C per principianti','img/pacchetti/C1.jpg', true, '1'),
+	values	('pac001','Sviluppo','svi001',49.90,'C &egrave; un linguaggio utile per quasi tutti i programmatori di computer. Alla fine di questo corso, capirai i fondamenti del linguaggio di programmazione C e ti renderai pi&ugrave; commerciabile per le posizioni di programmazione entry level','Programmazione C per principiantipacchetto','img/pacchetti/C1.jpg', true, '1'),
 			('pac002','Sviluppo','svi001',65.00,'C ++ pu&ograve; essere difficile da imparare, ma farlo ha enormi profitti. Se sei interessato ad imparare come usare C ++ per lo sviluppo del gioco, o una pi&ugrave; ampia introduzione all argomento', 'Programmazione in C ++ Da principiante ad oltre','img/pacchetti/C++.jpg', true, '1'),
 			('pac003','Sviluppo','svi001',79.99,'Java &egrave; uno dei linguaggi di programmazione pi&ugrave; popolari. Java offre funzioni di programmazione sia orientate agli oggetti che funzionali','Programmazione Java per principianti ','img/pacchetti/java1.jpg', true, '1'), 
 			('pac004','Sviluppo','svi001',140.00,'Questo corso &egrave; rivolto a principianti inesperti che non hanno mai programmato prima, cos&igrave; come ai programmatori esistenti che vogliono aumentare le loro opzioni di carriera imparando Python. Payton &egrave; uno dei linguaggi di programmazione pi&ugrave; popolari, &egrave; la scelta di linguaggio numero uno per l apprendimento automatico, la scienza dei dati e l intelligenza artificiale.','Impara Python programming','img/pacchetti/python.png', true, '1'), 
@@ -91,7 +92,7 @@ INSERT into sottoCategoria(idSottocat,nomeSott)
 			('pac040','Fotografia','fot002',99.99,'Scatti meravigliose foto notturne che impressionano la tua famiglia e i tuoi amici con questo corso completo di fotografia notturna!','Fotografia notturna','img/pacchetti/fotografare-notte.jpg', true,'1'), 
 			('pac041','Fotografia','fot003',49.99,'Con la fotografia di base , puoi imparare rapidamente a scattare meravigliose foto di cibo anche se non hai mai preso una macchina fotografica e non hai mai disegnato un piatto di cibo!','Fotografia dell alimento','img/pacchetti/fotografarecibo.jpg', true,'1'), 
 			('pac042','Fotografia','fot003',189.99,'Impara esattamente come diventare un fotografo di matrimoni, avviare un attivit&agrave; fotografica per conto tuo e scattare foto di nozze migliori.','Fotografia di matrimoni','img/pacchetti/fotografare-matrimonio.jpg', true,'1'), 
-			('pac043','Insegnamento','ins001',30.00,'Primo corso in Algebra (inizio algebra).','Algebra I (Algebra iniziale)','img/pacchetti/algebra.jpg', true,'0'), 
+			('pac043','Insegnamento','ins001',30.00,'Primo corso in Algebra (inizio algebra).','Algebra I (Algebra iniziale)','img/pacchetti/algebra.jpg', true,'1'), 
 			('pac044','Insegnamento','ins001',79.99,'Pi&ugrave; di 60 domande risolte per aiutarvi ad entrare nel flusso di problemi statistici di cracking (Binomiale, Distribuzione Normale ecc.)','Esercitazione su statistiche','img/pacchetti/matematica.jpg', true,'1'), 
 			('pac045','Insegnamento','ins001',98.99,'Master Discrete Math, la spina dorsale di Matematica e Informatica','Corso matematica discreta','img/pacchetti/discreta.jpg', true,'1'), 
 			('pac046','Insegnamento','ins002',199.99,'Impara l inglese per principianti (A1-&gt; A2+) ','Corso di inglese','img/pacchetti/inglese.jpg', true,'1'), 
@@ -99,11 +100,11 @@ INSERT into sottoCategoria(idSottocat,nomeSott)
 			('pac048','Business','bus001', 164.99,'Scopri come utilizzare l analisi aziendale per consigliare la soluzione migliore e cambiare strategia per raggiungere gli obiettivi della tua organizzazione ' ,'Analisi Aziendale : analisi strategica','img/pacchetti/analisiaziendale.jpg', true,'1'), 
 			('pac049','Business','bus001',149.99,'Strategia aziendale: capire cosa serve per avere successo negli affari','Business Fundamentals: strategia aziendale','img/pacchetti/strategiabuisiness.jpg', true,'1'), 
 			('pac050','Business','bus002',174.99,'La guida AZ per far crescere il tuo seguito su Instagram, massimizzare il tuo coinvolgimento e aumentare lead e vendite.','Il corso completo di marketing su Instagram','img/pacchetti/marketingstrategia.jpg', true,'1'), 
-			('pac051','Business','bus002',199.99,'Domina la pubblicit&agrave;&nbsp;su Facebook e fai crescere qualsiasi attivit&agrave; commerciale: strategia di marketing su Facebook, retargeting degli annunci, remarketing e altro ancora!','Il corso completo di annunci di Facebook','img/pacchetti/facebook.jpg', true,'1');
-
+			('pac051','Business','bus002',199.99,'Domina la pubblicit&agrave;&nbsp;su Facebook e fai crescere qualsiasi attivit&agrave; commerciale: strategia di marketing su Facebook, retargeting degli annunci, remarketing e altro ancora!','Il corso completo di annunci di Facebook','img/pacchetti/facebook.jpg', true,'0');
+    
 /*LEZIONI*/
 INSERT INTO lezioni(url,titolo,durata,codiceP,approvato)
-	values	('https://www.youtube.com/embed/4ynmgioiuJU','Introduzione alla programmazione in C','7:11','pac001','0'),
+	values	('https://www.youtube.com/embed/4ynmgioiuJU','Introduzione alla programmazione in C','7:11','pac001','1'),
 			('https://www.youtube.com/embed/cQBIHAEcjxw','Variabili cosa sono e come si usano','34:19','pac001','1'), 
 			('https://www.youtube.com/embed/maObxTDOcF8','Espressioni e output di variabili','06:23','pac001','1'), 
 			('https://www.youtube.com/embed/kawt09xztZ8','Costanti e Input','04:39','pac001','1'), 
@@ -273,4 +274,12 @@ INSERT INTO lezioni(url,titolo,durata,codiceP,approvato)
 			('https://www.youtube.com/embed/8v6KZuhBfIE','Come dominare su Instagram nel tuo settore','04:53','pac050','1'), 
 			('https://www.youtube.com/embed/aNwngjArv5g','Facebook per il business : introduzione','13:36','pac051','1'), 
 			('https://www.youtube.com/embed/05C9JNZAUdM','Facebook per il business : Differenza tra profilo e pagina','05:03','pac051','1'), 
-			('https://www.youtube.com/embed/2nCeuNPMaoY','Facebook per il budiness : Di Cosa parleremo in questo corso','02:29','pac051','1');
+			('https://www.youtube.com/embed/2nCeuNPMaoY','Facebook per il budiness : Di Cosa parleremo in questo corso','02:29','pac051','0');
+		
+/*ORDINE*/
+INSERT INTO ordine(numOrdine, nomeCliente, dataOdierna)
+	values(1, "Damiana", "2020-01-19");
+    
+/*ACQUISTO*/
+INSERT INTO acquisto(numAcquisto, numOrdine, codiceP, titoloPacchetto, prezzo)
+	values(1, 1, "pac043", "Algebra I (Algebra iniziale)", 30);

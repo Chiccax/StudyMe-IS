@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import model.bean.OrdineBean;
 import model.dao.OrdineDao;
 
-class OrdineDaoTest {
+class TC_OrdineDao {
 	OrdineDao ordine;
 	
 	@BeforeEach
