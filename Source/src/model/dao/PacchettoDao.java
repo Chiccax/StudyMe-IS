@@ -81,6 +81,7 @@ public class PacchettoDao {
 				pa.setDescrizione(res.getString(5));
 				pa.setTitolo(res.getString(6));
 				pa.setFoto(res.getString(7));
+				pa.setApprovato(res.getInt(9));
 				
 				return pa;
 			}

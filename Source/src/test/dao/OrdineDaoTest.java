@@ -1,5 +1,12 @@
 package test.dao;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import java.sql.Date;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +23,18 @@ class OrdineDaoTest {
 	
 	@Test
 	void testinsert() {
-		OrdineBean ordine;
+		Date d= new Date(12, 12, 12);
+
+		OrdineBean ordine= new OrdineBean();
+		ordine.setCliente("Damiana");
+		ordine.setNumOrdine(1);
+		ordine.setData(d);
+		
+		OrdineDao dao= new OrdineDao();
+		int n=dao.insert(ordine);
+		
+		assertNotEquals(-1, n);
+		
 		
 	}
 }

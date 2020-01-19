@@ -3,12 +3,13 @@ package test.dao;
 
 
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,10 +18,20 @@ import model.bean.OrdineBean;
 import model.bean.PacchettoBean;
 import model.dao.InsegnanteDao;
 import model.dao.PacchettoDao;
+import model.manager.UtenteManager;
 
 class InsegnanteDaoTest {
 	InsegnanteDao insegnante;
-	
+	PacchettoDao pacchetto= new PacchettoDao();
+	@AfterEach
+	protected void tearDown() throws Exception {
+		insegnante.updateCode("PAC048","pac048");
+		insegnante.updateDescr("pac001", "C &egrave; un linguaggio utile per quasi tutti i programmatori di computer. Alla fine di questo corso, capirai i fondamenti del linguaggio di programmazione C e ti renderai pi&ugrave; commerciabile per le posizioni di programmazione entry level2");	
+		insegnante.updateTitle("Programmazione C per principianti2", "Programmazione C per principianti");
+		insegnante.updateTitleLesson("nuovo nome", "Facebook per il business : Differenza tra profilo e pagina");
+		insegnante.updateUrlLesson("https://www.youtube.com/embed/-H5XKA_YDhA", "https://www.youtube.com/embed/05C9JNZAUdM");
+		
+	}
 	@BeforeEach
 	void setUp() throws Exception{
 		insegnante = new InsegnanteDao();
@@ -38,100 +49,108 @@ class InsegnanteDaoTest {
 		
 		PacchettoBean pacchetto=new PacchettoBean();
 		pacchetto= insegnante.inserPacchetto(nuovoCodice, nomeUtente, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
-		assertEquals(nuovoCodice, pacchetto.getCodicePacchetto());
+		assertNotNull(pacchetto);
 	}
 	
 	@Test 
 	void testdeletePacchetto() {
-		String codicePacchetto= "pac456";
-	
-		PacchettoDao pacchetto= new PacchettoDao();
+		String codicePacchetto= "pac004";
 		insegnante.deletePacchetto(codicePacchetto);
-		assertEquals(0, pacchetto.getPacchetto(codicePacchetto));
+		
+		PacchettoDao pacchetto=new PacchettoDao();
+		insegnante.deletePacchetto(codicePacchetto);
+		PacchettoBean p= pacchetto.getPacchetto(codicePacchetto);
+		assertEquals(0,p.getNelCatalogo());	
 	}
-	
+
 	@Test 
 	void testupdateCode() {
-		String vecchioCodice= "pac600";
-		String nuovoCodice="pac001";
-		insegnante.updateCode(vecchioCodice, nuovoCodice);
-		
+		PacchettoBean p= new PacchettoBean();
+		p.setCodicePacchetto("pac048");
+		insegnante.updateCode(p.getCodicePacchetto(), "PAC048");
+		PacchettoBean pacchettoEsistente1 = pacchetto.getPacchetto("PAC048");
+		assertNotNull(pacchettoEsistente1);
 	}
 	
 	@Test
 	void testupdateTitolo() {
-		String vecchioCodice= "pac001";
-		String nuovoTitolo="Programmazione C per principianti2";
-		insegnante.updateTitle(vecchioCodice, nuovoTitolo);
+		PacchettoBean p= new PacchettoBean();
+		p.setCodicePacchetto("pac001");
+		insegnante.updateTitle("pac001", "Programmazione C per principianti2");
+		PacchettoBean pacchettoEsistente= pacchetto.getPacchettoByTitolo("Programmazione C per principianti2");
+		assertNotNull(pacchettoEsistente);
 	}
 
 	@Test 
 	void testupdatePrice() {
-		String vecchioCodice= "pac001";
-		double nuovoPrezzo=89.00;
-		insegnante.updatePrice(vecchioCodice, nuovoPrezzo);
+		PacchettoBean p= new PacchettoBean();
+		p.setCodicePacchetto("pac001");
+		p.setTitolo("Programmazione C per principianti");
+		p.setPrezzo(21.9);
+		
+		insegnante.updatePrice(p.getCodicePacchetto(), 21.9);
+		PacchettoBean pacchettoEsistente1 = pacchetto.getPacchettoByTitolo(p.getTitolo());
+		assertEquals(p.getPrezzo(),pacchettoEsistente1.getPrezzo());
 	}
-	
-
 	@Test 
-	void testupdateDesc() {
-		String vecchioCodice= "pac001";
-		String nuovaDescrizione="C &egrave; un linguaggio utile per quasi tutti i programmatori di computer. Alla fine di questo corso, capirai i fondamenti del linguaggio di programmazione C e ti renderai pi&ugrave; commerciabile per le posizioni di programmazione entry level2";
-		insegnante.updateDescr(vecchioCodice, nuovaDescrizione);
+	void testUpdateDesc() {
+		PacchettoBean p= new PacchettoBean();
+		p.setCodicePacchetto("pac001");
+		
+		insegnante.updateDescr(p.getCodicePacchetto(), "bla bla bla bla bla");	
+		PacchettoBean pacchettoEsistente1 = pacchetto.getPacchetto(p.getCodicePacchetto());
+		assertEquals("bla bla bla bla bla", pacchettoEsistente1.getDescrizione());
+
 	}
 	
 	@Test
-	void testinsertLesson() {
+	void testInsertLesson() {
 		String codiceP="pac003";
 		String url="https://www.youtube.com/embed/tsxwGnDfvWE";
 		String titolo="provatest25"; 
 		String durata="12:00";
-		
 		LezioniBean lezione=new LezioniBean();
 		lezione= insegnante.insertLesson(codiceP, url, titolo, durata);
 		assertEquals(url,lezione.getUrl());
 	}
 
 	@Test
-	void testupdateTitleLesson() {
-		String vecchioTitolo= "Corso Photoshop : Creare, salvare e aprire un file";
-		String nuovoTitolo="Corso Photoshop : Creare, salvare un file";
-		insegnante.updateTitleLesson(vecchioTitolo, nuovoTitolo);
+	void testUpdateTitleLesson() {
+		LezioniBean p= new LezioniBean();
+		p.setTitolo("\"Facebook per il business : Differenza tra profilo e pagina\"");
+		insegnante.updateTitleLesson(p.getTitolo(), "nuovo nome");
+		ArrayList<LezioniBean> lezioneTitoloEsistente = pacchetto.getLezioniByTitolo("nuovo nome");
+		assertNotNull(lezioneTitoloEsistente);
 	}
 	
 	@Test
-	void testupdateUrlLesson() {
-		String vecchioTitolo="Corso Photoshop : Creare, salvare e aprire un file";
-		String nuovoUrl="https://www.youtube.com/embed/_2gmtVuenfc";
-		
-		insegnante.updateUrlLesson(vecchioTitolo, nuovoUrl);
+	void testUpdateUrlLesson() {
+		LezioniBean p= new LezioniBean();
+		p.setUrl("https://www.youtube.com/embed/05C9JNZAUdM");
+		insegnante.updateUrlLesson("https://www.youtube.com/embed/05C9JNZAUdM", "https://www.youtube.com/embed/-H5XKA_YDhA");
+		ArrayList<LezioniBean> lezioneEsistente = pacchetto.getLezioniByURl("https://www.youtube.com/embed/-H5XKA_YDhA");
+		assertNotNull(lezioneEsistente);
+
 	}
-	
 	@Test 
-	void testupdateDurationLesson() {
-		String vecchioTitolo="Corso Photoshop : Creare, salvare e aprire un file";
-		String nuovaDurata="12:00";
+	void testUpdateDurationLesson() {
+		LezioniBean p= new LezioniBean();
+		p.setTitolo("Facebook per il business : Differenza tra profilo e pagina");
 		
-		insegnante.updateDurationLesson(vecchioTitolo, nuovaDurata);
-	}
+		insegnante.updateDurationLesson(p.getTitolo(),"11:11");
+		ArrayList<LezioniBean> lezione = pacchetto.getLezioniByTitolo(p.getTitolo());
+		
+		assertEquals("11:11",lezione.get(0).getDurata());	
+		}
 	
 	@Test
-	void testDeleteLesson() {
-		String titolo="provatest";
-	
-		insegnante.deleteLesson(titolo);
-		
-	}
-	
-	@Test
-	void testgetOrdine() {
+	void testGetOrdine() {
 		String nomeCliente="Pasquale";
 		
-		List<OrdineBean> ord = new ArrayList<OrdineBean>();
 		List<OrdineBean> ordini = new ArrayList<OrdineBean>();
 		ordini = insegnante.getOrdine(nomeCliente);
-		assertEquals(ord, ordini);
+		assertNotNull(ordini);
 		
 	}
 	
-};
+}

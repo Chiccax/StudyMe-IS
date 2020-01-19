@@ -3,12 +3,19 @@ package test.dao;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import model.bean.LezioniBean;
+import model.bean.PacchettoBean;
 import model.dao.GestoreDao;
+import model.dao.InsegnanteDao;
+import model.dao.PacchettoDao;
 
 class GestoreDaoTest {
 
@@ -20,30 +27,47 @@ class GestoreDaoTest {
 	}
 	@Test
 	void testapprovaInteroPacchetto() {
-		String codicePacchetto="pac200";
 		
-		gestore.approvaInteroPacchetto(codicePacchetto);
-		assertEquals(codicePacchetto,gestore.approvaInteroPacchetto(codicePacchetto));
+		 PacchettoBean p= new PacchettoBean();
+		 PacchettoDao pacchettodao= new PacchettoDao();
+		 p.setCodicePacchetto("pac005");
+		
+		 gestore.approvaInteroPacchetto(p.getCodicePacchetto());
+		 PacchettoBean pacchettoEsistente = pacchettodao.getPacchetto(p.getCodicePacchetto());
+		 System.out.println(pacchettoEsistente.getCodicePacchetto());
+		 assertNotNull(pacchettoEsistente);
+		 assertEquals(1, pacchettoEsistente.getApprovato());
+		
 	}
 	@Test
 	void disapprovaInteroPacchetto() {
-		String codicePacchetto="pac200";
-		
-		gestore.disapprovaInteroPacchetto(codicePacchetto);
-		assertEquals(codicePacchetto,gestore.disapprovaInteroPacchetto(codicePacchetto));
+		PacchettoDao pacchettodao= new PacchettoDao();
+		PacchettoBean p= new PacchettoBean();
+		p.setCodicePacchetto("pac005");
+		gestore.disapprovaInteroPacchetto(p.getCodicePacchetto());
+		PacchettoBean pacchettoEsistente = pacchettodao.getPacchetto(p.getCodicePacchetto());
+		assertNotNull(pacchettoEsistente);	
+		assertEquals(-1, pacchettoEsistente.getApprovato());
 	}
 	@Test
 	void testapprovaSingolaLezione() {
-		String url="https://www.youtube.com/embed/tsxwGnDfvWE";
+		PacchettoDao pacchettodao= new PacchettoDao();
+		LezioniBean p= new LezioniBean();
+		p.setUrl("https://www.youtube.com/embed/WWWJHIjj00U");
+		gestore.approvaSingolaLezione(p.getUrl());
+		ArrayList<LezioniBean> lezioneEsistente = pacchettodao.getLezioniByURl("https://www.youtube.com/embed/-H5XKA_YDhA");
 		
-		gestore.approvaSingolaLezione(url);;
-		assertEquals(url,gestore.approvaSingolaLezione(url));
-	}
+		assertEquals(1, lezioneEsistente.get(0).getApprovato());
+			}
 	@Test
 	void testdisapprovaSingolaLezione() {
-		String url="https://www.youtube.com/embed/tsxwGnDfvWE";
-		
-		gestore.disapprovaSingolaLezione(url);
-		assertEquals(url, gestore.disapprovaSingolaLezione(url));
+		LezioniBean p= new LezioniBean();
+		PacchettoDao pacchettodao= new PacchettoDao();
+			
+		p.setUrl("https://www.youtube.com/embed/WWWJHIjj00U");
+		gestore.disapprovaSingolaLezione(p.getUrl());
+		ArrayList<LezioniBean> lezioneEsistente = pacchettodao.getLezioniByURl("https://www.youtube.com/embed/-H5XKA_YDhA");
+		assertEquals(1, lezioneEsistente.get(0).getApprovato());
+
 	}
 }
