@@ -13,7 +13,7 @@ import model.dao.InsegnanteDao;
 import model.dao.PacchettoDao;
 import model.manager.InsegnanteManager;
 
-class InsegnanteManagerTest extends Mockito {
+class TC_InsegnanteManager extends Mockito {
 
 	InsegnanteDao insegnanteMock;
 	PacchettoDao pacchettoMock;

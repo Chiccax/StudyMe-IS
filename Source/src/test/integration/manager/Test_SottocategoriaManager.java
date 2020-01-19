@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import model.manager.SottocategoriaManager;
 import model.bean.*;
-class testSottocategoriaManager {
+class Test_SottocategoriaManager {
 
 	@Test
 	void testSelezionaSottocategorieInsegnante() {

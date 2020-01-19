@@ -10,18 +10,18 @@ import org.junit.jupiter.api.Test;
 import model.bean.RecensioneBean;
 import model.dao.RecensioneDao;
 import model.manager.LezioneManager;
-class TestRecensioneManager {
+class Test_RecensioneManager {
 
 	@Test
 	void testAggiungiRecensione() {
-		manager.aggiungiRecensione("Annarella", "pac001", "Pacchetto ottimo!", "Consigliatissimo!");
+		manager.aggiungiRecensione("Damiana", "pac043", "Pacchetto ottimo!", "Consigliatissimo!");
 		
 		ArrayList<RecensioneBean> recensioni = new ArrayList<RecensioneBean>();
-		recensioni = managerLezioni.getRecensioni("pac001");
+		recensioni = managerLezioni.getRecensioni("pac043");
 		RecensioneBean recensioneAttuale = null;
 		
 		for(RecensioneBean r : recensioni) {
-			if((r.getCliente()).equals("Annarella"))
+			if((r.getCliente()).equals("Damiana"))
 				recensioneAttuale = r;
 		}
 		

@@ -11,7 +11,7 @@ import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
 import model.manager.InsegnanteManager;
 
-class TestInsegnanteManager {
+class Test_InsegnanteManager {
 
 	@Test
 	void testInserisciPacchetto() {

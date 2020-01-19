@@ -16,9 +16,10 @@ import model.bean.LezioniBean;
 import model.bean.PacchettoBean;
 import model.bean.RecensioneBean;
 import model.bean.UtenteBean;
+import model.dao.InsegnanteDao;
 import model.dao.PacchettoDao;
 
-class PacchettoDaoTest {
+class TC_PacchettoDao {
 
 	PacchettoDao pacchetto;
 	
@@ -33,6 +34,7 @@ class PacchettoDaoTest {
 		pacchetti = pacchetto.getAllPacchetti();
 		assertNotNull(pacchetti);
 	}
+	
 	@Test
 	void testGetPacchetto() {
 		String codiceP="pac001";
@@ -45,19 +47,22 @@ class PacchettoDaoTest {
 	
 	@Test
 	void testGetPacchettoByTitolo() {
-		String titolo = "Capire i fondamenti del linguaggio C";
+		String titolo = "Programmazione C per principianti";
 		PacchettoBean p = new PacchettoBean();
 		p = pacchetto.getPacchettoByTitolo(titolo);
 		assertNotNull(p);
 	}
 	
-	@Test
+	/*@Test
 	void testDeletePacchetto() {
-		String codiceP="pac002";
+		InsegnanteDao dao = new InsegnanteDao();
+		String codiceP="pac004";
 
-		boolean resp = pacchetto.delPacchetto(codiceP);
-		assertEquals(true, resp);
-	}
+		dao.deletePacchetto(codiceP);
+		
+		PacchettoBean p = pacchetto.getPacchetto(codiceP);
+		assertEquals(0, p.getNelCatalogo());
+	}*/ 
 	
 	@Test
 	void testSearchPackage() {

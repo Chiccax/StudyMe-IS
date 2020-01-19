@@ -24,11 +24,12 @@ import model.manager.CatalogoManager;
 public class CatalogoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	protected CatalogoServlet() {
+	public CatalogoServlet() {
         super();
       
     }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String categoria=request.getParameter("categoria");	
 		String userName= null;
 		HttpSession session = request.getSession();

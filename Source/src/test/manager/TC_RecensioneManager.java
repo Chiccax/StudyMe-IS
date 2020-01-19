@@ -6,7 +6,7 @@ import org.mockito.Mockito;
 import model.dao.RecensioneDao;
 import model.manager.RecensioneManager;
 
-class RecensioneManagerTest extends Mockito {
+class TC_RecensioneManager extends Mockito {
 
 	RecensioneDao recensioneMock;
 	RecensioneManager recensioneManager;
@@ -16,8 +16,8 @@ class RecensioneManagerTest extends Mockito {
 		recensioneMock = (RecensioneDao)Mockito.mock(RecensioneDao.class);
 		RecensioneManager manager = new RecensioneManager();
 		manager.setDao(recensioneMock);
-		manager.aggiungiRecensione("Annarella", "pac001", "Ottimo corso", "Corso consigliato a tutti!");
-		verify(recensioneMock).aggiungiRecensione("Annarella", "pac001", "Ottimo corso", "Corso consigliato a tutti!");
+		manager.aggiungiRecensione("Damiana", "pac001", "Ottimo corso", "Corso consigliato a tutti!");
+		verify(recensioneMock).aggiungiRecensione("Damiana", "pac001", "Ottimo corso", "Corso consigliato a tutti!");
 	}
 
 }

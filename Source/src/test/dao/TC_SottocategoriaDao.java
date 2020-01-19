@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import model.bean.SottocategoriaBean;
 import model.dao.SottocategoriaDao;
 
-class SottocategoriaDaoTest {
+class TC_SottocategoriaDao {
 	SottocategoriaDao sottocategoria;
 	
 	@BeforeEach

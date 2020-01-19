@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import model.bean.UtenteBean;
 import model.dao.UtenteDao;
 
-class UtenteDaoTest {
+class TC_UtenteDao {
 	UtenteDao utente;
 	String email;
 	
@@ -42,15 +42,15 @@ class UtenteDaoTest {
 	
 	@Test
 	void testModificaPassword() {
-		String passwordNuova = "chicca";
+		String passwordNuova = "Mariarosaria";
 		String passwordBase64format  = Base64.getEncoder().encodeToString(passwordNuova.getBytes()); 
-		boolean resp = utente.updatePassword("chiccaesp98@libero.com", passwordBase64format);
+		boolean resp = utente.updatePassword("mesposito@gmail.com", passwordBase64format);
 		assertEquals(true, resp);
 	}
 	
 	@Test
 	void testModificaEmail() {
-		boolean resp = utente.updateEmail("chiccaesp98@libero.com", "mesposito@gmail.com");
+		boolean resp = utente.updateEmail("mesposito@gmail.com", "chiccaesp98@libero.com");
 		assertEquals(true, resp);
 	}
 

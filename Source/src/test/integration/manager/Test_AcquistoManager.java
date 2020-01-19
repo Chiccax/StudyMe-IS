@@ -15,7 +15,7 @@ import model.dao.AcquistoDao;
 import model.dao.OrdineDao;
 import model.dao.PacchettoDao;
 
-class TestAcquistoManager {
+class Test_AcquistoManager {
 
 	@Test
 	void testGetDataOdierna() {
@@ -37,11 +37,11 @@ class TestAcquistoManager {
 		p.setFoto("img/pacchetti/C1.jpg");
 		carrello.add(p);
 		
-		manager.getOrdine("Annarella", carrello);
+		manager.getOrdine("Damiana", carrello);
 		
 		ArrayList<OrdineAcquistoBean> ordini = new ArrayList<OrdineAcquistoBean>();
 		OrdineManager ordine = new OrdineManager();
-		ordini = ordine.RicercaNomeCliente("Annarella");
+		ordini = ordine.RicercaNomeCliente("Damiana");
 		
 		assertNotNull(ordini);
 	}

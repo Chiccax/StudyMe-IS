@@ -13,7 +13,7 @@ import model.dao.SottocategoriaDao;
 import model.dao.UtenteDao;
 import model.manager.SottocategoriaManager;
 
-class SottocategoriaManagerTest extends Mockito {
+class TC_SottocategoriaManager extends Mockito {
 
 	SottocategoriaDao sottocategoriaMock;
 	SottocategoriaManager sottocategoria;

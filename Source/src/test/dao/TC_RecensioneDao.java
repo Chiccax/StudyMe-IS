@@ -14,7 +14,7 @@ import model.bean.UtenteBean;
 import model.dao.PacchettoDao;
 import model.dao.RecensioneDao;
 
-class RecensioneDaoTest {
+class TC_RecensioneDao {
 	
 	RecensioneDao recensione;
 		
@@ -25,10 +25,10 @@ class RecensioneDaoTest {
 
 	@Test
 	void testAggiungiRecensione() {
-		String nomeUtente= "Pasquale";
+		String nomeUtente= "Damiana";
 		String codicePacchetto="pac002";
 		String titoloRecensione="Programmazione";
-		String testoRecensione="questo corso è stato interessante";
+		String testoRecensione="Questo corso è stato interessante";
 
 		recensione.aggiungiRecensione(nomeUtente, codicePacchetto, titoloRecensione, testoRecensione);
 		ArrayList<RecensioneBean> recensioni = new ArrayList<RecensioneBean>();
@@ -37,7 +37,7 @@ class RecensioneDaoTest {
 		recensioni = p.getRecensioni("pac002");
 		
 		for(RecensioneBean r : recensioni) {
-			if((r.getCliente()).equals("Pasquale")) {
+			if((r.getCliente()).equals("Damiana")) {
 				String res = r.getCliente();
 				assertNotNull(res);
 			}
@@ -46,8 +46,8 @@ class RecensioneDaoTest {
 	
 	@Test
 	void isAlwreadyReviewed() throws SQLException {
-		String nomeUtente= "Annarella";
-		String codicePacchetto = "pac001";
+		String nomeUtente= "Damiana";
+		String codicePacchetto = "pac002";
 			
 		boolean resp= recensione.isAlwreadyReviewed(nomeUtente,codicePacchetto);
 		assertEquals(true, resp);

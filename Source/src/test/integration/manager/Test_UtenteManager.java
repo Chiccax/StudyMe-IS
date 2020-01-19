@@ -19,11 +19,14 @@ import model.dao.PacchettoDao;
 import model.dao.UtenteDao;
 import model.manager.UtenteManager;
 
-class TestUtenteManager {
+class Test_UtenteManager {
 	
 	@AfterEach
 	protected void tearDown() throws Exception {
-		manager.setEmail("mesposito@gmail.com", "chiccaesp98@gmail.com");
+		manager.setEmail("chiccaesp98@gmail.com", "mesposito@gmail.com");
+		String passwordNuova = "chicca";
+		String passwordBase64format  = Base64.getEncoder().encodeToString(passwordNuova.getBytes()); 
+		manager.setPassword("mesposito@gmail.com", passwordBase64format);
 		
 	}
 	
@@ -32,14 +35,14 @@ class TestUtenteManager {
 		UtenteBean utenteLoggato = new UtenteBean();
 		
 		String passwordNuova = "chicca";
-		//String passwordBase64format  = Base64.getEncoder().encodeToString(passwordNuova.getBytes()); 
-		utenteLoggato = manager.getUtente("Mariarosaria", "TWFyaWFyb3Nhcmlh");
+		String passwordBase64format  = Base64.getEncoder().encodeToString(passwordNuova.getBytes()); 
+		utenteLoggato = manager.getUtente("Mariarosaria", passwordBase64format);
 		assertNotNull(utenteLoggato);
 	}
 	
 	@Test
 	public void testModificaEmail() {
-		boolean res = manager.setEmail("chiccaesp98@gmail.com", "mesposito@gmail.com");
+		boolean res = manager.setEmail("mesposito@gmail.com", "chiccaesp98@gmail.com");
 		assertTrue(res);
 	}
 	
@@ -78,12 +81,12 @@ class TestUtenteManager {
 	
 	@Test
 	public void testApprovaInteroPacchetto() {
-		manager.approvaInteroPacchetto("pac050");
+		manager.approvaInteroPacchetto("pac051");
 		
 		PacchettoBean pacchettoApprovato = new PacchettoBean();
 		
 		PacchettoDao pacchetto = new PacchettoDao();
-		pacchettoApprovato = pacchetto.getPacchetto("pac050");
+		pacchettoApprovato = pacchetto.getPacchetto("pac051");
 		
 		assertEquals(1, pacchettoApprovato.getApprovato());
 	}
@@ -91,24 +94,24 @@ class TestUtenteManager {
 
 	@Test
 	public void testDisapprovaInteroPacchetto() {
-		manager.disapprovaInteroPacchetto("pac050");
+		manager.disapprovaInteroPacchetto("pac052");
 		
 		PacchettoBean pacchettoDisapprovato = new PacchettoBean();
 		
 		PacchettoDao pacchetto = new PacchettoDao();
-		pacchettoDisapprovato = pacchetto.getPacchetto("pac050");
+		pacchettoDisapprovato = pacchetto.getPacchetto("pac051");
 		assertEquals(-1, pacchettoDisapprovato.getApprovato());
 	}
 	
 	@Test
 	public void testApprovaSingolaLezione() {
-		manager.approvaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
+		manager.approvaSingolaLezione("https://www.youtube.com/embed/2nCeuNPMaoY");
 	
 		PacchettoDao pacchetto = new PacchettoDao();
-		ArrayList<LezioniBean> l = pacchetto.getLezioniByURl("https://www.youtube.com/embed/_2gmtVuenfc");
+		ArrayList<LezioniBean> l = pacchetto.getLezioniByURl("https://www.youtube.com/embed/2nCeuNPMaoY");
 		
 		for(LezioniBean lezioni : l) {
-			if((lezioni.getUrl()).equals("https://www.youtube.com/embed/_2gmtVuenfc")) {
+			if((lezioni.getUrl()).equals("https://www.youtube.com/embed/2nCeuNPMaoY")) {
 				assertEquals(1, lezioni.getApprovato());
 			}
 		}
@@ -116,13 +119,13 @@ class TestUtenteManager {
 	
 	@Test
 	public void testDisapprovaSingolaLezione() {
-		manager.disapprovaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
+		manager.disapprovaSingolaLezione("https://www.youtube.com/embed/2nCeuNPMaoY");
 		
 		PacchettoDao pacchetto = new PacchettoDao();
-		ArrayList<LezioniBean> l = pacchetto.getLezioniByURl("https://www.youtube.com/embed/_2gmtVuenfc");
+		ArrayList<LezioniBean> l = pacchetto.getLezioniByURl("https://www.youtube.com/embed/2nCeuNPMaoY");
 		
 		for(LezioniBean lezioni : l) {
-			if((lezioni.getUrl()).equals("https://www.youtube.com/embed/_2gmtVuenfc")) {
+			if((lezioni.getUrl()).equals("https://www.youtube.com/embed/2nCeuNPMaoY")) {
 				assertEquals(-1, lezioni.getApprovato());
 			}
 		}

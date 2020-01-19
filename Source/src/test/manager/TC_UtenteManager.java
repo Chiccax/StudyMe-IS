@@ -16,7 +16,7 @@ import model.dao.GestoreDao;
 import model.dao.UtenteDao;
 import model.manager.UtenteManager;
 
-class UtenteManagerTest extends Mockito{
+class TC_UtenteManager extends Mockito{
 	
 	GestoreDao gestoreMock;
 	UtenteDao utenteMock;
@@ -68,11 +68,11 @@ class UtenteManagerTest extends Mockito{
 	void testRegistrazione()throws IOException{
 		utenteMock = (UtenteDao)Mockito.mock(UtenteDao.class);
 		utenteManager = new UtenteManager();
-		String password = "Giorgio92";
+		String password = "Fulgione";
 		String passwordBase64format  = Base64.getEncoder().encodeToString(password.getBytes()); 
 		boolean res;
-		when(utenteMock.registration("giorgio@gmail.com", "Giorgio", passwordBase64format)).thenReturn(true);
-		res = utenteManager.registrazione("giorgio@gmail.com", "Giorgio", passwordBase64format);
+		when(utenteMock.registration("anna@live.it", "AnnaF", passwordBase64format)).thenReturn(true);
+		res = utenteManager.registrazione("anna@live.it", "AnnaF", passwordBase64format);
 		assertEquals(res, true);
 	}
 
@@ -82,11 +82,14 @@ class UtenteManagerTest extends Mockito{
 		utenteManager = new UtenteManager();
 		
 		ArrayList<PacchettoBean> pacchettiMock = new ArrayList<PacchettoBean>();
+		PacchettoBean pacchetto = new PacchettoBean();
+		pacchettiMock.add(pacchetto);
+		
 		when(gestoreMock.visualizzaPacchettiDaApprovare()).thenReturn(pacchettiMock);
 		
 		ArrayList<PacchettoBean> pacchetti = new ArrayList<PacchettoBean>();
 		pacchetti = utenteManager.visualizzaPacchettiDaApprovare();
-		assertEquals(pacchetti.size(), pacchettiMock.size());
+		assertEquals( pacchettiMock.size(), pacchetti.size());
  	}
 	
 	@Test
@@ -95,6 +98,8 @@ class UtenteManagerTest extends Mockito{
 		utenteManager = new UtenteManager();
 		
 		ArrayList<LezioniBean> lezioniMock = new ArrayList<LezioniBean>();
+		LezioniBean lezione = new LezioniBean();
+		lezioniMock.add(lezione);
 		when(gestoreMock.visualizzaLezioniDaApprovare()).thenReturn(lezioniMock);
 		
 		ArrayList<LezioniBean> lezioni = new ArrayList<LezioniBean>();
@@ -107,8 +112,8 @@ class UtenteManagerTest extends Mockito{
 		gestoreMock = (GestoreDao)Mockito.mock(GestoreDao.class);
 		utenteManager = new UtenteManager();
 		utenteManager.setDao(gestoreMock);
-		utenteManager.approvaInteroPacchetto("pac001");
-		verify(gestoreMock).approvaInteroPacchetto("pac001");
+		utenteManager.approvaInteroPacchetto("pac051");
+		verify(gestoreMock).approvaInteroPacchetto("pac051");
 	}
 	
 	@Test
@@ -116,8 +121,8 @@ class UtenteManagerTest extends Mockito{
 		gestoreMock = (GestoreDao)Mockito.mock(GestoreDao.class);
 		utenteManager = new UtenteManager();
 		utenteManager.setDao(gestoreMock);
-		utenteManager.disapprovaInteroPacchetto("pac001");
-		verify(gestoreMock).disapprovaInteroPacchetto("pac001");
+		utenteManager.disapprovaInteroPacchetto("pac051");
+		verify(gestoreMock).disapprovaInteroPacchetto("pac051");
 	}
 	
 	@Test
@@ -125,8 +130,8 @@ class UtenteManagerTest extends Mockito{
 		gestoreMock = (GestoreDao)Mockito.mock(GestoreDao.class);
 		utenteManager = new UtenteManager();
 		utenteManager.setDao(gestoreMock);
-		utenteManager.approvaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
-		verify(gestoreMock).approvaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
+		utenteManager.approvaSingolaLezione("https://www.youtube.com/embed/ScVr-Kyq6Ws");
+		verify(gestoreMock).approvaSingolaLezione("https://www.youtube.com/embed/ScVr-Kyq6Ws");
 	}
 	
 	@Test
@@ -134,7 +139,7 @@ class UtenteManagerTest extends Mockito{
 		gestoreMock = (GestoreDao)Mockito.mock(GestoreDao.class);
 		utenteManager = new UtenteManager(); 
 		utenteManager.setDao(gestoreMock);
-		utenteManager.disapprovaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
-		verify(gestoreMock).disapprovaSingolaLezione("https://www.youtube.com/embed/_2gmtVuenfc");
+		utenteManager.disapprovaSingolaLezione("https://www.youtube.com/embed/05C9JNZAUdM");
+		verify(gestoreMock).disapprovaSingolaLezione("https://www.youtube.com/embed/05C9JNZAUdM");
 	}
 }
