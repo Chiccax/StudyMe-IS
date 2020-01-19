@@ -35,6 +35,7 @@ class TC_InsegnanteManager extends Mockito {
 		PacchettoBean pacchetto = new PacchettoBean();
 		
 		when(insegnanteMock.inserPacchetto("pac333", "Mariarosaria", "inf001", 33 , "Corso sulla gestione processi", "Processi", "https://cdn01.alison-static.net/courses/1052/alison_courseware_intro_1052.jpg")).thenReturn(pacchettoMock);
+		insegnanteManager.setDao(insegnanteMock);
 		pacchetto = insegnanteManager.inserPacchetto("pac333", "Mariarosaria", "inf001", 33 , "Corso sulla gestione processi", "Processi", "https://cdn01.alison-static.net/courses/1052/alison_courseware_intro_1052.jpg");
 		assertEquals("pac333", pacchetto.getCodicePacchetto());
 	}
@@ -48,6 +49,7 @@ class TC_InsegnanteManager extends Mockito {
 		pacchettoFake.setCodicePacchetto("pac001");
 		
 		when(pacchettoMock.getPacchetto("pac001")).thenReturn(pacchettoFake);
+		insegnanteManager.setDao(insegnanteMock);
 		
 		PacchettoBean pacchettoReal = new PacchettoBean();
 		pacchettoReal = insegnanteManager.getPacchetto("pac001");
@@ -63,7 +65,7 @@ class TC_InsegnanteManager extends Mockito {
 		pacchettoFake.setCodicePacchetto("pac001");
 		
 		when(pacchettoMock.getPacchettoByTitolo("Programmazione C per principianti")).thenReturn(pacchettoFake);
-		
+		insegnanteManager.setDao(insegnanteMock);
 		PacchettoBean pacchettoReal = new PacchettoBean();
 		pacchettoReal = insegnanteManager.getPacchettoByTitolo("Programmazione C per principianti");
 		
@@ -127,7 +129,7 @@ class TC_InsegnanteManager extends Mockito {
 		lezioneMock.setDurata("7:00");
 		
 		when(insegnanteMock.insertLesson("pac333", "https://www.youtube.com/embed/XlCrxbICYcY", "Lezione 1 di 5", "7:00")).thenReturn(lezioneMock);
-		
+		insegnanteManager.setDao(insegnanteMock);
 		LezioniBean lezione = new LezioniBean();
 		lezione = insegnanteManager.insertLesson("pac333", "https://www.youtube.com/embed/XlCrxbICYcY", "Lezione 1 di 5", "7:00");
 		
@@ -145,7 +147,7 @@ class TC_InsegnanteManager extends Mockito {
 		lezioniMock.add(lezioneMock);
 
 		when(pacchettoMock.getLezioniByTitolo("Corso Photoshop : Introduzione al corso")).thenReturn(lezioniMock);
-		
+		insegnanteManager.setDao(insegnanteMock);
 		ArrayList<LezioniBean> lezione = new ArrayList<LezioniBean>();
 		lezione = insegnanteManager.getLezioniByTitolo("Corso Photoshop : Introduzione al corso");
 		
@@ -163,7 +165,7 @@ class TC_InsegnanteManager extends Mockito {
 		lezioniMock.add(lezioneMock);
 
 		when(pacchettoMock.getLezioniByURl("https://www.youtube.com/embed/-cyYH6qGNF8")).thenReturn(lezioniMock);
-		
+		insegnanteManager.setDao(insegnanteMock);
 		ArrayList<LezioniBean> lezione = new ArrayList<LezioniBean>();
 		lezione = insegnanteManager.getLezioniByURl("https://www.youtube.com/embed/-cyYH6qGNF8");
 		
@@ -213,7 +215,7 @@ class TC_InsegnanteManager extends Mockito {
 		
 		ArrayList<UtenteBean> acquirentiMock = new ArrayList<UtenteBean>();
 		when(pacchettoMock.getAcquirenti("pac001")).thenReturn(acquirentiMock);
-		
+		insegnanteManager.setDao(insegnanteMock);
 		ArrayList<UtenteBean> acquirenti = new ArrayList<UtenteBean>();
 		acquirenti = insegnanteManager.getAcquirenti("pac001");
 	

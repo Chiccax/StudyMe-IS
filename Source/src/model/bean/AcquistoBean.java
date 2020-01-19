@@ -83,6 +83,15 @@ public class AcquistoBean {
 		this.titoloPacchetto = titoloPacchetto;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof AcquistoBean))
+			return false;
+		
+		AcquistoBean other = (AcquistoBean) obj;
+		
+		return this.numAcquisto == other.getNumAcquisto();
+	}
 
 	private int numOrdine, numAcquisto;
 	private String codiceP,titoloPacchetto;

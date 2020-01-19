@@ -35,6 +35,7 @@ class TC_UtenteManager extends Mockito{
 		UtenteBean utenteM = new UtenteBean();
 	
 		when(utenteMock.login("Martina", passwordBase64format)).thenReturn(utenteLoggato);
+		utenteManager.setDaoUtente(utenteMock);
 		utenteM = utenteManager.login("Martina", passwordBase64format);
 		assertEquals(utenteM.getNomeUtente(), utenteLoggato.getNomeUtente());
 	}
@@ -46,6 +47,7 @@ class TC_UtenteManager extends Mockito{
 		
 		boolean res;
 		when(utenteMock.updateEmail("mesposito@gmail.com", "chiccaesp98@gmail.com")).thenReturn(true);
+		utenteManager.setDaoUtente(utenteMock);
 		res = utenteManager.setEmail("mesposito@gmail.com", "chiccaesp98@gmail.com");
 		assertEquals(res, true);
 	}
@@ -60,6 +62,7 @@ class TC_UtenteManager extends Mockito{
 		
 		boolean res;
 		when(utenteMock.updatePassword("mesposito@gmail.com", passwordBase64format)).thenReturn(true);
+		utenteManager.setDaoUtente(utenteMock);
 		res = utenteManager.setPassword("mesposito@gmail.com", passwordBase64format);
 		assertEquals(res, true);
 	}
@@ -72,6 +75,7 @@ class TC_UtenteManager extends Mockito{
 		String passwordBase64format  = Base64.getEncoder().encodeToString(password.getBytes()); 
 		boolean res;
 		when(utenteMock.registration("anna@live.it", "AnnaF", passwordBase64format)).thenReturn(true);
+		utenteManager.setDaoUtente(utenteMock);
 		res = utenteManager.registrazione("anna@live.it", "AnnaF", passwordBase64format);
 		assertEquals(res, true);
 	}
@@ -86,7 +90,7 @@ class TC_UtenteManager extends Mockito{
 		pacchettiMock.add(pacchetto);
 		
 		when(gestoreMock.visualizzaPacchettiDaApprovare()).thenReturn(pacchettiMock);
-		
+		utenteManager.setDao(gestoreMock);
 		ArrayList<PacchettoBean> pacchetti = new ArrayList<PacchettoBean>();
 		pacchetti = utenteManager.visualizzaPacchettiDaApprovare();
 		assertEquals( pacchettiMock.size(), pacchetti.size());
@@ -101,7 +105,7 @@ class TC_UtenteManager extends Mockito{
 		LezioniBean lezione = new LezioniBean();
 		lezioniMock.add(lezione);
 		when(gestoreMock.visualizzaLezioniDaApprovare()).thenReturn(lezioniMock);
-		
+		utenteManager.setDao(gestoreMock);
 		ArrayList<LezioniBean> lezioni = new ArrayList<LezioniBean>();
 		lezioni = utenteManager.visualizzaLezioniDaApprovare();
 		assertEquals(lezioni.size(), lezioniMock.size());

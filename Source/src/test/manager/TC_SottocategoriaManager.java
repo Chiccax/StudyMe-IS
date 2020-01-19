@@ -10,7 +10,6 @@ import org.mockito.Mockito;
 
 import model.bean.SottocategoriaBean;
 import model.dao.SottocategoriaDao;
-import model.dao.UtenteDao;
 import model.manager.SottocategoriaManager;
 
 class TC_SottocategoriaManager extends Mockito {
@@ -39,6 +38,7 @@ class TC_SottocategoriaManager extends Mockito {
 		ArrayList<SottocategoriaBean> sottocategorie = new ArrayList<SottocategoriaBean>();
 		
 		when(sottocategoriaMock.selezionaSottocagorieInsegnante("Mariarosaria")).thenReturn(sottocategorieMock);
+		sottocategoria.setDao(sottocategoriaMock);
 		sottocategorie = sottocategoria.selezionaSottocagorieInsegnante("Mariarosaria");
 		
 		assertEquals(sottocategorie.size(), sottocategorieMock.size());
@@ -55,7 +55,7 @@ class TC_SottocategoriaManager extends Mockito {
 		SottocategoriaBean s = new SottocategoriaBean();
 		
 		when(sottocategoriaMock.findByKey("svi001")).thenReturn(sMock);
-		
+		sottocategoria.setDao(sottocategoriaMock);
 		s = (SottocategoriaBean) sottocategoria.findByKey("svi001");
 		
 		assertNotNull(s);

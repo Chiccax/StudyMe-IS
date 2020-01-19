@@ -2,6 +2,7 @@ package model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.DriverManagerConnectionPool;
@@ -33,6 +34,22 @@ public class AcquistoDao {
 		 }catch (SQLException e) {
 			 e.printStackTrace();
 		 }
+	}
+	
+	public boolean existingPurchase(int idAcquisto) {
+		try {
+			Connection conn = DriverManagerConnectionPool.getConnection();
+			PreparedStatement stm = conn.prepareStatement("SELECT * FROM acquisto WHERE numAcquisto = ? ");
+			stm.setInt(1, idAcquisto);
+			ResultSet res = stm.executeQuery();
+			if(res.next()) {
+				return true;
+			} else
+				return false;
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }
 

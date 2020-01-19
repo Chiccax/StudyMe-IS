@@ -1,6 +1,5 @@
 package test.dao;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.ArrayList;
@@ -16,7 +15,6 @@ import model.bean.LezioniBean;
 import model.bean.PacchettoBean;
 import model.bean.RecensioneBean;
 import model.bean.UtenteBean;
-import model.dao.InsegnanteDao;
 import model.dao.PacchettoDao;
 
 class TC_PacchettoDao {

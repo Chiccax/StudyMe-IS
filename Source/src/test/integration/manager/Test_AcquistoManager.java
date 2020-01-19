@@ -2,7 +2,6 @@ package test.integration.manager;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -11,9 +10,6 @@ import org.junit.jupiter.api.Test;
 import model.manager.AcquistoManager;
 import model.manager.OrdineManager;
 import model.bean.*;
-import model.dao.AcquistoDao;
-import model.dao.OrdineDao;
-import model.dao.PacchettoDao;
 
 class Test_AcquistoManager {
 

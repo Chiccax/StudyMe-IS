@@ -2,21 +2,21 @@ package test.integration.manager;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Base64;
 
-import org.junit.After;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import model.bean.LezioniBean;
 import model.bean.PacchettoBean;
 import model.bean.UtenteBean;
+import model.dao.GestoreDao;
 import model.dao.PacchettoDao;
-import model.dao.UtenteDao;
 import model.manager.UtenteManager;
 
 class Test_UtenteManager {
@@ -50,7 +50,7 @@ class Test_UtenteManager {
 	public void testModificaPassword() {
 		String passwordNuova = "passMariarosaria";
 		String passwordBase64format  = Base64.getEncoder().encodeToString(passwordNuova.getBytes()); 
-		Boolean res = manager.setPassword("chiccaesp98@gmail.com", passwordBase64format);
+		Boolean res = manager.setPassword("mesposito@gmail.com", passwordBase64format);
 		assertTrue(res);
 	}
 	
@@ -83,12 +83,16 @@ class Test_UtenteManager {
 	public void testApprovaInteroPacchetto() {
 		manager.approvaInteroPacchetto("pac051");
 		
-		PacchettoBean pacchettoApprovato = new PacchettoBean();
-		
-		PacchettoDao pacchetto = new PacchettoDao();
-		pacchettoApprovato = pacchetto.getPacchetto("pac051");
-		
-		assertEquals(1, pacchettoApprovato.getApprovato());
+		GestoreDao gestore = new GestoreDao();
+		ArrayList<PacchettoBean> pacchettiDaApprovare = new ArrayList<PacchettoBean>();
+		pacchettiDaApprovare = gestore.visualizzaPacchettiDaApprovare();
+		String nomePacchetto = null;
+		for(PacchettoBean p : pacchettiDaApprovare) {
+			if(p.getCodicePacchetto().equals("pac051")) {
+				nomePacchetto = p.getTitolo();
+			}
+		}
+		assertNull(nomePacchetto);
 	}
 	
 
@@ -96,11 +100,16 @@ class Test_UtenteManager {
 	public void testDisapprovaInteroPacchetto() {
 		manager.disapprovaInteroPacchetto("pac052");
 		
-		PacchettoBean pacchettoDisapprovato = new PacchettoBean();
-		
-		PacchettoDao pacchetto = new PacchettoDao();
-		pacchettoDisapprovato = pacchetto.getPacchetto("pac051");
-		assertEquals(-1, pacchettoDisapprovato.getApprovato());
+		GestoreDao gestore = new GestoreDao();
+		ArrayList<PacchettoBean> pacchettiDaApprovare = new ArrayList<PacchettoBean>();
+		pacchettiDaApprovare = gestore.visualizzaPacchettiDaApprovare();
+		String nomePacchetto = null;
+		for(PacchettoBean p : pacchettiDaApprovare) {
+			if(p.getCodicePacchetto().equals("pac052")) {
+				nomePacchetto = p.getTitolo();
+			}
+		}
+		assertNull(nomePacchetto);
 	}
 	
 	@Test

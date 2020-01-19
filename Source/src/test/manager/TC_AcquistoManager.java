@@ -38,7 +38,9 @@ class TC_AcquistoManager extends Mockito{
 		AcquistoBean acquisto = new AcquistoBean();
 		
 		when(ordineMock.insert(ordine)).thenReturn(1);
+		manager = new AcquistoManager();
 		manager.setDao(acquistoMock);
+		manager.setDaoOrdine(ordineMock);
 		manager.getOrdine("Damiana", carrello);
 		verify(acquistoMock).insertAcquisto(acquisto);
 	}

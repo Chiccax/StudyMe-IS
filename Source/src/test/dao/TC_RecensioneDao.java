@@ -10,7 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import model.bean.RecensioneBean;
-import model.bean.UtenteBean;
 import model.dao.PacchettoDao;
 import model.dao.RecensioneDao;
 

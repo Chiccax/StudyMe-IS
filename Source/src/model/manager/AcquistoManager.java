@@ -41,16 +41,24 @@ public class AcquistoManager {
 	 **/
 	public void getOrdine(String userName, ArrayList<PacchettoBean> carrello){
 		AcquistoDao a;
+		OrdineDao o;
+		
 		if(dao != null) {
 			a = dao;
 		} else {
 			a = new AcquistoDao();
 		}
 		
+		if(ordine != null) {
+			o = ordine;
+		} else {
+			o = new OrdineDao();
+		}
+		
 		ordineBean.setCliente(userName);
 		ordineBean.setData(Date.valueOf(getDataOdierna()));
 		int numOrd = 0;
-		numOrd = ordine.insert(ordineBean);
+		numOrd = o.insert(ordineBean);
 		
 		for (PacchettoBean p : carrello) {
 			String codiceP = p.getCodicePacchetto();
@@ -69,8 +77,11 @@ public class AcquistoManager {
 		this.dao = a;
 	}
 	
+	public void setDaoOrdine(OrdineDao o) {
+		this.ordine = o;
+	}
 	OrdineBean ordineBean = new OrdineBean();
 	AcquistoBean acquistoBean = new AcquistoBean();
-	OrdineDao ordine = new OrdineDao();
+	OrdineDao ordine;
 	AcquistoDao dao;
 }

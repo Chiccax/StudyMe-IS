@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.bean.SottocategoriaBean;
+import model.dao.InsegnanteDao;
 import model.dao.SottocategoriaDao;
 
 public class SottocategoriaManager {
@@ -19,7 +20,14 @@ public class SottocategoriaManager {
 	 * @return ArrayList<SottocategoriaBean> sottocategorie
 	 **/
 	public ArrayList<SottocategoriaBean> selezionaSottocagorieInsegnante(String utente){
-		sottocategorie = manager.selezionaSottocagorieInsegnante(utente);
+		SottocategoriaDao s;
+		if(manager != null) {
+			s = manager;
+		} else {
+			s = new SottocategoriaDao();
+		}
+
+		sottocategorie = s.selezionaSottocagorieInsegnante(utente);
 		return sottocategorie;
 	}
 	
@@ -30,11 +38,22 @@ public class SottocategoriaManager {
 	 * @throws SQLException
 	 **/
 	public Object findByKey(Object codiceS) throws SQLException{
-		sottocategoria = manager.findByKey(codiceS);
+		SottocategoriaDao s;
+		if(manager != null) {
+			s = manager;
+		} else {
+			s = new SottocategoriaDao();
+		}
+		
+		sottocategoria = s.findByKey(codiceS);
 		return sottocategoria;
 	}
 	
-	SottocategoriaDao manager = new SottocategoriaDao();
+	public void setDao(SottocategoriaDao a) {
+		manager = a;
+	}
+	
+	SottocategoriaDao manager;
 	Object sottocategoria = null;
 	ArrayList<SottocategoriaBean> sottocategorie = new ArrayList<SottocategoriaBean>();
 }

@@ -27,7 +27,14 @@ public class InsegnanteManager {
 	 * @return  PacchettoBean pacchettoDaInserire
 	 * **/
 	public PacchettoBean inserPacchetto(String nuovoCodice,String nomeUtente,String nuovaSottocategoria, double nuovoPrezzo,String nuovaDescrizione,String nuovoTitolo,String nuovaFoto){
-		pacchettoDaInserire = insegnanteManager.inserPacchetto(nuovoCodice, nomeUtente, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		
+		pacchettoDaInserire = i.inserPacchetto(nuovoCodice, nomeUtente, nuovaSottocategoria, nuovoPrezzo, nuovaDescrizione, nuovoTitolo, nuovaFoto);
 		return pacchettoDaInserire;
 	}
 	/**
@@ -36,7 +43,14 @@ public class InsegnanteManager {
 	 * @return PacchettoBean pacchetto
 	 **/
 	public PacchettoBean getPacchetto(String nuovoCodice){
-		pacchetto = pacchettoDao.getPacchetto(nuovoCodice);
+		PacchettoDao p;
+		if(daoPacchetto != null) {
+			p = daoPacchetto;
+		} else {
+			p = new PacchettoDao();	
+		}
+		
+		pacchetto = p.getPacchetto(nuovoCodice);
 		return  pacchetto;
 	}
 	/**
@@ -45,7 +59,14 @@ public class InsegnanteManager {
 	 * @return PacchettoBean pacchettoEsistente
 	 **/
 	public PacchettoBean getPacchettoByTitolo(String nuovoTitolo){
-		pacchettoEsistente = pacchettoDao.getPacchettoByTitolo(nuovoTitolo);
+		PacchettoDao p;
+		if(daoPacchetto != null) {
+			p = daoPacchetto;
+		} else {
+			p = new PacchettoDao();	
+		}
+		
+		pacchettoEsistente = p.getPacchettoByTitolo(nuovoTitolo);
 		return  pacchettoEsistente;
 	}
 	/**
@@ -131,7 +152,14 @@ public class InsegnanteManager {
 	 * @return LezioniBean lezioniBean 
 	 * **/
 	public LezioniBean insertLesson(String codicePacchettoAttuale,String url,String titolo,String durata){
-		lezioniBean =insegnanteManager.insertLesson(codicePacchettoAttuale, url, titolo, durata);
+		InsegnanteDao i;
+		if(dao != null) {
+			i = dao;
+		} else {
+			i = new InsegnanteDao();
+		}
+		
+		lezioniBean = i.insertLesson(codicePacchettoAttuale, url, titolo, durata);
 		return lezioniBean;
 	}
 	/**
@@ -140,7 +168,14 @@ public class InsegnanteManager {
 	 * @return  ArrayList<LezioniBean> lezioneTitoloEsistente
 	 **/
 	public ArrayList<LezioniBean> getLezioniByTitolo(String titolo){
-		lezioneTitoloEsistente = pacchettoDao.getLezioniByTitolo(titolo);
+		PacchettoDao p;
+		if(daoPacchetto != null) {
+			p = daoPacchetto;
+		} else {
+			p = new PacchettoDao();	
+		}
+		
+		lezioneTitoloEsistente = p.getLezioniByTitolo(titolo);
 		return   lezioneTitoloEsistente;
 	}
 	/**
@@ -149,7 +184,14 @@ public class InsegnanteManager {
 	 * @return  ArrayList<LezioniBean> lezioneEsistente
 	 **/
 	public ArrayList<LezioniBean> getLezioniByURl(String url){
-		lezioneEsistente = pacchettoDao.getLezioniByURl(url);
+		PacchettoDao p;
+		if(daoPacchetto != null) {
+			p = daoPacchetto;
+		} else {
+			p = new PacchettoDao();	
+		}
+		
+		lezioneEsistente = p.getLezioniByURl(url);
 		return   lezioneEsistente;
 	}
 	/**
@@ -202,7 +244,14 @@ public class InsegnanteManager {
 	 * @return  ArrayList<UtenteBean> acquirenti
 	 **/
 	public ArrayList<UtenteBean> getAcquirenti(String vecchioCodice){
-		acquirenti = pacchettoDao.getAcquirenti(vecchioCodice);
+		PacchettoDao p;
+		if(daoPacchetto != null) {
+			p = daoPacchetto;
+		} else {
+			p = new PacchettoDao();	
+		}
+		
+		acquirenti = p.getAcquirenti(vecchioCodice);
 		return  acquirenti;
 	}
 	
@@ -226,9 +275,14 @@ public class InsegnanteManager {
 		this.dao = i;
 	}
 	
+	public void setDaoPacchetto(PacchettoDao p) {
+		this.daoPacchetto = p;
+	}
+	
 	InsegnanteDao insegnanteManager = new InsegnanteDao();
 	PacchettoDao pacchettoDao = new PacchettoDao();
 	InsegnanteDao dao;
+	PacchettoDao daoPacchetto;
 	PacchettoBean pacchetto= new PacchettoBean();
 	PacchettoBean pacchettoEsistente= new PacchettoBean();
 	ArrayList<LezioniBean> lezioneEsistente = new ArrayList<LezioniBean>() ;

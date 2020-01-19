@@ -22,7 +22,14 @@ public class UtenteManager {
 	 * @return UtenteBean user
 	 **/
 	public UtenteBean getUtente(String  nomeUtente, String passwordBase64format){
-		UtenteBean user = utenteDao.login(nomeUtente, passwordBase64format);
+		UtenteDao u;
+		if(daoUtente != null) {
+			u = daoUtente;
+		} else {
+			u = new UtenteDao();
+		}
+		
+		UtenteBean user = u.login(nomeUtente, passwordBase64format);
 		return user;
 	}
 
@@ -33,7 +40,14 @@ public class UtenteManager {
 	 * @return true se l'operazione va a buon fine, false altrimenti
 	 **/
 	public boolean setEmail(String emailUtente, String nuovaEmailUtente){
-		boolean res= utenteDao.updateEmail(emailUtente, nuovaEmailUtente);
+		UtenteDao u;
+		if(daoUtente != null) {
+			u = daoUtente;
+		} else {
+			u = new UtenteDao();
+		}
+		
+		boolean res= u.updateEmail(emailUtente, nuovaEmailUtente);
 		return res;
 	}
 	/**
@@ -43,7 +57,14 @@ public class UtenteManager {
 	 * @return true se l'operazione va a buon fine, false altrimenti
 	 **/
 	public boolean setPassword(String emailUtente, String passwordBase64format){
-		boolean res= utenteDao.updatePassword(emailUtente, passwordBase64format);
+		UtenteDao u;
+		if(daoUtente != null) {
+			u = daoUtente;
+		} else {
+			u = new UtenteDao();
+		}
+		
+		boolean res= u.updatePassword(emailUtente, passwordBase64format);
 		return res;
 	}
 	/**
@@ -54,8 +75,15 @@ public class UtenteManager {
 	 * @return true se l'operazione va a buon fine, false altrimenti
 	 **/
 	public boolean registrazione(String email,String nomeUtente,String passwordBase64format){
-		 boolean res= utenteDao.registration(email, nomeUtente, passwordBase64format);
-		 return res;
+		UtenteDao u;
+		if(daoUtente != null) {
+			u = daoUtente;
+		} else {
+			u = new UtenteDao();
+		}
+		
+		boolean res= u.registration(email, nomeUtente, passwordBase64format);
+		return res;
 	}
 	/**
 	 * Effettua il login
@@ -64,8 +92,15 @@ public class UtenteManager {
 	 * @return UtenteBean utente
 	 **/
 	public UtenteBean login(String nomeUtente,String passwordBase64format){
-		UtenteBean utente= utenteDao.login(nomeUtente, passwordBase64format);
-		 return utente;
+		UtenteDao u;
+		if(daoUtente != null) {
+			u = daoUtente;
+		} else {
+			u = new UtenteDao();
+		}
+		
+		UtenteBean utente= u.login(nomeUtente, passwordBase64format);
+		return utente;
 	}
 	/**
 	 * Visualizza i pacchetti da approvare
@@ -80,7 +115,14 @@ public class UtenteManager {
 	 * @return ArrayList<LezioniBean> lezioniDaApprovare
 	 **/
 	public ArrayList<LezioniBean> visualizzaLezioniDaApprovare(){
-		ArrayList<LezioniBean> lezioniDaApprovare = gestoreDao.visualizzaLezioniDaApprovare();
+		GestoreDao g;
+		if(dao != null) {
+			g = dao;
+		} else {
+			g = new GestoreDao();
+		}
+		
+		ArrayList<LezioniBean> lezioniDaApprovare = g.visualizzaLezioniDaApprovare();
 		 return lezioniDaApprovare;
 	}
 	/**
@@ -144,7 +186,12 @@ public class UtenteManager {
 		this.dao = g;
 	}
 	
+	public void setDaoUtente(UtenteDao u) {
+		this.daoUtente = u;
+	}
+	
 	private GestoreDao dao;
+	private UtenteDao daoUtente;
 	UtenteDao utenteDao = new UtenteDao();
 	GestoreDao gestoreDao = new GestoreDao();
 }
